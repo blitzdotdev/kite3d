@@ -88,7 +88,10 @@ import {
     backupPath,
     canMakeAsset,
     canSaveAsset,
+    isExternalGeometry,
+    isExternalMaterial,
     isExternalObject,
+    isExternalTexture,
     isLoadableFile,
     isPackageProject, SelectFileRef,
     thumbPath
@@ -1477,27 +1480,30 @@ export class ViewerInstanceManager extends EventDispatcher<{
                     })
                     // todo any other events? materialChanged, geometryChanged etc
                 }else if(this.loadedScene){
+                    // The scene file saves everything but a placed asset's own clone children, which is
+                    // what isExternal* tests. _tpRootPath does not: it is set on everything an asset
+                    // file produced, nodes the scene owns included, so it swallowed edits the scene saves.
                     v.scene.addEventListener('objectUpdate', (ev)=>{
-                        if(ev.object._tpRootPath) return // part of some asset
+                        if(isExternalObject(ev.object)) return // inside a placed asset's clone
                         if(this.loadedScene !== file.path) return
                         this.loadedNeedsSave = true
                         // todo use asset tracker instead of manual sub
                     })
                     v.scene.addEventListener('materialUpdate', (ev)=>{
                         // todo handle material array
-                        if(!Array.isArray(ev.material) && ev.material._tpRootPath) return // part of some asset
+                        if(!Array.isArray(ev.material) && isExternalMaterial(ev.material)) return
                         if(this.loadedScene !== file.path) return
                         this.loadedNeedsSave = true
                         // todo use asset tracker instead of manual sub
                     })
                     v.scene.addEventListener('textureUpdate', (ev)=>{
-                        if(ev.texture._tpRootPath) return // part of some asset
+                        if(isExternalTexture(ev.texture)) return
                         if(this.loadedScene !== file.path) return
                         this.loadedNeedsSave = true
                         // todo use asset tracker instead of manual sub
                     })
                     v.scene.addEventListener('geometryUpdate', (ev)=>{
-                        if(ev.geometry._tpRootPath) return // part of some asset
+                        if(isExternalGeometry(ev.geometry)) return
                         if(this.loadedScene !== file.path) return
                         this.loadedNeedsSave = true
                         // todo use asset tracker instead of manual sub

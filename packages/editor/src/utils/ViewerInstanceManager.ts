@@ -467,7 +467,12 @@ export class ViewerInstanceManager extends EventDispatcher<{
 
     /** The scene as the text that goes to disk. The save, the dirty check and the load all read it here. */
     private serializeScene(viewer: ThreeViewer, scenePath: string) {
-        return serializeSceneGltf(viewer, {scenePath, base: this.filesBase, sceneName: this.loadedSceneName})
+        return serializeSceneGltf(viewer, {
+            scenePath,
+            base: this.filesBase,
+            assets: this.loadedProject?.assetsManifest,
+            sceneName: this.loadedSceneName,
+        })
     }
 
     /**

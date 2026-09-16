@@ -1,5 +1,5 @@
 import {PropertyBinding, type IObject3D, type ThreeViewer} from 'threepipe'
-import {assetUrlPrefix} from './runtime/projectFormat.ts'
+import {assetUrlPrefix, createProjectAssetURLModifier, type AssetsJSONManifest} from './runtime/projectFormat.ts'
 
 export interface SerializeSceneGltfOptions {
     scenePath?: string
@@ -8,6 +8,11 @@ export interface SerializeSceneGltfOptions {
      * given. Strings that point into the project through it are written back as project paths.
      */
     base?: URL
+    /**
+     * The project's `assets.json`, the one `createProjectAssetURLModifier` was given. It names the file
+     * behind an asset id, which the glTF resource uris need to reach a path relative to the scene.
+     */
+    assets?: AssetsJSONManifest
     /**
      * The name the scene carries in its file, from `sceneGltfName`. threepipe names the model root
      * 'Scene' for the UI, so the exporter would write that name over the file's own. A scene with no
@@ -134,6 +139,7 @@ async function serializeSceneGltfDocument(
     const document = cloneJson(input) as GltfDocument
     applySceneName(document, options.sceneName)
     restoreAuthoredNames(document)
+    removeLoaderNodeExtras(document)
     removeVolatileViewerIds(document)
     removeUnreferencedUuids(document)
     sortExtensionLists(document)
@@ -144,6 +150,7 @@ async function serializeSceneGltfDocument(
 
     extractBuffers(document, sceneDirectory, fileStem(scenePath), files)
     await extractImages(document, sceneDirectory, files)
+    relativizeResourceUris(document, sceneDirectory, options)
 
     const canonical = canonicalizeJson(document, projectPathRewriter(options.base)) as GltfDocument
     return {
@@ -186,6 +193,25 @@ function restoreAuthoredNames(document: GltfDocument): void {
         if (!isRecord(extras) || typeof extras.name !== 'string') continue
         if (isLoaderNameOf(node.name || '', extras.name)) node.name = extras.name
         delete extras.name
+        if (!Object.keys(extras).length) delete node.extras
+    }
+}
+
+/**
+ * What the import writes into a placed asset's `userData`, and the exporter then writes into its node:
+ * `gltfAsset` is the asset file's own `asset` block and `gltfExtras` its top level `extras`
+ * (GLTFLoader2.ts:197,199), and `uuid` is the copy of the node uuid the editor's asset tracker makes when
+ * it links an instance (AssetTracker.ts:556). None of the three is authored, all three come back on the
+ * next load, and a node placed this session carries none of them, so the save after a reload would differ
+ * from the save before it. The node uuid the file keeps is `gltfUUID`, which the loader reads back.
+ */
+function removeLoaderNodeExtras(document: GltfDocument): void {
+    for (const node of document.nodes || []) {
+        const extras = node.extras
+        if (!isRecord(extras)) continue
+        delete extras.gltfAsset
+        delete extras.gltfExtras
+        delete extras.uuid
         if (!Object.keys(extras).length) delete node.extras
     }
 }
@@ -385,6 +411,38 @@ async function extractImages(
     for (const [path, bytes] of byPath) files.push({path, bytes})
 }
 
+/**
+ * `images[].uri` and `buffers[].uri` are glTF's own references: three's GLTFLoader resolves them itself,
+ * relative to the scene file, and never sees the engine's URL modifier, so a project path cannot work
+ * there. They are written relative to the scene, whatever URL they carried. Every other project
+ * reference, `rootPath` and the viewer config's environment and background, keeps the project form,
+ * which the modifier reads on load.
+ */
+function relativizeResourceUris(
+    document: GltfDocument,
+    sceneDirectory: string,
+    options: SerializeSceneGltfOptions,
+): void {
+    const base = options.base
+    if (!base) return
+    const resolveAssetUrl = options.assets ? createProjectAssetURLModifier(base, options.assets) : undefined
+    for (const resource of [...document.images || [], ...document.buffers || []]) {
+        if (!resource.uri) continue
+        let url = resource.uri
+        if (resolveAssetUrl) {
+            // The modifier throws on an asset id the manifest no longer holds, a texture whose file was
+            // deleted. That uri stays as it is and the rest of the scene still saves.
+            try {
+                url = resolveAssetUrl(url)
+            } catch {
+                continue
+            }
+        }
+        const path = projectPath(url, base)
+        if (path) resource.uri = relativeProjectPath(sceneDirectory, path)
+    }
+}
+
 function decodeDataUrl(uri: string): {bytes: Uint8Array, mimeType?: string} {
     const match = /^data:([^;,]*)(;base64)?,(.*)$/s.exec(uri)
     if (!match) throw new Error('Invalid data URL in glTF')
@@ -445,13 +503,17 @@ function canonicalizeJson(value: unknown, rewrite: (text: string) => string): un
 function projectPathRewriter(base: URL | undefined): (text: string) => string {
     if (!base) return (text) => text
     return (text) => {
-        const rest = text.startsWith(base.href) ? text.slice(base.href.length)
-            : text.startsWith(base.pathname) ? text.slice(base.pathname.length)
-                : null
-        if (rest === null) return text
-        const path = rest.split(/[?#]/, 1)[0]
+        const path = projectPath(text, base)
         return path ? assetUrlPrefix + path : text
     }
+}
+
+/** The project file a URL names through the base, or null when it points somewhere else. */
+function projectPath(text: string, base: URL): string | null {
+    const rest = text.startsWith(base.href) ? text.slice(base.href.length)
+        : text.startsWith(base.pathname) ? text.slice(base.pathname.length)
+            : null
+    return rest === null ? null : rest.split(/[?#]/, 1)[0] || null
 }
 
 /**

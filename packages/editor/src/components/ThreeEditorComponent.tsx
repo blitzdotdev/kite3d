@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useMemo, useReducer, useRef, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useMemo, useReducer, useState} from 'react';
 import {isPackageProject} from '../utils/projectUtils.ts'
 import {BlueprintJsUiPlugin2} from '../UiConfigRendererBlueprint2.tsx'
 import {
@@ -193,15 +193,18 @@ export function ThreeEditorComponent() {
     //     manager.features.refresh(editorMode)
     // }, []);
 
-    const canvasContainer = useRef<HTMLDivElement>(null)
-    // add viewer.container to canvasContainer when it changes
-    useEffect(() => {
-        if(canvasContainer.current && viewer && viewer.container.parentElement !== canvasContainer.current){
-            canvasContainer.current.innerHTML = ''
-            canvasContainer.current.appendChild(viewer.container)
-            viewer.resize()
-        }
-    }, [canvasContainer.current, viewer])
+    // The centre strip draws the active tab's panel alone, so every switch, and every tab an open
+    // adds, mounts a new empty container. React hands the node to this callback on the commit that
+    // mounts it, which is the only moment that is always right: a dependency list reads
+    // `ref.current` while it still holds the node of the last commit, and an open renders twice, so
+    // the second render, the one that swaps the panel, reads an unchanged value and the canvas
+    // stays behind in the panel that left.
+    const canvasContainer = useCallback((node: HTMLDivElement | null) => {
+        if(!node || !viewer || viewer.container.parentElement === node) return
+        node.innerHTML = ''
+        node.appendChild(viewer.container)
+        viewer.resize()
+    }, [viewer])
 
     return !uiConfigRenderer || !viewer ? null : (
         <UiConfigRendererContext.Provider value={uiConfigRenderer}>

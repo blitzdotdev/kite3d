@@ -32,7 +32,7 @@ This part is done. `~/kite3d` is the new monorepo and will become master of the 
 │   ├── editor/               upstream editor at 7fac408, git mv, history follows every file
 │   ├── engine/               createGame, the glTF serializer, the format parsers, the plugins
 │   ├── kite3d/               init, dev, screenshot, skills, publish (prints a skill path); open returns in section 10
-│   ├── threepipe/            0.5.1 plus shouldExportObject in the exporter
+│   ├── threepipe/            0.5.1 plus shouldExportObject in the exporter and traverseVisible in the G-buffer pass (#31)
 │   └── uiconfig-blueprint/   vendored, 0.1.0-dev.14
 ├── scripts/                  release.mjs, set-version.mjs, build-uiconfig-blueprint.mjs
 ├── .github/workflows/        ci.yml, release.yml

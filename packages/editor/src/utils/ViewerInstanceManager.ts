@@ -43,6 +43,7 @@ import {
 import {BlueprintJsUiPlugin2} from '../UiConfigRendererBlueprint2.tsx'
 import {GeometryGeneratorPlugin} from '@threepipe/plugin-geometry-generator'
 import {createProjectAssetURLModifier} from '@kite3d/engine/projectFormat'
+import {serializeAssetGltf, type SerializedSceneFile} from '@kite3d/engine/sceneSerialization'
 import {CannonPhysicsPlugin, HtmlUiComponent, RuntimeProject} from '@kite3d/engine'
 import {EditorFeatures} from './EditorFeatures.ts'
 import {EditModePlugin} from "./EditModePlugin.ts";
@@ -661,7 +662,13 @@ export class ViewerInstanceManager extends EventDispatcher<{
         return {file: new File([blob], 'running.gltf', {type: 'model/gltf+json'})}
     }
 
-    async exportObject(obj: IObject3D|IMaterial, name = 'asset') {
+    /**
+     * The bytes one asset file holds, and the sidecars that go beside it. The target path picks the
+     * format: a `.gltf` is text glTF with its buffer in a sibling `.bin`, a `.glb` is binary, and a
+     * material is its own json either way. `saveNewProjectAsset` names its new file after the
+     * extension this answers, so it has no path to give yet and gets the binary form.
+     */
+    async exportObject(obj: IObject3D|IMaterial, name = 'asset', assetPath = '') {
         const viewer = this.get()
         if (!viewer) {
             return {
@@ -684,10 +691,11 @@ export class ViewerInstanceManager extends EventDispatcher<{
 
         // todo any other plugin/editor features to disable?
 
-        const ext = (obj as IMaterial).isMaterial ? 'mat' : 'glb'
+        // GLTFExporter2 reads the format off exportExt alone (GLTFExporter2.ts:181), so that is the
+        // one place the format is decided.
+        const ext = (obj as IMaterial).isMaterial ? 'mat' : /\.gltf$/i.test(assetPath) ? 'gltf' : 'glb'
         const blob = await viewer?.export(obj, {
             exportExt: ext,
-            binary: true,
             // do not save uuid when saving glb asset object
             // preserveUUIDs: !(obj as IObject3D).isObject3D, // only for objects
             preserveUUIDs: true, // always save
@@ -700,9 +708,12 @@ export class ViewerInstanceManager extends EventDispatcher<{
         }
         const mimes = {
             glb: 'model/gltf-binary',
+            gltf: 'model/gltf+json',
             mat: 'application/json',
         }
-        const file = new File([blob], name + '.' + ext, {type: mimes[ext] || 'application/octet-stream'})
+        const serialized = ext === 'gltf' ? serializeAssetGltf(await blob.text(), assetPath) : null
+        const body = serialized ? serialized.gltf as Uint8Array<ArrayBuffer> : blob
+        const file = new File([body], name + '.' + ext, {type: mimes[ext] || 'application/octet-stream'})
 
         // const snapshotPlugin = viewer.getPlugin(CanvasSnapshotPlugin)!
         // const preview = await snapshotPlugin.getFile('snapshot.jpeg', {
@@ -718,11 +729,16 @@ export class ViewerInstanceManager extends EventDispatcher<{
         // this.features.enable('edit-mode', 'exportScene')
         // this.features.enable('picking', 'exportScene')
 
-        return {file, preview: previewFile, ext}
+        return {file, preview: previewFile, ext, files: serialized?.files ?? []}
     }
 
     // Returns a result only when the asset did not land on disk; the caller stops on it.
-    async writeAssetFile(obj: IObject3D|IMaterial, handle: ProjectDirectoryHandle, assetPath: string, res: {file: File, preview?: string | File}) {
+    async writeAssetFile(obj: IObject3D|IMaterial, handle: ProjectDirectoryHandle, assetPath: string, res: {file: File, preview?: string | File, files: SerializedSceneFile[]}) {
+        // The buffer goes down before the file that names it, the order a scene writes its sidecars in.
+        for (const sidecar of res.files) {
+            const bytes = sidecar.bytes as Uint8Array<ArrayBuffer>
+            await this.fsHelper.writeFile(handle, sidecar.path, new File([bytes], sidecar.path.split('/').pop()!))
+        }
         const res1 = await this.writeResolvingConflict(this.store?.find(assetPath) ?? null, handle, assetPath, res.file).catch(e => {
             console.error('Failed to save asset file.', e)
             return null
@@ -1408,7 +1424,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
             }
         }
 
-        const res = await this.exportObject(obj).catch(e=>{
+        const res = await this.exportObject(obj, 'asset', path).catch(e=>{
             console.error(e)
             return {error: e?.message || e?.toString() || 'Unknown error exporting asset', file: null}
         })

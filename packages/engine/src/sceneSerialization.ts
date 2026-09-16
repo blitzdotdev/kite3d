@@ -161,6 +161,23 @@ async function serializeSceneGltfDocument(
     }
 }
 
+/**
+ * One asset file as text glTF with its buffer beside it. three's exporter embeds the whole buffer as a
+ * base64 data url, which is six megabytes of text for a tank, so the buffer goes into `<stem>.bin` next
+ * to the file, the pair a `.scene.gltf` is already written as.
+ *
+ * A scene's own canonicalizations are not applied here. They answer for a scene: its name, its viewer
+ * config, the uuids only the scene file repeats. An asset is written as its exporter wrote it, and its
+ * images already carry a uri of their own, so nothing here touches them.
+ */
+export function serializeAssetGltf(gltf: string, assetPath: string): SerializedSceneGltf {
+    const document = JSON.parse(gltf) as GltfDocument
+    const path = normalizeProjectPath(assetPath)
+    const files: SerializedSceneFile[] = []
+    extractBuffers(document, directoryName(path), fileStem(path), files)
+    return {gltf: encoder.encode(`${JSON.stringify(document, null, 2)}\n`), files}
+}
+
 /** The name the scene in a glTF file carries. It survives a load and a save through `sceneName`. */
 export function sceneGltfName(gltf: string): string | undefined {
     return mainScene(JSON.parse(gltf) as GltfDocument)?.name

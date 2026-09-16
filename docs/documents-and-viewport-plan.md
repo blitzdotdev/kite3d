@@ -256,7 +256,7 @@ Found while shooting them, all in today's editor:
 Found while building pass 1b (#37), open:
 
 - Play left the main scene's file changed. Fixed on 2026-09-16 (#38): the serializer drops `near` and `far` for a camera with `autoNearFar` on, which threepipe derives on every render (a plain save had written whatever was on screen last, too), and Stop restores the scene name the raw snapshot had overwritten. A run no longer changes what Save writes.
-- Save Asset on a `.gltf` path writes a binary glB under the `.gltf` name, because the exporter hardcodes binary; the `.bin` beside it is orphaned. Not new, the navbar Save did the same. What a `.gltf` path saves as is the owner's decision.
+- Save Asset on a `.gltf` path wrote a binary glB under the `.gltf` name and orphaned the `.bin` beside it. Decided and fixed on 2026-09-16 (#40): a `.gltf` path saves text glTF with its buffer in a sibling `<stem>.bin`, the pair a scene file is written as, and a `.glb` path stays binary.
 
 
 ## 5. Later: views as render targets

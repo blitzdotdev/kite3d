@@ -8,6 +8,12 @@ export interface SerializeSceneGltfOptions {
      * given. Strings that point into the project through it are written back as project paths.
      */
     base?: URL
+    /**
+     * The name the scene carries in its file, from `sceneGltfName`. threepipe names the model root
+     * 'Scene' for the UI, so the exporter would write that name over the file's own. A scene with no
+     * name of its own is written without one.
+     */
+    sceneName?: string | null
 }
 
 export interface SerializedSceneFile {
@@ -29,6 +35,34 @@ interface GltfBuffer {
 interface GltfBufferView {
     buffer: number
     byteOffset?: number
+    byteLength: number
+    [key: string]: unknown
+}
+
+interface GltfAccessor {
+    bufferView?: number
+    [key: string]: unknown
+}
+
+interface GltfPrimitive {
+    attributes?: Record<string, number>
+    targets?: Record<string, number>[]
+    indices?: number
+    [key: string]: unknown
+}
+
+interface GltfMesh {
+    primitives?: GltfPrimitive[]
+    [key: string]: unknown
+}
+
+interface GltfSkin {
+    inverseBindMatrices?: number
+    [key: string]: unknown
+}
+
+interface GltfAnimation {
+    samplers?: {input: number, output: number}[]
     [key: string]: unknown
 }
 
@@ -44,11 +78,22 @@ interface GltfNode {
     [key: string]: unknown
 }
 
+interface GltfScene {
+    name?: string
+    [key: string]: unknown
+}
+
 interface GltfDocument extends Record<string, unknown> {
+    scene?: number
+    scenes?: GltfScene[]
     buffers?: GltfBuffer[]
     bufferViews?: GltfBufferView[]
+    accessors?: GltfAccessor[]
     images?: GltfImage[]
     nodes?: GltfNode[]
+    meshes?: GltfMesh[]
+    skins?: GltfSkin[]
+    animations?: GltfAnimation[]
 }
 
 const encoder = new TextEncoder()
@@ -87,10 +132,12 @@ async function serializeSceneGltfDocument(
         throw new Error('The scene is not a JSON glTF document')
     }
     const document = cloneJson(input) as GltfDocument
+    applySceneName(document, options.sceneName)
     restoreAuthoredNames(document)
     removeVolatileViewerIds(document)
     removeUnreferencedUuids(document)
     sortExtensionLists(document)
+    canonicalizeAccessorOrder(document)
     const scenePath = normalizeProjectPath(options.scenePath || 'assets/main.scene.gltf')
     const sceneDirectory = directoryName(scenePath)
     const files: SerializedSceneFile[] = []
@@ -103,6 +150,27 @@ async function serializeSceneGltfDocument(
         gltf: encoder.encode(`${JSON.stringify(canonical, null, 2)}\n`),
         files: files.sort((left, right) => left.path.localeCompare(right.path)),
     }
+}
+
+/** The name the scene in a glTF file carries. It survives a load and a save through `sceneName`. */
+export function sceneGltfName(gltf: string): string | undefined {
+    return mainScene(JSON.parse(gltf) as GltfDocument)?.name
+}
+
+/**
+ * threepipe names the model root 'Scene' for the UI (RootScene.ts:250) and the exporter writes the model
+ * root as the glTF scene, so the file would take the UI's name on every save. The file's own name goes
+ * back in its place, and a scene without one is written without one.
+ */
+function applySceneName(document: GltfDocument, name: string | null | undefined): void {
+    const scene = mainScene(document)
+    if (!scene) return
+    if (name) scene.name = name
+    else delete scene.name
+}
+
+function mainScene(document: GltfDocument): GltfScene | undefined {
+    return document.scenes?.[typeof document.scene === 'number' ? document.scene : 0]
 }
 
 /**
@@ -190,6 +258,81 @@ function canonicalizeViewerConfig(value: unknown): void {
     Object.values(value).forEach(canonicalizeViewerConfig)
 }
 
+/**
+ * three's exporter writes an accessor, and the bytes behind it, the first time it meets an attribute, so the
+ * file follows `geometry.attributes` insertion order: a box built in the editor lists POSITION first, the same
+ * box read back from its file lists NORMAL first, and the first save after a reload rewrites every accessor
+ * index. That order is not part of the scene, so it goes: the accessors follow the document that names them,
+ * a primitive's attributes by name, and the buffer views follow their accessors, which makes the `.bin`
+ * canonical too.
+ */
+function canonicalizeAccessorOrder(document: GltfDocument): void {
+    const accessors = document.accessors
+    if (!accessors?.length) return
+    const newIndex = new Map<number, number>()
+    const oldOrder: number[] = []
+    const claim = (index: number) => {
+        if (!newIndex.has(index)) newIndex.set(index, oldOrder.push(index) - 1)
+    }
+    mapAccessorReferences(document, (index) => {
+        claim(index)
+        return index
+    })
+    for (let index = 0; index < accessors.length; index++) claim(index)   // an accessor nothing names keeps its place
+    document.accessors = oldOrder.map((index) => accessors[index])
+    mapAccessorReferences(document, (index) => newIndex.get(index)!)
+    canonicalizeBufferViewOrder(document)
+}
+
+/** The six places three's exporter makes an accessor, in one fixed order. */
+function mapAccessorReferences(document: GltfDocument, map: (index: number) => number): void {
+    for (const mesh of document.meshes || []) {
+        for (const primitive of mesh.primitives || []) {
+            mapAttributes(primitive.attributes, map)
+            for (const target of primitive.targets || []) mapAttributes(target, map)
+            if (typeof primitive.indices === 'number') primitive.indices = map(primitive.indices)
+        }
+    }
+    for (const node of document.nodes || []) {
+        // An instanced mesh: three writes its per-instance transforms as accessors of their own.
+        const instancing = isRecord(node.extensions) ? node.extensions.EXT_mesh_gpu_instancing : undefined
+        if (isRecord(instancing)) mapAttributes(instancing.attributes as Record<string, number> | undefined, map)
+    }
+    for (const skin of document.skins || []) {
+        if (typeof skin.inverseBindMatrices === 'number') skin.inverseBindMatrices = map(skin.inverseBindMatrices)
+    }
+    for (const animation of document.animations || []) {
+        for (const sampler of animation.samplers || []) {
+            sampler.input = map(sampler.input)
+            sampler.output = map(sampler.output)
+        }
+    }
+}
+
+function mapAttributes(attributes: Record<string, number> | undefined, map: (index: number) => number): void {
+    if (!attributes) return
+    for (const name of Object.keys(attributes).sort()) attributes[name] = map(attributes[name])
+}
+
+/** A buffer view holds one accessor's bytes, so the views go in the order of the accessors that read them. */
+function canonicalizeBufferViewOrder(document: GltfDocument): void {
+    const views = document.bufferViews
+    if (!views?.length) return
+    const newIndex = new Map<number, number>()
+    const oldOrder: number[] = []
+    const claim = (index: number) => {
+        if (!newIndex.has(index)) newIndex.set(index, oldOrder.push(index) - 1)
+    }
+    for (const accessor of document.accessors || []) {
+        if (typeof accessor.bufferView === 'number') claim(accessor.bufferView)
+    }
+    for (let index = 0; index < views.length; index++) claim(index)
+    document.bufferViews = oldOrder.map((index) => views[index])
+    for (const accessor of document.accessors || []) {
+        if (typeof accessor.bufferView === 'number') accessor.bufferView = newIndex.get(accessor.bufferView)!
+    }
+}
+
 // three's exporter merges the scene into one buffer, so the document has one embedded buffer or none.
 function extractBuffers(
     document: GltfDocument,
@@ -199,10 +342,28 @@ function extractBuffers(
 ): void {
     const embedded = document.buffers?.[0]
     if (!embedded?.uri?.startsWith('data:')) return
-    const bytes = decodeDataUrl(embedded.uri).bytes
+    const bytes = packBufferViews(document, decodeDataUrl(embedded.uri).bytes)
     const binName = `${baseName}.bin`
     document.buffers = [{byteLength: bytes.byteLength, uri: binName}]
     files.push({path: joinProjectPath(sceneDirectory, binName), bytes})
+}
+
+/** Lay the buffer out in the order the views are in now. A view starts on a four-byte boundary, as glTF asks. */
+function packBufferViews(document: GltfDocument, buffer: Uint8Array): Uint8Array {
+    const views = document.bufferViews || []
+    const align = (offset: number) => Math.ceil(offset / 4) * 4
+    let length = 0
+    for (const view of views) length = align(length) + view.byteLength
+    const packed = new Uint8Array(length)
+    let offset = 0
+    for (const view of views) {
+        offset = align(offset)
+        const start = view.byteOffset || 0
+        packed.set(buffer.subarray(start, start + view.byteLength), offset)
+        view.byteOffset = offset
+        offset += view.byteLength
+    }
+    return packed
 }
 
 async function extractImages(

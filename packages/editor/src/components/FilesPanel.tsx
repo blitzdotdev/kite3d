@@ -190,7 +190,7 @@ export function FilesPanelGrid({}: {
                 const res = await manager.loadProjectFile(r, force).catch(e=>{
                     return {error: e?.message ?? 'Unknown error'}
                 })
-                const r2 = showSuccessErrorToast(res ? `Loaded ${project.path}${r.path} successfully` : 'Unknown Error', 'Unable to load file', res as ErrorRes)
+                const r2 = showSuccessErrorToast(res ? `Loaded ${r.path} successfully` : 'Unknown Error', 'Unable to load file', res as ErrorRes)
             }else {
                 // directory or something
             }

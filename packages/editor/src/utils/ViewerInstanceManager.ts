@@ -52,7 +52,7 @@ import {
 import {BlueprintJsUiPlugin2} from '../UiConfigRendererBlueprint2.tsx'
 import {GeometryGeneratorPlugin} from '@threepipe/plugin-geometry-generator'
 import {createProjectAssetURLModifier} from '@kite3d/engine/projectFormat'
-import {serializeSceneGltf} from '@kite3d/engine/sceneSerialization'
+import {sceneGltfName, serializeSceneGltf} from '@kite3d/engine/sceneSerialization'
 import {CannonPhysicsPlugin, HtmlUiComponent, RuntimeProject} from '@kite3d/engine'
 import {EditorFeatures} from './EditorFeatures.ts'
 import {EditModePlugin} from "./EditModePlugin.ts";
@@ -465,13 +465,18 @@ export class ViewerInstanceManager extends EventDispatcher<{
         this.loadedNeedsSave = state.needsSave
     }
 
+    /** The scene as the text that goes to disk. The save, the dirty check and the load all read it here. */
+    private serializeScene(viewer: ThreeViewer, scenePath: string) {
+        return serializeSceneGltf(viewer, {scenePath, base: this.filesBase, sceneName: this.loadedSceneName})
+    }
+
     /**
      * The dirty flag follows scene events, and a load or a save can leave one queued for the next
      * frame. Serializing is the answer that cannot be wrong, so it settles the cases that discard work.
      */
     private async sceneDiffersFromSaved(): Promise<boolean> {
         if (!this.loadedScene || !this.savedSceneHash) return true
-        const {gltf} = await serializeSceneGltf(this.get(), {scenePath: this.loadedScene, base: this.filesBase})
+        const {gltf} = await this.serializeScene(this.get(), this.loadedScene)
         return await sha256Hex(gltf) !== this.savedSceneHash
     }
 
@@ -741,7 +746,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         const exported = await this.withEditorHidden(async (viewer)=>{
             // An isolated view hides objects that are visible in the scene. The file keeps the scene's own.
             const serialized = await viewer.getPlugin(EditModePlugin)!.withIsolateVisibilityRestored(()=>
-                this.whileNotRendering(viewer, ()=>serializeSceneGltf(viewer, {scenePath, base: this.filesBase})))
+                this.whileNotRendering(viewer, ()=>this.serializeScene(viewer, scenePath)))
             // The thumbnail is taken while the grid and the gizmos are still hidden.
             const snapshot = takePreview && viewer.renderEnabled
                 ? await viewer.getPlugin(CanvasSnapshotPlugin)!.getFile('snapshot.jpeg', {
@@ -1151,6 +1156,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
 
     // for this.loadedProject
     loadedScene: string|null = null
+    loadedSceneName: string|null = null
     // loadedAssetId: string|null = null
     loadedPath: string|null = null
     loadedAssetObj: IObject3D|IMaterial|ITexture|null = null
@@ -1236,8 +1242,14 @@ export class ViewerInstanceManager extends EventDispatcher<{
                             importAsModelRoot: true,
                             importedFile: sceneFile,
                         })
+                        // The scene's own name. threepipe moves the file's children into the model root,
+                        // which is named for the UI, so nothing else carries the name to the next save.
+                        this.loadedSceneName = sceneGltfName(await sceneFile.text()) ?? null
                     }
-                    else res = v.scene.modelRoot // modelRoot is returning when opening a scene file
+                    else {
+                        res = v.scene.modelRoot // modelRoot is returning when opening a scene file
+                        this.loadedSceneName = null
+                    }
                 }
                 this.get()?.getPlugin(EditModePlugin)?.enable('loadImport')
             } else {
@@ -1435,6 +1447,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
             // }
 
             this.loadedScene = isScene ? file.path : null
+            if(!isScene) this.loadedSceneName = null // loadImport reads it, and only a scene file has one
             // this.loadedAssetId = isAsset ? obj.userData.tpAssetId : null
             // this.loadedPath = assetUrlPrefix+file.path
             this.loadedPath = (res as ImportResultExtras).__rootPath ?? (assetUrlPrefix+file.path)
@@ -1548,7 +1561,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
                 this.restoreEditCamera()
                 // Loading the scene and placing the edit camera raise update events of their own, so
                 // the flag is cleared once the scene is settled, against the text it serializes to now.
-                this.savedSceneHash = await sha256Hex((await serializeSceneGltf(v, {scenePath: this.loadedScene, base: this.filesBase})).gltf)
+                this.savedSceneHash = await sha256Hex((await this.serializeScene(v, this.loadedScene)).gltf)
                 this.loadedNeedsSave = false
             } else {
                 this.get().getPlugin(EditModePlugin)?.resetView()
@@ -1561,6 +1574,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
             if(file.path.endsWith('.scene.gltf') || file.path.endsWith('.scene.json')) {
                 // new project maybe
                 this.loadedScene = file.path
+                this.loadedSceneName = null
                 // this.loadedAssetId = null
                 this.loadedPath = assetUrlPrefix+file.path
                 this.loadedAssetObj = null
@@ -1598,6 +1612,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
             this.unloadScene()
             this.get().assetManager.tracker.removeFromRegistry(assetUrlPrefix + this.loadedProjectFile.path)
             this.loadedScene = null
+            this.loadedSceneName = null
             // this.loadedAssetId = null
             this.loadedPath = null
             this.loadedAssetObj = null
@@ -1814,6 +1829,11 @@ export class ViewerInstanceManager extends EventDispatcher<{
         if(obj1.isObject3D){
             const clone = cloneAssetItem(obj1)
             // if(clone._tpAssetId) delete clone._tpAssetId // note that asset id needs to be set later when saving or assigning the object
+            // The clone goes back into the scene as the scene's own node, an instance of the new asset and
+            // no part of it, so it drops the asset root the object picked up when it became one. This is
+            // what cloneAssetObject does for an asset placed from the Files panel.
+            if(clone._tpRootPath) delete clone._tpRootPath
+            if(clone._tpRootUid) delete clone._tpRootUid
             if(!clone.userData.sProperties) clone.userData.sProperties = [...defSPropsObj]
             if(!clone._sChildren) clone._sChildren = []
             result = clone
@@ -1826,6 +1846,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
             const mat = (obj as IMaterial)
             const clone = cloneAssetItem(mat)
             // if(clone._tpAssetId) delete clone._tpAssetId // note that asset id needs to be set later when saving or assigning the object
+            if(clone._tpRootPath) delete clone._tpRootPath // as above: the meshes keep the scene's own material
             if(!clone.userData.sProperties) clone.userData.sProperties = [...defSPropsMat]
             result = clone
 

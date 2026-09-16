@@ -183,7 +183,7 @@ export function InspectorPanelComponent({...props}: PanelActions & InspectorPane
                 return
             }
             const res = await manager.saveProjectAsset(project, manager.loadedProjectFile, assetRootPathAsset as IObject3D|IMaterial, assetRootPath1)
-            const r = showSuccessErrorToast(res ? `Saved ${project.path}${assetRootPath1} successfully` : 'Unknown Error', 'Unable to save asset', res)
+            const r = showSuccessErrorToast(res ? `Saved ${assetRootPath1} successfully` : 'Unknown Error', 'Unable to save asset', res)
             if(r)
                 setNeedsSave(false) // todo get needs save based on object
             return res

@@ -29,7 +29,7 @@ export function PluginsSectionComp(){
         const res = await settingsManager.removeProjectPlugin(p).then(()=>({error: null})).catch(e=>{
             return {error: e?.message ?? 'Unknown error'}
         })
-        const r = showSuccessErrorToast(res ? `Removed ${project.path}${p.import} successfully` : 'Unknown Error', 'Unable to remove plugin', res)
+        const r = showSuccessErrorToast(res ? `Removed ${p.import} successfully` : 'Unknown Error', 'Unable to remove plugin', res)
         return r
     }
 
@@ -87,7 +87,7 @@ export function AddPluginComp(){
         const res = await manager.settingsManager.addProjectPlugin(typeof path === 'string' ? {import: './'+path} : path).then(()=>({error: null})).catch(e=>{
             return {error: e?.message ?? 'Unknown error'}
         })
-        const r = showSuccessErrorToast(res ? `Loaded ${project.path}${path1} successfully` : 'Unknown Error', 'Unable to load plugin', res)
+        const r = showSuccessErrorToast(res ? `Loaded ${path1} successfully` : 'Unknown Error', 'Unable to load plugin', res)
         return r
     }
 
@@ -137,7 +137,7 @@ export function ScriptsSectionComp(){
         const res = await manager.settingsManager.removeProjectScript(p).then(()=>({error: null})).catch(e=>{
             return {error: e?.message ?? 'Unknown error'}
         })
-        const r = showSuccessErrorToast(res ? `Removed ${project.path}${p.import} successfully` : 'Unknown Error', 'Unable to remove plugin', res)
+        const r = showSuccessErrorToast(res ? `Removed ${p.import} successfully` : 'Unknown Error', 'Unable to remove plugin', res)
         return r
     }
 

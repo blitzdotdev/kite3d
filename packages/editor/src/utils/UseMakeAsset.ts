@@ -17,7 +17,7 @@ export function useMakeAsset() {
         const res = await manager.saveNewProjectAsset(project, manager.loadedProjectFile, data.obj)
         setIsMaking(false)
         // @ts-ignore
-        const r = showSuccessErrorToast(res.path ? `Created ${project.path}${res.path} successfully` : 'Unknown Error', 'Unable to create asset', res)
+        const r = showSuccessErrorToast(res.path ? `Created ${res.path} successfully` : 'Unknown Error', 'Unable to create asset', res)
         return (res as any).result ?? null
 
     }

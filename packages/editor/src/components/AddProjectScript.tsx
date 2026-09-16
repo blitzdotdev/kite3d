@@ -6,7 +6,7 @@ export const addProjectScript = async (path: string, manager: ViewerInstanceMana
     const res = await manager.settingsManager.addProjectScript({import: './' + path}, true).then(() => ({error: null})).catch(e => {
         return {error: e?.message ?? 'Unknown error'}
     })
-    const r = showSuccessErrorToast(res ? `Loaded ${manager.loadedProject.path}${path} successfully` : 'Unknown Error', 'Unable to load plugin', res)
+    const r = showSuccessErrorToast(res ? `Loaded ${path} successfully` : 'Unknown Error', 'Unable to load plugin', res)
     const mod = manager.scriptUtil.scriptModules.get('./' + path)
     if (!mod) {
         return false

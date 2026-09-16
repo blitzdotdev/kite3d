@@ -13,7 +13,7 @@ export function useSaveProjectFile() {
             console.error(e)
             return {error: 'Unable to save file: ' + (e.message || e.toString())}
         })
-        return showSuccessErrorToast(`Saved ${manager.loadedProject.path}${manager.loadedProjectFile.path} successfully.`, 'Unable to save file.', res as any)
+        return showSuccessErrorToast(`Saved ${manager.loadedProjectFile.path} successfully.`, 'Unable to save file.', res as any)
     }, [manager])
     return {saveProjectFile}
 }

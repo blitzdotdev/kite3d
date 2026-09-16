@@ -141,6 +141,7 @@ async function serializeSceneGltfDocument(
     restoreAuthoredNames(document)
     removeLoaderNodeExtras(document)
     writeShadowFlags(document)
+    dropDerivedShadowCameras(document)
     removeVolatileViewerIds(document)
     removeUnreferencedUuids(document)
     sortExtensionLists(document)
@@ -243,6 +244,41 @@ function writeShadowFlags(document: GltfDocument): void {
     const used = Array.isArray(document.extensionsUsed) ? document.extensionsUsed as string[] : []
     if (!used.includes(extension)) used.push(extension)
     document.extensionsUsed = used
+}
+
+/**
+ * three derives the whole shadow camera of a point light and of a spot light, so nothing in it is
+ * authored: `far` comes from the light's distance and `up` from the cube face in
+ * `PointLightShadow.updateMatrices`, and `fov` from the angle, `aspect` from the map size and `far`
+ * from the distance in `SpotLightShadow.updateMatrices`. The exporter wrote it anyway, so the first
+ * shadow render changed the text the scene serializes to and a scene nobody edited looked dirty. A
+ * directional light's ortho bounds are authored, so its camera stays. `bias`, `normalBias`, `radius`
+ * and `mapSize` are authored too and stay for every light. The importer still reads a camera that an
+ * older file carries (GLTFLightExtrasExtension.ts:34-35), so those files keep loading.
+ */
+function dropDerivedShadowCameras(document: GltfDocument): void {
+    const extension = 'WEBGI_light_extras'
+    const punctual = isRecord(document.extensions) ? document.extensions.KHR_lights_punctual : undefined
+    const lights = isRecord(punctual) && Array.isArray(punctual.lights) ? punctual.lights : []
+    let used = false
+    for (const node of document.nodes || []) {
+        const extensions = isRecord(node.extensions) ? node.extensions : undefined
+        const extras = extensions && isRecord(extensions[extension]) ? extensions[extension] : undefined
+        if (!extensions || !extras) continue
+        const ref = isRecord(extensions.KHR_lights_punctual) ? extensions.KHR_lights_punctual.light : undefined
+        const light = typeof ref === 'number' ? lights[ref] : undefined
+        const type = isRecord(light) ? light.type : undefined
+        const shadow = isRecord(extras.shadow) ? extras.shadow : undefined
+        if (shadow && (type === 'point' || type === 'spot')) {
+            delete shadow.camera
+            if (!Object.keys(shadow).length) delete extras.shadow
+        }
+        if (Object.keys(extras).length) used = true
+        else delete extensions[extension]
+    }
+    if (used) return
+    const list = document.extensionsUsed
+    if (Array.isArray(list)) document.extensionsUsed = list.filter((name) => name !== extension)
 }
 
 /** The name the loader makes from an authored one, plus the `_1` and up that a repeated name gets. */

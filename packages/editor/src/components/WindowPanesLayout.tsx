@@ -75,8 +75,8 @@ export function WindowPanesLayout({ panels }: WindowPanesLayoutProps){
         };
     }, [isExpanded]);
 
-    const renderPanel  = (panel: WindowPanel, index = 0)=> {
-        return <Card key={panel.key ?? index} style={panel.style} className={`window-panel-card ${panel.className || ''}`}>
+    const renderPanel  = (panel: WindowPanel, index: number)=> {
+        return <Card key={panel.key ?? index} style={panel.style} className={"window-panel-card"}>
             {/*<div style={{fontWeight: 'bold', marginBottom: '4px'}}>{panel.title}</div>*/}
             {/*<div></div>*/}
             {panel.content}
@@ -85,7 +85,7 @@ export function WindowPanesLayout({ panels }: WindowPanesLayoutProps){
 
     const renderPanels  = (p0: (WindowPanel|null)[], vertical = false)=> {
         const p = p0.filter(p=>!!p)
-        if(p.length > 1){
+        if(p.length){
             return <Tabs
                 vertical={vertical}
                 animate={false}
@@ -99,8 +99,6 @@ export function WindowPanesLayout({ panels }: WindowPanesLayoutProps){
                     } panelClassName={className} title={toTitleCase(panel.title)} />
                 ))}
             </Tabs>
-        }else if(p.length){
-            return renderPanel(p[0])
         }
     }
 

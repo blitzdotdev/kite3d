@@ -19,8 +19,8 @@ export class PlayModeHelper extends EventDispatcher<{
     // The run on the edit viewer: the project's scripts, plugins, clock, components, physics and main().
     private running: RunningGame | null = null
 
-    // Play borrows the main scene and gives it back at Stop, the dirty flag included.
-    private dirtyBeforeRun: {dirty: boolean, savedHash: string | null} | null = null
+    // Play borrows the main scene and gives it back at Stop: the dirty flag and the name the file carries.
+    private beforeRun: {dirty: boolean, savedHash: string | null, sceneName: string | null} | null = null
 
     constructor(private manager: ViewerInstanceManager) {
         super()
@@ -50,7 +50,7 @@ export class PlayModeHelper extends EventDispatcher<{
 
         // Play runs the main scene, whatever tab was showing. Switching while it runs is refused.
         await store.activateForPlay(scene.path)
-        this.dirtyBeforeRun = {dirty: scene.dirty, savedHash: scene.savedHash}
+        this.beforeRun = {dirty: scene.dirty, savedHash: scene.savedHash, sceneName: scene.sceneName}
 
         // Play runs the scene as it is, not as an isolated view shows it.
         manager.get().getPlugin(EditModePlugin)?.exitIsolate()
@@ -192,10 +192,13 @@ export class PlayModeHelper extends EventDispatcher<{
             }
         }
 
-        if (this.dirtyBeforeRun) {
-            scene.savedHash = this.dirtyBeforeRun.savedHash
-            scene.dirty = this.dirtyBeforeRun.dirty
-            this.dirtyBeforeRun = null
+        if (this.beforeRun) {
+            scene.savedHash = this.beforeRun.savedHash
+            scene.dirty = this.beforeRun.dirty
+            // The run's snapshot is threepipe's raw export, and it names the model root 'Scene'.
+            // Importing that snapshot back would write its name over the one the scene file carries.
+            scene.sceneName = this.beforeRun.sceneName
+            this.beforeRun = null
         }
 
     }

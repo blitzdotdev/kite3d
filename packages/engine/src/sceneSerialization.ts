@@ -346,6 +346,14 @@ function canonicalizeViewerConfig(value: unknown): void {
         delete value.aspect
         if (isRecord(value.object)) delete value.object.aspect
     }
+    // A camera with autoNearFar on takes its near and far from the scene bounds on every render, so
+    // neither is authored. What the file got was whatever was on screen last: the save hides the grid
+    // and the gizmos, and a run fits the camera to the game. A camera with the flag off keeps the
+    // near and far its author set.
+    if (isRecord(value.userData) && value.userData.autoNearFar === true) {
+        delete value.near
+        delete value.far
+    }
     Object.values(value).forEach(canonicalizeViewerConfig)
 }
 

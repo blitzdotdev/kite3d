@@ -1,7 +1,13 @@
 import {PropertyBinding, type IObject3D, type ThreeViewer} from 'threepipe'
+import {assetUrlPrefix} from './runtime/projectFormat.ts'
 
 export interface SerializeSceneGltfOptions {
     scenePath?: string
+    /**
+     * The base the viewer resolved project URLs against, the one `createProjectAssetURLModifier` was
+     * given. Strings that point into the project through it are written back as project paths.
+     */
+    base?: URL
 }
 
 export interface SerializedSceneFile {
@@ -92,7 +98,7 @@ async function serializeSceneGltfDocument(
     extractBuffers(document, sceneDirectory, fileStem(scenePath), files)
     await extractImages(document, sceneDirectory, files)
 
-    const canonical = canonicalizeJson(document) as GltfDocument
+    const canonical = canonicalizeJson(document, projectPathRewriter(options.base)) as GltfDocument
     return {
         gltf: encoder.encode(`${JSON.stringify(canonical, null, 2)}\n`),
         files: files.sort((left, right) => left.path.localeCompare(right.path)),
@@ -259,11 +265,32 @@ function sortExtensionLists(document: GltfDocument): void {
     }
 }
 
-function canonicalizeJson(value: unknown): unknown {
-    if (Array.isArray(value)) return value.map(canonicalizeJson)
+function canonicalizeJson(value: unknown, rewrite: (text: string) => string): unknown {
+    if (Array.isArray(value)) return value.map((item) => canonicalizeJson(item, rewrite))
+    if (typeof value === 'string') return rewrite(value)
     if (typeof value === 'number') return canonicalNumber(value)
     if (!isRecord(value)) return value
-    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, canonicalizeJson(value[key])]))
+    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, canonicalizeJson(value[key], rewrite)]))
+}
+
+/**
+ * A URL that reaches a project file through the base goes back as `/kite3d/<path>`, the form the
+ * engine's URL modifier turns into that same URL again. Without this a saved scene holds the dev
+ * server's port, and it loads on no other port and in no published game. The root-relative form is
+ * the same address written without the origin. Query and fragment go: the server adds `?v=<sha>`
+ * and `?r=<revision>` to make one load cacheable, and neither names the file. The path segments
+ * keep the encoding the URL carried, because the modifier hands them straight back to `URL`.
+ */
+function projectPathRewriter(base: URL | undefined): (text: string) => string {
+    if (!base) return (text) => text
+    return (text) => {
+        const rest = text.startsWith(base.href) ? text.slice(base.href.length)
+            : text.startsWith(base.pathname) ? text.slice(base.pathname.length)
+                : null
+        if (rest === null) return text
+        const path = rest.split(/[?#]/, 1)[0]
+        return path ? assetUrlPrefix + path : text
+    }
 }
 
 /**

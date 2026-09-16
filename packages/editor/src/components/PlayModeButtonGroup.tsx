@@ -76,6 +76,7 @@ export const PlayModeButtonGroup: FC<{}> = ({}) => {
                             // openOnTargetFocus={false}
                         >
                             <InteractionIconButton
+                                aria-label={v.label}
                                 disabled={v.key === 'pause' && !isPlaying}
                                 intent={active ? Intent.PRIMARY : Intent.NONE}
                                 endIcon={v.icon}

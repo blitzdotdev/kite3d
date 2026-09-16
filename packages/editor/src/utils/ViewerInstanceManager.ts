@@ -468,7 +468,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
      */
     private async sceneDiffersFromSaved(): Promise<boolean> {
         if (!this.loadedScene || !this.savedSceneHash) return true
-        const {gltf} = await serializeSceneGltf(this.get(), {scenePath: this.loadedScene})
+        const {gltf} = await serializeSceneGltf(this.get(), {scenePath: this.loadedScene, base: this.filesBase})
         return await sha256Hex(gltf) !== this.savedSceneHash
     }
 
@@ -738,7 +738,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         const exported = await this.withEditorHidden(async (viewer)=>{
             // An isolated view hides objects that are visible in the scene. The file keeps the scene's own.
             const serialized = await viewer.getPlugin(EditModePlugin)!.withIsolateVisibilityRestored(()=>
-                this.whileNotRendering(viewer, ()=>serializeSceneGltf(viewer, {scenePath})))
+                this.whileNotRendering(viewer, ()=>serializeSceneGltf(viewer, {scenePath, base: this.filesBase})))
             // The thumbnail is taken while the grid and the gizmos are still hidden.
             const snapshot = takePreview && viewer.renderEnabled
                 ? await viewer.getPlugin(CanvasSnapshotPlugin)!.getFile('snapshot.jpeg', {
@@ -1542,7 +1542,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
                 this.restoreEditCamera()
                 // Loading the scene and placing the edit camera raise update events of their own, so
                 // the flag is cleared once the scene is settled, against the text it serializes to now.
-                this.savedSceneHash = await sha256Hex((await serializeSceneGltf(v, {scenePath: this.loadedScene})).gltf)
+                this.savedSceneHash = await sha256Hex((await serializeSceneGltf(v, {scenePath: this.loadedScene, base: this.filesBase})).gltf)
                 this.loadedNeedsSave = false
             } else {
                 this.get().getPlugin(EditModePlugin)?.resetView()

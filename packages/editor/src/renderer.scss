@@ -552,6 +552,27 @@ button.kite3d-status-chip {
 
 .center-top-panel {
   position: relative;
+
+  // The strip of the center slot stands above the viewport. The floating toolbars and the left and
+  // right flaps are positioned against the slot, so they start below the strip. Its height is the
+  // tab list's two paddings plus a tab's line height, the three values it is built from above.
+  --center-tab-strip-height: calc(#{$pt-grid-size} * 3);
+
+  // The viewport clips what leaves it and never scrolls, so it keeps no scrollbar gutter; index.html
+  // asks every scroll container for a stable one, and that gutter would narrow the canvas.
+  > .window-panels-tabs > .bp5-tab-panel {
+    overflow: hidden;
+    scrollbar-gutter: auto;
+  }
+
+  > .interactionControlsButtonContainer {
+    top: calc(var(--center-tab-strip-height) + $pt-grid-size);
+  }
+
+  > .panel-toggle-button.panel-toggle-left,
+  > .panel-toggle-button.panel-toggle-right {
+    top: var(--center-tab-strip-height);
+  }
 }
 
 .panel-toggle-button {

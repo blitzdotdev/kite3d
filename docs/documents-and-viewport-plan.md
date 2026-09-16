@@ -239,7 +239,7 @@ Previews, shot on 2026-09-16 against the editor at 0.20.1 with the terminator pr
 
 Found while shooting them, all in today's editor:
 
-- The center slot renders no tab strip with one panel; `WindowPanesLayout` renders `Tabs` only for two or more (`WindowPanesLayout.tsx:86-105`). The pass renders the strip for one document too.
+- The center slot rendered no tab strip with one panel; `WindowPanesLayout` rendered `Tabs` only for two or more. Fixed on 2026-09-16 (#33): the strip renders for one panel too and the toolbars sit below it.
 - `NavProjectFileName` re-renders on `loadedNeedsSaveChange` only (`SaveProjectButton.tsx:21-35`), so the file-name button vanishes after a switch. The pass subscribes it to the store's active document.
 - An object opens with no light and no environment: `unloadScene` disposes the scene's lights and the object branch of `loadProjectFile` (`:1473`) adds none, while the material branch has its rig (`:1532-1541`). The object preview above uses the editor's Studio lighting override; the object document gets the rig of section 6.
 - Opening a file that has no asset id writes an entry into `assets.json` (`addIdToAssetsManifest`, `:1297-1305`). `store.open` inherits that write.

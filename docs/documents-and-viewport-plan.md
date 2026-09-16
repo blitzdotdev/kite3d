@@ -255,7 +255,7 @@ Found while shooting them, all in today's editor:
 
 Found while building pass 1b (#37), open:
 
-- Play leaves the main scene dirty. After Run and Stop the scene text differs in the scene camera's `far`, 2000 to about 706, which threepipe's `autoNearFar` derives during the run. The same class as the shadow cameras of #35: a render-derived value the serializer writes. The fix belongs in the serializer, after a measurement.
+- Play left the main scene's file changed. Fixed on 2026-09-16 (#38): the serializer drops `near` and `far` for a camera with `autoNearFar` on, which threepipe derives on every render (a plain save had written whatever was on screen last, too), and Stop restores the scene name the raw snapshot had overwritten. A run no longer changes what Save writes.
 - Save Asset on a `.gltf` path writes a binary glB under the `.gltf` name, because the exporter hardcodes binary; the `.bin` beside it is orphaned. Not new, the navbar Save did the same. What a `.gltf` path saves as is the owner's decision.
 
 

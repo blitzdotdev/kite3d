@@ -1779,7 +1779,6 @@ export class ViewerInstanceManager extends EventDispatcher<{
         // set sChildren to []
         // set userData.sProperties to []
 
-        const assetId = generateUUID()
         // obj.userData.tpAssetId = assetId
 
         let objParent = (obj as IObject3D).isObject3D ? (obj as IObject3D).parent : null
@@ -1821,6 +1820,14 @@ export class ViewerInstanceManager extends EventDispatcher<{
         }
 
         const assetPath = assets + assetName + ext
+
+        // The manifest mints the id and holds it before the asset's own url exists, because writing the
+        // file gives the object that url and the instance that goes back into the scene resolves it.
+        const assetId = await this.addIdToAssetsManifest({path: assetPath}).catch(e=>{
+            console.error(e)
+            return null
+        })
+        if(!assetId) return {error: 'Cannot write the asset id to the assets manifest.'}
 
         const res2 = await this.writeAssetFile(obj, assetId, handle, assetPath, res)
         if(res2){
@@ -1877,12 +1884,6 @@ export class ViewerInstanceManager extends EventDispatcher<{
                 return res3
             }
         }
-
-        await this.addIdToAssetsManifest({path: assetPath, file: res.file}, assetId).catch(e=>{
-            //ignore?
-            console.error(e)
-            return null
-        })
 
         return {error: null, path: assetPath, result}
     }

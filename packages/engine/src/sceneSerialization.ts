@@ -140,6 +140,7 @@ async function serializeSceneGltfDocument(
     applySceneName(document, options.sceneName)
     restoreAuthoredNames(document)
     removeLoaderNodeExtras(document)
+    writeShadowFlags(document)
     removeVolatileViewerIds(document)
     removeUnreferencedUuids(document)
     sortExtensionLists(document)
@@ -214,6 +215,34 @@ function removeLoaderNodeExtras(document: GltfDocument): void {
         delete extras.uuid
         if (!Object.keys(extras).length) delete node.extras
     }
+}
+
+/**
+ * threepipe's exporter writes `castShadow` and `receiveShadow` only when they are on, and its importer
+ * gives a node that carries no `WEBGI_object3d_extras` a default instead: shadows on for a light
+ * (GLTFObject3DExtrasExtension.ts:21), the material's own answer for a mesh (iObjectCommons.ts:768). So a
+ * light or a mesh the author left with its shadows off casts them again after a reload, and the save after
+ * that reload writes the flags. Every node that can carry shadows writes them, so the file says what the
+ * author set and a reload restores it. A light ignores `receiveShadow`, so only meshes write it.
+ */
+function writeShadowFlags(document: GltfDocument): void {
+    const extension = 'WEBGI_object3d_extras'
+    let written = false
+    for (const node of document.nodes || []) {
+        const extensions = isRecord(node.extensions) ? node.extensions : {}
+        const light = isRecord(extensions.KHR_lights_punctual)
+        if (!light && typeof node.mesh !== 'number') continue
+        const extras = isRecord(extensions[extension]) ? extensions[extension] : {}
+        extras.castShadow = extras.castShadow === true
+        if (!light) extras.receiveShadow = extras.receiveShadow === true
+        extensions[extension] = extras
+        node.extensions = extensions
+        written = true
+    }
+    if (!written) return
+    const used = Array.isArray(document.extensionsUsed) ? document.extensionsUsed as string[] : []
+    if (!used.includes(extension)) used.push(extension)
+    document.extensionsUsed = used
 }
 
 /** The name the loader makes from an authored one, plus the `_1` and up that a repeated name gets. */

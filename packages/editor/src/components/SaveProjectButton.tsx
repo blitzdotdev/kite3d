@@ -1,55 +1,30 @@
 import {useLoadingState} from 'uiconfig-blueprint/lib/esm/lib'
 import {Button} from '@blueprintjs/core'
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect} from "react";
 import {useProject} from "../utils/UseProject.ts";
-import {useManager} from "../utils/UseManager.ts";
 import {showSuccessErrorToast} from "../utils/Toaster.tsx";
+import {useDocuments} from "../documents/UseDocuments.ts";
 
 export function useSaveProjectFile() {
-    const manager = useManager()
+    const {store} = useDocuments()
     const saveProjectFile = useCallback(async ()=>{
-        if(!manager.loadedProjectFile || !manager.loadedProject) return
-        const res = await manager.saveProjectSceneOrAsset(manager.loadedProject, manager.loadedProjectFile).catch(e=>{
+        const path = store.activeId
+        if (!path) return
+        const res = await store.save(path).catch(e=>{
             console.error(e)
             return {error: 'Unable to save file: ' + (e.message || e.toString())}
         })
-        return showSuccessErrorToast(`Saved ${manager.loadedProjectFile.path} successfully.`, 'Unable to save file.', res as any)
-    }, [manager])
+        return showSuccessErrorToast(`Saved ${path} successfully.`, 'Unable to save file.', res as any)
+    }, [store])
     return {saveProjectFile}
-}
-
-export function useFileNeedsSave(){
-    const manager = useManager()
-    const [fileNeedsSave, setFileNeedsSave] = useState(manager.loadedNeedsSave)
-    useEffect(()=>{
-        const l = ()=>{
-            // console.log(manager.loadedNeedsSave)
-            setFileNeedsSave(manager.loadedNeedsSave)
-        }
-        manager.addEventListener('loadedNeedsSaveChange', l)
-        return ()=>{
-            manager.removeEventListener('loadedNeedsSaveChange', l)
-        }
-    }, [manager])
-    return [fileNeedsSave, setFileNeedsSave]
 }
 
 export function SaveProjectButton() {
     const {loadingState, updateLoading} = useLoadingState()
     const {project} = useProject()
     const {saveProjectFile} = useSaveProjectFile()
-    const manager = useManager()
-
-    const [fileNeedsSave] = useFileNeedsSave()
-    // the button renders from the loaded file, so it has to hear when a reload replaces it
-    const [loadedFile, setLoadedFile] = useState(manager.loadedProjectFile)
-    useEffect(()=>{
-        const l = ()=>setLoadedFile(manager.loadedProjectFile)
-        manager.addEventListener('loadedProjectFileChange', l)
-        return ()=>{
-            manager.removeEventListener('loadedProjectFileChange', l)
-        }
-    }, [manager])
+    const {store} = useDocuments()
+    const active = store.active
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -64,22 +39,10 @@ export function SaveProjectButton() {
         }
     }, [saveProjectFile, updateLoading])
 
-    return !loadedFile || !project ? null : <>
-        {manager.loadedScene &&
-            <Button
-                    variant={"minimal"} size={"small"}
-                    icon="git-repo" text="Save Scene"
-                    loading={loadingState['save-scene']}
-                    disabled={!fileNeedsSave}
-                    onClick={() => updateLoading('save-scene', saveProjectFile())}/>
-        }
-        {manager.loadedAssetObj &&
-            <Button
-                    variant={"minimal"} size={"small"}
-                    icon="git-repo" text="Save File"
-                    loading={loadingState['save-scene']}
-                    disabled={!fileNeedsSave}
-                    onClick={() => updateLoading('save-scene', saveProjectFile())}/>
-        }
-    </>
+    return !active || !project ? null : <Button
+        variant={"minimal"} size={"small"}
+        icon="git-repo" text={active.kind === 'scene' ? 'Save Scene' : 'Save File'}
+        loading={loadingState['save-scene']}
+        disabled={!active.dirty}
+        onClick={() => updateLoading('save-scene', saveProjectFile())}/>
 }

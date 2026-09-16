@@ -10,6 +10,9 @@ import {HubClient} from './devserver/HubClient.ts'
 import {DevServerDirectoryHandle, ProjectManifest} from './devserver/handles.ts'
 import {HubProvider} from './utils/UseHub.ts'
 import {ViewerInstanceManager} from './utils/ViewerInstanceManager.ts'
+import {Viewport} from './documents/Viewport.ts'
+import {DocumentStore} from './documents/DocumentStore.ts'
+import {showErrorToast} from './utils/Toaster.tsx'
 
 declare global {
     interface Window {
@@ -53,16 +56,24 @@ async function openServedProject() {
         lastModified: Date.now(),
         handle: root,
     })
-    await manager.loadProject(project, {})
-    const mainScene = project.settings?.mainScene
-    await manager.loadProjectFile(mainScene ? await manager.getLoadedFile(project, mainScene) : null)
+    const viewer = await manager.loadProject(project, {})
+    const viewport = new Viewport(viewer, manager)
+    const store = new DocumentStore(manager, viewport)
+    manager.store = store
 
     createRoot(document.getElementById('root')!).render(
         // <StrictMode>
-            <App manager={manager} project={project} hub={hub}/>
+            <App manager={manager} project={project} hub={hub} store={store}/>
         // </StrictMode>,
     )
     manager.initialize()
+
+    // The editor renders first. A main scene that does not load is one broken file, and the user
+    // needs the Files panel to reach it, not a blank page.
+    const mainScene = store.mainScenePath
+    if (mainScene) {
+        await store.open(mainScene).catch((e) => showErrorToast(`Unable to open ${mainScene}`, e))
+    }
     window.kite3dProjectLoaded = true
 }
 

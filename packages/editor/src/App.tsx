@@ -18,10 +18,12 @@ import {LoadedProject} from "./utils/project.ts";
 import {HubClient} from "./devserver/HubClient.ts";
 import {HubProvider} from "./utils/UseHub.ts";
 import {AskDialogBridge} from "./utils/AskDialog.tsx";
+import {DocumentStore} from "./documents/DocumentStore.ts";
+import {DocumentStoreProvider} from "./documents/UseDocuments.ts";
 
 // console.log(InspectorStackComponent, Split)
 
-function App({manager, project, hub}: { manager: ViewerInstanceManager, project: LoadedProject, hub: HubClient }) {
+function App({manager, project, hub, store}: { manager: ViewerInstanceManager, project: LoadedProject, hub: HubClient, store: DocumentStore }) {
     return (
         <QueryClientProvider client={queryClient}>
         <BlueprintProvider>
@@ -30,6 +32,7 @@ function App({manager, project, hub}: { manager: ViewerInstanceManager, project:
         <HubProvider hub={hub}>
         <ProjectProvider project={project}>
         <ManagerProvider manager={manager}>
+        <DocumentStoreProvider store={store}>
         <AssetsProvider>
         <ContextMenuProvider>
             <>
@@ -40,6 +43,7 @@ function App({manager, project, hub}: { manager: ViewerInstanceManager, project:
             </>
         </ContextMenuProvider>
         </AssetsProvider>
+        </DocumentStoreProvider>
         </ManagerProvider>
         </ProjectProvider>
         </HubProvider>

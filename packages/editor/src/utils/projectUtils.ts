@@ -130,3 +130,9 @@ export function thumbPath(path: string){
 export function backupPath(path: string, time: string){
     return `.${settingsKey}/backups/${path}/${time}/${path.split('/').pop()}`
 }
+
+/** The sha256 of some bytes as hex. The scene's dirty check and its save both measure with it. */
+export async function sha256Hex(bytes: ArrayBuffer | Uint8Array): Promise<string> {
+    const digest = await crypto.subtle.digest('SHA-256', bytes as BufferSource)
+    return Array.from(new Uint8Array(digest), (value)=>value.toString(16).padStart(2, '0')).join('')
+}

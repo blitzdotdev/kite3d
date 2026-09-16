@@ -1,9 +1,7 @@
 import {
     AssetExporterPlugin,
-    BoxGeometry,
     CanvasSnapshotPlugin,
     DepthBufferPlugin,
-    DirectionalLight2,
     EditorViewWidgetPlugin,
     EntityComponentPlugin,
     EventDispatcher,
@@ -15,9 +13,7 @@ import {
     GLTFLoader2,
     GLTFMeshOptDecodePlugin,
     HalfFloatType,
-    HemisphereLight2,
     htmlDialogWrapper,
-    IGeometry,
     IMaterial,
     ImportResult,
     ImportResultExtras,
@@ -29,14 +25,12 @@ import {
     KTXLoadPlugin,
     LoadingScreenPlugin,
     mergeResources,
-    Mesh2,
     metaToResources,
     NormalBufferPlugin,
     Object3DGeneratorPlugin,
     Object3DWidgetsPlugin,
     OrbitControls3,
     PickingPlugin,
-    PlaneGeometry,
     PLYLoadPlugin,
     PopmotionPlugin,
     RenderTargetPreviewPlugin,
@@ -44,19 +38,15 @@ import {
     STLLoadPlugin,
     ThreeViewer,
     TransformControlsPlugin,
-    TypedClass,
-    UndoManagerPlugin,
-    UnlitMaterial,
     USDZLoadPlugin
 } from 'threepipe'
 import {BlueprintJsUiPlugin2} from '../UiConfigRendererBlueprint2.tsx'
 import {GeometryGeneratorPlugin} from '@threepipe/plugin-geometry-generator'
 import {createProjectAssetURLModifier} from '@kite3d/engine/projectFormat'
-import {sceneGltfName, serializeSceneGltf} from '@kite3d/engine/sceneSerialization'
 import {CannonPhysicsPlugin, HtmlUiComponent, RuntimeProject} from '@kite3d/engine'
 import {EditorFeatures} from './EditorFeatures.ts'
 import {EditModePlugin} from "./EditModePlugin.ts";
-import {FileManifestEntry, manifestEntryToFile, SelectedInspectorItem} from "./AssetsProvider.ts";
+import {FileManifestEntry, manifestEntryToFile} from "./AssetsProvider.ts";
 import {
     AssetsJSONManifest,
     assetUrlPrefix,
@@ -75,7 +65,7 @@ import {AnotherFSHelper, getDirHandle, getFileHandle} from "./fsApi.ts";
 import {AssetTracker, cloneAssetItem, defSPropsMat, defSPropsObj} from "./AssetTracker.ts";
 import {CanvasFileDropHandler} from "./CanvasFileDropHandler.tsx";
 import {generatePreview} from "./three/GeneratePreview.ts";
-import {mimeToExt, typesExts} from '../data/fileTypes.ts'
+import {mimeToExt} from '../data/fileTypes.ts'
 import {ScriptUtil} from "./ScriptUtil.ts";
 import {TExternalFile} from "../components/ExternalFilesPanel.tsx";
 import {queryClient} from "../tsdb/client.ts";
@@ -84,23 +74,17 @@ import z from "zod";
 import {PlayModeHelper} from "./PlayModeHelper.ts";
 import {EditPreviewHelper} from "./EditPreviewHelper.ts";
 import {ProjectSettingsManager} from "./ProjectSettingsManager.ts";
+import type {DocumentStore} from "../documents/DocumentStore.ts";
+import type {EditorDocument, SaveResult} from "../documents/EditorDocument.ts";
+import type {SceneDocument} from "../documents/SceneDocument.ts";
 import {
-    backupPath,
     canMakeAsset,
     canSaveAsset,
-    isExternalGeometry,
-    isExternalMaterial,
     isExternalObject,
-    isExternalTexture,
     isLoadableFile,
-    isPackageProject, SelectFileRef,
+    isPackageProject,
     thumbPath
 } from "./projectUtils.ts";
-
-export interface SceneDirtyState {
-    needsSave: boolean
-    savedSceneHash: string | null
-}
 
 export interface ViewerProps {
     msaa: boolean,
@@ -112,10 +96,7 @@ export interface ViewerProps {
 }
 
 export class ViewerInstanceManager extends EventDispatcher<{
-    loadedNeedsSaveChange: {},
-    loadedProjectFileChange: {},
     projectFilesChange: {},
-    // assetRegistryChange: {},
 }>{
     private _viewers = new Map<string, ThreeViewer>()
     features = new EditorFeatures(this)
@@ -124,6 +105,8 @@ export class ViewerInstanceManager extends EventDispatcher<{
     editPreview = new EditPreviewHelper(this.features)
     settingsManager = new ProjectSettingsManager(this)
     fsHelper = new AnotherFSHelper()
+    /** The open documents. main.tsx builds it once the viewport exists, and it stays for the session. */
+    store: DocumentStore | null = null
 
     constructor(readonly source: DevServerSource, readonly manifest: ProjectManifest) {
         super()
@@ -427,90 +410,18 @@ export class ViewerInstanceManager extends EventDispatcher<{
         if (event.type === 'command') return
         if (event.client === this.source.clientId) return        // this tab wrote it, its base is already the new sha
         this.manifest.apply(event)
-        if (event.path === this.loadedProjectFile?.path) await this.openFileChangedOnDisk()
         // package.json and assets.json reload the settings, a module re-imports: the queue does both
-        else if (event.path === 'package.json' || event.path === 'assets.json' || /\.m?js$/i.test(event.path)) {
+        if (event.path === 'package.json' || event.path === 'assets.json' || /\.m?js$/i.test(event.path)) {
             this.scriptUtil.changedFilesQ.push(event.path)
             await this.scriptUtil.refreshChangedFilesQ()
-        } else this.scheduleAssetRefresh(event.path)
+        } else await this.store?.onFileChanged(event.path)
         this.dispatchEvent({type: 'projectFilesChange'})
-    }
-
-    /** The open file changed under the editor. A clean editor takes the disk copy, a dirty one asks. */
-    private async openFileChangedOnDisk() {
-        const path = this.loadedProjectFile?.path
-        if (!path) return
-        if (this.loadedNeedsSave && await this.sceneDiffersFromSaved()) {
-            const reload = await ask('Changed on disk', `${path} changed on disk. Reload it and discard the editor copy?`, [
-                {label: 'Keep editing', value: false},
-                {label: 'Reload', value: true, intent: 'danger'},
-            ])
-            if (!reload) return
-        }
-        await this.reloadOpenFile()
-    }
-
-    // The text this tab last loaded or saved for the open scene.
-    private savedSceneHash: string | null = null
-
-    /**
-     * The dirty flag and the text it is measured against. Play reads them before it starts and writes
-     * them back at Stop, because reloading the snapshot looks to the editor like a load from disk.
-     */
-    get sceneDirtyState(): SceneDirtyState {
-        return {needsSave: this._loadedNeedsSave, savedSceneHash: this.savedSceneHash}
-    }
-    set sceneDirtyState(state: SceneDirtyState) {
-        this.savedSceneHash = state.savedSceneHash
-        this.loadedNeedsSave = state.needsSave
-    }
-
-    /** The scene as the text that goes to disk. The save, the dirty check and the load all read it here. */
-    private serializeScene(viewer: ThreeViewer, scenePath: string) {
-        return serializeSceneGltf(viewer, {
-            scenePath,
-            base: this.filesBase,
-            assets: this.loadedProject?.assetsManifest,
-            sceneName: this.loadedSceneName,
-        })
-    }
-
-    /**
-     * The dirty flag follows scene events, and a load or a save can leave one queued for the next
-     * frame. Serializing is the answer that cannot be wrong, so it settles the cases that discard work.
-     */
-    private async sceneDiffersFromSaved(): Promise<boolean> {
-        if (!this.loadedScene || !this.savedSceneHash) return true
-        const {gltf} = await this.serializeScene(this.get(), this.loadedScene)
-        return await sha256Hex(gltf) !== this.savedSceneHash
-    }
-
-    /** The edit camera takes the scene's own camera, so a scene opens where it was authored. */
-    private restoreEditCamera() {
-        const viewer = this.get()
-        const editMode = viewer.getPlugin(EditModePlugin)
-        if (!editMode) return
-        const saved = viewer.scene.defaultCamera
-        editMode.cameraMode = saved.isPerspectiveCamera ? 'perspective' : 'orthographic'
-        const camera = editMode.cameraMode === 'orthographic' ? editMode.cameraOrtho : editMode.cameraPerspective
-        camera.position.copy(saved.position)
-        camera.quaternion.copy(saved.quaternion)
-        camera.target.copy(saved.target)
-        camera.setDirty({change: 'transform'})
-    }
-
-    /** Replaces the open file with the copy on disk. Unsaved edits are lost. */
-    private async reloadOpenFile() {
-        const project = this.loadedProject
-        const path = this.loadedProjectFile?.path
-        if (!project || !path) return
-        await this.loadProjectFile(await this.getLoadedFile(project, path), true)
     }
 
     // One timer per asset: Blender writes the .gltf, its .bin and its textures within a few ms.
     private assetRefreshTimers = new Map<string, ReturnType<typeof setTimeout>>()
 
-    private scheduleAssetRefresh(path: string) {
+    scheduleAssetRefresh(path: string) {
         const owner = this.assetOwning(path)
         if (!owner) return
         clearTimeout(this.assetRefreshTimers.get(owner))
@@ -544,7 +455,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         const assets = this.loadedProject?.assetsManifest
         return assets ? createProjectAssetURLModifier(this.filesBase, assets)(url) : url
     }
-    private readonly filesBase = new URL('/files/', location.href)
+    readonly filesBase = new URL('/files/', location.href)
 
     async getLoadedFile(project: LoadedProject, path: string, file?: File): Promise<SavedSceneFile | null> {
         if (!project || !path) return null
@@ -670,7 +581,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
     }
 
     /** Runs an export with the editor's own grid, gizmos, picking and components out of the way. */
-    private async withEditorHidden<T>(run: (viewer: ThreeViewer) => Promise<T>): Promise<T> {
+    async withEditorHidden<T>(run: (viewer: ThreeViewer) => Promise<T>): Promise<T> {
         const viewer = this.get()
         this.features.disable('edit-mode', 'exportScene')
         this.features.disable('picking', 'exportScene')
@@ -725,63 +636,13 @@ export class ViewerInstanceManager extends EventDispatcher<{
     }
 
     /** Holds the frame still while an exporter walks the scene. */
-    private async whileNotRendering<T>(viewer: ThreeViewer, run: () => Promise<T>): Promise<T> {
+    async whileNotRendering<T>(viewer: ThreeViewer, run: () => Promise<T>): Promise<T> {
         const renderEnabled = viewer.renderEnabled
         viewer.renderEnabled = false
         try {
             return await run()
         } finally {
             viewer.renderEnabled = renderEnabled
-        }
-    }
-
-    /**
-     * The scene as the project's text glTF. The sidecars, its buffer and any embedded image, are
-     * written next to it; the `.gltf` itself is returned so the save writes it with its own base sha.
-     */
-    async exportScene(scenePath: string, takePreview = true) {
-        if(this.playMode.isRunningMode){
-            return {
-                error: 'cannot export scene while running/playing'
-            }
-        }
-        const handle = this.loadedProject?.handle
-        if (!handle) return {error: 'no project to export the scene into'}
-
-        const exported = await this.withEditorHidden(async (viewer)=>{
-            // An isolated view hides objects that are visible in the scene. The file keeps the scene's own.
-            const serialized = await viewer.getPlugin(EditModePlugin)!.withIsolateVisibilityRestored(()=>
-                this.whileNotRendering(viewer, ()=>this.serializeScene(viewer, scenePath)))
-            // The thumbnail is taken while the grid and the gizmos are still hidden.
-            const snapshot = takePreview && viewer.renderEnabled
-                ? await viewer.getPlugin(CanvasSnapshotPlugin)!.getFile('snapshot.jpeg', {
-                    mimeType: 'image/jpeg',
-                    quality: 0.85,
-                    waitForProgressive: false,
-                })
-                : null
-            return {serialized, preview: snapshot ? new File([snapshot], 'preview.jpg', {type: 'image/jpeg'}) : ''}
-        }).catch(e=>{
-            console.error('Failed to export scene', e)
-            return undefined
-        })
-        if (!exported) return {error: 'failed to export scene'}
-
-        for (const sidecar of exported.serialized.files) {
-            const bytes = sidecar.bytes as Uint8Array<ArrayBuffer>   // every producer allocates a plain ArrayBuffer
-            await this.fsHelper.writeFile(handle, sidecar.path, new File([bytes], sidecar.path.split('/').pop()!))
-        }
-        // A scene whose last mesh went away has no buffer left, so its .bin would be stale bytes on disk.
-        const binPath = scenePath.replace(/\.gltf$/i, '.bin')
-        if (!exported.serialized.files.some(f=>f.path === binPath) && this.manifest.files.has(binPath)) {
-            await this.source.delete(binPath)
-            this.manifest.files.delete(binPath)
-            this.manifest.based.delete(binPath)
-        }
-
-        return {
-            file: new File([exported.serialized.gltf as Uint8Array<ArrayBuffer>], scenePath.split('/').pop()!, {type: 'model/gltf+json'}),
-            preview: exported.preview,
         }
     }
 
@@ -862,7 +723,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
 
     // Returns a result only when the asset did not land on disk; the caller stops on it.
     async writeAssetFile(obj: IObject3D|IMaterial, assetId: string, handle: ProjectDirectoryHandle, assetPath: string, res: {file: File, preview?: string | File}) {
-        const res1 = await this.writeResolvingConflict(handle, assetPath, res.file).catch(e => {
+        const res1 = await this.writeResolvingConflict(this.store?.find(assetPath) ?? null, handle, assetPath, res.file).catch(e => {
             console.error('Failed to save asset file.', e)
             return null
         })
@@ -1103,7 +964,6 @@ export class ViewerInstanceManager extends EventDispatcher<{
 
             await this.scriptUtil.loadProjectExtScript({import: "threepipe"})
         }
-        this._loadedNeedsSave = false
         return v
     }
 
@@ -1159,138 +1019,31 @@ export class ViewerInstanceManager extends EventDispatcher<{
     //     version: 1,
     // }
 
-    // for this.loadedProject
-    loadedScene: string|null = null
-    loadedSceneName: string|null = null
-    // loadedAssetId: string|null = null
-    loadedPath: string|null = null
-    loadedAssetObj: IObject3D|IMaterial|ITexture|null = null
-    // loadedAssetType: 'object'|'material'|'texture'|null = null
-    _loadedProjectFile: SavedSceneFile | null = null
-    get loadedProjectFile() {
-        return this._loadedProjectFile
-    }
-    set loadedProjectFile(v) {
-        this._loadedProjectFile = v
-        this.dispatchEvent({type: 'loadedProjectFileChange'})
-    }
-
-    _loadedNeedsSave = false
-    get loadedNeedsSave() {
-        if(this.playMode.isRunningMode) return false
-        return this._loadedNeedsSave
-    }
-    set loadedNeedsSave(v) {
-        if(this.playMode.isRunningMode) return
-        if(this._loadedNeedsSave === v) return
-        this._loadedNeedsSave = v
-        this.dispatchEvent({type: 'loadedNeedsSaveChange'})
-        if(v && this.loadedScene) this.recheckSceneDirty()
-    }
-
-    private sceneDirtyCheck?: ReturnType<typeof setTimeout>
-
     /**
-     * A scene update is raised by an authored change, and also by the editor settling around it: the
-     * canvas takes its size, the grid appears, the edit camera moves. Serializing is the answer that
-     * cannot be wrong, so once the updates stop the flag is checked against the text that was saved.
+     * Reads an asset file into the registry, so every instance that places it shares one import.
+     * A file that is open as a document is handed over as it is, because re-importing it would
+     * replace the object that document is showing.
      */
-    private recheckSceneDirty() {
-        clearTimeout(this.sceneDirtyCheck)
-        this.sceneDirtyCheck = setTimeout(async ()=>{
-            if(!this._loadedNeedsSave || this.savingScene || this.playMode.isRunningMode) return
-            if(await this.sceneDiffersFromSaved().catch(()=>true)) return
-            this.loadedNeedsSave = false
-        }, 300)
-    }
-
-    // this will refresh file in the asset registry, i.e load it again.
-    async loadImport(file: SavedSceneFile | {path: string, file?: File}, project: LoadedProject, isMain = false) {
-        const sceneFile: File | undefined = file.file ??
-            (file === project ?
-            await resolveFile(project.file, project.handle) :
-            await resolveFile(file.path, project.handle))
+    async loadImport(file: SavedSceneFile | {path: string, file?: File}, project: LoadedProject) {
+        const sceneFile: File | undefined = file.file ?? await resolveFile(file.path, project.handle)
         await this.scriptUtil.scriptsRefreshing
-        const isValidFile = !!sceneFile && !!(sceneFile).name && (sceneFile).name.includes('.')
-        if (isValidFile) { // empty files when new scene is created
-            const v = this.get()
-            let res: ImportResult|undefined
-
-            // const fileRootPath = assetUrlPrefix+file.path
-            // isMain is the document being opened on the viewport; the other side of it is an asset
-            // loaded to place into that document, which is where an id may be minted.
-            const fileRootPath = await this.toAssetIdPath(file, !isMain);
-
-            if (isMain) {
-                // The objects an isolated view remembers are about to go, so the view goes with them.
-                this.get()?.getPlugin(EditModePlugin)?.exitIsolate()
-                this.get()?.getPlugin(EditModePlugin)?.disable('loadImport') // todo do for single files also?
-                // console.log(this.get()?.getPlugin(EditModePlugin))
-                if(this.defaultViewerSettings) {
-                    // importConfig, not fromJSON: exportConfig writes serialized resources, and fromJSON
-                    // refuses them until loadConfigResources has turned them into a loaded meta.
-                    await v.importConfig(this.defaultViewerSettings)
-                }
-                if(file !== project && !file.path.endsWith('.scene.gltf')) {
-                    res = await v.assetManager.tracker.refreshFromRegistry(fileRootPath, {
-                        // processRaw: true,
-                        // cacheAsset: false,
-                        // pathOverride: fileRootPath,
-                        importedFile: sceneFile,
-                    }).pms
-                    // todo we need to reset the asset if not saved when its removed from scene (or remove from registry)
-                    // res = await v.assetManager.loadImported(res)
-                }else { // isMain and ends with .scene.gltf
-                    const isEmptyScene = isValidFile && ((sceneFile).name === 'dummy' || sceneFile.size === 0)
-                    if(!isEmptyScene) {
-                        // The scene loads from its own URL, so its .bin and its textures resolve next to
-                        // it. Play's snapshot is held in memory and never on disk, so its bytes come along.
-                        res = await v.load(this.source.fileUrl(file.path, this.manifest.files.get(file.path)?.sha256), {
-                            importAsModelRoot: true,
-                            importedFile: sceneFile,
-                        })
-                        // The scene's own name. threepipe moves the file's children into the model root,
-                        // which is named for the UI, so nothing else carries the name to the next save.
-                        this.loadedSceneName = sceneGltfName(await sceneFile.text()) ?? null
-                    }
-                    else {
-                        res = v.scene.modelRoot // modelRoot is returning when opening a scene file
-                        this.loadedSceneName = null
-                    }
-                }
-                this.get()?.getPlugin(EditModePlugin)?.enable('loadImport')
-            } else {
-                if(fileRootPath === this.loadedPath){
-                    // do not reload the asset if its the same as the loaded one
-                    res = await this.getAssetFromPath(fileRootPath) ?? undefined
-                }else {
-                    res = await v.assetManager.tracker.refreshFromRegistry(fileRootPath, {
-                        // processRaw: true,
-                        // cacheAsset: false,
-                        // pathOverride: fileRootPath,
-                        importedFile: sceneFile,
-                    }).pms
-                }
-                // res = await v.assetManager.importer.importSingle(sceneFile, {
-                //     processRaw: true,
-                //     cacheAsset: false,
-                //     pathOverride: fileRootPath,
-                // })
-            }
-            // todo check if asset id is not set inside the file, if not create it and set needsSave
-            if(!res) throw new Error('Failed to load file ' + file.path)
-            if (res._loadingPromise) await res._loadingPromise // wait for parent to load first
-            return res
-        }
-
-        return null
+        if (!sceneFile?.name || !sceneFile.name.includes('.')) return null
+        // This is the placement side of an open: the asset goes into the document on the viewport,
+        // so it is the caller that may mint an id.
+        const fileRootPath = await this.toAssetIdPath(file, true)
+        const res = this.store?.documents.some(d => d.rootPath === fileRootPath)
+            ? await this.getAssetFromPath(fileRootPath) ?? undefined
+            : await this.get().assetManager.tracker.refreshFromRegistry(fileRootPath, {importedFile: sceneFile}).pms
+        if (!res) throw new Error('Failed to load file ' + file.path)
+        if (res._loadingPromise) await res._loadingPromise      // wait for parent to load first
+        return res
     }
 
     /**
      * The URL an entry loads from. Minting an id writes the project's `assets.json`, so only a
      * placement into the open document asks for one: opening a file reads the manifest, never writes it.
      */
-    private async toAssetIdPath(entry: FileManifestEntry | { path: string; file?: File }, registerMissingId = false) {
+    async toAssetIdPath(entry: FileManifestEntry | { path: string; file?: File }, registerMissingId = false) {
         if(entry.path.startsWith('@')){
             console.error('Unexpected: Entry path already has asset id: ', entry)
             return entry.path
@@ -1330,7 +1083,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         const r = await this.getLoadedFile(project, file.path, fi || undefined)
         if(!r) return null
 
-        const res = await this.loadImport(r, project, false).catch(e=>{
+        const res = await this.loadImport(r, project).catch(e=>{
             console.error(e)
             return null
         })
@@ -1405,237 +1158,6 @@ export class ViewerInstanceManager extends EventDispatcher<{
     editorId = generateUUID()
     _runningSceneFile: File|null = null
 
-    /**
-     *
-     * @param file
-     * @param force - unload current even if unsaved changes
-     */
-    async loadProjectFile(file: SavedSceneFile | null, force = false){
-        // if(project !== this.loadedProject){
-        //     console.error('Project does not match the loaded project, cannot load scene/asset.', file)
-        //     return {error: 'Unknown Error loading scene/asset.'}
-        // }
-        const project = this.loadedProject
-        if(file && !project){
-            console.error('No project loaded, cannot load scene/asset.', file)
-            return {error: 'No project loaded, cannot load scene/asset.'}
-        }
-        if(file && !file.path){
-            console.error('No file path provided, cannot load scene/asset.', file)
-            return {error: 'No file path provided, cannot load scene/asset.'}
-        }
-        if(this.loadedProjectFile){
-            if(this.loadedProjectFile === file){
-                // todo check if file has updated hash and ask to reload?
-                // already loaded
-                return
-            }
-            if(this.loadedNeedsSave && !force) return {error: 'Current scene/asset has unsaved changes, please save before loading another file.'}
-            await this._unloadProjectFile()
-        }
-
-        if(project && !file && !isPackageProject(project)){
-            file = project
-        }
-
-        console.log(file)
-        if(!file || !project) return undefined
-
-        const res = await this.loadImport(file, project, true).catch(e=>{
-            return {error: e.message}
-        })
-        if(res?.error) return res as {error: string|null}
-        if (res) {
-            const v = this.get()
-            const obj = res as (IObject3D | IMaterial | ITexture) & ImportResult
-            if(!obj.isObject3D && !obj.isMaterial && !obj.isTexture){
-                console.error(res)
-                if(typeof (obj as any)?.dispose === 'function') (obj as any).dispose()
-                return {error: 'Failed to load asset, invalid object: ' +  file.path}
-            }
-            const isScene = obj === v.scene.modelRoot
-            // const isAsset = !isScene && !!obj.userData.tpAssetId
-
-            // if(!isScene && !isAsset){
-            //     // todo make it an asset
-            // }
-
-            this.loadedScene = isScene ? file.path : null
-            if(!isScene) this.loadedSceneName = null // loadImport reads it, and only a scene file has one
-            // this.loadedAssetId = isAsset ? obj.userData.tpAssetId : null
-            // this.loadedPath = assetUrlPrefix+file.path
-            this.loadedPath = (res as ImportResultExtras).__rootPath ?? (assetUrlPrefix+file.path)
-            this.loadedAssetObj = !isScene ? obj : null
-            this.loadedProjectFile = file
-            this.loadedNeedsSave = false // the editor copy came from disk, so there is nothing to save yet
-
-            // todo remove event listeners on file unload
-
-            if(obj.isObject3D){
-                if(this.loadedAssetObj) {
-                    // (obj as IObject3D).addEventListener('objectUpdate', () => {
-                    //     if (this.loadedAssetObj !== obj) return
-                    //     this.loadedNeedsSave = true
-                    //     // todo update _tpAssetNeedsSave in threepipe and use that
-                    // })
-                    // listener is required on the scene because the bubble is to parentRoot not parent(for optimization)
-                    v.scene.addObject(obj as IObject3D)
-                    v.scene.addEventListener('objectUpdate', (ev)=>{
-                        if(ev.object._tpRootPath !== this.loadedPath) return
-                        if (this.loadedAssetObj !== obj) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    v.scene.addEventListener('materialUpdate', (ev)=>{
-                        // todo handle material array
-                        if(!Array.isArray(ev.material) && ev.material._tpRootPath !== this.loadedPath) return
-                        if (this.loadedAssetObj !== obj) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    v.scene.addEventListener('textureUpdate', (ev)=>{
-                        if(ev.texture._tpRootPath !== this.loadedPath) return
-                        if (this.loadedAssetObj !== obj) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    v.scene.addEventListener('geometryUpdate', (ev)=>{
-                        if(ev.geometry._tpRootPath !== this.loadedPath) return
-                        if (this.loadedAssetObj !== obj) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    // todo any other events? materialChanged, geometryChanged etc
-                }else if(this.loadedScene){
-                    // The scene file saves everything but a placed asset's own clone children, which is
-                    // what isExternal* tests. _tpRootPath does not: it is set on everything an asset
-                    // file produced, nodes the scene owns included, so it swallowed edits the scene saves.
-                    v.scene.addEventListener('objectUpdate', (ev)=>{
-                        if(isExternalObject(ev.object)) return // inside a placed asset's clone
-                        if(this.loadedScene !== file.path) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    v.scene.addEventListener('materialUpdate', (ev)=>{
-                        // todo handle material array
-                        if(!Array.isArray(ev.material) && isExternalMaterial(ev.material)) return
-                        if(this.loadedScene !== file.path) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    v.scene.addEventListener('textureUpdate', (ev)=>{
-                        if(isExternalTexture(ev.texture)) return
-                        if(this.loadedScene !== file.path) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    v.scene.addEventListener('geometryUpdate', (ev)=>{
-                        if(isExternalGeometry(ev.geometry)) return
-                        if(this.loadedScene !== file.path) return
-                        this.loadedNeedsSave = true
-                        // todo use asset tracker instead of manual sub
-                    })
-                    // todo any other events? materialChanged, geometryChanged etc
-                }
-            }
-            if(obj.isMaterial){
-                // todo line material
-                const box = new BoxGeometry(1, 1, 1)
-                const boxObj = new Mesh2(box as any, obj as IMaterial)
-                v.scene.addObject(boxObj)
-                v.scene.add(new HemisphereLight2(0xffffff, 0x444444, 1) as any)
-                v.scene.add(new DirectionalLight2(0xffffff, 0.5) as any)
-                await v.setEnvironmentMap('https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.hdr')
-                // todo size, camera controls
-
-                ;(obj as IMaterial).addEventListener('materialUpdate', ()=>{
-                    console.warn('materialUpdate', obj)
-                    if(this.loadedAssetObj !== obj) return
-                    this.loadedNeedsSave = true
-                    // todo use asset tracker instead of manual sub
-                })
-            }
-            if(obj.isTexture){
-                const plane = new PlaneGeometry(1, 1)
-                const mat = new UnlitMaterial({map: obj as ITexture})
-                const planeObj = new Mesh2(plane as any, mat as any)
-                // todo size, camera controls
-                v.scene.addObject(planeObj)
-
-                ;(obj as ITexture).addEventListener('textureUpdate', ()=>{
-                    if(this.loadedAssetObj !== obj) return
-                    this.loadedNeedsSave = true
-                    // todo use asset tracker instead of manual sub
-                })
-            }
-
-            if(obj._loadingPromise) await obj._loadingPromise
-            console.log('Loaded scene/asset: ', file.path, obj)
-            if(this.loadedScene) {
-                this.restoreEditCamera()
-                // Loading the scene and placing the edit camera raise update events of their own, so
-                // the flag is cleared once the scene is settled, against the text it serializes to now.
-                this.savedSceneHash = await sha256Hex((await this.serializeScene(v, this.loadedScene)).gltf)
-                this.loadedNeedsSave = false
-            } else {
-                this.get().getPlugin(EditModePlugin)?.resetView()
-            }
-            // if(this.loadedProjectFile)
-            //     this.startRunMode()
-            return obj
-        }else {
-            // 404 no file
-            if(file.path.endsWith('.scene.gltf') || file.path.endsWith('.scene.json')) {
-                // new project maybe
-                this.loadedScene = file.path
-                this.loadedSceneName = null
-                // this.loadedAssetId = null
-                this.loadedPath = assetUrlPrefix+file.path
-                this.loadedAssetObj = null
-                this.loadedProjectFile = file
-                this.loadedNeedsSave = true
-                return {error: null}
-            } else {
-                if(file.file.name === 'dummy' || file.file.size === 0){ // new file
-                    return {error: null}
-                }
-                return {error: 'File not found: ' +  file.path}
-            }
-        }
-        return {error: 'Unknown error loading scene/asset.'}
-
-    }
-
-    unloadScene(){
-        const v = this.get()
-        v.scene.disposeSceneModels(true, true)
-        v.scene.disposeTextures(true)
-        // todo for now
-        const comps = EntityComponentPlugin.ObjectToComponents.get(v.scene.defaultCamera)
-        // v.getPlugin(EntityComponentPlugin)?.removeComponent()
-        comps?.forEach(c=>{
-            v.getPlugin(EntityComponentPlugin)?.removeComponent(v.scene.defaultCamera, c.uuid)
-        })
-        delete v.scene.defaultCamera.userData.EntityComponentPlugin
-    }
-
-    // use loadProjectFile(null)
-    async _unloadProjectFile(){
-        if(this.loadedProjectFile){ // todo we have to reset the current loaded asset, on remove it from the registry
-            // todo unload current scene/asset
-            this.unloadScene()
-            this.get().assetManager.tracker.removeFromRegistry(assetUrlPrefix + this.loadedProjectFile.path)
-            this.loadedScene = null
-            this.loadedSceneName = null
-            // this.loadedAssetId = null
-            this.loadedPath = null
-            this.loadedAssetObj = null
-            this.loadedProjectFile = null
-            this.loadedNeedsSave = false
-            // this.loadedAssetType = null
-        }
-    }
-
     // todo
     //  reloadScene
 
@@ -1645,7 +1167,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
      * Writes the file. The server refuses a write whose base is not what is on disk, which means
      * someone else wrote the path since this tab read it, so the user picks what wins.
      */
-    private async writeResolvingConflict(handle: ProjectDirectoryHandle, path: string, file: File): Promise<'written' | 'reloaded' | 'cancelled'> {
+    async writeResolvingConflict(doc: EditorDocument | null, handle: ProjectDirectoryHandle, path: string, file: File): Promise<'written' | 'reloaded' | 'cancelled'> {
         try {
             await this.fsHelper.writeFile(handle, path, file)
             return 'written'
@@ -1653,12 +1175,14 @@ export class ViewerInstanceManager extends EventDispatcher<{
             if (!(e instanceof ProjectConflictError)) throw e
             // Reload answers only for the file on screen. No other path has an editor copy to replace.
             const choices: AskChoice<'cancelled' | 'reload' | 'overwrite'>[] = [{label: 'Cancel', value: 'cancelled'}]
-            if (path === this.loadedProjectFile?.path) choices.push({label: 'Reload from disk', value: 'reload', intent: 'danger'})
+            // Reload answers only for the document this write belongs to; no other path has a copy to replace.
+            const reloadable = doc && path === doc.path ? doc : null
+            if (reloadable) choices.push({label: 'Reload from disk', value: 'reload', intent: 'danger'})
             choices.push({label: 'Overwrite', value: 'overwrite', intent: 'primary'})
             const answer = await ask('Changed on disk', `${path} changed on disk since you opened it.`, choices)
             if (answer === 'cancelled') return 'cancelled'
             if (answer === 'reload') {
-                await this.reloadOpenFile()
+                await reloadable!.reload()   // the user chose the disk copy, so nothing asks again
                 return 'reloaded'
             }
             // The editor copy wins: rebase on what the 412 reported, then send the same write again.
@@ -1669,96 +1193,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         }
     }
 
-    async saveProjectSceneOrAsset(project: LoadedProject, file: SavedSceneFile): Promise<{ error: string | null, warn?: string }> {
-        if(project !== this.loadedProject){
-            console.error('Project does not match the loaded project, cannot save scene/asset.', file)
-            return {error: 'Unknown Error saving scene/asset.'}
-        }
-        if(!this.loadedProjectFile){
-            console.error('No scene/asset loaded, cannot save.', file)
-            return {error: 'Unknown Error saving scene/asset.'}
-        }
-        if(this.loadedProjectFile !== file){
-            console.error('Path to save does not match the loaded path, cannot save.', file, this.loadedProjectFile)
-            return {error: 'Unknown Error saving scene/asset.'}
-        }
-        const scene = this.loadedScene === this.loadedProjectFile.path ? this.loadedScene : null
-        const asset = this.loadedAssetObj
-        if(!scene && !asset){
-            console.error('Loaded path is neither a scene nor an asset, cannot save.', file)
-            return {error: 'Unknown Error saving scene/asset.'}
-        }
-        if(scene && asset){
-            throw new Error('Loaded path cannot be both a scene and an asset.')
-        }
-        const handle = project.handle
-        if (!handle) return {error: 'Cannot get project directory handle'}
-
-        this.savingScene = true
-
-        if(scene) {
-            const res = await this.exportScene(scene)
-            if (!res.file) {
-                this.savingScene = false
-                return res
-            }
-            const filePath = scene
-            const backupFilePath = backupPath(scene, Date.now().toFixed()) // todo clear old backups?
-            const previewFilePath = thumbPath(scene)
-
-            const listed = this.manifest.files.get(filePath)
-            if (listed) {
-                // The backup keeps the copy that is on disk now. It reads through the transport, not
-                // through the handle, so the save below still carries the base this tab loaded.
-                const original = await this.source.read(filePath, listed.sha256)
-                this.fsHelper.writeFile(handle, backupFilePath, new File([original.bytes], listed.path.split('/').pop()!)).catch(e => {
-                    console.error('Failed to create backup of scene file.', e)
-                })
-            }
-            const saved = await this.writeResolvingConflict(handle, filePath, res.file).catch(e => {
-                console.error(e)
-                return null
-            })
-            if (saved !== 'written') {
-                this.savingScene = false
-                if (!saved) return {error: 'Failed to save scene file.'}
-                return saved === 'reloaded'
-                    ? {error: null, warn: `Reloaded ${filePath} from disk. The editor copy is gone.`}
-                    : {error: null, warn: `${filePath} changed on disk. Nothing was saved.`}
-            }
-
-            if (res.preview) {
-                if ((res.preview as File).name) {
-                    await this.fsHelper.writeFile(handle, previewFilePath, res.preview as File).catch(e => {
-                        console.error('Unable to save scene thumbnail')
-                        console.error(e)
-                        return false
-                    })
-                } else {
-                    console.error('Invalid preview file, cannot save scene thumbnail.')
-                }
-            }
-
-            project.lastModified = Date.now()
-
-            this.savedSceneHash = await sha256Hex(await res.file.arrayBuffer())
-            this.loadedNeedsSave = false
-            this.savingScene = false
-            return {error: null}
-        }
-        if(this.loadedAssetObj){
-            if((this.loadedAssetObj as ITexture).isTexture){
-                this.savingScene = false
-                return {error: "Texture Save not implemented yet."}
-            }
-            this.savingScene = false
-            return this.saveProjectAsset(project, null, this.loadedAssetObj as IObject3D|IMaterial, file.path)
-        }
-        this.savingScene = false
-        return {error: 'Unknown error saving scene/asset.'}
-    }
-
-    async saveNewProjectAsset(project: LoadedProject, scene: SavedSceneFile|null, obj: IObject3D|IMaterial, ext2 = 'asset') {
+    async saveNewProjectAsset(project: LoadedProject, scene: SceneDocument|null, obj: IObject3D|IMaterial, ext2 = 'asset') {
         if(!canMakeAsset(obj)) return {error: 'Object cannot be saved as asset. Make sure it has geometry and a material.'}
 
         const {handle, assets} = project
@@ -1887,7 +1322,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         }
 
         if(scene){
-            const res3 = await this.saveProjectSceneOrAsset(project, scene)
+            const res3 = await scene.save()
             if(res3?.error){
                 // todo rollback asset creation, setting asset id reference, setting rootPath userData
                 return res3
@@ -1951,7 +1386,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         return (reg?.pms || null) as any
     }
 
-    async saveProjectAsset(project: LoadedProject, scene: SavedSceneFile|null, obj: IObject3D|IMaterial, path: string) {
+    async saveProjectAsset(project: LoadedProject, scene: SceneDocument|null, obj: IObject3D|IMaterial, path: string): Promise<SaveResult> {
         if(!canSaveAsset(obj) || !path) return {error: 'Asset cannot be saved, make sure it is a valid asset'}
 
         const handle = project.handle
@@ -2004,11 +1439,10 @@ export class ViewerInstanceManager extends EventDispatcher<{
         //     })
         // }
 
-        if(obj === this.loadedAssetObj){
-            this.loadedNeedsSave = false
-        }
+        const doc = this.store?.documents.find(d => d.path === path)
+        if (doc) doc.dirty = false
 
-        return scene && saveScene ? this.saveProjectSceneOrAsset(project, scene) : {error: null}
+        return scene && saveScene ? scene.save() : {error: null}
     }
 
     // only for this session to avoid checking for file exists
@@ -2089,11 +1523,6 @@ async function compositeScreenshot(source: HTMLCanvasElement): Promise<Blob> {
             else reject(new Error('The editor did not produce a screenshot.'))
         }, 'image/png')
     })
-}
-
-async function sha256Hex(bytes: ArrayBuffer | Uint8Array): Promise<string> {
-    const digest = await crypto.subtle.digest('SHA-256', bytes as BufferSource)
-    return Array.from(new Uint8Array(digest), (value)=>value.toString(16).padStart(2, '0')).join('')
 }
 
 async function fileFromDataUrl(dataUrl: string, name: string = 'file') {

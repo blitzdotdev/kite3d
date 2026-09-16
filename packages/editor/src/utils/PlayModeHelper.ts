@@ -1,13 +1,14 @@
 import {EventDispatcher, PickingPlugin} from "threepipe";
 import {RunningGame, startGame} from "@kite3d/engine";
 import {settingsKey} from "./project.ts";
-import {SceneDirtyState, ViewerInstanceManager} from "./ViewerInstanceManager.ts";
+import {ViewerInstanceManager} from "./ViewerInstanceManager.ts";
 import {isPackageProject} from "./projectUtils.ts";
 import {EditModePlugin} from "./EditModePlugin.ts";
 
 export class PlayModeHelper extends EventDispatcher<{
     runModePauseChange: {},
-    // assetRegistryChange: {},
+    /** A run started or stopped. The document strip is dead while one runs, so it listens. */
+    runModeChange: {},
 }> {
 
     isPausedRunning = false
@@ -18,8 +19,8 @@ export class PlayModeHelper extends EventDispatcher<{
     // The run on the edit viewer: the project's scripts, plugins, clock, components, physics and main().
     private running: RunningGame | null = null
 
-    // Play borrows the open scene and gives it back at Stop, the dirty flag included.
-    private dirtyBeforeRun: SceneDirtyState | null = null
+    // Play borrows the main scene and gives it back at Stop, the dirty flag included.
+    private dirtyBeforeRun: {dirty: boolean, savedHash: string | null} | null = null
 
     constructor(private manager: ViewerInstanceManager) {
         super()
@@ -30,9 +31,9 @@ export class PlayModeHelper extends EventDispatcher<{
         // check if scene is loaded
         // save current scene to running.glb
         // load running.glb in play mode
-        // set loadedNeedsSave = false
-        if (!manager.loadedScene) return false
-        if (!manager.loadedProjectFile) return false
+        const store = manager.store
+        const scene = store?.mainScene
+        if (!store || !scene) return false
         if (manager.savingScene) return false
 
         if (this.isRunningMode) {
@@ -47,7 +48,9 @@ export class PlayModeHelper extends EventDispatcher<{
         const isPackage = isPackageProject(project)
         if (!project || (isPackage && !project.handle)) return false
 
-        this.dirtyBeforeRun = manager.sceneDirtyState
+        // Play runs the main scene, whatever tab was showing. Switching while it runs is refused.
+        await store.activateForPlay(scene.path)
+        this.dirtyBeforeRun = {dirty: scene.dirty, savedHash: scene.savedHash}
 
         // Play runs the scene as it is, not as an isolated view shows it.
         manager.get().getPlugin(EditModePlugin)?.exitIsolate()
@@ -79,7 +82,8 @@ export class PlayModeHelper extends EventDispatcher<{
                 if (v.scene.modelRoot.userData.gltfExtras)
                     v.scene.modelRoot.userData.gltfExtras.resourcePath = gltfMeta
 
-                manager._runningSceneFile = res.file
+                const snapshot = res.file as File
+                manager._runningSceneFile = snapshot
 
                 // todo async write file and delete on stop (handle user stopping before write complete)
                 // const saved = await manager.writeFile(project.handle, filePath, manager._runningSceneFile, project.path).catch(e => {
@@ -91,13 +95,9 @@ export class PlayModeHelper extends EventDispatcher<{
                 //     throw new Error('Failed to save scene file for run mode')
                 // }
 
-                manager.unloadScene() // todo why do we need to unload and load the same thing again?
+                // The game runs on a copy, so stopping can put the authored scene back untouched.
                 load = async () => {
-                    await manager.loadImport({
-                        file: res.file, path: filePath,
-                    }, project, true).catch(e => {
-                        return {error: e.message}
-                    })
+                    await store.viewport.reload(scene, () => scene.importTree(snapshot, filePath))
                     if (picking && selected) {
                         const obj = v.object3dManager.getObject(selected)
                         if (obj) picking.setSelectedObject(obj)
@@ -111,6 +111,7 @@ export class PlayModeHelper extends EventDispatcher<{
 
         console.clear && console.clear()
         this.isRunningMode = true
+        this.dispatchEvent({type: 'runModeChange'})
         manager.features.enable('physics', 'PlayingMode')
         manager.get().timeline.reset()
 
@@ -147,6 +148,7 @@ export class PlayModeHelper extends EventDispatcher<{
         const manager = this.manager
         if (!this.isRunningMode) return false
         this.isRunningMode = false
+        this.dispatchEvent({type: 'runModeChange'})
 
         await this.unpauseRunMode(false)
 
@@ -154,7 +156,9 @@ export class PlayModeHelper extends EventDispatcher<{
         const isPackage = isPackageProject(project)
         if (!project || (isPackage && !project.handle)) return false
 
-        if (!manager.loadedProjectFile || !manager.loadedScene) return
+        const store = manager.store
+        const scene = store?.mainScene
+        if (!store || !scene) return
 
         const v = manager.get()
         const picking = v.getPlugin(PickingPlugin)
@@ -162,10 +166,6 @@ export class PlayModeHelper extends EventDispatcher<{
 
         await this.running?.stop()
         this.running = null
-
-        if (isPackage) {
-            manager.unloadScene()
-        }
 
         manager.features.disable('physics', 'PlayingMode')
 
@@ -184,11 +184,7 @@ export class PlayModeHelper extends EventDispatcher<{
             }
             // todo delete tempFile
 
-            const res2 = await manager.loadImport({
-                file: tempFile, path: filePath,
-            }, project, true).catch(e => {
-                return {error: e.message}
-            })
+            await store.viewport.reload(scene, () => scene.importTree(tempFile, filePath))
 
             if (picking && selected) {
                 const obj = v.object3dManager.getObject(selected)
@@ -197,7 +193,8 @@ export class PlayModeHelper extends EventDispatcher<{
         }
 
         if (this.dirtyBeforeRun) {
-            manager.sceneDirtyState = this.dirtyBeforeRun
+            scene.savedHash = this.dirtyBeforeRun.savedHash
+            scene.dirty = this.dirtyBeforeRun.dirty
             this.dirtyBeforeRun = null
         }
 

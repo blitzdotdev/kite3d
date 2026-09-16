@@ -33,6 +33,7 @@ jobs:
       - run: npm run build
       - run: npm run lint
       - run: npm run test:scripts
+      - run: npx playwright install --with-deps chromium
       - name: Publish packages
         run: node scripts/release.mjs --publish
         env:

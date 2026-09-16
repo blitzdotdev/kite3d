@@ -246,6 +246,8 @@ Previews, shot on 2026-09-16 against the editor at 0.20.1 with the terminator pr
 
 Built on 2026-09-16 (#42, by the terminator session): the left panel is Objects and one Resources tab with Materials, Textures and Geometries as collapsible sections with counts; a mesh row expands to reference rows for its geometry, its materials with their texture slots, and its components, click selects the resource, double-click reveals it in Resources; a double-click on a placed asset's root opens the asset's document through `store.open`; preview rig rows are dimmed. Files and Library stay in the bottom slot.
 
+Fixed on 2026-09-16 (#43, by the terminator session): a newly opened tab drew nothing until a switch away and back. The center strip mounts a new canvas container per tab, and the effect that moved the viewer's canvas into it read the container ref one commit behind, so the two renders of an open skipped the move. A ref callback keyed on the viewer moves the canvas on the mount commit, and a kite3d test guards it.
+
 Found while shooting them, all in today's editor:
 
 - The center slot rendered no tab strip with one panel; `WindowPanesLayout` rendered `Tabs` only for two or more. Fixed on 2026-09-16 (#33): the strip renders for one panel too and the toolbars sit below it.

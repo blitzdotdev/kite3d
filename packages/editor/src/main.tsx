@@ -1,5 +1,6 @@
 import './renderer.scss'
 import {BlueprintProvider, FocusStyleManager} from "@blueprintjs/core";
+import {getIconPaths, Icons} from '@blueprintjs/icons'
 import {AppToasterOverlay, VisualStyleProvider} from 'uiconfig-blueprint/lib/esm/lib'
 import App from './App.tsx'
 import {createRoot} from 'react-dom/client'
@@ -20,6 +21,12 @@ declare global {
         kite3dProjectLoaded?: boolean
     }
 }
+
+// Blueprint loads its icon paths from a lazy chunk when the first icon renders. One failed request
+// there blanks every icon for the life of the page: it caches the failure and never retries. These
+// paths ship in this bundle instead, and the filled cache gives the first render its paths.
+Icons.setLoaderOptions({loader: (name, size) => Promise.resolve(getIconPaths(name, size))})
+void Icons.loadAll()
 
 FocusStyleManager.onlyShowFocusOnTabs();
 

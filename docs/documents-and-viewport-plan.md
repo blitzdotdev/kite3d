@@ -232,6 +232,26 @@ With one viewer and no text view, the old fight between two viewers and the figh
 - The Files panel's open action calls `store.open`; the Inspector's Edit Asset opens the asset's document instead of selecting the hidden source object; the Inspector's header shows the active document's name.
 - Files and Library stay project-level in the bottom slot. A drop lands on the active document (`CanvasFileDropHandler.tsx:116-118`, the drop root read from the document at `:364`).
 
+Previews, shot on 2026-09-16 against the editor at 0.20.1 with the terminator project. The tab strip is drawn over the running editor; everything else is the editor as it is. Each tab carries the kind icon the Files panel already uses for that extension (`icons.tsx`), the name, a dot when dirty and an x.
+
+![Scene document, main.scene.gltf active and dirty](assets/viewport/scene.png)
+
+![Object document, hktank.gltf active](assets/viewport/object.png)
+
+![Material document, steel.asset.mat active](assets/viewport/material.png)
+
+![Texture document, steel-albedo.png active](assets/viewport/texture.png)
+
+Found while shooting them, all in today's editor:
+
+- The center slot renders no tab strip with one panel; `WindowPanesLayout` renders `Tabs` only for two or more (`WindowPanesLayout.tsx:86-105`). The pass renders the strip for one document too.
+- `NavProjectFileName` re-renders on `loadedNeedsSaveChange` only (`SaveProjectButton.tsx:21-35`), so the file-name button vanishes after a switch. The pass subscribes it to the store's active document.
+- An object opens with no light and no environment: `unloadScene` disposes the scene's lights and the object branch of `loadProjectFile` (`:1473`) adds none, while the material branch has its rig (`:1532-1541`). The object preview above uses the editor's Studio lighting override; the object document gets the rig of section 7.
+- Opening a file that has no asset id writes an entry into `assets.json` (`addIdToAssetsManifest`, `:1297-1305`). `store.open` inherits that write.
+- The Files panel opens `.scene.gltf`, `.glb`, `.gltf` and `.mat` only (`FilesPanel.tsx:564`); the texture preview was opened through `loadProjectFile` directly. That path builds `/kite3d/@<id>/f.<ext>` (`toAssetIdPath`, `:1287-1309`) and fails for an entry whose file key is not `f.<ext>`, which is the terminator project's seven `unit-*` entries.
+- `.phmatgltf` is a threepipe importer format, not an editor material file. The editor's material files are `.mat` and `.mat.json` (`data/fileTypes.ts:6`).
+
+
 ## 5. Blender in the back, hot render on save
 
 The editor half is done. A save in Blender rewrites the `.glb`, the server broadcasts it, `scheduleAssetRefresh` maps the path to its owner, and `refreshFromRegistry` updates every placed instance (`:513-533`; proven in the rewrite's step 2b with a mesh swapped over an asset file). What remains touches no editor code:

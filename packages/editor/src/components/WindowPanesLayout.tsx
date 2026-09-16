@@ -23,12 +23,15 @@ export interface WindowPanesLayoutProps{
         bottom: null | (WindowPanel|null)[]
         center: (WindowPanel|null)[]
     }
-    /** The centre tab to show. The other three slots keep their own selection. */
+    /** The centre tab to show. The bottom and right slots keep their own selection. */
     selectedCenterTabId?: string
     onCenterTabChange?: (id: string)=>void
+    /** The left tab to show. A reference row in the Objects tree switches it to Resources. */
+    selectedLeftTabId?: string
+    onLeftTabChange?: (id: string)=>void
 }
 
-export function WindowPanesLayout({ panels, selectedCenterTabId, onCenterTabChange }: WindowPanesLayoutProps){
+export function WindowPanesLayout({ panels, selectedCenterTabId, onCenterTabChange, selectedLeftTabId, onLeftTabChange }: WindowPanesLayoutProps){
     const panelRefs = {
         left: useRef<ImperativePanelHandle>(null),
         right: useRef<ImperativePanelHandle>(null),
@@ -88,7 +91,7 @@ export function WindowPanesLayout({ panels, selectedCenterTabId, onCenterTabChan
         </Card>
     }
 
-    const renderPanels  = (p0: (WindowPanel|null)[], vertical = false, controlled = false)=> {
+    const renderPanels  = (p0: (WindowPanel|null)[], vertical = false, controlled?: {selectedTabId?: string, onChange?: (id: string)=>void})=> {
         const p = p0.filter(p=>!!p)
         if(!p.length) return
         // One panel gets a strip too: the center slot is the document tabs, and one open document
@@ -99,8 +102,8 @@ export function WindowPanesLayout({ panels, selectedCenterTabId, onCenterTabChan
             renderActiveTabPanelOnly={true}
             size={"medium"}
             className={"window-panels-tabs"}
-            selectedTabId={controlled ? selectedCenterTabId : undefined}
-            onChange={controlled && onCenterTabChange ? (id)=>onCenterTabChange(String(id)) : undefined}
+            selectedTabId={controlled?.selectedTabId}
+            onChange={controlled?.onChange ? (id)=>controlled.onChange!(String(id)) : undefined}
         >
             {p.map(({className, ...panel}, i)=>(
                 <Tab id={panel.key || `tab-${i}`} key={panel.key || i} disabled={panel.disabled} panel={
@@ -122,7 +125,7 @@ export function WindowPanesLayout({ panels, selectedCenterTabId, onCenterTabChan
             onCollapse={triggerUpdate}
             onExpand={triggerUpdate}
         >
-            {renderPanels(panels.left)}
+            {renderPanels(panels.left, false, {selectedTabId: selectedLeftTabId, onChange: onLeftTabChange})}
         </Panel>
         <PanelResizeHandle className={"window-panes-separator"} />
         <Panel
@@ -135,7 +138,7 @@ export function WindowPanesLayout({ panels, selectedCenterTabId, onCenterTabChan
                         order={0}
                         className="center-top-panel"
                     >
-                        {renderPanels(panels.center, false, true)}
+                        {renderPanels(panels.center, false, {selectedTabId: selectedCenterTabId, onChange: onCenterTabChange})}
                         <InteractionControlsButtonGroup key="interaction-controls" />
                         <EditPreviewButtonGroup key="editpreview" isExpanded={isExpanded} toggleExpand={toggleExpand} />
                         <PopupDialogCard/>

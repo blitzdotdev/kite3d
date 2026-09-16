@@ -244,6 +244,8 @@ Previews, shot on 2026-09-16 against the editor at 0.20.1 with the terminator pr
 
 ![Texture document, steel-albedo.png active](assets/viewport/texture.png)
 
+Built on 2026-09-16 (#42, by the terminator session): the left panel is Objects and one Resources tab with Materials, Textures and Geometries as collapsible sections with counts; a mesh row expands to reference rows for its geometry, its materials with their texture slots, and its components, click selects the resource, double-click reveals it in Resources; a double-click on a placed asset's root opens the asset's document through `store.open`; preview rig rows are dimmed. Files and Library stay in the bottom slot.
+
 Found while shooting them, all in today's editor:
 
 - The center slot rendered no tab strip with one panel; `WindowPanesLayout` rendered `Tabs` only for two or more. Fixed on 2026-09-16 (#33): the strip renders for one panel too and the toolbars sit below it.

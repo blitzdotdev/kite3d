@@ -213,6 +213,41 @@ button.kite3d-status-chip {
   margin-left: 0 !important;
 }
 
+// The Resources tab: three sections, each holding one of the trees this tab replaced.
+.resources-panel{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+.resources-section-header{
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+  padding: 4px 6px;
+  position: sticky;
+  top: 0;
+  user-select: none;
+  z-index: 1;
+  background: var(--pt-app-background-color);
+}
+.resources-section-header:hover{
+  background: var(--pt-minimal-button-background-color-hover);
+}
+.resources-section-title{
+  flex: 1 1 auto;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.resources-section-body .folderContent{
+  height: auto;
+  margin-left: 0 !important;
+  max-width: 100%;
+}
+
 //.bp5-tree-drop-spacer {
 //  div{
 //    background: red;

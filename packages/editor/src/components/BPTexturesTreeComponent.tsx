@@ -10,7 +10,9 @@ import {
     UiObjectConfig
 } from "threepipe";
 import { UiConfigRendererContextType} from 'uiconfig-blueprint/lib/esm/lib'
-import {filterObjectsInSceneRoot} from "../utils/three/filterObjectsInSceneRoot.ts";
+import {sceneTextures} from "../utils/three/sceneResources.ts";
+import {selectResource} from "../utils/three/selectResource.ts";
+import {textureIcon} from "../utils/icons.tsx";
 import React, {useMemo} from "react";
 import {useObjContextMenu} from "./UseObjContextMenu.tsx";
 import {HandleContextMenuCallback, MenuItem2} from "../utils/ContextMenuUtils.ts";
@@ -49,7 +51,7 @@ export class BPTexturesTreeComponent<T extends ITexture = ITexture> extends BPTr
         // if(obj.isUnlitTexture){
         //     node.icon = 'full-circle'
         // }
-        node.icon = 'media'
+        node.icon = textureIcon
         return node;
     }
     //
@@ -71,40 +73,14 @@ export class BPTexturesTreeComponent<T extends ITexture = ITexture> extends BPTr
     // }
 
     protected _getRootNodes(): T[] {
-        // const v = this.context.methods.getRawValue(this.props.config)
-        // return v?.children as any || [] // todo as any
-        const showAll = false
-        if(showAll) {
-            let mats =
-                showAll ?
-                    this.context.viewer.materialManager.getAllMaterials() || [] :
-                    this.context.viewer.object3dManager.getMaterials() // only materials in scene
-            if(!showAll)
-                mats = Array.from(filterObjectsInSceneRoot(mats))
-
-            const textures = new Set<ITexture>()
-            mats.forEach((m: IMaterial) => {
-                const maps = m._mapRefs || []
-                maps.forEach((t: ITexture) => {
-                    if (t && t.isTexture) {
-                        textures.add(t)
-                    }
-                })
-            })
-            return Array.from(textures) as T[]
-        }else {
-            return this.context.viewer.object3dManager.getTextures() as T[]
-        }
-        // return getValue(this.props.config)
-        // return (this.props.config.children || []).map(c => getOrCall(c) || {}).flat(2)
+        return sceneTextures(this.context.viewer) as T[]
     }
 
     protected async _onNodeClick(_id: string) {
         const node = this._infoMap.get(_id)
         if(!node) return
         const value = node.isSelected ? null : node.nodeData! // unselect if already selected
-        // node.nodeData!.dispatchEvent({type: 'select', value: value ?? null, texture: node.nodeData!, ui: true, bubbleToMaterial: true, bubbleToObject: true, bubbleToParent: true})
-        this.context.viewer.getPlugin(PickingPlugin)?.setSelectedObject(value)
+        selectResource(this.context.viewer, node.nodeData!, value)
     }
 
     protected async _onNodeDoubleClick(_id: string) {
@@ -179,6 +155,13 @@ export class BPTexturesTreeComponent<T extends ITexture = ITexture> extends BPTr
             console.error('BPTexturesTreeComponent: viewer not found in context', this.context)
             return
         }
+        // A closed Resources section is not mounted, so it missed every selection event while it was
+        // shut. The tree reads what is picked now, or its row opens unhighlighted.
+        const picked = viewer.getPlugin(PickingPlugin)?.getSelectedObject<ITexture>()
+        if(picked?.isTexture) {
+            this._selectedIds = [picked.uuid]
+            this.setSelected(this._selectedIds, false)
+        }
         viewer.getPlugin(PickingPlugin)?.addEventListener('selectedObjectChanged', this.selectedObjectChanged)
         viewer.scene.addEventListener('sceneUpdate', this.sceneUpdate) // todo: subscribe only to the texture in the config instead of the whole scene
         viewer.scene.addEventListener('textureUpdate', this.textureUpdate) // todo: subscribe only to the texture in the config instead of the whole scene
@@ -200,7 +183,7 @@ export class BPTexturesTreeComponent<T extends ITexture = ITexture> extends BPTr
 
 }
 
-export function TextureHierarchyComponent({className}: {className: string}){
+export function TextureHierarchyComponent({className, treeRef}: {className: string, treeRef?: React.Ref<BPTexturesTreeComponent>}){
     const manager = useManager()
     const viewer = manager.get()
     const {handleContextMenu} = useObjContextMenu()
@@ -212,5 +195,6 @@ export function TextureHierarchyComponent({className}: {className: string}){
 
     return <BPTexturesTreeComponent
         key={viewer.scene.modelRoot.uuid} // this is required because viewer can be destroyed and recreated
+        ref={treeRef}
         config={config} handleContextMenu={handleContextMenu} className={className}/>
 }

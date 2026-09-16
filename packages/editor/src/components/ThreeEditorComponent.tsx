@@ -15,9 +15,9 @@ import {Alignment, Button, Card, Divider, IconName, Navbar, Panel, PanelStack2, 
 import {BPHierarchyComponent} from './BPHierarchyComponent.tsx'
 import {SaveProjectButton} from './SaveProjectButton.tsx'
 import {BPTextureFileComponent} from './BPTextureFileComponent.tsx'
-import {BPMaterialsTreeComponent, MaterialHierarchyComponent} from "./BPMaterialsTreeComponent.tsx";
-import {BPTexturesTreeComponent, TextureHierarchyComponent} from "./BPTexturesTreeComponent.tsx";
-import {GeometryHierarchyComponent} from "./BPGeometriesTreeComponent.tsx";
+import {BPMaterialsTreeComponent} from "./BPMaterialsTreeComponent.tsx";
+import {BPTexturesTreeComponent} from "./BPTexturesTreeComponent.tsx";
+import {ResourcesHierarchyComponent} from "./BPResourcesTreeComponent.tsx";
 import {FilesPanel} from "./FilesPanel.tsx";
 import {
     InspectorPanelComponent,
@@ -41,6 +41,7 @@ import {useCloseDocument} from '../documents/UseCloseDocument.tsx';
 import {DocumentTab} from '../documents/DocumentTab.tsx';
 import {useTabKeys} from '../documents/UseTabKeys.ts';
 import {showErrorToast} from '../utils/Toaster.tsx';
+import {resourceReveal} from '../utils/resourceReveal.ts';
 
 
 export function RefUiConfigComponent(props: BPComponentProps<any>){
@@ -88,11 +89,10 @@ export function RefUiConfigComponent(props: BPComponentProps<any>){
 ConfigObjectGenerators.reference = RefUiConfigComponent
 ConfigObjectGenerators.image = BPTextureFileComponent
 
+// Objects first, then one Resources tab holding the materials, textures and geometries lists.
 const editorLeftTabs = {
     objects: ObjectHierarchyComponent,
-    materials: MaterialHierarchyComponent,
-    textures: TextureHierarchyComponent,
-    geometries: GeometryHierarchyComponent,
+    resources: ResourcesHierarchyComponent,
 }
 ConfigObjectGenerators.hierarchy = BPHierarchyComponent
 ConfigObjectGenerators.materials = BPMaterialsTreeComponent
@@ -108,6 +108,15 @@ export function ThreeEditorComponent() {
     const {documents, activeId, store} = useDocuments()
     const {closeDocument} = useCloseDocument()
     useTabKeys()
+    const [leftTabId, setLeftTabId] = useState<string>('objects')
+
+    // A double click on a reference row in the Objects tree asks for the Resources tab. The tab
+    // itself opens the section and scrolls to the row.
+    useEffect(() => {
+        const listener = () => setLeftTabId('resources')
+        resourceReveal.addEventListener('reveal', listener)
+        return () => resourceReveal.removeEventListener('reveal', listener)
+    }, [])
     const isRunning = manager.playMode.isRunningMode
 
     // const [splitSizes, setSplitSizes] = useState([0, 100, 0])
@@ -252,6 +261,8 @@ export function ThreeEditorComponent() {
                 <WindowPanesLayout
                     key={viewer.scene.uuid} // force rerender when viewer change, because we might add events to the viewer in sub components like BPHierarchyComponent
                     selectedCenterTabId={activeId ?? undefined}
+                    selectedLeftTabId={leftTabId}
+                    onLeftTabChange={setLeftTabId}
                     // A cold tab reads its file on this click, and a file that has gone bad since the
                     // last session says so here.
                     onCenterTabChange={(id)=>void store.activate(id).catch(e=>showErrorToast(`Unable to open ${id}`, e))}

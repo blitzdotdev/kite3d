@@ -1,5 +1,6 @@
 import {
     Event2,
+    IMaterial,
     IObject3D,
     ISceneEventMap,
     ObjectPickerEventMap,
@@ -12,14 +13,43 @@ import {VisibilityIcon} from "./VisibilityIcon";
 import React from "react";
 import {canMakeAsset, isExternalObject} from "../utils/projectUtils.ts";
 import {HandleContextMenuCallback, MenuItem2} from "../utils/ContextMenuUtils.ts";
-import {Intent} from "@blueprintjs/core";
-import {BPTreeComponent} from "./BPTreeComponent.tsx";
+import {Icon, IconName, Intent} from "@blueprintjs/core";
+import {hasObjectReferences, ObjectReference, objectReferences} from "../utils/three/objectReferences.ts";
+import {SceneResource, selectResource} from "../utils/three/selectResource.ts";
+import {resourceReveal} from "../utils/resourceReveal.ts";
+import {componentIcon, geometryIcon, iconForMaterial, textureIcon} from "../utils/icons.tsx";
+import {BPTreeComponent, BPTreeComponentState} from "./BPTreeComponent.tsx";
 import {TreeNodeInfo} from "./treeTypes.ts";
 import {canDropNode, CanvasFileDropHandler, isDraggableDroppableNode} from "../utils/CanvasFileDropHandler.tsx";
 import {uiConfigToMenuItem} from "../utils/ContextMenuUtils.ts";
 import {EditModePlugin} from "../utils/EditModePlugin.ts";
 
 interface BPHierarchyComponentPropsExtras extends HandleContextMenuCallback<IObject3D>{
+    /**
+     * A double click on an asset row opens that asset's own document. The wrapper resolves the path
+     * and answers true when it opened one, because then focusing the camera would be wasted work.
+     */
+    onOpenAsset?: (object: IObject3D) => boolean
+}
+
+const referenceKindIcons: Record<Exclude<ObjectReference['kind'], 'material'>, IconName> = {
+    geometry: geometryIcon,
+    texture: textureIcon,
+    component: componentIcon,
+}
+
+/**
+ * A reference row wears the icon of what it points at, with a link glyph in front of it. The kind
+ * is never spelled out: the icon says it, and the tooltip on the label says the slot.
+ */
+function referenceIcon(reference: ObjectReference) {
+    const kindIcon = reference.kind === 'material'
+        ? iconForMaterial(reference.resource as IMaterial) ?? 'style'
+        : referenceKindIcons[reference.kind]
+    return <span className={'tree-node-reference-icon'}>
+        <Icon icon={'link'} size={10}/>
+        {typeof kindIcon === 'string' ? <Icon icon={kindIcon} size={14}/> : kindIcon}
+    </span>
 }
 export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTreeComponent<T, IObject3D, BPHierarchyComponentPropsExtras> {
     declare context: UiConfigRendererContextType&{viewer: ThreeViewer}
@@ -38,10 +68,17 @@ export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTre
 
     protected _updateNodeInfo(node: TreeNodeInfo<T>, obj: T) {
         node.label = obj.name ? obj.name : obj.type ? `(${obj.type})` : 'unnamed';
+        const children: TreeNodeInfo<T>[] = []
         if(!obj.isMesh && !obj.isLine && !obj.isPoints && !obj.isScene && !obj.isCamera && !obj.isLight)
             // todo _sChildren
-            node.childNodes = ((obj.children as T[]) || []).reduce<any[]>((...args) => this.buildData(...args), [])
+            children.push(...((obj.children as T[]) || []).reduce<any[]>((...args) => this.buildData(...args), []))
+        // What the object points at goes under its real children, and only while the row is open:
+        // a closed row builds nothing. Every tree refresh rebuilds these rows with the rest.
+        if(node.isExpanded) children.push(...objectReferences(obj).map(r => this._referenceNode(r)))
+        node.childNodes = children
         node.isSelected = this._selectedId === node.id
+        // A preview light belongs to the document view, not to the file, so its row is dimmed.
+        node.className = obj.userData?.excludeFromExport ? 'tree-node-excluded' : undefined
 
         // node.hasCaret = (node.childNodes?.length||0) > 0
         node.icon = undefined
@@ -93,7 +130,7 @@ export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTre
             node.droppable = droppable
             node.draggable = draggable
             node.intent = isComponent ? Intent.WARNING : isExternal ? Intent.PRIMARY : Intent.NONE
-            node.hasCaret = !node.icon
+            node.hasCaret = !node.icon || hasObjectReferences(obj)
         }
 
         return node;
@@ -108,7 +145,78 @@ export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTre
         // return (this.props.config.children || []).map(c => getOrCall(c) || {}).flat(2)
     }
 
+    /**
+     * The reference rows on the tree right now, by row id. A row that is not built is not here.
+     * The base class builds the first state from its constructor, before a field of this class is
+     * set, so every reader creates it if it has to, the way the base class does with its own map.
+     */
+    private _refRows!: Map<string | number, ObjectReference>
+
+    /**
+     * Turns one reference into a row. The row keeps its own open state across refreshes, the way an
+     * object row does, because the same node object is updated in place.
+     */
+    private _referenceNode(reference: ObjectReference): TreeNodeInfo<T> {
+        if (!this._refRows) this._refRows = new Map()
+        const node: TreeNodeInfo<T> = this._infoMap.get(reference.id) ?? {
+            id: reference.id,
+            label: '',
+            childNodes: [],
+            isExpanded: false,
+            isSelected: false,
+        }
+        node.label = <span className={'tree-node-reference-label'} title={reference.tooltip}>{reference.name}</span>
+        node.icon = referenceIcon(reference)
+        node.className = 'tree-node-reference'
+        node.intent = Intent.NONE
+        node.isSelected = false // the row is a pointer; the resource highlights in the Resources tab
+        node.draggable = false  // a reference cannot be moved, only followed
+        node.droppable = false
+        node.secondaryLabel = undefined
+        node.hasCaret = !!reference.children?.length
+        node.childNodes = node.isExpanded ? (reference.children ?? []).map(c => this._referenceNode(c)) : []
+        this._infoMap.set(reference.id, node)
+        this._refRows.set(reference.id, reference)
+        this.nSet?.add(reference.id)
+        return node
+    }
+
+    /** A reference row puts its resource in the Inspector, the same as the Resources tab does. */
+    private _selectReference(reference: ObjectReference) {
+        if(reference.kind === 'component') {
+            // A component has no row of its own anywhere else: the Inspector shows it under its object.
+            const owner = reference.owner
+            owner.dispatchEvent({type: 'select', value: owner, object: owner, ui: true, bubbleToParent: true})
+            return
+        }
+        const resource = reference.resource as SceneResource
+        selectResource(this.context.viewer, resource, resource)
+    }
+
+    protected async _onNodeExpandCollapse(_id: string | number, expanded?: boolean) {
+        await super._onNodeExpandCollapse(_id, expanded)
+        const node = this._infoMap.get(_id)
+        if(!node?.isExpanded) return
+        // Opening a row is what builds the reference rows under it.
+        const reference = this._refRows?.get(_id)
+        const references = reference ? reference.children : node.nodeData ? objectReferences(node.nodeData) : undefined
+        if(!references?.length) return
+        const realChildren = (node.childNodes ?? []).filter(c => !this._refRows?.has(c.id))
+        node.childNodes = [...realChildren, ...references.map(r => this._referenceNode(r))]
+        await this.setStatePromise({...this.state, nodes: this._cloneNodes()})
+    }
+
+    getUpdatedState(_state: BPTreeComponentState<T>): BPTreeComponentState<T> {
+        if (!this._refRows) this._refRows = new Map()
+        const state = super.getUpdatedState(_state)
+        // A row the rebuild did not keep is off the tree, so its reference goes with it.
+        for (const id of [...this._refRows.keys()]) if (!this._infoMap.has(id)) this._refRows.delete(id)
+        return state
+    }
+
     protected async _onNodeClick(_id: string) {
+        const reference = this._refRows?.get(_id)
+        if(reference) return this._selectReference(reference)
         const node = this._infoMap.get(_id)
         if(!node) return
         const value = node.isSelected ? null : node.nodeData! // unselect if already selected
@@ -116,16 +224,27 @@ export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTre
     }
 
     protected async _onNodeDoubleClick(_id: string) {
+        const reference = this._refRows?.get(_id)
+        if(reference) {
+            this._selectReference(reference)
+            // The second click follows the pointer: the Resources tab opens on that row.
+            if(reference.kind !== 'component')
+                resourceReveal.reveal({kind: reference.kind, uuid: reference.resource.uuid})
+            return
+        }
         const node = this._infoMap.get(_id)
         if(!node) return
-        let isScene = node.nodeData! === this.context.viewer.scene as any
-        let obj = node.nodeData!
-        node.nodeData!.dispatchEvent({
+        const obj = node.nodeData!
+        const isScene = obj === this.context.viewer.scene as any
+        // An asset row opens its own document, the way the Inspector's Edit Asset button does.
+        // Focusing the camera on a row whose document replaces the viewport would be wasted.
+        const opened = !isScene && (this.props.onOpenAsset?.(obj) ?? false)
+        obj.dispatchEvent({
             type: 'select',
-            value: node.nodeData!,
-            object: node.nodeData!,
+            value: obj,
+            object: obj,
             ui: true,
-            focusCamera: !isScene,
+            focusCamera: !isScene && !opened,
             bubbleToParent: true,
         })
         if(isScene){
@@ -137,6 +256,9 @@ export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTre
         // console.log(_id, _e)
         _e.preventDefault()
         _e.stopPropagation()
+
+        // A reference row has no menu: nothing under it can be renamed, reordered or deleted.
+        if(this._refRows?.has(_id)) return this._onNodeClick(_id as string)
 
         const items: MenuItem2[] = []
         const node = this._infoMap.get(_id)

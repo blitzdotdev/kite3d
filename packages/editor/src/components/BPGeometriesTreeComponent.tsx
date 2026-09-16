@@ -1,6 +1,8 @@
 import {Event2, IGeometry, IObject3D, ISceneEventMap, PickingPlugin, ThreeViewer, UiObjectConfig} from "threepipe";
 import {UiConfigRendererContextType} from 'uiconfig-blueprint/lib/esm/lib'
-import {filterObjectsInSceneRoot} from "../utils/three/filterObjectsInSceneRoot.ts";
+import {sceneGeometries} from "../utils/three/sceneResources.ts";
+import {selectResource} from "../utils/three/selectResource.ts";
+import {geometryIcon} from "../utils/icons.tsx";
 import React, {useMemo} from "react";
 import {useObjContextMenu} from "./UseObjContextMenu.tsx";
 import {HandleContextMenuCallback, MenuItem2} from "../utils/ContextMenuUtils.ts";
@@ -40,25 +42,19 @@ export class BPGeometriesTreeComponent<T extends IGeometry = IGeometry> extends 
         //     node.icon = 'full-circle'
         // }
         // todo set icon based on if its generated or not and its type?
-        node.icon = 'grid-view'
+        node.icon = geometryIcon
         return node;
     }
 
     protected _getRootNodes(): T[] {
-        const showAll = false // todo param in ui
-        const geoms = this.context.viewer.object3dManager.getGeometries()
-        if(showAll)
-            return Array.from(geoms) as T[]
-        const inRoot = filterObjectsInSceneRoot(geoms);
-        return Array.from(inRoot) as T[] // only return geometries that are in the root scene model root
+        return sceneGeometries(this.context.viewer) as T[]
     }
 
     protected async _onNodeClick(_id: string) {
         const node = this._infoMap.get(_id)
         if(!node) return
         const value = node.isSelected ? null : node.nodeData! // unselect if already selected
-        // node.nodeData!.dispatchEvent({type: 'select', value: value ?? null, material: node.nodeData!, ui: true, bubbleToObject: true, bubbleToParent: true})
-        this.context.viewer.getPlugin(PickingPlugin)?.setSelectedObject(value)
+        selectResource(this.context.viewer, node.nodeData!, value)
     }
 
     protected async _onNodeDoubleClick(_id: string) {
@@ -128,6 +124,13 @@ export class BPGeometriesTreeComponent<T extends IGeometry = IGeometry> extends 
             console.error('BPGeometriesTreeComponent: viewer not found in context', this.context)
             return
         }
+        // A closed Resources section is not mounted, so it missed every selection event while it was
+        // shut. The tree reads what is picked now, or its row opens unhighlighted.
+        const picked = viewer.getPlugin(PickingPlugin)?.getSelectedObject<IGeometry>()
+        if(picked?.isBufferGeometry) {
+            this._selectedIds = [picked.uuid]
+            this.setSelected(this._selectedIds, false)
+        }
         viewer.getPlugin(PickingPlugin)?.addEventListener('selectedObjectChanged', this.selectedObjectChanged)
         viewer.scene.addEventListener('sceneUpdate', this.sceneUpdate) // todo: subscribe only to the geometry in the config instead of the whole scene
         viewer.scene.addEventListener('geometryUpdate', this.geometryUpdate) // todo: subscribe only to the geometry in the config instead of the whole scene
@@ -147,7 +150,7 @@ export class BPGeometriesTreeComponent<T extends IGeometry = IGeometry> extends 
 
 }
 
-export function GeometryHierarchyComponent({className}: {className: string}){
+export function GeometryHierarchyComponent({className, treeRef}: {className: string, treeRef?: React.Ref<BPGeometriesTreeComponent>}){
     const manager = useManager()
     const viewer = manager.get()
 
@@ -160,5 +163,6 @@ export function GeometryHierarchyComponent({className}: {className: string}){
 
     return <BPGeometriesTreeComponent
         key={viewer.scene.modelRoot.uuid} // this is required because viewer can be destroyed and recreated
+        ref={treeRef}
         config={config} handleContextMenu={handleContextMenu} className={className}/>
 }

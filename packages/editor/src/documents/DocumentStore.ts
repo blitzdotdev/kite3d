@@ -44,14 +44,17 @@ export class DocumentStore extends EventDispatcher<{change: object}> {
         return doc instanceof SceneDocument ? doc : undefined
     }
 
-    /** The store redraws its strip. "Set as main scene" moves which tab carries a close cross. */
-    changed = () => this.dispatchEvent({type: 'change'})
+    /** The store redraws its strip and writes its memory. Both describe the same list of tabs. */
+    changed = () => {
+        this.remember()
+        this.dispatchEvent({type: 'change'})
+    }
 
     find(path: string) {
         return this.documents.find(d => d.path === path)
     }
 
-    /** Opens a file on the viewport. A path that is already open is focused, not loaded again. */
+    /** Opens a file on the viewport. A path that is already open is focused, not read again. */
     async open(path: string): Promise<EditorDocument | undefined> {
         const found = this.find(path)
         if (found) {
@@ -61,11 +64,29 @@ export class DocumentStore extends EventDispatcher<{change: object}> {
         const kind = documentKind(path)
         if (!kind) return undefined
         const doc = this.create(path, kind)
-        await doc.load()
         this.documents.push(doc)
         this.changed()
-        await this.activate(path)
+        await this.activate(path)      // the activate reads the file, the way it does for a cold tab
         return doc
+    }
+
+    /**
+     * Brings back the tabs this project had open. Every remembered file becomes a cold tab and only
+     * the active one reads its file; a cold tab reads its own when it is first shown. A remembered
+     * path the project no longer has is dropped.
+     */
+    async restore() {
+        const memory = this.remembered()
+        const paths = memory.paths.filter(p => this.session.manifest.files.has(p))
+        const main = this.mainScenePath
+        if (main && !paths.includes(main)) paths.unshift(main)     // the main scene tab is always open
+        for (const path of paths) {
+            const kind = documentKind(path)
+            if (kind) this.documents.push(this.create(path, kind))
+        }
+        this.changed()
+        const active = memory.activeId && paths.includes(memory.activeId) ? memory.activeId : main
+        if (active) await this.activate(active)
     }
 
     async activate(path: string) {
@@ -79,6 +100,7 @@ export class DocumentStore extends EventDispatcher<{change: object}> {
     async activateForPlay(path: string) {
         const doc = this.find(path)
         if (!doc || this.activeId === path) return
+        if (!doc.loaded) await doc.load()      // a cold tab reads its file the first time it is shown
         await this.viewport.show(doc)
         this.activeId = path
         this.changed()
@@ -124,12 +146,38 @@ export class DocumentStore extends EventDispatcher<{change: object}> {
     /** A file changed on disk. A document with that path reloads; anything else is a placed asset. */
     async onFileChanged(path: string) {
         const doc = this.find(path)
-        if (doc) {
+        // A cold tab reads the file when it is first shown, so the change is only news to the scenes
+        // that place it.
+        if (doc?.loaded) {
             await doc.reloadFromDisk()
             this.changed()
             return
         }
         this.session.scheduleAssetRefresh(path)
+    }
+
+    /** The tabs of this project, under a key of its own: one browser origin serves many projects. */
+    private get memoryKey() {
+        return `kite3d.editor.tabs:${this.session.loadedProject?.path ?? ''}`
+    }
+
+    private remember() {
+        localStorage.setItem(this.memoryKey, JSON.stringify({
+            paths: this.documents.map(d => d.path),
+            activeId: this.activeId,
+        }))
+    }
+
+    private remembered(): {paths: string[], activeId: string | null} {
+        const text = localStorage.getItem(this.memoryKey)
+        try {
+            const read = text ? JSON.parse(text) : null
+            if (Array.isArray(read?.paths)) return {paths: read.paths, activeId: read.activeId ?? null}
+        } catch {
+            // localStorage outlives the build that wrote it, and a key this build cannot read must
+            // not stop the editor from opening its main scene.
+        }
+        return {paths: [], activeId: null}
     }
 
     private create(path: string, kind: DocumentKind): EditorDocument {

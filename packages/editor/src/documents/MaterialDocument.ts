@@ -13,7 +13,7 @@ export class MaterialDocument extends EditorDocument {
         super(path, 'material', session, viewport)
     }
 
-    async load() {
+    protected async read() {
         const res = await this.importAsset()
         if (!(res as IMaterial).isMaterial) throw new Error('Not a material: ' + this.path)
         this.material = res as IMaterial

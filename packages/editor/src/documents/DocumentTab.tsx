@@ -10,7 +10,8 @@ export function DocumentTab({doc, canClose, onClose}: {
 }) {
     return <span className="document-tab">
         <Icon icon={fileToIcon({path: doc.path, type: 'file'})} size={14} className="document-tab-kind"/>
-        <span className="document-tab-name">{doc.name}</span>
+        {/* A tab remembered from the last session has not read its file yet, and says so in italics. */}
+        <span className={doc.loaded ? 'document-tab-name' : 'document-tab-name document-tab-cold'}>{doc.name}</span>
         {doc.dirty ? <span className="document-tab-dot"/> : null}
         {canClose ? <span
             className="document-tab-close"

@@ -722,7 +722,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
     }
 
     // Returns a result only when the asset did not land on disk; the caller stops on it.
-    async writeAssetFile(obj: IObject3D|IMaterial, assetId: string, handle: ProjectDirectoryHandle, assetPath: string, res: {file: File, preview?: string | File}) {
+    async writeAssetFile(obj: IObject3D|IMaterial, handle: ProjectDirectoryHandle, assetPath: string, res: {file: File, preview?: string | File}) {
         const res1 = await this.writeResolvingConflict(this.store?.find(assetPath) ?? null, handle, assetPath, res.file).catch(e => {
             console.error('Failed to save asset file.', e)
             return null
@@ -739,10 +739,13 @@ export class ViewerInstanceManager extends EventDispatcher<{
         // todo
         //  save preview thumbnail
 
-        const ext = assetPath.split('.').pop() || 'glb'
-        ;(obj as ImportResultExtras).__rootPath = assetUrlPrefix + '@' + assetId + '/f.' + ext
+        // The entry's own file key, not `f.<ext>`. 5b7102a7 fixed the same assumption in
+        // toAssetIdPath; here a wrong key leaves the saved asset unreachable, so the Inspector loses
+        // its Save Asset button after one save.
+        const rootPath = await this.toAssetIdPath({path: assetPath})
+        ;(obj as ImportResultExtras).__rootPath = rootPath
         // todo root blob?
-        obj.userData.rootPath = (obj as ImportResultExtras).__rootPath
+        obj.userData.rootPath = rootPath
         obj.userData.rootPathOptions = {}
         this.convertToAsset(obj)
 
@@ -1273,7 +1276,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         })
         if(!assetId) return {error: 'Cannot write the asset id to the assets manifest.'}
 
-        const res2 = await this.writeAssetFile(obj, assetId, handle, assetPath, res)
+        const res2 = await this.writeAssetFile(obj, handle, assetPath, res)
         if(res2){
             // delete obj.userData.tpAssetId
             return res2
@@ -1413,7 +1416,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
             return res
         }
 
-        const res2 = await this.writeAssetFile(obj, assetId, handle, path, res)
+        const res2 = await this.writeAssetFile(obj, handle, path, res)
         if(res2){
             return res2
         }

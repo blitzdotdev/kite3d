@@ -90,7 +90,9 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
     importedViewerConfig?: ISerializedViewerConfig  // the WEBGI_viewer extension, applied on the first attach
     state?: ViewportState                              // captured on detach, applied on attach
     dirty = false
-    abstract load(): Promise<void>                  // disk to memory through the handle; no viewer involved
+    loaded = false                                  // false for a tab restored cold; nothing reads nodes until it is true
+    load(): Promise<void>                           // reads the file through the handle, then sets loaded
+    protected abstract read(): Promise<void>        // the kind's own read; no viewer involved
     abstract save(): Promise<SaveResult>            // {error, warn}, the toast's shape; through the handle with the base sha; 412 asks
     abstract reloadFromDisk(): Promise<void>        // asks first when dirty
     unload(): void                                  // frees the tree and its GPU memory; close, and a reload from disk or Play
@@ -229,7 +231,7 @@ With one viewer and no text view, the old fight between two viewers and the figh
 - The center slot gets one entry per document instead of the single `Content` entry (`ThreeEditorComponent.tsx:254-262`). `WindowPanesLayout` grows the two props revision 2 assumed and today lacks, `selectedTabIds` and `onTabChange`, and `WindowPanel.title` widens to `ReactNode` for a kind icon, the name, a dot when dirty and an x. Blueprint's `Tab.title` already accepts a node.
 - The viewport canvas mounts once, the way `ThreeEditorComponent.tsx:180-187` does today, and stays mounted across switches; only the store's active id changes. The chips (`EditModeStatusChips`, `:261`) stay on the viewport.
 - The navbar's file-name button (`NavProjectFileName`, `:412-427`) shows the active document's name and its asterisk from the document's dirty flag; the picker popover beside it is untouched.
-- The Files panel's open action calls `store.open`; the Inspector's Edit Asset opens the asset's document instead of selecting the hidden source object; the Inspector's header shows the active document's name.
+- The Files panel's open action calls `store.open`; the Inspector's Edit Asset opens the asset's document instead of selecting the hidden source object; the Inspector's header names what it inspects, which is the picked object when there is one and the active document when there is not.
 - Files and Library stay project-level in the bottom slot. A drop lands on the active document (`CanvasFileDropHandler.tsx:116-118`, the drop root read from the document at `:364`).
 
 Previews, shot on 2026-09-16 against the editor at 0.20.1 with the terminator project. The tab strip is drawn over the running editor; everything else is the editor as it is. Each tab carries the kind icon the Files panel already uses for that extension (`icons.tsx`), the name, a dot when dirty and an x.
@@ -269,7 +271,7 @@ Some things want a second live picture while the viewport shows a document: a ma
 
 ## 7. Passes
 
-Pass 1: documents, the viewport, tabs. Pass 1a (#36) built the first, third and fourth bullets and the strip itself; pass 1b takes the keys, the Inspector hooks and persistence from the second and third.
+Pass 1: documents, the viewport, tabs. Pass 1a (#36) built the first, third and fourth bullets and the strip itself; pass 1b built the keys, the Inspector hooks and the tab memory from the second and third.
 
 - Extract the four document classes and `DocumentStore` from `ViewerInstanceManager`; add `Viewport` with the switch protocol; replace `unloadScene()`'s dispose with the detach of 4.3, keep dispose for close; fix the registry key in `_unloadProjectFile` (`:1618`) on the way.
 - Center tabs with the two new layout props, the dirty dot and the x, `Cmd+W` and `Ctrl+Tab`, the close prompt, `localStorage` persistence.

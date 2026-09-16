@@ -136,6 +136,12 @@ body{
   white-space: nowrap;
 }
 
+// A tab that has not read its file yet, the way an editor marks a preview tab.
+.document-tab-cold {
+  font-style: italic;
+  opacity: 0.7;
+}
+
 .document-tab-dot {
   background: currentcolor;
   border-radius: 50%;

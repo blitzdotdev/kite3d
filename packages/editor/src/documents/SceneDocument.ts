@@ -25,7 +25,7 @@ export class SceneDocument extends EditorDocument {
         super(path, 'scene', session, viewport)
     }
 
-    async load() {
+    protected async read() {
         const saved = await this.session.getLoadedFile(this.session.loadedProject!, this.path)
         if (!saved) throw new Error('File not found: ' + this.path)
         const url = this.session.source.fileUrl(this.path, this.session.manifest.files.get(this.path)?.sha256)

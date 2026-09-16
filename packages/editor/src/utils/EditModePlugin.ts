@@ -335,6 +335,7 @@ export class EditModePlugin extends AViewerPluginSync<{
         },
         {
             keys: ['[', ']'],
+            altKey: false,      // Alt+] and Alt+[ are the tab strip's, and off macOS they still read as ] and [
             onDown: (event: KeyboardEvent) => {
                 event.preventDefault()
                 this.setWASDMovementSpeed(this.wasdMovementSpeed * (event.key === ']' ? 2 : 0.5))
@@ -408,7 +409,9 @@ export class EditModePlugin extends AViewerPluginSync<{
     ]
 
     private _keyDown = (event: KeyboardEvent) => {
-        if(!event.metaKey && !event.ctrlKey) {
+        // Alt joins meta and ctrl here: off macOS Alt+W still reads as w, and it would fly the camera
+        // forward while the tab strip's key closes a tab.
+        if(!event.metaKey && !event.ctrlKey && !event.altKey) {
             this.keyMap[event.key.toLowerCase()] = true
         }
     }

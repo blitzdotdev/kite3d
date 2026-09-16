@@ -6,6 +6,18 @@ import {EditorDocument} from './EditorDocument.ts'
 export const DocumentStoreContext = createContext<DocumentStore | undefined>(undefined)
 
 export function DocumentStoreProvider({store, children}: {store: DocumentStore, children: any}) {
+    // The browser owns the page's close, and its own close shortcut never reaches the editor. This
+    // ask is all that stands between that key and an unsaved document.
+    useEffect(() => {
+        const onBeforeUnload = (event: BeforeUnloadEvent) => {
+            if (!store.documents.some(d => d.dirty)) return
+            event.preventDefault()
+            event.returnValue = ''       // the browser writes its own text; a page cannot choose it
+        }
+        window.addEventListener('beforeunload', onBeforeUnload)
+        return () => window.removeEventListener('beforeunload', onBeforeUnload)
+    }, [store])
+
     return createElement(DocumentStoreContext.Provider, {value: store}, children)
 }
 

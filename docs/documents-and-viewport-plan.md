@@ -10,7 +10,7 @@ Revision 1 chose one WebGL viewer per tab and was rejected for the duplicated GP
 - There is one 3D viewer, the viewport. Every open document keeps its object tree in memory; only the active one sits under `modelRoot`. Switching detaches one, attaches the other, and restores that document's camera, selection, settings and undo ledger.
 - No GPU redundancy. threepipe's object manager unregisters a detached tree and disposes the GPU side of its exclusive materials, textures and geometries; three re-uploads them on the next draw. Nothing in that machinery changed in the rewrite.
 - The harder premise: today a switch does not detach, it disposes. `loadProjectFile` calls `unloadScene()`, which runs `disposeSceneModels(true, true)` and `disposeTextures(true)`. Residency starts by replacing that dispose with a detach.
-- Already shipped since revision 2: the material preview rig (a box, two lights, an HDR environment), a texture preview, and the asset hot reload, which was the one missing rule of the Blender section. What remains of Blender is the launch: `kite3d edit`, a server route, a Files menu item and a bridge script.
+- Already shipped since revision 2: the material preview rig (a box, two lights, an HDR environment), a texture preview, and the asset hot reload, so a save in Blender already reaches every placed instance. The Blender launch itself is not built now, by decision.
 - Views as render targets (a live material sphere, thumbnails, a split view) stay "later", on the same renderer.
 
 ## 1. What changed since revision 2
@@ -62,7 +62,7 @@ ViewerInstanceManager                   ViewerInstanceManager   the session: pro
 - Session. What stays on `ViewerInstanceManager`: `loadedProject` (`:947`), the transport and the manifest (`:128`), `filesBase` (`:547`), the SSE subscription (`initialize`, `:138-140`), `scriptUtil`, `settingsManager`, `playMode`, `editPreview`, `features`, the screenshot command, the asset refresh timers. One per project, created by `ManagerProvider` (`UseManager.ts:7`). No rename.
 - Document. One per open file, identified by its project-relative path, typed by kind. It owns its root nodes, its view state and its dirty state. Today's per-document fields move onto it.
 - Viewport. The one `ThreeViewer` with today's plugin set (`:227`, `:236-314`, `:324`). It shows one document and implements the switch protocol of 4.3. It is the only code that touches `modelRoot`.
-- Store. The list of documents, the active id, open, activate, close, save, the routing of file events, the eviction policy. It owns nothing GPU.
+- Store. The list of documents, the active id, open, activate, close, save, the routing of file events. It owns nothing GPU.
 - View. What the center slot renders: the viewport canvas, one tab per document. Text and file views are gone with the text kind; if decision 3 brings a text view back, it is the second view kind.
 
 ### 4.2 Core interfaces
@@ -88,11 +88,10 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
     importedViewerConfig?: ISerializedViewerConfig  // the WEBGI_viewer extension, applied on the first attach
     state?: ViewportState                              // captured on detach, applied on attach
     dirty = false
-    lastActive = 0
     abstract load(): Promise<void>                  // disk to memory through the handle; no viewer involved
     abstract save(): Promise<boolean>               // through the handle with the base sha; 412 asks
     abstract reloadFromDisk(): Promise<void>        // asks first when dirty
-    unload(): void                                  // frees the tree; the tab stays, cold
+    unload(): void                                  // frees the tree and its GPU memory; close only
 }
 export class SceneDocument extends EditorDocument {   // kind 'scene'
     sceneName: string | null = null                 // the file's own name, kept apart from modelRoot's "Scene"
@@ -121,14 +120,10 @@ export class Viewport {
 
 ```ts
 // DocumentStore.ts
-export interface EvictionPolicy {
-    keepGpuResident: boolean       // false: a detached document drops its GPU memory (threepipe's default)
-    unloadAfterMinutes: number     // a clean inactive document frees its tree after this; the tab stays, cold
-}
 export class DocumentStore extends EventDispatcher<{change: object}> {
     readonly documents: EditorDocument[] = []
     activeId: string | null = null
-    constructor(readonly session: ViewerInstanceManager, readonly viewport: Viewport, readonly policy: EvictionPolicy)
+    constructor(readonly session: ViewerInstanceManager, readonly viewport: Viewport)
     get active(): EditorDocument | undefined
     get mainScene(): SceneDocument                    // always open, never closed
     open(path: string): Promise<EditorDocument>       // find or create, load, activate
@@ -174,10 +169,10 @@ This is the heart of it, and every step below is backed by what threepipe does t
 Three details the pass must handle, all measured against today's code.
 
 - Scenes load with `importAsModelRoot: true` (`:1246-1249`), which merges the file's animations into the permanent `modelRoot` (`RootScene.ts:335-341`). A document loads as a plain import instead, keeps its animations on itself, and the animation plugin's generic path plays them. The serializer keeps reading `modelRoot` (`packages/engine/src/sceneSerialization.ts`), which stays correct because only the active document's roots are under it; saving an inactive dirty document attaches it first, saves, and detaches again.
-- The registry's `refs` follow the scene's add and remove events (`AssetTracker.ts:57-155`), and the last removed ref drops the entry with `removeFromRegistry`. So detaching the only document that places an asset unregisters that asset; re-attaching re-imports it through `getFromRegistry`, from the server (the importer runs with `cacheImportedAssets = false`, `:326`). That is correct and slower than a cached re-attach. Pass 1 measures the switch on the terminator scene and, if it hurts, keeps the registry entries of a resident document alive by holding a ref per document.
+- The registry's `refs` follow the scene's add and remove events (`AssetTracker.ts:57-155`), and the last removed ref drops the entry with `removeFromRegistry`. So detaching the only document that places an asset unregisters that asset; re-attaching re-imports it through `getFromRegistry`, from the server (the importer runs with `cacheImportedAssets = false`, `:326`). So a resident document holds a ref per placed asset while it is open, the registry keeps the entry, and a re-attach never re-imports. Pass 1 still measures the switch on the terminator scene.
 - The dirty listeners are installed once per open file and never removed (`:1468`). With documents they become one set on the viewport, routed to `viewport.current`, which is where the `isExternal*` rule already decides what is the document's own.
 
-What this buys, in Godot's terms: the resource model for free. threepipe already treats attachment as ownership, so a detached document costs CPU memory only. If a project wants instant switches over memory, `keepGpuResident` sets the three auto-dispose flags false and nothing else changes.
+What this buys, in Godot's terms: the resource model for free. threepipe already treats attachment as ownership, so a detached document costs CPU memory only. Decision 1 chose instant switches over memory: step 4 runs with the manager's three auto-dispose flags off and restores them after it, so a detached document keeps its GPU memory. `unload()` on close disposes it with `dispose(true)` per root node.
 
 ### 4.4 Data paths
 
@@ -218,7 +213,7 @@ Screenshot: `captureScreenshot` (`:695`) captures the viewport, which shows the 
 
 Persistence: the open paths and the active id under `kite3d.editor.tabs:<project path>` in `localStorage`. On reload every remembered document is created cold; only the active one loads. A remembered path that no longer exists is dropped.
 
-Memory: a clean inactive document unloads its tree after `unloadAfterMinutes` and its tab goes cold; clicking it loads again. Dirty documents never unload. The GPU memory of a detached document is already gone unless `keepGpuResident` is on.
+Memory: a document stays loaded and resident until it is closed; nothing unloads on a timer. Close frees the tree and the GPU side through `unload()`. After a page reload the remembered tabs are created cold and load on the first click.
 
 ### 4.5 Keyboard and focus
 
@@ -246,59 +241,50 @@ Found while shooting them, all in today's editor:
 
 - The center slot renders no tab strip with one panel; `WindowPanesLayout` renders `Tabs` only for two or more (`WindowPanesLayout.tsx:86-105`). The pass renders the strip for one document too.
 - `NavProjectFileName` re-renders on `loadedNeedsSaveChange` only (`SaveProjectButton.tsx:21-35`), so the file-name button vanishes after a switch. The pass subscribes it to the store's active document.
-- An object opens with no light and no environment: `unloadScene` disposes the scene's lights and the object branch of `loadProjectFile` (`:1473`) adds none, while the material branch has its rig (`:1532-1541`). The object preview above uses the editor's Studio lighting override; the object document gets the rig of section 7.
+- An object opens with no light and no environment: `unloadScene` disposes the scene's lights and the object branch of `loadProjectFile` (`:1473`) adds none, while the material branch has its rig (`:1532-1541`). The object preview above uses the editor's Studio lighting override; the object document gets the rig of section 6.
 - Opening a file that has no asset id writes an entry into `assets.json` (`addIdToAssetsManifest`, `:1297-1305`). `store.open` inherits that write.
 - The Files panel opens `.scene.gltf`, `.glb`, `.gltf` and `.mat` only (`FilesPanel.tsx:564`); the texture preview was opened through `loadProjectFile` directly. That path builds `/kite3d/@<id>/f.<ext>` (`toAssetIdPath`, `:1287-1309`) and fails for an entry whose file key is not `f.<ext>`, which is the terminator project's seven `unit-*` entries.
 - `.phmatgltf` is a threepipe importer format, not an editor material file. The editor's material files are `.mat` and `.mat.json` (`data/fileTypes.ts:6`).
 
 
-## 5. Blender in the back, hot render on save
-
-The editor half is done. A save in Blender rewrites the `.glb`, the server broadcasts it, `scheduleAssetRefresh` maps the path to its owner, and `refreshFromRegistry` updates every placed instance (`:513-533`; proven in the rewrite's step 2b with a mesh swapped over an asset file). What remains touches no editor code:
-
-- `kite3d edit <path>` and a Files menu item, Edit in Blender, post to a new server route that spawns `blender --python kite3d_bridge.py -- /abs/path/crate.asset.glb` detached, the way the launcher spawns a project server (`packages/kite3d/src/serverState.ts`, `startDetachedServer`). The route answers 409 with a plain message when no Blender is on PATH.
-- `kite3d_bridge.py` imports the glb, points the session at a `.blend` beside the asset (the guide already says so), and registers a `bpy.app.handlers.save_post` handler that exports the glb back to the same path with `bpy.ops.export_scene.gltf(export_format='GLB')`.
-- Cmd+S in Blender rewrites the glb; chokidar sees it; the object document, if open, reloads; every scene document re-imports its instances. Names, hierarchy and custom properties survive the round trip.
-
-## 6. Later: views as render targets
+## 5. Later: views as render targets
 
 Some things want a second live picture while the viewport shows a document: a material sphere in the Inspector, thumbnails in Files, a split view of two scenes. That is the render-to-texture architecture on the same renderer, and nothing in section 4 has to change for it. Each extra view is a scene, a camera and a `WebGLRenderTarget`, drawn by the viewport's renderer after its frame and copied to its own small canvas; a preview queue draws one at a time and caches images under `.kite3d/thumbs/`, which the Files panel already reads. The one upstream change it needs, the render manager drawing to a target instead of the canvas, is the same change a shared-renderer mode would need.
 
-## 7. What is not happening
+## 6. What is not happening
 
 - No object in two documents. A scene and an object document hold separate copies; the scene learns about edits through the file, which is what the asset refresh already does.
-- No mesh editing in the browser. Blender is the editor. The object document is a viewer with a camera and a light rig.
+- No mesh editing in the browser. The object document is a viewer with a camera and a light rig, the rig the material document has today.
+- No Blender launch and no `kite3d edit` for now. Blender stays a tool the user runs on their own; the asset hot reload already picks up its saves.
 - No text tabs unless decision 3 says so.
 - Component instances do not survive a switch. The entity plugin destroys them on `objectRemove` and rebuilds them from saved state on `objectAdd`. Edit mode does not run them, so this is invisible until Play, which runs on the main scene only.
 - Animation playback position resets on a switch, because mixers are rebuilt.
-- Undo commands hold closures over live objects. They survive a detach because the objects stay alive. They do not survive an unload, so a document that unloads loses its history. Dirty documents never unload.
+- Undo commands hold closures over live objects. They survive a detach because the objects stay alive. They do not survive a close, which is the only time a document unloads.
 - A project plugin that assumes it sees every object ever loaded will be surprised by detach and attach. Test with the terminator project's plugins before landing.
 
-## 8. Passes
+## 7. Passes
 
 Pass 1: documents, the viewport, tabs.
 
 - Extract the four document classes and `DocumentStore` from `ViewerInstanceManager`; add `Viewport` with the switch protocol; replace `unloadScene()`'s dispose with the detach of 4.3, keep dispose for close; fix the registry key in `_unloadProjectFile` (`:1618`) on the way.
 - Center tabs with the two new layout props, the dirty dot and the x, `Cmd+W` and `Ctrl+Tab`, the close prompt, `localStorage` persistence.
 - The undo ledger per document; Save Asset reachable from the Inspector for an opened asset; Play pinned to the main scene with the strip disabled while it runs; the session's listener routed through the store.
-- Evidence, headless: two scenes, one object, one material and one texture open; screenshots per switch; `viewer.object3dManager` material and geometry counts equal to the active document's after every switch; `renderer.info.memory.textures` drops after a detach and returns after an attach; a save of an inactive dirty scene writes its file and leaves the active one on the viewport; opening a path twice focuses the tab; the switch time on the terminator scene measured and in the report, with the registry re-import cost separated out.
-
-Pass 2: the Blender launch.
-
-- `kite3d edit`, the server route, the Files menu item, `kite3d_bridge.py`, the no-Blender message.
-- Evidence: Blender headless (`blender -b -P`) rewrites a fixture glb while an object tab shows it and a scene tab places it twice; screenshots before and after with the pixel diff; the scene file on disk unchanged.
+- Open never writes to `assets.json`: `toAssetIdPath` (`:1287-1309`) registers an id on placement and save only, and it resolves an entry's own file key instead of assuming `f.<ext>`. The object document gets the material document's light rig. The dirty flag that appears after a load with no edit is measured, the serialized text at load against the text after the first asset refresh; churn only means the refresh resets the hash, a material diff is reported.
+- Evidence, headless: two scenes, one object, one material and one texture open; screenshots per switch; `viewer.object3dManager` material and geometry counts equal to the active document's after every switch; `renderer.info.memory.textures` holds across a detach and drops after a close; a save of an inactive dirty scene writes its file and leaves the active one on the viewport; opening a path twice focuses the tab; the switch time on the terminator scene measured and in the report, with the registry re-import cost separated out.
 
 Later: views as render targets, starting with the material sphere and the thumbnail queue. And text tabs if decision 3 wants them.
 
-## 9. Decisions for you
+## 8. Decisions
 
-- [ ] GPU eviction on detach, threepipe's default (my pick), or keep resident for instant switches. One flag either way.
-- [ ] Unload a clean inactive document after 10 minutes (my pick), or never.
-- [ ] Text files: no tabs, agents edit scripts and the editor stays a 3D tool (my pick); or a read-only text view; or CodeMirror comes back as an editable text document, which is its own pass.
-- [ ] Textures as documents, view-only with the toast on save (my pick, since the preview exists), or no texture tabs.
-- [ ] Switching tabs during Play: the strip is disabled (my pick), or a switch stops Play first.
-- [ ] Blender launch from the Files menu through a server route (my pick), or `kite3d edit` only.
-- [ ] Material preview on the box the rewrite built (my pick), or a sphere as revision 2 proposed.
+Decided 2026-09-16.
+
+- [x] Keep resident for instant switches. Threepipe's default eviction on detach was the note's pick and was rejected for the switch time.
+- [x] Never unload an inactive document on a timer. Close is the only unload.
+- [x] Text files: no tabs. Agents edit scripts and the editor stays a 3D tool.
+- [x] Textures are documents, view-only, with the toast on save.
+- [x] Switching tabs during Play: the strip is disabled.
+- [x] Material preview on the box the rewrite built.
+- [x] No Blender launch and no `kite3d edit` for now.
 
 ## Method and files
 

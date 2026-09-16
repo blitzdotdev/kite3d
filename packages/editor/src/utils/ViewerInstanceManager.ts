@@ -1217,7 +1217,9 @@ export class ViewerInstanceManager extends EventDispatcher<{
             let res: ImportResult|undefined
 
             // const fileRootPath = assetUrlPrefix+file.path
-            const fileRootPath = await this.toAssetIdPath(file);
+            // isMain is the document being opened on the viewport; the other side of it is an asset
+            // loaded to place into that document, which is where an id may be minted.
+            const fileRootPath = await this.toAssetIdPath(file, !isMain);
 
             if (isMain) {
                 // The objects an isolated view remembers are about to go, so the view goes with them.
@@ -1284,7 +1286,11 @@ export class ViewerInstanceManager extends EventDispatcher<{
         return null
     }
 
-    private async toAssetIdPath(entry: FileManifestEntry | { path: string; file?: File }) {
+    /**
+     * The URL an entry loads from. Minting an id writes the project's `assets.json`, so only a
+     * placement into the open document asks for one: opening a file reads the manifest, never writes it.
+     */
+    private async toAssetIdPath(entry: FileManifestEntry | { path: string; file?: File }, registerMissingId = false) {
         if(entry.path.startsWith('@')){
             console.error('Unexpected: Entry path already has asset id: ', entry)
             return entry.path
@@ -1295,7 +1301,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
             return entry.path
         }
         let assetId = Object.entries(this.loadedProject.assetsManifest.files).find(([id, f]) => f.path === entry.path)?.[0] || null
-        if (!assetId) {
+        if (!assetId && registerMissingId) {
             if (!entry.path.endsWith('.scene.gltf') && entry.path.startsWith((this.loadedProject?.assets?.replace(/\/$/, '') ?? 'assets') + '/')) {
                 assetId = await this.addIdToAssetsManifest(entry).catch(e => {
                     console.error(e)
@@ -1305,8 +1311,11 @@ export class ViewerInstanceManager extends EventDispatcher<{
             }
         }
         const ext = entry.path.split('?')[0].split('.').pop()?.toLowerCase() || ''
-        const fileRootPath = assetId ? `${assetUrlPrefix}@${assetId}/f.${ext}` : assetUrlPrefix + entry.path
-        return fileRootPath;
+        // createProjectAssetURLModifier resolves any key of the entry's own files map, and reads
+        // f.<ext> as the entry's own file only when the entry has no map.
+        const entryFiles = assetId ? this.loadedProject?.assetsManifest?.files[assetId]?.files : undefined
+        const fileKey = entryFiles ? Object.keys(entryFiles).find(k => entryFiles[k] === entry.path) : `f.${ext}`
+        return assetId && fileKey ? `${assetUrlPrefix}@${assetId}/${fileKey}` : assetUrlPrefix + entry.path
     }
 
     // this will load the asset again even if in memory
@@ -1931,7 +1940,7 @@ export class ViewerInstanceManager extends EventDispatcher<{
         }
         let path = entry.path
         if(!entry.path.startsWith('@')) {
-            path = await this.toAssetIdPath(entry)
+            path = await this.toAssetIdPath(entry, true) // the drag, the drop and the Files panel place this asset
         }
         // path = path.replace(assetUrlPrefix, '')
         const reg = this.get()?.assetManager.tracker.getFromRegistry(path, {

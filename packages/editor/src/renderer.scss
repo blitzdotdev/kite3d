@@ -230,10 +230,13 @@ button.kite3d-status-chip {
   top: 0;
   user-select: none;
   z-index: 1;
-  background: var(--pt-app-background-color);
+  // The panel's own colour, so a collapsed header reads as a row and not as a selection.
+  // Both colours here are opaque, so rows scrolling under the sticky header stay hidden.
+  background: var(--main-app-background);
 }
 .resources-section-header:hover{
-  background: var(--pt-minimal-button-background-color-hover);
+  // One step lighter than the panel, the lift a hovered tree row shows.
+  background: var(--pt-app-background-color);
 }
 .resources-section-title{
   flex: 1 1 auto;

@@ -17,7 +17,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && node -e \"require('fs').chmodSync('dist/cli.js', 0o755)\"",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src test --ext ts --report-unused-disable-directives --max-warnings 0 && eslint template --ext js --report-unused-disable-directives --max-warnings 0",
     "test": "vitest run"

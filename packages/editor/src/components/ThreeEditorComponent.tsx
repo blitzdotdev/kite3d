@@ -13,7 +13,7 @@ import {getOrCall, ThreeViewer, TypedClass, TypeSystem, UiObjectConfig} from 'th
 import {EditorModes, EditorModesButtonGroup, editorModesInspectorConfig} from './EditorModes.tsx'
 import {Alignment, Button, Card, Divider, IconName, Navbar, Panel, PanelStack2, Popover} from '@blueprintjs/core'
 import {BPHierarchyComponent} from './BPHierarchyComponent.tsx'
-import {SaveProjectButton, useFileNeedsSave} from './SaveProjectButton.tsx'
+import {SaveProjectButton} from './SaveProjectButton.tsx'
 import {BPTextureFileComponent} from './BPTextureFileComponent.tsx'
 import {BPMaterialsTreeComponent, MaterialHierarchyComponent} from "./BPMaterialsTreeComponent.tsx";
 import {BPTexturesTreeComponent, TextureHierarchyComponent} from "./BPTexturesTreeComponent.tsx";
@@ -36,6 +36,9 @@ import {useManager} from "../utils/UseManager.ts";
 import {ExternalFilesPanel} from "./ExternalFilesPanel.tsx";
 import {DependenciesSectionComp, PluginsSectionComp, ScriptsSectionComp } from './ProjectSettingsComponents.tsx';
 import {EditModePlugin} from '../utils/EditModePlugin.ts';
+import {useDocuments} from '../documents/UseDocuments.ts';
+import {useCloseDocument} from '../documents/UseCloseDocument.tsx';
+import {DocumentTab} from '../documents/DocumentTab.tsx';
 
 
 export function RefUiConfigComponent(props: BPComponentProps<any>){
@@ -100,6 +103,9 @@ export function ThreeEditorComponent() {
     const [uiConfigRenderer, setUiConfigRenderer] = useState<BlueprintJsUiPlugin2 | null>(null)
     const manager = useManager()
     const { project } = useProject()
+    const {documents, activeId, store} = useDocuments()
+    const {closeDocument} = useCloseDocument()
+    const isRunning = manager.playMode.isRunningMode
 
     // const [splitSizes, setSplitSizes] = useState([0, 100, 0])
 
@@ -127,7 +133,6 @@ export function ThreeEditorComponent() {
             // v = manager.loadProject(project, props) ?? manager.reset(props)
             v = manager.get()
             // todo load default scene settings first like empty env etc
-            // pms = projectFile ? manager.loadProjectFile(project, projectFile) : null
         } else {
             v = manager.get()
             // file should only be files saved from this editor with scene settings.
@@ -243,6 +248,8 @@ export function ThreeEditorComponent() {
 
                 <WindowPanesLayout
                     key={viewer.scene.uuid} // force rerender when viewer change, because we might add events to the viewer in sub components like BPHierarchyComponent
+                    selectedCenterTabId={activeId ?? undefined}
+                    onCenterTabChange={(id)=>void store.activate(id)}
                     panels={{
                         left:
                             Object.entries(editorLeftTabs).map(([k, TabPanel])=>({
@@ -251,15 +258,27 @@ export function ThreeEditorComponent() {
                                 content: <TabPanel key={k} className={''}/>,
                                 className: 'hierarchy-stack'
                             })),
-                        center: [{title: 'Content', style: {
-                            position: "relative",
-                            display: "flex",
-                            flexDirection: "column",
-                        }, content: <>
+                        // One tab per open document. The canvas mounts once and stays: only the
+                        // store's active id changes, and every tab renders the same viewport.
+                        center: documents.map(doc=>({
+                            key: doc.path,
+                            // Decision 5: a switch during Play would detach the running scene.
+                            disabled: isRunning,
+                            title: <DocumentTab
+                                doc={doc}
+                                canClose={doc.path !== store.mainScenePath && !isRunning}
+                                onClose={()=>void closeDocument(doc.path)}/>,
+                            style: {
+                                position: "relative",
+                                display: "flex",
+                                flexDirection: "column",
+                            },
+                            content: <>
                                 {/* A sibling, not a child: the effect above clears the mount before it appends the viewer. */}
                                 <div className={"editorCanvasContainer"} key={"editorCanvasContainer"} ref={canvasContainer}></div>
                                 <EditModeStatusChips viewer={viewer}/>
-                            </>}],
+                            </>,
+                        })),
                         bottom: [{title: 'Files', content: <FilesPanel />},
                             {title: 'Library', content: <ExternalFilesPanel />}],
                         right: [
@@ -411,17 +430,16 @@ function EditModeStatusChips({viewer}: {viewer: ThreeViewer}) {
 
 export function NavProjectFileName(){
     const { project} = useProject()
-    const manager = useManager()
+    const active = useDocuments().store.active
 
-    const fileIcon: IconName|MaybeElement = !!manager.loadedScene ? 'cubes' : !!manager.loadedAssetObj ? iconForSelectionObject(manager.loadedAssetObj) : 'document'
+    const fileIcon: IconName|MaybeElement = active?.kind === 'scene' ? 'cubes' : active?.asset ? iconForSelectionObject(active.asset) : 'document'
 
-    const [fileNeedsSave] = useFileNeedsSave()
     if(!project) return null
     return <>
         {/* The project name opens the picker, which is the hub page's content in a popover. */}
         <Popover minimal placement="bottom-start" popoverClassName="project-picker-popover" content={<ProjectPicker/>}>
             <Button variant={"minimal"} size={"small"} icon={'folder-close'} text={project.path}/>
         </Popover>
-        {manager.loadedProjectFile && <Button variant={"minimal"} size={"small"} icon={fileIcon} text={(manager.loadedProjectFile.path.split('/').pop()?.replace(/\.glb$/, '') || 'Untitled') + (fileNeedsSave ? '*' : '')}/>}
+        {active && <Button variant={"minimal"} size={"small"} icon={fileIcon} text={active.name.replace(/\.glb$/, '') + (active.dirty ? '*' : '')}/>}
     </>
 }

@@ -57,6 +57,8 @@ ViewerInstanceManager                   ViewerInstanceManager   the session: pro
 
 ## 4. The design
 
+Pass 1a built the design on 2026-09-16 (#36): the four document classes, the store, the Viewport with the switch protocol, keep resident, the data paths and the basic tab strip. The interfaces below are updated to what landed.
+
 ### 4.1 Five objects
 
 - Session. What stays on `ViewerInstanceManager`: `loadedProject` (`:947`), the transport and the manifest (`:128`), `filesBase` (`:547`), the SSE subscription (`initialize`, `:138-140`), `scriptUtil`, `settingsManager`, `playMode`, `editPreview`, `features`, the screenshot command, the asset refresh timers. One per project, created by `ManagerProvider` (`UseManager.ts:7`). No rename.
@@ -75,8 +77,8 @@ export type DocumentKind = 'scene' | 'object' | 'material' | 'texture'
 
 export interface ViewportState {                       // what the viewport restores on a switch
     camera: {position: Vector3Tuple; quaternion: Vector4Tuple; target: Vector3Tuple; mode: 'perspective' | 'ortho'}
-    selection: string[]                             // object uuids
-    viewerConfig?: ISerializedViewerConfig          // viewer.toJSON(true): scene, render, timeline, plugins
+    selection: string | null                        // the picked object's uuid; picking holds one
+    scene: {environment: ITexture | null; background: ITexture | Color | null; backgroundColor: Color | null}   // by reference; see the note under 4.3
     undo: {stack: JSUndoManagerCommand[]; sp: number}   // the per-document ledger
 }
 
@@ -89,9 +91,9 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
     state?: ViewportState                              // captured on detach, applied on attach
     dirty = false
     abstract load(): Promise<void>                  // disk to memory through the handle; no viewer involved
-    abstract save(): Promise<boolean>               // through the handle with the base sha; 412 asks
+    abstract save(): Promise<SaveResult>            // {error, warn}, the toast's shape; through the handle with the base sha; 412 asks
     abstract reloadFromDisk(): Promise<void>        // asks first when dirty
-    unload(): void                                  // frees the tree and its GPU memory; close only
+    unload(): void                                  // frees the tree and its GPU memory; close, and a reload from disk or Play
 }
 export class SceneDocument extends EditorDocument {   // kind 'scene'
     sceneName: string | null = null                 // the file's own name, kept apart from modelRoot's "Scene"
@@ -124,6 +126,7 @@ export class DocumentStore extends EventDispatcher<{change: object}> {
     readonly documents: EditorDocument[] = []
     activeId: string | null = null
     constructor(readonly session: ViewerInstanceManager, readonly viewport: Viewport)
+    get mainScenePath(): string | null             // the live project setting, which Set as main scene moves
     get active(): EditorDocument | undefined
     get mainScene(): SceneDocument                    // always open, never closed
     open(path: string): Promise<EditorDocument>       // find or create, load, activate
@@ -171,6 +174,8 @@ Three details the pass must handle, all measured against today's code.
 - Scenes load with `importAsModelRoot: true` (`:1246-1249`), which merges the file's animations into the permanent `modelRoot` (`RootScene.ts:335-341`). A document loads as a plain import instead, keeps its animations on itself, and the animation plugin's generic path plays them. The serializer keeps reading `modelRoot` (`packages/engine/src/sceneSerialization.ts`), which stays correct because only the active document's roots are under it; saving an inactive dirty document attaches it first, saves, and detaches again.
 - The registry's `refs` follow the scene's add and remove events (`AssetTracker.ts:57-155`), and the last removed ref drops the entry with `removeFromRegistry`. So detaching the only document that places an asset unregisters that asset; re-attaching re-imports it through `getFromRegistry`, from the server (the importer runs with `cacheImportedAssets = false`, `:326`). So a resident document holds a ref per placed asset while it is open, the registry keeps the entry, and a re-attach never re-imports. Pass 1 still measures the switch on the terminator scene.
 - The dirty listeners are installed once per open file and never removed (`:1468`). With documents they become one set on the viewport, routed to `viewport.current`, which is where the `isExternal*` rule already decides what is the document's own.
+
+Two things landed differently from the table above. Step 7 restores the scene's environment, background and background colour by reference instead of `viewer.fromJSON(state.viewerConfig)`, because `fromJSON` refuses a serialized meta and `importConfig` re-imports every resource on each switch; two scenes with different render settings in their files do not restore each other's yet, an open item. And `unload()` also runs on a reload from disk and at Play's stop, since a reload must free the old tree; the attach installs an empty undo ledger for a document without state, so no command ever reaches a detached tree.
 
 What this buys, in Godot's terms: the resource model for free. threepipe already treats attachment as ownership, so a detached document costs CPU memory only. Decision 1 chose instant switches over memory: step 4 runs with the manager's three auto-dispose flags off and restores them after it, so a detached document keeps its GPU memory. `unload()` on close disposes it with `dispose(true)` per root node.
 
@@ -240,8 +245,8 @@ Previews, shot on 2026-09-16 against the editor at 0.20.1 with the terminator pr
 Found while shooting them, all in today's editor:
 
 - The center slot rendered no tab strip with one panel; `WindowPanesLayout` rendered `Tabs` only for two or more. Fixed on 2026-09-16 (#33): the strip renders for one panel too and the toolbars sit below it.
-- `NavProjectFileName` re-renders on `loadedNeedsSaveChange` only (`SaveProjectButton.tsx:21-35`), so the file-name button vanishes after a switch. The pass subscribes it to the store's active document.
-- An object opens with no light and no environment: `unloadScene` disposes the scene's lights and the object branch of `loadProjectFile` (`:1473`) adds none, while the material branch has its rig (`:1532-1541`). The object preview above uses the editor's Studio lighting override; the object document gets the rig of section 6.
+- `NavProjectFileName` re-rendered on the dirty flag only, so the file-name button vanished after a switch. Fixed in #36: it reads the store's active document.
+- An object opens with no light and no environment: `unloadScene` disposes the scene's lights and the object branch of `loadProjectFile` (`:1473`) adds none, while the material branch has its rig (`:1532-1541`). The object preview above used the editor's Studio lighting override; since #36 the object document carries the material document's rig.
 - Opening a file that had no asset id wrote an entry into `assets.json`. Fixed on 2026-09-16 (#34): `toAssetIdPath` mints an id on placement only, and it resolves an entry's own file key instead of assuming `f.<ext>`, so the terminator units open.
 - The Files panel opens `.scene.gltf`, `.glb`, `.gltf` and `.mat` only (`FilesPanel.tsx:564`); the texture preview was opened through `loadProjectFile` directly.
 - `.phmatgltf` is a threepipe importer format, not an editor material file. The editor's material files are `.mat` and `.mat.json` (`data/fileTypes.ts:6`).
@@ -259,12 +264,12 @@ Some things want a second live picture while the viewport shows a document: a ma
 - No text tabs unless decision 3 says so.
 - Component instances do not survive a switch. The entity plugin destroys them on `objectRemove` and rebuilds them from saved state on `objectAdd`. Edit mode does not run them, so this is invisible until Play, which runs on the main scene only.
 - Animation playback position resets on a switch, because mixers are rebuilt.
-- Undo commands hold closures over live objects. They survive a detach because the objects stay alive. They do not survive a close, which is the only time a document unloads.
+- Undo commands hold closures over live objects. They survive a detach because the objects stay alive. They do not survive a close or a reload from disk, the two times a document unloads.
 - A project plugin that assumes it sees every object ever loaded will be surprised by detach and attach. Test with the terminator project's plugins before landing.
 
 ## 7. Passes
 
-Pass 1: documents, the viewport, tabs.
+Pass 1: documents, the viewport, tabs. Pass 1a (#36) built the first, third and fourth bullets and the strip itself; pass 1b takes the keys, the Inspector hooks and persistence from the second and third.
 
 - Extract the four document classes and `DocumentStore` from `ViewerInstanceManager`; add `Viewport` with the switch protocol; replace `unloadScene()`'s dispose with the detach of 4.3, keep dispose for close; fix the registry key in `_unloadProjectFile` (`:1618`) on the way.
 - Center tabs with the two new layout props, the dirty dot and the x, `Cmd+W` and `Ctrl+Tab`, the close prompt, `localStorage` persistence.

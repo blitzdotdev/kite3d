@@ -8,11 +8,13 @@ import {WindowPanelFlap} from "./WindowPanelFlap.tsx";
 import {PopupDialogCard} from "./PopupDialogCard.tsx";
 
 export interface WindowPanel{
-    title: string
+    /** A string is title cased; a node is drawn as it is, which is how a document tab carries its icon. */
+    title: ReactNode
     content: ReactNode
     style?: CSSProperties
     key?: string
     className?: string
+    disabled?: boolean
 }
 export interface WindowPanesLayoutProps{
     panels: {
@@ -21,9 +23,12 @@ export interface WindowPanesLayoutProps{
         bottom: null | (WindowPanel|null)[]
         center: (WindowPanel|null)[]
     }
+    /** The centre tab to show. The other three slots keep their own selection. */
+    selectedCenterTabId?: string
+    onCenterTabChange?: (id: string)=>void
 }
 
-export function WindowPanesLayout({ panels }: WindowPanesLayoutProps){
+export function WindowPanesLayout({ panels, selectedCenterTabId, onCenterTabChange }: WindowPanesLayoutProps){
     const panelRefs = {
         left: useRef<ImperativePanelHandle>(null),
         right: useRef<ImperativePanelHandle>(null),
@@ -83,23 +88,26 @@ export function WindowPanesLayout({ panels }: WindowPanesLayoutProps){
         </Card>
     }
 
-    const renderPanels  = (p0: (WindowPanel|null)[], vertical = false)=> {
+    const renderPanels  = (p0: (WindowPanel|null)[], vertical = false, controlled = false)=> {
         const p = p0.filter(p=>!!p)
-        if(p.length){
-            return <Tabs
-                vertical={vertical}
-                animate={false}
-                renderActiveTabPanelOnly={true}
-                size={"medium"}
-                className={"window-panels-tabs"}
-            >
-                {p.map(({className, ...panel}, i)=>(
-                    <Tab id={panel.key || `tab-${i}`} key={panel.key || i} panel={
-                        renderPanel(panel, i)
-                    } panelClassName={className} title={toTitleCase(panel.title)} />
-                ))}
-            </Tabs>
-        }
+        if(!p.length) return
+        // One panel gets a strip too: the center slot is the document tabs, and one open document
+        // still needs its tab.
+        return <Tabs
+            vertical={vertical}
+            animate={false}
+            renderActiveTabPanelOnly={true}
+            size={"medium"}
+            className={"window-panels-tabs"}
+            selectedTabId={controlled ? selectedCenterTabId : undefined}
+            onChange={controlled && onCenterTabChange ? (id)=>onCenterTabChange(String(id)) : undefined}
+        >
+            {p.map(({className, ...panel}, i)=>(
+                <Tab id={panel.key || `tab-${i}`} key={panel.key || i} disabled={panel.disabled} panel={
+                    renderPanel(panel, i)
+                } panelClassName={className} title={typeof panel.title === 'string' ? toTitleCase(panel.title) : panel.title} />
+            ))}
+        </Tabs>
     }
 
     return  <PanelGroup className={"editorSplitContainer"} direction="horizontal" autoSaveId={"tpEditorWindowPanelsRoot"}>
@@ -127,7 +135,7 @@ export function WindowPanesLayout({ panels }: WindowPanesLayoutProps){
                         order={0}
                         className="center-top-panel"
                     >
-                        {renderPanels(panels.center)}
+                        {renderPanels(panels.center, false, true)}
                         <InteractionControlsButtonGroup key="interaction-controls" />
                         <EditPreviewButtonGroup key="editpreview" isExpanded={isExpanded} toggleExpand={toggleExpand} />
                         <PopupDialogCard/>

@@ -117,6 +117,53 @@ body{
   }
 }
 
+.document-tab {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.document-tab-kind {
+  flex: 0 0 auto;
+  opacity: 0.75;
+
+  [aria-selected="true"] & {
+    opacity: 0.95;
+  }
+}
+
+.document-tab-name {
+  white-space: nowrap;
+}
+
+.document-tab-dot {
+  background: currentcolor;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  height: 7px;
+  opacity: 0.85;
+  width: 7px;
+}
+
+// A 12px glyph is too small to aim at, so the box around it is the target.
+.document-tab-close {
+  align-items: center;
+  border-radius: 2px;
+  color: var(--pt-text-color-muted);
+  cursor: pointer;
+  display: flex;
+  flex: 0 0 auto;
+  height: 16px;
+  justify-content: center;
+  margin-left: 1px;
+  width: 16px;
+
+  &:hover {
+    background: rgb(127 127 127 / 25%);
+    color: inherit;
+  }
+}
+
 .kite3d-viewport-status-chips {
   display: flex;
   gap: 6px;
@@ -206,6 +253,8 @@ button.kite3d-status-chip {
       top: 0;
       left: 0;
       position: absolute;
+      // It covers the whole tab, so a control inside the tab would never be clicked.
+      pointer-events: none;
       //z-index: -1;
       /* The magic is here! */
       opacity: 0.15;

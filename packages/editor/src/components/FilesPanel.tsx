@@ -7,7 +7,6 @@ import {
     ButtonProps,
     Icon,
     IconName,
-    Intent,
     MaybeElement,
     MenuItem,
     Slider
@@ -15,12 +14,13 @@ import {
 import React, {FC, useEffect, useRef, useState} from "react";
 import {useObjContextMenu} from "./UseObjContextMenu.tsx";
 import {MenuItem2, MenuItemAction} from "../utils/ContextMenuUtils.ts";
-import {FileManifestEntry, getFileByPath, manifestEntryToFile, useAssets} from "../utils/AssetsProvider.ts";
+import {FileManifestEntry, getFileByPath, useAssets} from "../utils/AssetsProvider.ts";
 import {ProjectDirectoryHandle, ProjectFileHandle} from "../devserver/handles.ts";
-import {useSaveProjectFile} from "./SaveProjectButton.tsx";
+import {useDocuments} from "../documents/UseDocuments.ts";
+import {documentKind} from "../documents/DocumentStore.ts";
+import {ObjectDocument} from "../documents/ObjectDocument.ts";
 import {useDialogPrompt, useLoadingState} from "uiconfig-blueprint/lib/esm/lib";
 import {
-    IObject3D,
     PhysicalMaterial,
     PickingPlugin,
     ThreeSerialization,
@@ -132,91 +132,21 @@ const menuItemsFiles: MenuItem2[] = [{
     props: {text: 'Reveal in System File Explorer', icon: 'folder-shared'},
 }*/]
 
-function useSaveBeforeClose() {
-    const {prompt, close} = useDialogPrompt()
-    const saveBeforeClose = ()=>{
-        return new Promise<boolean|null>((resolve)=>{
-            const buttons = [{
-                label: 'Cancel',
-                value: null,
-            },{
-                label: 'No',
-                value: false,
-            },{
-                label: 'Yes',
-                value: true,
-            },]
-            let resolved = false
-            prompt({
-                canClose: false,
-                title: 'Save File',
-                message: 'You have unsaved changes, do you want to save before closing?',
-                showInput: false,
-                actions: (
-                    buttons.map((b, i)=><Button
-                        key={i}
-                        intent={b.value ? Intent.SUCCESS : b.value === false ? Intent.DANGER : Intent.NONE}
-                        onClick={() => {
-                            resolved = true
-                           close()
-                           resolve(b.value)
-                        }}>{b.label}</Button>)
-                ),
-            }).finally(()=>!resolved && resolve(null))
-        })
-    }
-    return {saveBeforeClose}
-}
-
 export function FilesPanelGrid({}: {
 }){
     const {selectedFiles, setSelectedFiles, currentPath, setCurrentPath, fileManifest, refreshManifest }= useAssets()
 
     const {project} = useProject()
-    const {saveProjectFile} = useSaveProjectFile()
     const manager = useManager()
-
-    const {saveBeforeClose} = useSaveBeforeClose()
+    const {store} = useDocuments()
 
     const {loadingState, updateLoading} = useLoadingState()
 
-    const loadFile = async (f: FileManifestEntry | string)=>{
-        if(!manager.loadedProjectFile) return // todo loading another file
+    // Opening a file adds a tab. Nothing closes, so nothing asks about unsaved edits here.
+    const loadFile = async (path: string)=>{
         if(project !== manager.loadedProject || !project) return // another or no project loaded. todo error?
-        const g = async (force = false)=>{
-            const fi = typeof f !== 'string' ? await manifestEntryToFile(f) : null
-            const r = await manager.getLoadedFile(project, typeof f === 'string' ? f : f.path, fi || undefined)
-            if(r){
-                const res = await manager.loadProjectFile(r, force).catch(e=>{
-                    return {error: e?.message ?? 'Unknown error'}
-                })
-                const r2 = showSuccessErrorToast(res ? `Loaded ${r.path} successfully` : 'Unknown Error', 'Unable to load file', res as ErrorRes)
-            }else {
-                // directory or something
-            }
-        }
-        if(manager.loadedNeedsSave) {
-            // const v = manager.get()
-            // const yes= await v.dialog.confirm('You have unsaved changes. Are you sure you want to open a new file and lose those changes?')
-            const res = await saveBeforeClose()
-            if(res) {
-                // save and load
-                const saved = await saveProjectFile()
-                if(!saved){
-                    // save failed or cancelled
-                    return
-                }
-                await g()
-            }else if(res === false) {
-                // don't save, just load, which will unload current file
-                await g(true)
-            }else {
-                // cancelled
-                return
-            }
-        }else{
-            await g()
-        }
+        const res = await store.open(path).catch(e=>({error: e?.message ?? 'Unknown error'}))
+        if (res && 'error' in res) showSuccessErrorToast('', 'Unable to open file', res as ErrorRes)
     }
 
     let items = fileManifest
@@ -507,11 +437,13 @@ export class MyComponent extends Object3DComponent {
                 ])
             if(!change) return
             await manager.settingsManager.setMainScene(data.file.path)
-            await loadFile(data.file)
+            store.changed()     // the close cross moves to the tab that is no longer the main scene
+            await loadFile(data.file.path)
         },
         importFileModel: async (data: { file: FileManifestEntry })=>{
             if(!project) return {error: 'No project loaded'}
-            if(!manager.loadedScene && !(manager.loadedAssetObj as IObject3D)?.isObject3D){
+            const active = store.active
+            if(active?.kind !== 'scene' && active?.kind !== 'object'){
                 return { error: 'No scene/asset loaded to import the model into'}
             }
             const obj = await manager.loadAssetObjectClone(data.file, project)
@@ -526,9 +458,8 @@ export class MyComponent extends Object3DComponent {
                 autoCenter: true,
                 // indexInParent
             }
-            if(manager.loadedAssetObj){
-                const root = manager.loadedAssetObj as IObject3D
-                root.add(obj)
+            if(active instanceof ObjectDocument){
+                active.object.add(obj)
             }else {
                 manager.get().scene.addObject(obj)
             }
@@ -561,16 +492,13 @@ export class MyComponent extends Object3DComponent {
             setCurrentPath(f.path)
             setSelectedFiles([])
         } else {
-            const allowedTypes = ['.scene.gltf', '.glb', '.gltf', '.mat', /*'.glb', '.mat.json', '.js', '.ts'*/]
-            if (allowedTypes.some(ext => f.path.endsWith(ext))) {
-                // todo check type of file and open it if possible
-                // check for needssave
+            if (documentKind(f.path)) {
                 if (newTab) {
                     // todo
                     // window.open(window.location.pathname + '?project=' + encodeURIComponent(f.path) + (project?.path ? '&base=' + encodeURIComponent(project.path) : ''), '_blank')
                     return
                 }
-                updateLoading(f.path, loadFile(f))
+                updateLoading(f.path, loadFile(f.path))
             }
         }
     }

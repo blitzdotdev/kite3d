@@ -21,6 +21,7 @@ import {assetUrlPrefix, settingsKey} from "../utils/project.ts";
 import {iconForSelectionObject, iconForSelectionObjectType} from "../utils/icons.tsx";
 import {useProject} from "../utils/UseProject.ts";
 import {useManager} from "../utils/UseManager.ts";
+import {useDocuments} from "../documents/UseDocuments.ts";
 import { typesExts } from "../data/fileTypes.ts";
 
 type FilterItem = SelectedInspectorItem|SelectFileRef
@@ -96,6 +97,7 @@ export function RefSelectionObjectComponentInput(props: RefSelectionObjectCompon
     const manager = useManager()
     const viewer = manager.get()
     const picking = viewer.getPlugin(PickingPlugin)
+    const activeRootPath = useDocuments().store.active?.rootPath
 
     const {fileManifest} = useAssets()
     // const assetManifest = manager.assetManifest
@@ -192,7 +194,7 @@ export function RefSelectionObjectComponentInput(props: RefSelectionObjectCompon
     if (props.objectType === 'material') {
         // materials in the scene that do not belong to an asset (or belong to the loaded main asset)
         viewer.object3dManager.getMaterials().forEach(m=>{
-            if(m._tpRootPath && m._tpRootPath !== manager.loadedPath) return // skip materials that belong to other assets
+            if(m._tpRootPath && m._tpRootPath !== activeRootPath) return // skip materials that belong to other assets
             if(!m.appliedMeshes.size) return
             if(!m.assetType) return // if IMaterial
             if(!m.name) return // todo unnamed / internal
@@ -207,7 +209,7 @@ export function RefSelectionObjectComponentInput(props: RefSelectionObjectCompon
     if (props.objectType === 'texture') {
         // textures in the scene that do not belong to an asset (or belong to the loaded main asset)
         viewer.object3dManager.getTextures().forEach(m=>{
-            if(m._tpRootPath && m._tpRootPath !== manager.loadedPath) return // skip textures that belong to other assets
+            if(m._tpRootPath && m._tpRootPath !== activeRootPath) return // skip textures that belong to other assets
             // if(m._tpRootPath && m._tpRootPath !== manager.loadedAssetId) return // skip textures that belong to other assets
             if(!m.appliedObjects?.size) return
             if(!m.assetType) return // if ITexture

@@ -22,6 +22,7 @@ import {environmentCommand, materialCommand, objectCommand, textureCommand} from
 import {TExternalFile} from "../components/ExternalFilesPanel.tsx";
 import {assetableFileTypes, isExternalObject, notAssetableFileTypes} from "./projectUtils.ts";
 import {showErrorToast} from './Toaster.tsx';
+import type {ObjectDocument} from "../documents/ObjectDocument.ts";
 
 type DraggedItem = IMaterial | IObject3D | ITexture
 
@@ -361,7 +362,9 @@ export class CanvasFileDropHandler extends AViewerPluginSync{
         mesh: IObject3D|null, final = false,
         options: {index?: number, intersects?: Array<Intersection<IObject3D>>}
     ){
-        const assetRoot = this.manager.loadedScene ? this._viewer?.scene.modelRoot : this.manager.loadedAssetObj as IObject3D
+        // A drop lands in the document on the viewport: the scene's model root, or the open asset.
+        const active = this.manager.store?.active
+        const assetRoot = active?.kind === 'scene' ? this._viewer?.scene.modelRoot : (active as ObjectDocument | undefined)?.object
         if(!this._viewer) return false // for types
 
         if(!assetRoot) return false

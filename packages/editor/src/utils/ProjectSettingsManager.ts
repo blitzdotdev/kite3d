@@ -174,7 +174,7 @@ export class ProjectSettingsManager extends EventDispatcher<{}> {
 
     /** True when the page is reloading, so the caller stops. */
     private async reloadForDependencies() {
-        if (this.manager.loadedNeedsSave) {
+        if (this.manager.store?.documents.some(d => d.dirty)) {
             const reload = await ask('Dependencies changed', 'The editor reloads to pick up new dependencies. Unsaved changes are lost.', [
                 {label: 'Keep editing', value: false},
                 {label: 'Reload', value: true, intent: 'danger'},

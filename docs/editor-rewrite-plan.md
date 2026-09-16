@@ -679,7 +679,7 @@ Nobody runs a separate install step, so the registration happens by itself. The 
 
 ### 10.2 The door at `kite3d.dev`
 
-The landing page gets one button, "Open engine", a link to `kite3d://open`, under a copy-pastable one-liner, `npx -y kite3d@next init my-game` (the `@next` goes when 0.20.0 reaches `latest`). Next to the button, one line: "First time here? Run the command above once." Shipped on 2026-09-15 from blitz-cloud, worker `kite3d-landing` on the blitzmen account.
+The landing page gets one button, "Open engine", a link to `kite3d://open`, under a copy-pastable one-liner, `npx -y kite3d init my-game` (0.20.0 is on `latest` since 2026-09-15). Next to the button, one line: "First time here? Run the command above once." Shipped on 2026-09-15 from blitz-cloud, worker `kite3d-landing` on the blitzmen account.
 
 ```
  kite3d.dev ─ click "Open engine" ─► <a href="kite3d://open">

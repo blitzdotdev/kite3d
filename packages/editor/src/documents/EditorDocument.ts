@@ -44,6 +44,11 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
     rootMeta: {gltfAsset?: any, gltfExtras?: any} = {}
     /** False until the viewport has shown this document once. */
     shownOnce = false
+    /**
+     * False until this document has read its file. A tab restored from the last session starts cold
+     * and reads its file when it is first shown, so nothing may touch `nodes` while this is false.
+     */
+    loaded = false
 
     protected constructor(
         readonly path: string,
@@ -85,8 +90,14 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
         return this.session.get()
     }
 
-    /** Disk to memory. No viewer involved: the nodes come out detached. */
-    abstract load(): Promise<void>
+    /** Disk to memory. The one place a document stops being cold. */
+    async load(): Promise<void> {
+        await this.read()
+        this.loaded = true
+    }
+
+    /** The kind's own read of the file. No viewer involved: the nodes come out detached. */
+    protected abstract read(): Promise<void>
 
     /** Memory to disk, through the handle with the base sha. A 412 asks. */
     abstract save(): Promise<SaveResult>
@@ -125,6 +136,7 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
     /**
      * Frees the tree and its GPU memory. A close calls it, and so does a reload, which must free the
      * old tree before it reads the new one. The plan named close alone; the reload is the deviation.
+     * `loaded` stays true: a close drops the document, and a reload gives it a tree again at once.
      */
     unload() {
         const tracker = this.viewer.assetManager.tracker

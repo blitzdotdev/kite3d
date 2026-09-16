@@ -90,7 +90,9 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
     importedViewerConfig?: ISerializedViewerConfig  // the WEBGI_viewer extension, applied on the first attach
     state?: ViewportState                              // captured on detach, applied on attach
     dirty = false
-    abstract load(): Promise<void>                  // disk to memory through the handle; no viewer involved
+    loaded = false                                  // false for a tab restored cold; nothing reads nodes until it is true
+    load(): Promise<void>                           // reads the file through the handle, then sets loaded
+    protected abstract read(): Promise<void>        // the kind's own read; no viewer involved
     abstract save(): Promise<SaveResult>            // {error, warn}, the toast's shape; through the handle with the base sha; 412 asks
     abstract reloadFromDisk(): Promise<void>        // asks first when dirty
     unload(): void                                  // frees the tree and its GPU memory; close, and a reload from disk or Play
@@ -193,7 +195,7 @@ Open, from the Files panel (`openFile`, `FilesPanel.tsx:559`; the extension gate
 
 Switch: 4.3. The hierarchy, the materials, textures and geometries trees and the inspector bind to `useActiveDocument()`; materials and geometries already filter by the attached root (`utils/three/filterObjectsInSceneRoot.ts`), and textures do too now (`BPTexturesTreeComponent.tsx:83`), so the lists are correct either way.
 
-Close: the dirty prompt is today's `useSaveBeforeClose` (`FilesPanel.tsx:135-169`: Cancel, No, Yes) moved to a shared place and called from the tab's x and from Cmd+W. A document that is current is hidden first. `unload()` frees its tree with `dispose(true)` on each root. The main scene cannot be closed.
+Close: the dirty prompt is today's `useSaveBeforeClose` (`FilesPanel.tsx:135-169`: Cancel, No, Yes) moved to a shared place and called from the tab's x and from Alt+W. A document that is current is hidden first. `unload()` frees its tree with `dispose(true)` on each root. The main scene cannot be closed.
 
 Save: Cmd+S stays the one listener in `SaveProjectButton` (`:54-65`) and calls `store.save()`. A scene serializes inside `withIsolateVisibilityRestored` (`EditModePlugin.ts:276`) with its own `sceneName` and the manifest, through the engine's `serializeSceneGltf`, and updates its `savedHash`. An object or material saves through `saveProjectAsset`, which becomes reachable from the Inspector too (the gate at `InspectorPanelComponent.tsx:162` learns that the opened document is editable). A texture answers the toast it answers today.
 
@@ -222,14 +224,14 @@ Memory: a document stays loaded and resident until it is closed; nothing unloads
 
 ### 4.5 Keyboard and focus
 
-With one viewer and no text view, the old fight between two viewers and the fight between the viewport and a text editor are both gone. What remains is the tab strip itself: `Cmd+W` closes the active tab through the prompt, `Ctrl+Tab` and `Ctrl+Shift+Tab` cycle, and the existing target checks (`EditModePlugin.ts:418`, `:438`; `PickingPlugin.ts:200`) keep the viewport shortcuts out of inputs. The isolate and speed keys already return when rendering is off.
+With one viewer and no text view, the old fight between two viewers and the fight between the viewport and a text editor are both gone. What remains is the tab strip itself: `Alt+W` closes the active tab through the prompt, `Alt+]` and `Alt+[` cycle, and the existing target checks (`EditModePlugin.ts:418`, `:438`; `PickingPlugin.ts:200`) keep the viewport shortcuts out of inputs. Revision 3 asked for `Cmd+W` and `Ctrl+Tab` and was wrong: a browser keeps those for its own window and never sends them to the page, so `Alt` is the only modifier the editor can have, matched on `event.code` because `Option+W` types another character on macOS. A dirty document instead answers the browser's own close through a `beforeunload` ask. The isolate and speed keys already return when rendering is off.
 
 ### 4.6 The UI
 
 - The center slot gets one entry per document instead of the single `Content` entry (`ThreeEditorComponent.tsx:254-262`). `WindowPanesLayout` grows the two props revision 2 assumed and today lacks, `selectedTabIds` and `onTabChange`, and `WindowPanel.title` widens to `ReactNode` for a kind icon, the name, a dot when dirty and an x. Blueprint's `Tab.title` already accepts a node.
 - The viewport canvas mounts once, the way `ThreeEditorComponent.tsx:180-187` does today, and stays mounted across switches; only the store's active id changes. The chips (`EditModeStatusChips`, `:261`) stay on the viewport.
 - The navbar's file-name button (`NavProjectFileName`, `:412-427`) shows the active document's name and its asterisk from the document's dirty flag; the picker popover beside it is untouched.
-- The Files panel's open action calls `store.open`; the Inspector's Edit Asset opens the asset's document instead of selecting the hidden source object; the Inspector's header shows the active document's name.
+- The Files panel's open action calls `store.open`; the Inspector's Edit Asset opens the asset's document instead of selecting the hidden source object; the Inspector's header names what it inspects, which is the picked object when there is one and the active document when there is not.
 - Files and Library stay project-level in the bottom slot. A drop lands on the active document (`CanvasFileDropHandler.tsx:116-118`, the drop root read from the document at `:364`).
 
 Previews, shot on 2026-09-16 against the editor at 0.20.1 with the terminator project. The tab strip is drawn over the running editor; everything else is the editor as it is. Each tab carries the kind icon the Files panel already uses for that extension (`icons.tsx`), the name, a dot when dirty and an x.
@@ -251,6 +253,11 @@ Found while shooting them, all in today's editor:
 - The Files panel opens `.scene.gltf`, `.glb`, `.gltf` and `.mat` only (`FilesPanel.tsx:564`); the texture preview was opened through `loadProjectFile` directly.
 - `.phmatgltf` is a threepipe importer format, not an editor material file. The editor's material files are `.mat` and `.mat.json` (`data/fileTypes.ts:6`).
 
+Found while building pass 1b (#37), open:
+
+- Play leaves the main scene dirty. After Run and Stop the scene text differs in the scene camera's `far`, 2000 to about 706, which threepipe's `autoNearFar` derives during the run. The same class as the shadow cameras of #35: a render-derived value the serializer writes. The fix belongs in the serializer, after a measurement.
+- Save Asset on a `.gltf` path writes a binary glB under the `.gltf` name, because the exporter hardcodes binary; the `.bin` beside it is orphaned. Not new, the navbar Save did the same. What a `.gltf` path saves as is the owner's decision.
+
 
 ## 5. Later: views as render targets
 
@@ -269,10 +276,10 @@ Some things want a second live picture while the viewport shows a document: a ma
 
 ## 7. Passes
 
-Pass 1: documents, the viewport, tabs. Pass 1a (#36) built the first, third and fourth bullets and the strip itself; pass 1b takes the keys, the Inspector hooks and persistence from the second and third.
+Pass 1: documents, the viewport, tabs. Pass 1a (#36) built the first, third and fourth bullets and the strip itself; pass 1b built the keys, the Inspector hooks and the tab memory from the second and third.
 
 - Extract the four document classes and `DocumentStore` from `ViewerInstanceManager`; add `Viewport` with the switch protocol; replace `unloadScene()`'s dispose with the detach of 4.3, keep dispose for close; fix the registry key in `_unloadProjectFile` (`:1618`) on the way.
-- Center tabs with the two new layout props, the dirty dot and the x, `Cmd+W` and `Ctrl+Tab`, the close prompt, `localStorage` persistence.
+- Center tabs with the two new layout props, the dirty dot and the x, `Alt+W` and `Alt+]`, the close prompt, `localStorage` persistence.
 - The undo ledger per document; Save Asset reachable from the Inspector for an opened asset; Play pinned to the main scene with the strip disabled while it runs; the session's listener routed through the store.
 - Open never writes to `assets.json`: `toAssetIdPath` (`:1287-1309`) registers an id on placement and save only, and it resolves an entry's own file key instead of assuming `f.<ext>`. The object document gets the material document's light rig. The dirty flag that appears after a load with no edit was measured in #34: the only diff is the point light's shadow camera, whose `far` and `up` three derives during the first shadow render and the exporter writes into `WEBGI_light_extras`. Fixed on 2026-09-16 (#35): the engine serializer drops the shadow camera of point and spot lights, and the terminator scene now settles clean after a load.
 - Evidence, headless: two scenes, one object, one material and one texture open; screenshots per switch; `viewer.object3dManager` material and geometry counts equal to the active document's after every switch; `renderer.info.memory.textures` holds across a detach and drops after a close; a save of an inactive dirty scene writes its file and leaves the active one on the viewport; opening a path twice focuses the tab; the switch time on the terminator scene measured and in the report, with the registry re-import cost separated out.

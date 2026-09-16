@@ -12,7 +12,7 @@ export class TextureDocument extends EditorDocument {
         super(path, 'texture', session, viewport)
     }
 
-    async load() {
+    protected async read() {
         const res = await this.importAsset()
         if (!(res as ITexture).isTexture) throw new Error('Not a texture: ' + this.path)
         this.texture = res as ITexture

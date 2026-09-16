@@ -39,6 +39,8 @@ import {EditModePlugin} from '../utils/EditModePlugin.ts';
 import {useDocuments} from '../documents/UseDocuments.ts';
 import {useCloseDocument} from '../documents/UseCloseDocument.tsx';
 import {DocumentTab} from '../documents/DocumentTab.tsx';
+import {useTabKeys} from '../documents/UseTabKeys.ts';
+import {showErrorToast} from '../utils/Toaster.tsx';
 
 
 export function RefUiConfigComponent(props: BPComponentProps<any>){
@@ -105,6 +107,7 @@ export function ThreeEditorComponent() {
     const { project } = useProject()
     const {documents, activeId, store} = useDocuments()
     const {closeDocument} = useCloseDocument()
+    useTabKeys()
     const isRunning = manager.playMode.isRunningMode
 
     // const [splitSizes, setSplitSizes] = useState([0, 100, 0])
@@ -249,7 +252,9 @@ export function ThreeEditorComponent() {
                 <WindowPanesLayout
                     key={viewer.scene.uuid} // force rerender when viewer change, because we might add events to the viewer in sub components like BPHierarchyComponent
                     selectedCenterTabId={activeId ?? undefined}
-                    onCenterTabChange={(id)=>void store.activate(id)}
+                    // A cold tab reads its file on this click, and a file that has gone bad since the
+                    // last session says so here.
+                    onCenterTabChange={(id)=>void store.activate(id).catch(e=>showErrorToast(`Unable to open ${id}`, e))}
                     panels={{
                         left:
                             Object.entries(editorLeftTabs).map(([k, TabPanel])=>({

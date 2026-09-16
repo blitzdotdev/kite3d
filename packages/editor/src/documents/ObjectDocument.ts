@@ -13,7 +13,7 @@ export class ObjectDocument extends EditorDocument {
         super(path, 'object', session, viewport)
     }
 
-    async load() {
+    protected async read() {
         const res = await this.importAsset()
         if (!(res as IObject3D).isObject3D) throw new Error('Not a 3D object: ' + this.path)
         this.object = res as IObject3D

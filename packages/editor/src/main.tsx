@@ -68,12 +68,9 @@ async function openServedProject() {
     )
     manager.initialize()
 
-    // The editor renders first. A main scene that does not load is one broken file, and the user
-    // needs the Files panel to reach it, not a blank page.
-    const mainScene = store.mainScenePath
-    if (mainScene) {
-        await store.open(mainScene).catch((e) => showErrorToast(`Unable to open ${mainScene}`, e))
-    }
+    // The editor renders first. A file that does not load is one broken file, and the user needs the
+    // Files panel and the strip to reach it, not a blank page.
+    await store.restore().catch((e) => showErrorToast('Unable to open the last tabs', e))
     window.kite3dProjectLoaded = true
 }
 

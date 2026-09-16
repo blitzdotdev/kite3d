@@ -7,7 +7,6 @@ import {
     IMaterial,
     IObject3D,
     ITexture,
-    PickingPlugin,
     UiObjectConfig
 } from "threepipe";
 import {
@@ -22,11 +21,11 @@ import type {IconName} from "@blueprintjs/icons";
 import {MaybeElement} from "@blueprintjs/core/src/common/props.ts";
 import React, {ReactElement, useCallback, useEffect, useState} from "react";
 import {TexturePreview} from "./BPTextureFileComponent.tsx";
-import {showSuccessErrorToast} from "../utils/Toaster.tsx";
+import {showErrorToast, showSuccessErrorToast} from "../utils/Toaster.tsx";
 import {assetUrlPrefix, ExternalPlugin, ExternalScript} from "../utils/project.ts";
 import {useListenProperty} from "./UseListenProperty.tsx";
 import {useAsyncMemo} from "./UseAsyncMemo.tsx";
-import {iconForSelectionObject} from "../utils/icons.tsx";
+import {fileToIcon, iconForSelectionObject} from "../utils/icons.tsx";
 import {refreshTexturePreview} from "../utils/three/refreshTexturePreview.ts";
 import {isGeomEditable, isTexEditable} from "../utils/three/assetEditorChecks.ts";
 import {useProject} from "../utils/UseProject.ts";
@@ -54,8 +53,6 @@ export function InspectorPanelComponent({...props}: PanelActions & InspectorPane
     const selFile = !selObject && selectedFiles.length === 1 ? selectedFiles[0] : null
     const manager = useManager()
     const viewer = manager.get()
-    const picking = manager.get()?.getPlugin(PickingPlugin)
-    // const picking = viewer?.getPlugin(PickingPlugin)
     // const objectSelUiConfig = useMemo<UiObjectConfig[]|undefined>(()=>object ? picking?.objectSelectionUiConfig(object) : undefined, [object])
     // const objectMatManageUiConfig = useMemo<UiObjectConfig[]|undefined>(()=>object ? picking?.objectMaterialManageUiConfig(object) : undefined, [object])
     const {project} = useProject()
@@ -159,9 +156,12 @@ export function InspectorPanelComponent({...props}: PanelActions & InspectorPane
     const assetRootPath1 = manager.resolveAssetIdPath(assetRootPath2)
 
     const assetRootPathAsset = useAsyncMemo(async ()=>assetRootPathFull ? manager.getAssetFromPath(assetRootPathFull) : null, [manager, assetRootPathFull])
-    const instanceRootPathAsset = useAsyncMemo(async ()=>instanceRootPath ? manager.getAssetFromPath(instanceRootPath) : null, [manager, instanceRootPath])
 
-    const assetRootPathCanEdit = !!assetRootPathAsset && !assetRootUid && loadedAssetMain !== assetRootPathAsset
+    // An open object or material tab is the asset itself, so editing it and saving it are the point
+    // of the tab. A texture tab stays view only, which is the decision its save toast already says.
+    const openDocumentIsEditable = store.active?.kind === 'object' || store.active?.kind === 'material'
+    const assetRootPathCanEdit = !!assetRootPathAsset && !assetRootUid &&
+        (loadedAssetMain !== assetRootPathAsset || openDocumentIsEditable)
     const buttons: ReactElement[] = []
 
     // saves selObject
@@ -169,6 +169,8 @@ export function InspectorPanelComponent({...props}: PanelActions & InspectorPane
     if(selObject && assetRootPathAsset && assetRootPathCanEdit) {
         const resetAsset = async ()=>{
             if(!assetRootPath1 || !project || !assetRootPathAsset) return
+            // The open tab owns its tree, and loadAsset would hand back the copy it already shows.
+            if (store.active?.asset === assetRootPathAsset) return store.active.reload()
             const entry = getFileByPath(assetRootPath1, fileManifest)
             if(!entry) {
                 console.error('Could not find file in manifest: ' + assetRootPath1, fileManifest)
@@ -220,77 +222,20 @@ export function InspectorPanelComponent({...props}: PanelActions & InspectorPane
         )
     }
 
-    // if its a child of an asset component, show edit to go to the source, and reset to reset the source asset(everything)
-    if(selObject && assetRootPathAsset && assetRootUid) {
-        const editAsset = async ()=>{
-            if(!selObject || !project || !assetRootPathAsset || assetRootPathCanEdit || !assetRootPath1) return
+    // Edit Asset opens the asset's own file as a tab, for a placed instance and for a clone of a
+    // child alike. It used to select the source object the registry holds, which sits in no scene.
+    const editAssetPath = assetRootUid && assetRootPathAsset ? assetRootPath1
+        : isAssetInstance ? manager.resolveAssetIdPath(instanceRootPath)
+            : null
 
-            if(!assetRootPathAsset.isObject3D && !assetRootPathAsset.isMaterial){
-                console.error('Asset is not an object3D or material', assetRootPathAsset, assetRootPath1)
-                return
-            }
-            let obj: IObject3D | IMaterial | undefined
-            if(!assetRootUid){
-                obj = assetRootPathAsset as IObject3D | IMaterial
-            }else {
-                if(assetRootPathAsset.isObject3D) {
-                    // todo traverse schildren?
-                    assetRootPathAsset.traverse((s: IObject3D) => {
-                        if (!obj && s.uuid === assetRootUid) {
-                            obj = s
-                        }
-                    })
-                }else {
-                    console.error('Cannot edit child of non-object asset')
-                }
-            }
-            // if(!obj) {
-            //     console.error('Could not find object in asset to edit', assetRootUid, assetRootPathAsset)
-            // }
-            if(obj) {
-                picking?.setSelectedObject(obj || null, false)
-            }
-
-            return obj
-        }
-
+    if(selObject && editAssetPath) {
         buttons.push(
             <Button key={"editButton"} icon={<Icon icon={"edit"} size={14}/>}
                     size={"small"} variant={"minimal"}
                     title={"Edit Asset"} intent={Intent.WARNING}
                     loading={loadingState['editAsset']}
-                //todo handle error/null from fn return
-                    onClick={() => updateLoading('editAsset', editAsset())}
-            />
-        )
-
-    }
-
-
-    // if its instance of an asset, show edit to go to the source asset
-    if(selObject && isAssetInstance && instanceRootPath) {
-        const editAssetFromInstance = async ()=>{
-            if(!selObject || !project || !instanceRootPathAsset) return
-            if(!instanceRootPathAsset.isObject3D && !instanceRootPathAsset.isMaterial){
-                console.error('Asset is not an object3D or material', instanceRootPathAsset, instanceRootPath)
-                return
-            }
-            let obj: IObject3D | IMaterial | undefined
-            obj = instanceRootPathAsset as IObject3D | IMaterial
-            if(obj) {
-                const picking = manager.get()?.getPlugin(PickingPlugin)
-                picking?.setSelectedObject(obj || null, false)
-            }
-            return obj
-        }
-
-        buttons.push(
-            <Button key={"editButton"} icon={<Icon icon={"edit"} size={14}/>}
-                    size={"small"} variant={"minimal"}
-                    title={"Edit Asset"} intent={Intent.WARNING}
-                    loading={loadingState['editAsset']}
-                    //todo handle error/null from fn return
-                    onClick={() => updateLoading('editAsset', editAssetFromInstance())}
+                    onClick={() => updateLoading('editAsset', store.open(editAssetPath)
+                        .catch(e => showErrorToast(`Unable to open ${editAssetPath}`, e)))}
             />
         )
 
@@ -301,6 +246,12 @@ export function InspectorPanelComponent({...props}: PanelActions & InspectorPane
     if(selFile?.path) {
         title = selFile.path
         icon = 'document'
+    }
+    // Nothing is picked, so the Inspector belongs to the document on the viewport. It names it the
+    // way that document's tab does.
+    else if(inspectingScene && store.active) {
+        title = store.active.name
+        icon = fileToIcon({path: store.active.path, type: 'file'})
     }
     else if(inspectingScene) title = 'Global Settings'
     else if(assetRootPathAsset && assetRootPath1) {

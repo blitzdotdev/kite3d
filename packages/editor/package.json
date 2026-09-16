@@ -13,7 +13,8 @@
     "build": "tsc && vite build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext ts,tsx --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "dependencies": {
     "@kite3d/engine": "0.20.1",
@@ -64,6 +65,7 @@
     "sass": "^1.69.5",
     "typescript": "^5.7.2",
     "vite": "^6.3.5",
+    "vitest": "^3.2.4",
     "zod": "^4.1.13"
   }
 }

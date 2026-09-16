@@ -1,5 +1,6 @@
 import './renderer.scss'
 import {BlueprintProvider, FocusStyleManager} from "@blueprintjs/core";
+import {getIconPaths, Icons} from '@blueprintjs/icons'
 import {AppToasterOverlay, VisualStyleProvider} from 'uiconfig-blueprint/lib/esm/lib'
 import App from './App.tsx'
 import {createRoot} from 'react-dom/client'
@@ -18,6 +19,9 @@ declare global {
     }
 }
 
+Icons.setLoaderOptions({
+    loader: async (iconName, iconSize) => getIconPaths(iconName, iconSize),
+})
 FocusStyleManager.onlyShowFocusOnTabs();
 
 async function openServedProject() {
@@ -66,4 +70,4 @@ async function openServedProject() {
     window.kite3dProjectLoaded = true
 }
 
-void openServedProject()
+void Icons.loadAll().then(openServedProject)

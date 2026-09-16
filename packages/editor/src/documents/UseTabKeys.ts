@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import {useManager} from '../utils/UseManager.ts'
 import {useDocuments} from './UseDocuments.ts'
 import {useCloseDocument} from './UseCloseDocument.tsx'
+import {showErrorToast} from '../utils/Toaster.tsx'
 
 /**
  * The tab strip's keys. Cmd+W closes the active tab through the same prompt its cross uses, and
@@ -35,7 +36,9 @@ export function useTabKeys() {
                 event.preventDefault()
                 const step = event.shiftKey ? -1 : 1
                 const at = paths.indexOf(store.activeId ?? '')
-                void store.activate(paths[(at + step + paths.length) % paths.length])
+                const next = paths[(at + step + paths.length) % paths.length]
+                // A cold tab reads its file here, and a file gone bad says so, the way a click does.
+                void store.activate(next).catch(e => showErrorToast(`Unable to open ${next}`, e))
             }
         }
         window.addEventListener('keydown', onKeyDown)

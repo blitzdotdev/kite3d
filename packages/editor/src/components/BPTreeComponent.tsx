@@ -18,6 +18,18 @@ export abstract class BPTreeComponent<T = {}, TConfigVal extends any /*|Primitiv
 
     protected _infoMap = new Map<string | number, TreeNodeInfo<T>>()
 
+    private _treeRef = React.createRef<Tree2<T>>()
+
+    /**
+     * Brings a row into view, and answers whether the row was there. A caller that has just opened
+     * the tree can try again on the next frame while this is false.
+     */
+    scrollToNode(id: string | number) {
+        const el = this._treeRef.current?.getNodeContentElement(id)
+        el?.scrollIntoView({block: 'nearest'})
+        return !!el
+    }
+
     protected _createNodeInfo(id: string, obj: T) {
         return {
             id,
@@ -249,6 +261,7 @@ export abstract class BPTreeComponent<T = {}, TConfigVal extends any /*|Primitiv
                 }}
             >
             <TreeT
+                ref={this._treeRef}
                 contents={this.state.nodes}
                 className={"folderContent " + (this.props.className||'')}
                 canDropNode={(node, path, targetNode, targetPath, index) => {

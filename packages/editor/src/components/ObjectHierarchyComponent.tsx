@@ -7,6 +7,10 @@ import {useOnObjectCreate} from "./UseOnObjectCreate.tsx";
 import {Object3DGenerationMenu} from "./Object3DGenerationMenu.tsx";
 import {useManager} from "../utils/UseManager.ts";
 import {useMakeAsset} from "../utils/UseMakeAsset.ts";
+import {useDocuments} from "../documents/UseDocuments.ts";
+import {documentKind} from "../documents/DocumentStore.ts";
+import {assetUrlPrefix} from "../utils/project.ts";
+import {showErrorToast} from "../utils/Toaster.tsx";
 
 export function ExtraMenuItems(props: {
     event: React.MouseEvent<HTMLElement>,
@@ -54,6 +58,21 @@ export function ObjectHierarchyComponent({className}: { className: string }) {
     // })
 
     const contextMenu = useContextMenu()
+    const {store} = useDocuments()
+
+    /**
+     * A placed asset names the file it came from in userData.rootPath. A double click on that row
+     * opens the file as a document, the same call the Inspector's Edit Asset button makes. A clone
+     * of an asset child carries _tpRootPath instead, and that one stays a plain row.
+     */
+    const onOpenAsset = (obj: IObject3D) => {
+        const rootPath = (obj as {_tpRootPath?: string})._tpRootPath ? null : obj.userData?.rootPath
+        if (!rootPath || !rootPath.startsWith(assetUrlPrefix)) return false
+        const path = manager.resolveAssetIdPath(rootPath)
+        if (!path || path.startsWith(assetUrlPrefix) || !documentKind(path)) return false
+        store.open(path).catch(e => showErrorToast(`Unable to open ${path}`, e))
+        return true
+    }
 
     const config: UiObjectConfig = useMemo(() => ({
         type: 'hierarchy',
@@ -71,6 +90,7 @@ export function ObjectHierarchyComponent({className}: { className: string }) {
         <BPHierarchyComponent
             config={config}
             key={viewer.scene.modelRoot.uuid} // this is required because viewer can be destroyed and recreated
+            onOpenAsset={onOpenAsset}
             handleContextMenu={(e, items, obj) => {
                 contextMenu.handleContextMenu({
                     event: e,

@@ -8,11 +8,10 @@ import {
     ThreeViewer,
     UiObjectConfig
 } from "threepipe";
-import {
-    bpUiConfigIcons,
-    UiConfigRendererContextType
-} from 'uiconfig-blueprint/lib/esm/lib'
-import {filterObjectsInSceneRoot} from "../utils/three/filterObjectsInSceneRoot.ts";
+import {UiConfigRendererContextType} from 'uiconfig-blueprint/lib/esm/lib'
+import {sceneMaterials} from "../utils/three/sceneResources.ts";
+import {selectResource} from "../utils/three/selectResource.ts";
+import {iconForMaterial} from "../utils/icons.tsx";
 import React, {useMemo} from "react";
 import {useObjContextMenu} from "./UseObjContextMenu.tsx";
 import {HandleContextMenuCallback, MenuItem2} from "../utils/ContextMenuUtils.ts";
@@ -46,61 +45,19 @@ export class BPMaterialsTreeComponent<T extends IMaterial = IMaterial> extends B
         // if(!obj.isMesh && !obj.isLine && !obj.isPoints && !obj.isScene && !obj.isCamera && !obj.isLight)
         //     node.childNodes = ((obj.children as T[]) || []).reduce<any[]>((...args) => this.buildData(...args), [])
         node.isSelected = this._selectedIds?.includes(node.id as string) ?? false
-        if(obj.isPhysicalMaterial){
-            node.icon = bpUiConfigIcons['shape-sphere-filled-1']({style: {color: 'transparent'}, className: 'bp5-tree-node-icon-svg'})
-        }
-        if(obj.isUnlitMaterial){
-            node.icon = 'full-circle'
-        }
+        node.icon = iconForMaterial(obj)
         return node;
     }
 
     protected _getRootNodes(): T[] {
-        // const v = this.context.methods.getRawValue(this.props.config)
-        // const materials = new Set<IMaterial>()
-        // v?.traverse((obj) => {
-        //     if (obj.material) {
-        //         const mats = Array.isArray(obj.material) ? obj.material : [obj.material]
-        //         for (const mat of mats) {
-        //             if (mat && mat.isMaterial) {
-        //                 materials.add(mat)
-        //             }
-        //         }
-        //     }
-        // })
-        // const uuidSet = new Set<string>()
-        // // log materials with duplicate uuid
-        // materials.forEach((m) => {
-        //     if(!m.uuid || uuidSet.has(m.uuid)) {
-        //         console.warn('Materials: Material with duplicate or missing uuid, ignoring', m)
-        //         materials.delete(m)
-        //     }else if(m.uuid)
-        //         uuidSet.add(m.uuid)
-        // })
-        const showAll = false
-        const mats =
-            showAll ?
-                this.context.viewer.materialManager.getAllMaterials() || [] :
-                // only materials in scene
-                this.context.viewer.object3dManager.getMaterials()
-
-        if(showAll)
-            return Array.from(mats) as T[] // todo as any
-
-        const inRoot = filterObjectsInSceneRoot(mats);
-        return Array.from(inRoot) as T[]
-
-        // return v?.children as any || [] // todo as any
-        // return this.context.viewer.materialManager.getAllMaterials() as any || [] // todo as any
-        // return getValue(this.props.config)
-        // return (this.props.config.children || []).map(c => getOrCall(c) || {}).flat(2)
+        return sceneMaterials(this.context.viewer) as T[]
     }
 
     protected async _onNodeClick(_id: string) {
         const node = this._infoMap.get(_id)
         if(!node) return
         const value = node.isSelected ? null : node.nodeData! // unselect if already selected
-        node.nodeData!.dispatchEvent({type: 'select', value: value ?? null, material: node.nodeData!, ui: true, bubbleToObject: true, bubbleToParent: true})
+        selectResource(this.context.viewer, node.nodeData!, value)
     }
 
     protected async _onNodeDoubleClick(_id: string) {
@@ -181,6 +138,13 @@ export class BPMaterialsTreeComponent<T extends IMaterial = IMaterial> extends B
             console.error('BPMaterialsTreeComponent: viewer not found in context', this.context)
             return
         }
+        // A closed Resources section is not mounted, so it missed every selection event while it was
+        // shut. The tree reads what is picked now, or its row opens unhighlighted.
+        const picked = viewer.getPlugin(PickingPlugin)?.getSelectedObject<IMaterial>()
+        if(picked?.isMaterial) {
+            this._selectedIds = [picked.uuid]
+            this.setSelected(this._selectedIds, false)
+        }
         viewer.getPlugin(PickingPlugin)?.addEventListener('selectedObjectChanged', this.selectedObjectChanged)
         viewer.scene.addEventListener('sceneUpdate', this.sceneUpdate) // todo: subscribe only to the material in the config instead of the whole scene
         viewer.scene.addEventListener('materialUpdate', this.materialUpdate) // todo: subscribe only to the material in the config instead of the whole scene
@@ -200,7 +164,7 @@ export class BPMaterialsTreeComponent<T extends IMaterial = IMaterial> extends B
 
 }
 
-export function MaterialHierarchyComponent({className}: {className: string}){
+export function MaterialHierarchyComponent({className, treeRef}: {className: string, treeRef?: React.Ref<BPMaterialsTreeComponent>}){
     const {makeAsset} = useMakeAsset()
     const actions = {makeAsset: makeAsset}
     const {handleContextMenu} = useObjContextMenu(actions)
@@ -214,5 +178,6 @@ export function MaterialHierarchyComponent({className}: {className: string}){
 
     return <BPMaterialsTreeComponent
         key={viewer.scene.modelRoot.uuid} // this is required because viewer can be destroyed and recreated
+        ref={treeRef}
         config={config} handleContextMenu={handleContextMenu} className={className}/>
 }

@@ -2,7 +2,8 @@ import {FileManifestEntry, SelectedInspectorItem} from "./AssetsProvider.ts";
 import {SelectFileRef, SelObjectType} from "./projectUtils.ts";
 import {objectToType} from "../components/RefSelectionObjectComponent.tsx";
 import {IconName, MaybeElement} from "@blueprintjs/core";
-import {TypedClass} from "threepipe";
+import {IMaterial, TypedClass} from "threepipe";
+import {bpUiConfigIcons} from 'uiconfig-blueprint/lib/esm/lib'
 
 export function iconForSelectionObject(object?: SelectedInspectorItem|SelectFileRef|null): IconName | MaybeElement{
     const type = objectToType(object)
@@ -70,3 +71,18 @@ export function fileToIcon(f: {path: string, type?: 'file'|'directory'}):IconNam
     }, ['', 'document'])[1]
     return icon;
 }
+
+/**
+ * The icons the resource rows wear. The Resources tab and the reference rows under a mesh share
+ * them, so the same material looks the same wherever it is listed.
+ */
+export function iconForMaterial(material: IMaterial): IconName | MaybeElement {
+    if(material.isPhysicalMaterial)
+        return bpUiConfigIcons['shape-sphere-filled-1']({style: {color: 'transparent'}, className: 'bp5-tree-node-icon-svg'})
+    if(material.isUnlitMaterial) return 'full-circle'
+    return undefined
+}
+
+export const textureIcon: IconName = 'media'
+export const geometryIcon: IconName = 'grid-view'
+export const componentIcon: IconName = 'package'

@@ -22,6 +22,15 @@ body{
   display: none;
 }
 
+// Chrome 153 paints nothing inside a Blueprint icon at some page zooms, 75% and 90% included.
+// The icon stays in the dom, laid out and clickable, and its pixels never appear.
+// Page zoom is a css zoom on the root element, and under that zoom Chrome computes the
+// overflow: hidden clip the user agent stylesheet puts on an inline svg as empty for these
+// small icons. Blueprint draws inside the viewBox, so lifting the clip changes nothing at 100%.
+.bp5-icon > svg {
+  overflow: visible;
+}
+
 .bp5-vars, :root {
   // define custom properties for light and dark themes
   --main-app-background-hsl: var(--light-gray4-hsl);

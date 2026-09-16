@@ -1,6 +1,10 @@
 import {configDefaults, defineConfig} from 'vitest/config'
 import glsl from 'rollup-plugin-glsl'
+import {existsSync} from 'node:fs'
 import path from 'node:path'
+
+const localThree = path.resolve(__dirname, './node_modules/three/')
+const hoistedThree = path.resolve(__dirname, '../../node_modules/three/')
 
 export default defineConfig({
     plugins: [
@@ -9,7 +13,7 @@ export default defineConfig({
     resolve: {
         alias: {
             'threepipe': path.resolve(__dirname, './src/index.ts'),
-            'three': path.resolve(__dirname, './node_modules/three/'),
+            'three': existsSync(localThree) ? localThree : hoistedThree,
         },
     },
     test: {

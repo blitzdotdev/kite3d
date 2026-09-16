@@ -90,8 +90,7 @@ export class GBufferRenderPass<TP extends IPassID=IPassID, T extends WebGLRender
         const activeMipLevel = renderer.getActiveMipmapLevel()
 
         const objects = new Set<IObject3D>()
-        this.scene.traverse((object) => {
-            if (!object.visible) return
+        this.scene.traverseVisible((object) => {
             objects.add(object)
             const material = this.preprocessObject(object)
             if (!material) return

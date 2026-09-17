@@ -4,6 +4,7 @@ import {settingsKey} from "./project.ts";
 import {ViewerInstanceManager} from "./ViewerInstanceManager.ts";
 import {isPackageProject} from "./projectUtils.ts";
 import {EditModePlugin} from "./EditModePlugin.ts";
+import {SceneDocument} from "../documents/SceneDocument.ts";
 
 export class PlayModeHelper extends EventDispatcher<{
     runModePauseChange: {},
@@ -19,8 +20,12 @@ export class PlayModeHelper extends EventDispatcher<{
     // The run on the edit viewer: the project's scripts, plugins, clock, components, physics and main().
     private running: RunningGame | null = null
 
-    // Play borrows the main scene and gives it back at Stop: the dirty flag and the name the file carries.
-    private beforeRun: {dirty: boolean, savedHash: string | null, sceneName: string | null} | null = null
+    // The scene this run borrowed, what it looked like before, and the tab Play was pressed on.
+    // Stop gives all three back.
+    private beforeRun: {
+        scene: SceneDocument, activeId: string | null,
+        dirty: boolean, savedHash: string | null, sceneName: string | null,
+    } | null = null
 
     constructor(private manager: ViewerInstanceManager) {
         super()
@@ -32,8 +37,11 @@ export class PlayModeHelper extends EventDispatcher<{
         // save current scene to running.glb
         // load running.glb in play mode
         const store = manager.store
-        const scene = store?.mainScene
-        if (!store || !scene) return false
+        if (!store) return false
+        // Play runs the scene tab that is open. An object, material or texture tab holds no scene,
+        // so the main scene runs from those.
+        const scene = store.active instanceof SceneDocument ? store.active : store.mainScene
+        if (!scene) return false
         if (manager.savingScene) return false
 
         if (this.isRunningMode) {
@@ -48,9 +56,12 @@ export class PlayModeHelper extends EventDispatcher<{
         const isPackage = isPackageProject(project)
         if (!project || (isPackage && !project.handle)) return false
 
-        // Play runs the main scene, whatever tab was showing. Switching while it runs is refused.
+        // The tab Play was pressed on. The activate below overwrites it, and a cold scene reads its
+        // file in that same activate, so the rest of the record is taken after it.
+        const activeId = store.activeId
+        // A scene runs on the viewport, so it goes there first. Switching while it runs is refused.
         await store.activateForPlay(scene.path)
-        this.beforeRun = {dirty: scene.dirty, savedHash: scene.savedHash, sceneName: scene.sceneName}
+        this.beforeRun = {scene, activeId, dirty: scene.dirty, savedHash: scene.savedHash, sceneName: scene.sceneName}
 
         // Play runs the scene as it is, not as an isolated view shows it.
         manager.get().getPlugin(EditModePlugin)?.exitIsolate()
@@ -157,8 +168,9 @@ export class PlayModeHelper extends EventDispatcher<{
         if (!project || (isPackage && !project.handle)) return false
 
         const store = manager.store
-        const scene = store?.mainScene
-        if (!store || !scene) return
+        const before = this.beforeRun
+        if (!store || !before) return
+        const scene = before.scene
 
         const v = manager.get()
         const picking = v.getPlugin(PickingPlugin)
@@ -192,15 +204,16 @@ export class PlayModeHelper extends EventDispatcher<{
             }
         }
 
-        if (this.beforeRun) {
-            scene.savedHash = this.beforeRun.savedHash
-            scene.dirty = this.beforeRun.dirty
-            // The run's snapshot is threepipe's raw export, and it names the model root 'Scene'.
-            // Importing that snapshot back would write its name over the one the scene file carries.
-            scene.sceneName = this.beforeRun.sceneName
-            this.beforeRun = null
-        }
+        scene.savedHash = before.savedHash
+        scene.dirty = before.dirty
+        // The run's snapshot is threepipe's raw export, and it names the model root 'Scene'.
+        // Importing that snapshot back would write its name over the one the scene file carries.
+        scene.sceneName = before.sceneName
+        this.beforeRun = null
 
+        // The tab Play was pressed on comes back. activateForPlay does nothing when that tab is the
+        // scene that just ran, or when it is no longer open, and the scene stays on the viewport.
+        if (before.activeId) await store.activateForPlay(before.activeId)
     }
 
 }

@@ -72,8 +72,8 @@ export abstract class EditorDocument extends EventDispatcher<{change: object}> {
     private _dirty = false
 
     /**
-     * Play borrows the main scene, reloads a snapshot into it and puts the scene back at Stop. Those
-     * loads are not the user's edits, so nothing is dirty while a game runs.
+     * Play borrows the scene it runs, reloads a snapshot into it and puts the scene back at Stop.
+     * Those loads are not the user's edits, so nothing is dirty while a game runs.
      */
     get dirty() {
         if (this.session.playMode.isRunningMode) return false

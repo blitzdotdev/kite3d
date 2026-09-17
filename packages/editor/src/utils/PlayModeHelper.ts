@@ -20,8 +20,12 @@ export class PlayModeHelper extends EventDispatcher<{
     // The run on the edit viewer: the project's scripts, plugins, clock, components, physics and main().
     private running: RunningGame | null = null
 
-    // The scene this run borrowed, and what it looked like before. Stop gives both back.
-    private beforeRun: {scene: SceneDocument, dirty: boolean, savedHash: string | null, sceneName: string | null} | null = null
+    // The scene this run borrowed, what it looked like before, and the tab Play was pressed on.
+    // Stop gives all three back.
+    private beforeRun: {
+        scene: SceneDocument, activeId: string | null,
+        dirty: boolean, savedHash: string | null, sceneName: string | null,
+    } | null = null
 
     constructor(private manager: ViewerInstanceManager) {
         super()
@@ -52,9 +56,12 @@ export class PlayModeHelper extends EventDispatcher<{
         const isPackage = isPackageProject(project)
         if (!project || (isPackage && !project.handle)) return false
 
+        // The tab Play was pressed on. The activate below overwrites it, and a cold scene reads its
+        // file in that same activate, so the rest of the record is taken after it.
+        const activeId = store.activeId
         // A scene runs on the viewport, so it goes there first. Switching while it runs is refused.
         await store.activateForPlay(scene.path)
-        this.beforeRun = {scene, dirty: scene.dirty, savedHash: scene.savedHash, sceneName: scene.sceneName}
+        this.beforeRun = {scene, activeId, dirty: scene.dirty, savedHash: scene.savedHash, sceneName: scene.sceneName}
 
         // Play runs the scene as it is, not as an isolated view shows it.
         manager.get().getPlugin(EditModePlugin)?.exitIsolate()
@@ -203,6 +210,10 @@ export class PlayModeHelper extends EventDispatcher<{
         // Importing that snapshot back would write its name over the one the scene file carries.
         scene.sceneName = before.sceneName
         this.beforeRun = null
+
+        // The tab Play was pressed on comes back. activateForPlay does nothing when that tab is the
+        // scene that just ran, or when it is no longer open, and the scene stays on the viewport.
+        if (before.activeId) await store.activateForPlay(before.activeId)
     }
 
 }

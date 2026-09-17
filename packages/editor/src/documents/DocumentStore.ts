@@ -96,7 +96,7 @@ export class DocumentStore extends EventDispatcher<{change: object}> {
         await this.activateForPlay(path)
     }
 
-    /** Activates whatever the caller names, Play included. */
+    /** Activates whatever the caller names, past the gate above. Play and Stop come through here. */
     async activateForPlay(path: string) {
         const doc = this.find(path)
         if (!doc || this.activeId === path) return

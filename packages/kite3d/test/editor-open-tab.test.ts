@@ -76,6 +76,45 @@ it('runs the scene tab that is open, not the main scene', async (context) => {
     expect(running).not.toContain('MainSceneTriangle')
 })
 
+// Guards the owner's second report on the same press: Play from a tab that holds no scene has to
+// switch to the main scene, and Stop has to give the tab back.
+it('returns to the tab Play was pressed on', async (context) => {
+    const chromium = await browserLauncher()
+    if (!chromium) {
+        context.skip('Playwright is not installed. Run npx playwright install chromium.')
+        return
+    }
+    const root = await temporaryProject()
+    const server = await createDevServer({projectRoot: root, port: 0})
+    cleanup.push(() => server.close())
+    const browser = await chromium.launch({headless: true})
+    cleanup.push(() => browser.close())
+
+    const page = await browser.newPage({viewport: {width: 1280, height: 800}})
+    await page.goto(server.url, {waitUntil: 'domcontentloaded', timeout: 60_000})
+    await page.waitForFunction('window.kite3dProjectLoaded === true', undefined, {timeout: 60_000})
+    await page.waitForSelector('.editorCanvasContainer canvas', {timeout: 30_000})
+
+    await page.dblclick('button.file-item-button[title="pixel.png"]', {timeout: 30_000})
+    await page.waitForSelector('[role="tab"][aria-selected="true"] .document-tab-name:text-is("pixel.png")', {
+        timeout: 60_000,
+    })
+
+    await page.click('[aria-label="Run"]')
+    await page.waitForSelector('[aria-label="Pause"]:not([disabled])', {timeout: 60_000})
+    // A texture holds no scene, so the main scene runs and its tab is the one on screen.
+    expect(await sceneNodeNames(page)).toContain('MainSceneTriangle')
+    await page.waitForSelector('[role="tab"][aria-selected="true"] .document-tab-name:text-is("main.scene.gltf")', {
+        timeout: 30_000,
+    })
+
+    await page.click('[aria-label="Edit"]')
+    await page.waitForSelector('[role="tab"][aria-selected="true"] .document-tab-name:text-is("pixel.png")', {
+        timeout: 60_000,
+    })
+    expect(await sceneNodeNames(page)).not.toContain('MainSceneTriangle')
+})
+
 /**
  * Whether the viewer's canvas is in the container the page shows, and has a size. A query finds
  * mounted elements alone, so a canvas left behind in the panel that closed answers false.

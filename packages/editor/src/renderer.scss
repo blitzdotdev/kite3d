@@ -206,6 +206,18 @@ button.kite3d-status-chip {
   line-height: inherit;
 }
 
+// The left slot's tab panel. The Objects tree scrolls in it, so it keeps the scrollbar's width
+// whether the tree overflows or not, and the rows do not jump as branches open and close.
+.hierarchy-stack{
+  scrollbar-gutter: stable;
+}
+
+// The Resources tab holds its own scroll box below, so this panel never scrolls and reserves
+// nothing.
+.hierarchy-stack:has(.resources-panel){
+  scrollbar-gutter: auto;
+}
+
 .hierarchy-stack .folderContent{
   flex: 1 1 auto;
   max-width: 100%;
@@ -219,6 +231,8 @@ button.kite3d-status-chip {
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
+  // The sections scroll here, so the rows keep their width when the scrollbar comes and goes.
+  scrollbar-gutter: stable;
 }
 .resources-section-header{
   align-items: center;
@@ -482,6 +496,8 @@ button.kite3d-status-chip {
   width: 100%;
   flex: 1 1;
   overflow-y: auto;
+  // The grid is the Files tab's scroller, so the items keep their columns as the folder changes.
+  scrollbar-gutter: stable;
   --file-item-button-text-height: 14px;
 }
 .file-item-button-group{
@@ -660,11 +676,10 @@ button.kite3d-status-chip {
   // tab list's two paddings plus a tab's line height, the three values it is built from above.
   --center-tab-strip-height: calc(#{$pt-grid-size} * 3);
 
-  // The viewport clips what leaves it and never scrolls, so it keeps no scrollbar gutter; index.html
-  // asks every scroll container for a stable one, and that gutter would narrow the canvas.
+  // The viewport clips what leaves it and never scrolls. Its content stands 4 px past the panel, so
+  // a scroll container here would let a key press nudge the canvas out of place.
   > .window-panels-tabs > .bp5-tab-panel {
     overflow: hidden;
-    scrollbar-gutter: auto;
   }
 
   > .interactionControlsButtonContainer {

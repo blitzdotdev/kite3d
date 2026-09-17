@@ -129,6 +129,9 @@
 .bp5-panel-stack2-view {
   background-color: $light-gray4 !important;
   transition: var(--background-color-transition);
+  // The panel's content scrolls here, so the rows keep their width whether the scrollbar is there
+  // or not. It is the only box in the stack that ever shows one.
+  scrollbar-gutter: stable;
 }
 
 .bp5-dark{
@@ -141,7 +144,7 @@
   height: 100%;
   flex-grow: 1;
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 0 0 0 0;
 
   .bp5-panel-stack2-header{

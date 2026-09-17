@@ -1,6 +1,6 @@
 {
   "name": "@kite3d/engine",
-  "version": "0.21.0-alpha.7",
+  "version": "0.21.0-alpha.8",
   "description": "The open Kite3D game runtime, project format, scripting helpers, and game plugins.",
   "type": "module",
   "license": "Apache-2.0",

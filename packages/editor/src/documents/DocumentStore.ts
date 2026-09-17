@@ -38,7 +38,7 @@ export class DocumentStore extends EventDispatcher<{change: object}> {
         return this.documents.find(d => d.path === this.activeId)
     }
 
-    /** The main scene, which Play, the screenshot and the settings reload all act on. */
+    /** The main scene document, which Play runs when the tab on screen holds no scene of its own. */
     get mainScene(): SceneDocument | undefined {
         const doc = this.documents.find(d => d.path === this.mainScenePath)
         return doc instanceof SceneDocument ? doc : undefined

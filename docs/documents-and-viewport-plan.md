@@ -248,6 +248,8 @@ Built on 2026-09-16 (#42, by the terminator session): the left panel is Objects 
 
 Fixed on 2026-09-16 (#43, by the terminator session): a newly opened tab drew nothing until a switch away and back. The center strip mounts a new canvas container per tab, and the effect that moved the viewer's canvas into it read the container ref one commit behind, so the two renders of an open skipped the move. A ref callback keyed on the viewer moves the canvas on the mount commit, and a kite3d test guards it.
 
+Drawn on 2026-09-16 (#47): every tree row has one indent slot per depth with a guide line and a caret slot that is always present, so rows at one depth share their columns. A mesh's reference rows sit one level deeper on a dotted guide, inside a tinted band with a 2 px rule at its left, so the block has a visible start and end and the next sibling mesh reads as a sibling.
+
 Found while shooting them, all in today's editor:
 
 - The center slot rendered no tab strip with one panel; `WindowPanesLayout` rendered `Tabs` only for two or more. Fixed on 2026-09-16 (#33): the strip renders for one panel too and the toolbars sit below it.

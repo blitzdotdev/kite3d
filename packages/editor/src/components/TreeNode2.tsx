@@ -15,6 +15,7 @@
  *
  * Changes:
  * - Added support for drag and drop
+ * - A row with no icon still gets an icon column
  */
 
 import classNames from "classnames";
@@ -102,7 +103,11 @@ export class TreeNode2<T = {}> extends React.Component<TreeNodeProps<T>> {
             <li className={classes}>
                 <div className={contentClasses} ref={this.handleContentRef} {...eventHandlers}>
                     {this.maybeRenderCaret()}
-                    <Icon className={Classes.TREE_NODE_ICON} icon={icon} aria-hidden={true} tabIndex={-1} intent={intent} />
+                    {/* A row with no icon keeps the column. Blueprint's Icon draws nothing without
+                        one, and the name would then start where a row with an icon puts its icon. */}
+                    {icon
+                        ? <Icon className={Classes.TREE_NODE_ICON} icon={icon} aria-hidden={true} tabIndex={-1} intent={intent} />
+                        : <span className={"tree-node-icon-none"} />}
                     <span className={Classes.TREE_NODE_LABEL}
                           style={{
                               color: !intent || intent === 'none' ? undefined : `var(--pt-intent-${intent}-text-color`,

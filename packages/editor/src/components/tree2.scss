@@ -47,13 +47,36 @@
   }
 }
 
+// The grey Blueprint draws tree chrome with, in both themes.
+$tree-chrome: #8f99a8;
+// One indent step.
+$tree-indent: 10px;
+// One glyph column: a 16 px icon with 5 px on each side.
+$tree-slot: 26px;
+
+// Every row draws one vertical guide per ancestor, the way VS Code and Godot do, so where a
+// subtree ends is visible. A reference row's own levels are dotted: a reference is not a child.
+// --tree-depth carries the depth its class already indents by, so the two can never disagree.
 .bp5-tree-node-content{
-  //transition: background-color 0.2s ease-in-out;
+  position: relative;
+
+  &::before{
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: calc(#{$tree-indent} * (var(--tree-depth, 0) - var(--tree-reference-depth, 0)));
+    background-image: repeating-linear-gradient(to right, transparent 0 4px, rgba($tree-chrome, 0.2) 4px 5px, transparent 5px $tree-indent);
+  }
 }
 
-@for $i from 1 through 10 {
+// Blueprint numbers its depth classes to 20, and every one of them indents by our step.
+@for $i from 1 through 20 {
   .bp5-tree-node-content-#{$i} {
-    padding-left: calc(10px * $i);
+    --tree-depth: #{$i};
+    padding-left: $tree-indent * $i;
   }
 }
 
@@ -61,11 +84,13 @@
   padding: 7px 5px;
 }
 
-.bp5-tree-node-content:has(.bp5-icon) {
-  .bp5-tree-node-caret, .bp5-tree-node-caret-none {
-    min-width: 0px;
-  }
+// One caret column on every row, empty when there is nothing to open, so a row with no caret
+// never starts further left than a row with one. The icon column works the same way.
+.bp5-tree-node-caret, .bp5-tree-node-caret-none, .tree-node-icon-none{
+  min-width: $tree-slot;
+}
 
+.bp5-tree-node-content:has(.bp5-icon) {
   // because bp5-tree-node-icon is not applied on this icon
   .bp5-icon:has(.bp5-tree-node-icon-svg), .bp5-tree-node-icon{
     margin-right: 0px;
@@ -108,6 +133,37 @@
   gap: 1px;
   padding: 0 5px;
   opacity: 0.7;
+}
+
+// The reference rows of one object form a block: a tint over them and a rule at the block's left,
+// starting at the first reference and ending at the last. The next sibling object, on its solid
+// guide and outside the tint, is plainly not inside it.
+.tree-node-reference{
+  --tree-reference-depth: 1;
+}
+// References nest one level: the texture slots a material fills.
+.tree-node-reference .tree-node-reference{
+  --tree-reference-depth: 2;
+}
+.tree-node-reference > .bp5-tree-node-content{
+  background-image:
+    linear-gradient(rgba($tree-chrome, 0.35), rgba($tree-chrome, 0.35)),
+    linear-gradient(rgba($tree-chrome, 0.07), rgba($tree-chrome, 0.07));
+  background-repeat: no-repeat;
+  background-size: 2px 100%, 100% 100%;
+
+  &::after{
+    bottom: 0;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: calc(100% - #{$tree-indent} * var(--tree-depth));
+    width: calc(#{$tree-indent} * var(--tree-reference-depth));
+    background-image: repeating-linear-gradient(to right, transparent 0 4px, rgba($tree-chrome, 0.35) 4px 5px, transparent 5px $tree-indent);
+    // 2 on and 3 off divides the 30px row, so the dots hold their phase from row to row.
+    mask-image: repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 5px);
+  }
 }
 
 // A preview light belongs to the document view, not to the file it shows.

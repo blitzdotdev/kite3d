@@ -132,6 +132,16 @@ const menuItemsFiles: MenuItem2[] = [{
     props: {text: 'Reveal in System File Explorer', icon: 'folder-shared'},
 }*/]
 
+/**
+ * The item a file the viewport has a view for gets, above the rest. It stands outside the list
+ * above because no extension tag names its files: the document kinds are a list of their own.
+ */
+const menuItemOpenInNewTab: MenuItem2 = {
+    action: 'openInNewTab',
+    key: 'openInNewTab',
+    props: {text: 'Open in New Tab', icon: 'open-application'},
+}
+
 export function FilesPanelGrid({}: {
 }){
     const {selectedFiles, setSelectedFiles, currentPath, setCurrentPath, fileManifest, refreshManifest }= useAssets()
@@ -147,6 +157,16 @@ export function FilesPanelGrid({}: {
         if(project !== manager.loadedProject || !project) return // another or no project loaded. todo error?
         const res = await store.open(path).catch(e=>({error: e?.message ?? 'Unknown error'}))
         if (res && 'error' in res) showSuccessErrorToast('', 'Unable to open file', res as ErrorRes)
+    }
+
+    /** What a double click and the Open in New Tab item both do: walk into a folder, or open a file. */
+    const openFile = (f: FileManifestEntry) => {
+        if (f.type === 'directory') {
+            setCurrentPath(f.path)
+            setSelectedFiles([])
+        } else if (documentKind(f.path)) {
+            updateLoading(f.path, loadFile(f.path))
+        }
     }
 
     let items = fileManifest
@@ -244,6 +264,7 @@ export function FilesPanelGrid({}: {
         })
     }
     const actions: Record<string, MenuItemAction> = {
+        openInNewTab: (data: { file: FileManifestEntry })=> openFile(data.file),
         createEmptyScene: async ()=>{
             if(!dirHandle || !project?.handle) return
             await whileExistsPrompt({
@@ -487,21 +508,6 @@ export class MyComponent extends Object3DComponent {
     useEffect(() => {
         selectedFilesRef.current = selectedFiles
     }, [selectedFiles])
-    const openFile = (f: FileManifestEntry, newTab: boolean) => {
-        if (f.type === 'directory') {
-            setCurrentPath(f.path)
-            setSelectedFiles([])
-        } else {
-            if (documentKind(f.path)) {
-                if (newTab) {
-                    // todo
-                    // window.open(window.location.pathname + '?project=' + encodeURIComponent(f.path) + (project?.path ? '&base=' + encodeURIComponent(project.path) : ''), '_blank')
-                    return
-                }
-                updateLoading(f.path, loadFile(f.path))
-            }
-        }
-    }
     const selectFiles = async (files: FileManifestEntry[], e: React.MouseEvent|React.KeyboardEvent)=>{
         selectedFilesRef.current = files
         setSelectedFiles(files)
@@ -562,9 +568,7 @@ export class MyComponent extends Object3DComponent {
             if(e.key === 'Enter' && selectedFiles.length === 1) {
                 e.preventDefault()
                 e.stopPropagation()
-                const f = selectedFiles[0]
-                const newTab = e.metaKey || e.ctrlKey
-                openFile(f, newTab);
+                openFile(selectedFiles[0]);
             }
             if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
                 e.preventDefault()
@@ -610,13 +614,14 @@ export class MyComponent extends Object3DComponent {
                             return false
                         }))
 
+                    if(f.type !== 'directory' && documentKind(f.path)) menuItemsFiles2 = [menuItemOpenInNewTab, ...menuItemsFiles2]
+
                     handleContextMenu(e, menuItemsFiles2.map(i=>({...i, data: {file: f}})), f)
                 }}
                 onDoubleClick={(e)=>{
                     e.preventDefault()
                     e.stopPropagation()
-                    const newTab = e.metaKey || e.ctrlKey
-                    openFile(f, newTab);
+                    openFile(f);
                 }}
                 onClick={(e)=>{
                     // if(f.type === 'directory') setCurrentPath(f.path)

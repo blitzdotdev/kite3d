@@ -26,10 +26,10 @@ import {EditModePlugin} from "../utils/EditModePlugin.ts";
 
 interface BPHierarchyComponentPropsExtras extends HandleContextMenuCallback<IObject3D>{
     /**
-     * A double click on an asset row opens that asset's own document. The wrapper resolves the path
-     * and answers true when it opened one, because then focusing the camera would be wasted work.
+     * The document path a row's object opens as, or null for a row with no file of its own. A row
+     * that answers a path gets "Open in New Tab" on its menu.
      */
-    onOpenAsset?: (object: IObject3D) => boolean
+    documentPath?: (object: IObject3D) => string | null
 }
 
 const referenceKindIcons: Record<Exclude<ObjectReference['kind'], 'material'>, IconName> = {
@@ -236,15 +236,12 @@ export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTre
         if(!node) return
         const obj = node.nodeData!
         const isScene = obj === this.context.viewer.scene as any
-        // An asset row opens its own document, the way the Inspector's Edit Asset button does.
-        // Focusing the camera on a row whose document replaces the viewport would be wasted.
-        const opened = !isScene && (this.props.onOpenAsset?.(obj) ?? false)
         obj.dispatchEvent({
             type: 'select',
             value: obj,
             object: obj,
             ui: true,
-            focusCamera: !isScene && !opened,
+            focusCamera: !isScene,
             bubbleToParent: true,
         })
         if(isScene){
@@ -264,6 +261,17 @@ export class BPHierarchyComponent<T extends IObject3D = IObject3D> extends BPTre
         const node = this._infoMap.get(_id)
         if(!node) return
         const obj = node.nodeData!
+
+        // A row that came from a file opens that file as a tab, the way the Files panel does.
+        const path = this.props.documentPath?.(obj)
+        if (path) {
+            items.push({
+                props: {text: 'Open in New Tab'},
+                key: 'openInNewTab',
+                action: 'openDocument',
+                data: {path},
+            })
+        }
 
         const editMode = this.context.viewer.getPlugin(EditModePlugin)
         const selected = this.context.viewer.getPlugin(PickingPlugin)?.getSelectedObjects<IObject3D>() ?? []

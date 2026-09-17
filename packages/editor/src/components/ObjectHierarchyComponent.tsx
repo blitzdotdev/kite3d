@@ -34,9 +34,13 @@ export function ExtraMenuItems(props: {
 export function ObjectHierarchyComponent({className}: { className: string }) {
     const manager = useManager()
     const viewer = manager.get()
+    const {store} = useDocuments()
 
     const {makeAsset} = useMakeAsset()
     const actions = {makeAsset,
+        openDocument: (data: { path: string }) => {
+            store.open(data.path).catch(e => showErrorToast(`Unable to open ${data.path}`, e))
+        },
         moveInParent: (data: { obj: IObject3D, delta: number }) => {
             const parent = data.obj.parent
             if (!parent) return
@@ -58,20 +62,17 @@ export function ObjectHierarchyComponent({className}: { className: string }) {
     // })
 
     const contextMenu = useContextMenu()
-    const {store} = useDocuments()
 
     /**
-     * A placed asset names the file it came from in userData.rootPath. A double click on that row
-     * opens the file as a document, the same call the Inspector's Edit Asset button makes. A clone
-     * of an asset child carries _tpRootPath instead, and that one stays a plain row.
+     * A placed asset names the file it came from in userData.rootPath, and that file is what its row
+     * opens as a tab. An object inside an asset has no rootPath of its own, so it answers nothing.
      */
-    const onOpenAsset = (obj: IObject3D) => {
-        const rootPath = (obj as {_tpRootPath?: string})._tpRootPath ? null : obj.userData?.rootPath
-        if (!rootPath || !rootPath.startsWith(assetUrlPrefix)) return false
+    const documentPath = (obj: IObject3D) => {
+        const rootPath = obj.userData?.rootPath
+        if (!rootPath || !rootPath.startsWith(assetUrlPrefix)) return null
         const path = manager.resolveAssetIdPath(rootPath)
-        if (!path || path.startsWith(assetUrlPrefix) || !documentKind(path)) return false
-        store.open(path).catch(e => showErrorToast(`Unable to open ${path}`, e))
-        return true
+        if (!path || path.startsWith(assetUrlPrefix) || !documentKind(path)) return null
+        return path
     }
 
     const config: UiObjectConfig = useMemo(() => ({
@@ -90,7 +91,7 @@ export function ObjectHierarchyComponent({className}: { className: string }) {
         <BPHierarchyComponent
             config={config}
             key={viewer.scene.modelRoot.uuid} // this is required because viewer can be destroyed and recreated
-            onOpenAsset={onOpenAsset}
+            documentPath={documentPath}
             handleContextMenu={(e, items, obj) => {
                 contextMenu.handleContextMenu({
                     event: e,

@@ -1,0 +1,203 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "CARD ALY",
+      "children": [
+        1,
+        2
+      ],
+      "extras": {
+        "name": "CARD ALY",
+        "cityId": "sf-road:3687000"
+      }
+    },
+    {
+      "name": "Carriageway",
+      "mesh": 0
+    },
+    {
+      "name": "Sidewalks (junction clipping pending)",
+      "mesh": 1
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Carriageway",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Sidewalks (junction clipping pending)",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 3,
+            "NORMAL": 4
+          },
+          "indices": 5,
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Asphalt",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.09084171117479915,
+          0.10224173307914941,
+          0.10946171076915331,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Concrete sidewalk",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5028864580233624,
+          0.48514994004665124,
+          0.41254261347374327,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Centerline",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.775822218312646,
+          0.5711248294565854,
+          0.14412847084818123,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 56,
+      "type": "VEC3",
+      "min": [
+        12.463608741760254,
+        14.512070655822754,
+        161.25914001464844
+      ],
+      "max": [
+        38.764251708984375,
+        14.861815452575684,
+        168.70936584472656
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 56,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5125,
+      "count": 84,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 112,
+      "type": "VEC3",
+      "min": [
+        12.370283126831055,
+        14.63236141204834,
+        160.65672302246094
+      ],
+      "max": [
+        38.85757827758789,
+        14.991815567016602,
+        169.31178283691406
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 112,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5125,
+      "count": 168,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 672
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 672,
+      "byteLength": 672
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1344,
+      "byteLength": 336
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1680,
+      "byteLength": 1344
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3024,
+      "byteLength": 1344
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4368,
+      "byteLength": 672
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 5040
+    }
+  ]
+}

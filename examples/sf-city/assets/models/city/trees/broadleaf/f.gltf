@@ -1,0 +1,226 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Broadleaf placeholder, 10 m",
+      "children": [
+        1,
+        2
+      ],
+      "extras": {
+        "name": "Broadleaf placeholder, 10 m"
+      }
+    },
+    {
+      "name": "Trunk",
+      "mesh": 0
+    },
+    {
+      "name": "Canopy",
+      "mesh": 1
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Trunk",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 1
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 3,
+          "material": 1
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 4,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Canopy",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6
+          },
+          "indices": 7,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Broadleaf canopy",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.13286832154414627,
+          0.1912016827303171,
+          0.08865558627723595,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Trunk",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.1912016827303171,
+          0.12477181755144427,
+          0.0722718506743852,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 46,
+      "type": "VEC3",
+      "min": [
+        -0.23398269712924957,
+        9.536743306171047e-8,
+        -0.2162325233221054
+      ],
+      "max": [
+        0.23398269712924957,
+        4.699999809265137,
+        0.23999999463558197
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 46,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5125,
+      "count": 42,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 21,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 21,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 240,
+      "type": "VEC3",
+      "min": [
+        -3.200000047683716,
+        2.9800000190734863,
+        -3.200000047683716
+      ],
+      "max": [
+        3.200000047683716,
+        10.020000457763672,
+        3.200000047683716
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 240,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5125,
+      "count": 240,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 552
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 552,
+      "byteLength": 552
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1104,
+      "byteLength": 168
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1272,
+      "byteLength": 84
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1356,
+      "byteLength": 84
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1440,
+      "byteLength": 2880
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4320,
+      "byteLength": 2880
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7200,
+      "byteLength": 960
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 8160
+    }
+  ]
+}

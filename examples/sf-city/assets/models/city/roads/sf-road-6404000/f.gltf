@@ -1,0 +1,264 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "GRANT AVE",
+      "children": [
+        1,
+        2,
+        3
+      ],
+      "extras": {
+        "name": "GRANT AVE",
+        "cityId": "sf-road:6404000"
+      }
+    },
+    {
+      "name": "Carriageway",
+      "mesh": 0
+    },
+    {
+      "name": "Sidewalks (junction clipping pending)",
+      "mesh": 1
+    },
+    {
+      "name": "Inferred center markings",
+      "mesh": 2
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Carriageway",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Sidewalks (junction clipping pending)",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 3,
+            "NORMAL": 4
+          },
+          "indices": 5,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred center markings",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7
+          },
+          "indices": 8,
+          "material": 2
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Asphalt",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.09084171117479915,
+          0.10224173307914941,
+          0.10946171076915331,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Concrete sidewalk",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5028864580233624,
+          0.48514994004665124,
+          0.41254261347374327,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Centerline",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.775822218312646,
+          0.5711248294565854,
+          0.14412847084818123,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 212,
+      "type": "VEC3",
+      "min": [
+        150.3601531982422,
+        17.40415382385254,
+        -16.154460906982422
+      ],
+      "max": [
+        176.87657165527344,
+        20.64255714416504,
+        89.43675231933594
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 212,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5125,
+      "count": 318,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 424,
+      "type": "VEC3",
+      "min": [
+        148.2533416748047,
+        17.43269157409668,
+        -16.491552352905273
+      ],
+      "max": [
+        178.98336791992188,
+        20.99911117553711,
+        89.77384185791016
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 424,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5125,
+      "count": 636,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC3",
+      "min": [
+        157.33987426757812,
+        17.838619232177734,
+        -2.207991123199463
+      ],
+      "max": [
+        170.5816192626953,
+        19.889415740966797,
+        79.77009582519531
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5125,
+      "count": 132,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 2544
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2544,
+      "byteLength": 2544
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5088,
+      "byteLength": 1272
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6360,
+      "byteLength": 5088
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11448,
+      "byteLength": 5088
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 16536,
+      "byteLength": 2544
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 19080,
+      "byteLength": 1056
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 20136,
+      "byteLength": 1056
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 21192,
+      "byteLength": 528
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 21720
+    }
+  ]
+}

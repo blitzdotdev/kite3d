@@ -1,0 +1,3470 @@
+{
+  "version": 1,
+  "files": {
+    "sf-model-7dda79e5c7e11a9c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0001265/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0001265/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0001265/geometry.bin"
+      }
+    },
+    "sf-model-d3fe40d03dd62ca9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0002575/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0002575/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0002575/geometry.bin"
+      }
+    },
+    "sf-model-e6d63b04b41dbdaa": {
+      "path": "assets/models/city/buildings/sf-building-201006.0002980/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0002980/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0002980/geometry.bin"
+      }
+    },
+    "sf-model-44cf2b8885c47b5c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0002992/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0002992/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0002992/geometry.bin"
+      }
+    },
+    "sf-model-0178739871b18170": {
+      "path": "assets/models/city/buildings/sf-building-201006.0003146/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0003146/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0003146/geometry.bin"
+      }
+    },
+    "sf-model-eacb45c7a7aa3153": {
+      "path": "assets/models/city/buildings/sf-building-201006.0003278/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0003278/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0003278/geometry.bin"
+      }
+    },
+    "sf-model-b320e983d7976c11": {
+      "path": "assets/models/city/buildings/sf-building-201006.0003510/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0003510/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0003510/geometry.bin"
+      }
+    },
+    "sf-model-1ab0920f29420bc5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0003946/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0003946/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0003946/geometry.bin"
+      }
+    },
+    "sf-model-97b11e85c640a5b5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0004170/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0004170/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0004170/geometry.bin"
+      }
+    },
+    "sf-model-46927fbe0390fa0f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0004376/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0004376/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0004376/geometry.bin"
+      }
+    },
+    "sf-model-9ee206e5e01c9709": {
+      "path": "assets/models/city/buildings/sf-building-201006.0004523/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0004523/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0004523/geometry.bin"
+      }
+    },
+    "sf-model-bebce64a428b4002": {
+      "path": "assets/models/city/buildings/sf-building-201006.0004581/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0004581/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0004581/geometry.bin"
+      }
+    },
+    "sf-model-03a403a5b0cdb0cb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0004721/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0004721/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0004721/geometry.bin"
+      }
+    },
+    "sf-model-c336e86422a989af": {
+      "path": "assets/models/city/buildings/sf-building-201006.0005431/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0005431/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0005431/geometry.bin"
+      }
+    },
+    "sf-model-79919056110e6fa8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0005454/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0005454/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0005454/geometry.bin"
+      }
+    },
+    "sf-model-8a9f2189462e53e1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0005514/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0005514/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0005514/geometry.bin"
+      }
+    },
+    "sf-model-b5417b60455c7505": {
+      "path": "assets/models/city/buildings/sf-building-201006.0005585/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0005585/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0005585/geometry.bin"
+      }
+    },
+    "sf-model-00434b3e7fa23c00": {
+      "path": "assets/models/city/buildings/sf-building-201006.0005619/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0005619/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0005619/geometry.bin"
+      }
+    },
+    "sf-model-b5f69c7679e3f743": {
+      "path": "assets/models/city/buildings/sf-building-201006.0005946/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0005946/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0005946/geometry.bin"
+      }
+    },
+    "sf-model-d3d2e63b92cd0366": {
+      "path": "assets/models/city/buildings/sf-building-201006.0006131/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0006131/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0006131/geometry.bin"
+      }
+    },
+    "sf-model-977c8cd1ea8ee2c8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0006530/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0006530/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0006530/geometry.bin"
+      }
+    },
+    "sf-model-721198f25a9ff211": {
+      "path": "assets/models/city/buildings/sf-building-201006.0006749/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0006749/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0006749/geometry.bin"
+      }
+    },
+    "sf-model-e34affa98812c824": {
+      "path": "assets/models/city/buildings/sf-building-201006.0006787/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0006787/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0006787/geometry.bin"
+      }
+    },
+    "sf-model-fc87ce99cba5ba4b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0006847/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0006847/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0006847/geometry.bin"
+      }
+    },
+    "sf-model-9965183cb68f4150": {
+      "path": "assets/models/city/buildings/sf-building-201006.0007112/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0007112/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0007112/geometry.bin"
+      }
+    },
+    "sf-model-d1b9ff391cbc591a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0007333/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0007333/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0007333/geometry.bin"
+      }
+    },
+    "sf-model-723c9237cd463f66": {
+      "path": "assets/models/city/buildings/sf-building-201006.0007763/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0007763/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0007763/geometry.bin"
+      }
+    },
+    "sf-model-ad1f510413e34715": {
+      "path": "assets/models/city/buildings/sf-building-201006.0007782/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0007782/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0007782/geometry.bin"
+      }
+    },
+    "sf-model-1b3dc7fae9f44668": {
+      "path": "assets/models/city/buildings/sf-building-201006.0007895/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0007895/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0007895/geometry.bin"
+      }
+    },
+    "sf-model-7648b22260a17bf8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0008445/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0008445/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0008445/geometry.bin"
+      }
+    },
+    "sf-model-1690523dd03ecfa9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0008684/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0008684/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0008684/geometry.bin"
+      }
+    },
+    "sf-model-b7a6e4a1017d7bd2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0008828/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0008828/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0008828/geometry.bin"
+      }
+    },
+    "sf-model-c76b34bcd53b668f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0009076/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0009076/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0009076/geometry.bin"
+      }
+    },
+    "sf-model-1b8f4903787583bd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0009236/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0009236/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0009236/geometry.bin"
+      }
+    },
+    "sf-model-46da0c7194ea665d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0009276/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0009276/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0009276/geometry.bin"
+      }
+    },
+    "sf-model-35d7e7af30efe1ab": {
+      "path": "assets/models/city/buildings/sf-building-201006.0009496/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0009496/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0009496/geometry.bin"
+      }
+    },
+    "sf-model-e3c2ec7677dd13a9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0009733/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0009733/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0009733/geometry.bin"
+      }
+    },
+    "sf-model-99fe877f79a61b4a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0009976/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0009976/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0009976/geometry.bin"
+      }
+    },
+    "sf-model-446ee391a9707e8e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0010008/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0010008/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0010008/geometry.bin"
+      }
+    },
+    "sf-model-7486a743087f077a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0010590/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0010590/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0010590/geometry.bin"
+      }
+    },
+    "sf-model-131b648a1a50bfbc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0010727/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0010727/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0010727/geometry.bin"
+      }
+    },
+    "sf-model-a7a9e5c63afaad97": {
+      "path": "assets/models/city/buildings/sf-building-201006.0010868/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0010868/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0010868/geometry.bin"
+      }
+    },
+    "sf-model-828f14c0c866c51b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0010869/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0010869/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0010869/geometry.bin"
+      }
+    },
+    "sf-model-bfab8834bcf2f15c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0010935/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0010935/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0010935/geometry.bin"
+      }
+    },
+    "sf-model-24c50f3484093945": {
+      "path": "assets/models/city/buildings/sf-building-201006.0011021/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0011021/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0011021/geometry.bin"
+      }
+    },
+    "sf-model-ebf61556fa451642": {
+      "path": "assets/models/city/buildings/sf-building-201006.0011332/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0011332/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0011332/geometry.bin"
+      }
+    },
+    "sf-model-27bb24cf9c97db12": {
+      "path": "assets/models/city/buildings/sf-building-201006.0011381/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0011381/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0011381/geometry.bin"
+      }
+    },
+    "sf-model-69f446aedff2d80f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0011443/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0011443/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0011443/geometry.bin"
+      }
+    },
+    "sf-model-dce5bef719183ff8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0012477/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0012477/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0012477/geometry.bin"
+      }
+    },
+    "sf-model-62f2f547fbcf2c83": {
+      "path": "assets/models/city/buildings/sf-building-201006.0012608/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0012608/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0012608/geometry.bin"
+      }
+    },
+    "sf-model-1237ada059caed8c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0012623/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0012623/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0012623/geometry.bin"
+      }
+    },
+    "sf-model-2fd9c8ccad5c31ac": {
+      "path": "assets/models/city/buildings/sf-building-201006.0012769/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0012769/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0012769/geometry.bin"
+      }
+    },
+    "sf-model-712f8e194dc388e6": {
+      "path": "assets/models/city/buildings/sf-building-201006.0013310/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0013310/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0013310/geometry.bin"
+      }
+    },
+    "sf-model-ed6843c078c6416a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0013629/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0013629/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0013629/geometry.bin"
+      }
+    },
+    "sf-model-649611e5b555dd1b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0013687/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0013687/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0013687/geometry.bin"
+      }
+    },
+    "sf-model-a516f8fbf650ff06": {
+      "path": "assets/models/city/buildings/sf-building-201006.0013801/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0013801/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0013801/geometry.bin"
+      }
+    },
+    "sf-model-6b24a564bae99019": {
+      "path": "assets/models/city/buildings/sf-building-201006.0013835/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0013835/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0013835/geometry.bin"
+      }
+    },
+    "sf-model-645f20420710d076": {
+      "path": "assets/models/city/buildings/sf-building-201006.0013890/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0013890/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0013890/geometry.bin"
+      }
+    },
+    "sf-model-6bd46e9a2fcd1561": {
+      "path": "assets/models/city/buildings/sf-building-201006.0014663/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0014663/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0014663/geometry.bin"
+      }
+    },
+    "sf-model-795762921a017217": {
+      "path": "assets/models/city/buildings/sf-building-201006.0014731/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0014731/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0014731/geometry.bin"
+      }
+    },
+    "sf-model-20d68e93a8e4ee97": {
+      "path": "assets/models/city/buildings/sf-building-201006.0014868/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0014868/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0014868/geometry.bin"
+      }
+    },
+    "sf-model-6f4802d55814abba": {
+      "path": "assets/models/city/buildings/sf-building-201006.0015061/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0015061/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0015061/geometry.bin"
+      }
+    },
+    "sf-model-b96671489e2aab43": {
+      "path": "assets/models/city/buildings/sf-building-201006.0015279/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0015279/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0015279/geometry.bin"
+      }
+    },
+    "sf-model-a7b9edee15f5eeac": {
+      "path": "assets/models/city/buildings/sf-building-201006.0015594/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0015594/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0015594/geometry.bin"
+      }
+    },
+    "sf-model-5136d00f666391d7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0015968/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0015968/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0015968/geometry.bin"
+      }
+    },
+    "sf-model-5da3b56b410ce76f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0016242/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0016242/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0016242/geometry.bin"
+      }
+    },
+    "sf-model-48d96ca6a516f755": {
+      "path": "assets/models/city/buildings/sf-building-201006.0016245/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0016245/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0016245/geometry.bin"
+      }
+    },
+    "sf-model-b9d170fdf057412c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0016425/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0016425/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0016425/geometry.bin"
+      }
+    },
+    "sf-model-92a1c69fda34e60f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0017254/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0017254/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0017254/geometry.bin"
+      }
+    },
+    "sf-model-19175f84891c2209": {
+      "path": "assets/models/city/buildings/sf-building-201006.0017396/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0017396/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0017396/geometry.bin"
+      }
+    },
+    "sf-model-817b52b8ccb7896d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0017470/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0017470/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0017470/geometry.bin"
+      }
+    },
+    "sf-model-d5b4c5d92bf8773f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0017798/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0017798/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0017798/geometry.bin"
+      }
+    },
+    "sf-model-2abcefce418a3200": {
+      "path": "assets/models/city/buildings/sf-building-201006.0018675/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0018675/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0018675/geometry.bin"
+      }
+    },
+    "sf-model-8485f6b0a151b6a2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0018707/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0018707/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0018707/geometry.bin"
+      }
+    },
+    "sf-model-06b98b56c9b24fc1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0018849/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0018849/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0018849/geometry.bin"
+      }
+    },
+    "sf-model-b30b5bf817e0c6eb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0018872/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0018872/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0018872/geometry.bin"
+      }
+    },
+    "sf-model-0d8f72a37daec6cd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0019017/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0019017/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0019017/geometry.bin"
+      }
+    },
+    "sf-model-b7f99798f60f7525": {
+      "path": "assets/models/city/buildings/sf-building-201006.0019178/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0019178/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0019178/geometry.bin"
+      }
+    },
+    "sf-model-355069ef86408337": {
+      "path": "assets/models/city/buildings/sf-building-201006.0019291/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0019291/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0019291/geometry.bin"
+      }
+    },
+    "sf-model-3580b247165eadb7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0019589/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0019589/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0019589/geometry.bin"
+      }
+    },
+    "sf-model-175196db7c8894a1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0019799/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0019799/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0019799/geometry.bin"
+      }
+    },
+    "sf-model-f05a09128d1e05c7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0020169/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0020169/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0020169/geometry.bin"
+      }
+    },
+    "sf-model-f7faabf3cd96785d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0020724/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0020724/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0020724/geometry.bin"
+      }
+    },
+    "sf-model-f1231e456a4035b9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0021080/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0021080/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0021080/geometry.bin"
+      }
+    },
+    "sf-model-b7d6ebf874ec1480": {
+      "path": "assets/models/city/buildings/sf-building-201006.0021297/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0021297/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0021297/geometry.bin"
+      }
+    },
+    "sf-model-046bfcc6f2e1d4cb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0021577/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0021577/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0021577/geometry.bin"
+      }
+    },
+    "sf-model-c6f31108f88e99c8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0021828/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0021828/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0021828/geometry.bin"
+      }
+    },
+    "sf-model-8969da4cdeb4154c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0021835/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0021835/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0021835/geometry.bin"
+      }
+    },
+    "sf-model-e715317e8a1d0a48": {
+      "path": "assets/models/city/buildings/sf-building-201006.0021854/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0021854/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0021854/geometry.bin"
+      }
+    },
+    "sf-model-957d677d60696ac0": {
+      "path": "assets/models/city/buildings/sf-building-201006.0022442/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0022442/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0022442/geometry.bin"
+      }
+    },
+    "sf-model-4b1a42f2b9a310a4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0022595/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0022595/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0022595/geometry.bin"
+      }
+    },
+    "sf-model-e8d26c1ccd433b49": {
+      "path": "assets/models/city/buildings/sf-building-201006.0022675/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0022675/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0022675/geometry.bin"
+      }
+    },
+    "sf-model-2cc511fb6f503cce": {
+      "path": "assets/models/city/buildings/sf-building-201006.0022682/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0022682/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0022682/geometry.bin"
+      }
+    },
+    "sf-model-3da7a68926611769": {
+      "path": "assets/models/city/buildings/sf-building-201006.0022834/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0022834/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0022834/geometry.bin"
+      }
+    },
+    "sf-model-0458084db5e8ebd1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0023034/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0023034/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0023034/geometry.bin"
+      }
+    },
+    "sf-model-52affe336435455d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0023074/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0023074/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0023074/geometry.bin"
+      }
+    },
+    "sf-model-432dd84395d3dc9a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0023138/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0023138/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0023138/geometry.bin"
+      }
+    },
+    "sf-model-5bac7644c9080096": {
+      "path": "assets/models/city/buildings/sf-building-201006.0023157/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0023157/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0023157/geometry.bin"
+      }
+    },
+    "sf-model-b21d9ee7daa5503c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0023315/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0023315/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0023315/geometry.bin"
+      }
+    },
+    "sf-model-bbf022fc748530a6": {
+      "path": "assets/models/city/buildings/sf-building-201006.0023731/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0023731/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0023731/geometry.bin"
+      }
+    },
+    "sf-model-ff5fc026137d4212": {
+      "path": "assets/models/city/buildings/sf-building-201006.0023830/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0023830/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0023830/geometry.bin"
+      }
+    },
+    "sf-model-87f655c854705a29": {
+      "path": "assets/models/city/buildings/sf-building-201006.0024752/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0024752/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0024752/geometry.bin"
+      }
+    },
+    "sf-model-3f7cec00d6208f9a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0024832/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0024832/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0024832/geometry.bin"
+      }
+    },
+    "sf-model-34784569c911dbab": {
+      "path": "assets/models/city/buildings/sf-building-201006.0024877/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0024877/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0024877/geometry.bin"
+      }
+    },
+    "sf-model-9e6d111173da36d3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0025454/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0025454/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0025454/geometry.bin"
+      }
+    },
+    "sf-model-bb242504602ffe2e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0025797/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0025797/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0025797/geometry.bin"
+      }
+    },
+    "sf-model-854d1aced43016bb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0025920/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0025920/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0025920/geometry.bin"
+      }
+    },
+    "sf-model-37e8526cc264fb16": {
+      "path": "assets/models/city/buildings/sf-building-201006.0026024/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0026024/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0026024/geometry.bin"
+      }
+    },
+    "sf-model-55193ee469609178": {
+      "path": "assets/models/city/buildings/sf-building-201006.0026254/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0026254/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0026254/geometry.bin"
+      }
+    },
+    "sf-model-0c3f46ce5dbb5fc4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0026304/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0026304/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0026304/geometry.bin"
+      }
+    },
+    "sf-model-270d744c362e1bc0": {
+      "path": "assets/models/city/buildings/sf-building-201006.0026578/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0026578/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0026578/geometry.bin"
+      }
+    },
+    "sf-model-5e51cbb5a422bbc1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0026982/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0026982/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0026982/geometry.bin"
+      }
+    },
+    "sf-model-df3ea3c582fc5e61": {
+      "path": "assets/models/city/buildings/sf-building-201006.0027158/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0027158/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0027158/geometry.bin"
+      }
+    },
+    "sf-model-50af2b92d9250f61": {
+      "path": "assets/models/city/buildings/sf-building-201006.0027278/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0027278/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0027278/geometry.bin"
+      }
+    },
+    "sf-model-c0106861f510f0b0": {
+      "path": "assets/models/city/buildings/sf-building-201006.0027876/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0027876/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0027876/geometry.bin"
+      }
+    },
+    "sf-model-39fd4cb472d283eb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0027931/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0027931/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0027931/geometry.bin"
+      }
+    },
+    "sf-model-ae662debc9552e70": {
+      "path": "assets/models/city/buildings/sf-building-201006.0027972/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0027972/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0027972/geometry.bin"
+      }
+    },
+    "sf-model-6155224f46ab2724": {
+      "path": "assets/models/city/buildings/sf-building-201006.0028326/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0028326/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0028326/geometry.bin"
+      }
+    },
+    "sf-model-0a918453e61be9f5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0028518/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0028518/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0028518/geometry.bin"
+      }
+    },
+    "sf-model-063e86edbdfa1451": {
+      "path": "assets/models/city/buildings/sf-building-201006.0028639/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0028639/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0028639/geometry.bin"
+      }
+    },
+    "sf-model-b35f63b0a10dd28b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0029182/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0029182/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0029182/geometry.bin"
+      }
+    },
+    "sf-model-5f41f567262cdad7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0029328/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0029328/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0029328/geometry.bin"
+      }
+    },
+    "sf-model-faf012bb6e3853c5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0029689/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0029689/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0029689/geometry.bin"
+      }
+    },
+    "sf-model-354bf2c739e15e08": {
+      "path": "assets/models/city/buildings/sf-building-201006.0030444/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0030444/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0030444/geometry.bin"
+      }
+    },
+    "sf-model-45e71cd57a635149": {
+      "path": "assets/models/city/buildings/sf-building-201006.0030818/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0030818/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0030818/geometry.bin"
+      }
+    },
+    "sf-model-0cb62295daf9dd87": {
+      "path": "assets/models/city/buildings/sf-building-201006.0030905/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0030905/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0030905/geometry.bin"
+      }
+    },
+    "sf-model-caa0367e34dc4413": {
+      "path": "assets/models/city/buildings/sf-building-201006.0031007/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0031007/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0031007/geometry.bin"
+      }
+    },
+    "sf-model-779b5689a68d311a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0031475/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0031475/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0031475/geometry.bin"
+      }
+    },
+    "sf-model-3812af4f98ee2a1f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0031757/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0031757/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0031757/geometry.bin"
+      }
+    },
+    "sf-model-9162345fc44a8d04": {
+      "path": "assets/models/city/buildings/sf-building-201006.0032117/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0032117/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0032117/geometry.bin"
+      }
+    },
+    "sf-model-6377a699c8c8dd51": {
+      "path": "assets/models/city/buildings/sf-building-201006.0032267/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0032267/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0032267/geometry.bin"
+      }
+    },
+    "sf-model-6c219cd06d258593": {
+      "path": "assets/models/city/buildings/sf-building-201006.0032425/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0032425/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0032425/geometry.bin"
+      }
+    },
+    "sf-model-1a12a77ccba2a23b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0032893/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0032893/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0032893/geometry.bin"
+      }
+    },
+    "sf-model-be8499ecb2558ebc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0034152/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0034152/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0034152/geometry.bin"
+      }
+    },
+    "sf-model-7ea920e51367faab": {
+      "path": "assets/models/city/buildings/sf-building-201006.0034469/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0034469/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0034469/geometry.bin"
+      }
+    },
+    "sf-model-54c7a5a6f3c94f54": {
+      "path": "assets/models/city/buildings/sf-building-201006.0034483/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0034483/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0034483/geometry.bin"
+      }
+    },
+    "sf-model-7363419cfa4792e3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0034531/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0034531/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0034531/geometry.bin"
+      }
+    },
+    "sf-model-e22fe3387a7b8242": {
+      "path": "assets/models/city/buildings/sf-building-201006.0034858/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0034858/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0034858/geometry.bin"
+      }
+    },
+    "sf-model-cf19a2a9e40e5de9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0035355/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0035355/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0035355/geometry.bin"
+      }
+    },
+    "sf-model-8aeb1e6b6f523299": {
+      "path": "assets/models/city/buildings/sf-building-201006.0035487/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0035487/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0035487/geometry.bin"
+      }
+    },
+    "sf-model-1ca94e87d7eb2bb7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0035993/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0035993/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0035993/geometry.bin"
+      }
+    },
+    "sf-model-bc02667edea8b339": {
+      "path": "assets/models/city/buildings/sf-building-201006.0036074/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0036074/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0036074/geometry.bin"
+      }
+    },
+    "sf-model-df6de64d0de02d24": {
+      "path": "assets/models/city/buildings/sf-building-201006.0036250/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0036250/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0036250/geometry.bin"
+      }
+    },
+    "sf-model-dabc556a08b486dc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0036252/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0036252/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0036252/geometry.bin"
+      }
+    },
+    "sf-model-b599cfcf05dbb45d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0036381/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0036381/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0036381/geometry.bin"
+      }
+    },
+    "sf-model-6102a0070d6a3a93": {
+      "path": "assets/models/city/buildings/sf-building-201006.0036808/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0036808/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0036808/geometry.bin"
+      }
+    },
+    "sf-model-b334ff0ec52458ab": {
+      "path": "assets/models/city/buildings/sf-building-201006.0037689/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0037689/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0037689/geometry.bin"
+      }
+    },
+    "sf-model-8252ddc85d9dfbdd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0037903/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0037903/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0037903/geometry.bin"
+      }
+    },
+    "sf-model-6e080528ce12c53e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0038136/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0038136/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0038136/geometry.bin"
+      }
+    },
+    "sf-model-bcb47956f4aa8c79": {
+      "path": "assets/models/city/buildings/sf-building-201006.0038197/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0038197/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0038197/geometry.bin"
+      }
+    },
+    "sf-model-9b819090a0598683": {
+      "path": "assets/models/city/buildings/sf-building-201006.0038827/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0038827/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0038827/geometry.bin"
+      }
+    },
+    "sf-model-d2e5b49620c2c965": {
+      "path": "assets/models/city/buildings/sf-building-201006.0038860/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0038860/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0038860/geometry.bin"
+      }
+    },
+    "sf-model-50cee28c1e2bc020": {
+      "path": "assets/models/city/buildings/sf-building-201006.0038921/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0038921/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0038921/geometry.bin"
+      }
+    },
+    "sf-model-77ea8ed7ed40d88a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0039020/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0039020/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0039020/geometry.bin"
+      }
+    },
+    "sf-model-620e3ee2ba705fef": {
+      "path": "assets/models/city/buildings/sf-building-201006.0039134/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0039134/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0039134/geometry.bin"
+      }
+    },
+    "sf-model-929d4c3d22c9311a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0039267/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0039267/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0039267/geometry.bin"
+      }
+    },
+    "sf-model-312144cbc7598448": {
+      "path": "assets/models/city/buildings/sf-building-201006.0039370/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0039370/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0039370/geometry.bin"
+      }
+    },
+    "sf-model-5aa839e0de613686": {
+      "path": "assets/models/city/buildings/sf-building-201006.0039792/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0039792/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0039792/geometry.bin"
+      }
+    },
+    "sf-model-9415725eb2484dcc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0040215/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0040215/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0040215/geometry.bin"
+      }
+    },
+    "sf-model-58fbdaa545ca3a3d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0041336/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0041336/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0041336/geometry.bin"
+      }
+    },
+    "sf-model-4e40216bff29db1a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0041871/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0041871/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0041871/geometry.bin"
+      }
+    },
+    "sf-model-c22787a20cea74fb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0042002/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0042002/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0042002/geometry.bin"
+      }
+    },
+    "sf-model-08210ad502bed83a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0042087/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0042087/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0042087/geometry.bin"
+      }
+    },
+    "sf-model-17616318779040e1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0042122/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0042122/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0042122/geometry.bin"
+      }
+    },
+    "sf-model-d4e7145db525669d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0042445/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0042445/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0042445/geometry.bin"
+      }
+    },
+    "sf-model-cd772b4719876210": {
+      "path": "assets/models/city/buildings/sf-building-201006.0044106/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0044106/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0044106/geometry.bin"
+      }
+    },
+    "sf-model-d01dac68bfb2b0aa": {
+      "path": "assets/models/city/buildings/sf-building-201006.0044120/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0044120/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0044120/geometry.bin"
+      }
+    },
+    "sf-model-9647403f395fb5db": {
+      "path": "assets/models/city/buildings/sf-building-201006.0044165/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0044165/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0044165/geometry.bin"
+      }
+    },
+    "sf-model-a9184179f7462d5b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0044281/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0044281/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0044281/geometry.bin"
+      }
+    },
+    "sf-model-3fc4ef22ab33ec83": {
+      "path": "assets/models/city/buildings/sf-building-201006.0044500/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0044500/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0044500/geometry.bin"
+      }
+    },
+    "sf-model-971b0439d870babb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0045127/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0045127/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0045127/geometry.bin"
+      }
+    },
+    "sf-model-9893beb889604f27": {
+      "path": "assets/models/city/buildings/sf-building-201006.0045147/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0045147/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0045147/geometry.bin"
+      }
+    },
+    "sf-model-1b40acb8c33979ca": {
+      "path": "assets/models/city/buildings/sf-building-201006.0045551/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0045551/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0045551/geometry.bin"
+      }
+    },
+    "sf-model-843390a4f6e23318": {
+      "path": "assets/models/city/buildings/sf-building-201006.0046128/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0046128/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0046128/geometry.bin"
+      }
+    },
+    "sf-model-b739cb275d8e197f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0047035/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0047035/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0047035/geometry.bin"
+      }
+    },
+    "sf-model-0a76b5e23a03630f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0047096/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0047096/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0047096/geometry.bin"
+      }
+    },
+    "sf-model-1febec1a0800d8f2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0048128/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0048128/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0048128/geometry.bin"
+      }
+    },
+    "sf-model-6930e61971fc500b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0048191/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0048191/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0048191/geometry.bin"
+      }
+    },
+    "sf-model-4bf55b4c4fc0fdbc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0048854/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0048854/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0048854/geometry.bin"
+      }
+    },
+    "sf-model-afbcaebfbf0bec16": {
+      "path": "assets/models/city/buildings/sf-building-201006.0049741/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0049741/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0049741/geometry.bin"
+      }
+    },
+    "sf-model-c6e8a01ba3f89027": {
+      "path": "assets/models/city/buildings/sf-building-201006.0049889/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0049889/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0049889/geometry.bin"
+      }
+    },
+    "sf-model-3f18bef374f64404": {
+      "path": "assets/models/city/buildings/sf-building-201006.0050569/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0050569/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0050569/geometry.bin"
+      }
+    },
+    "sf-model-bfdefe3ecfea17e0": {
+      "path": "assets/models/city/buildings/sf-building-201006.0050983/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0050983/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0050983/geometry.bin"
+      }
+    },
+    "sf-model-dd7d922acfc1a697": {
+      "path": "assets/models/city/buildings/sf-building-201006.0052180/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0052180/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0052180/geometry.bin"
+      }
+    },
+    "sf-model-1e85ef2545f31127": {
+      "path": "assets/models/city/buildings/sf-building-201006.0052665/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0052665/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0052665/geometry.bin"
+      }
+    },
+    "sf-model-0be0476efeb88962": {
+      "path": "assets/models/city/buildings/sf-building-201006.0052744/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0052744/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0052744/geometry.bin"
+      }
+    },
+    "sf-model-b0506a6d9e1db36a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0053633/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0053633/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0053633/geometry.bin"
+      }
+    },
+    "sf-model-ed3ad19d8a0e7487": {
+      "path": "assets/models/city/buildings/sf-building-201006.0053684/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0053684/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0053684/geometry.bin"
+      }
+    },
+    "sf-model-b23dbf14df87502e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0053938/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0053938/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0053938/geometry.bin"
+      }
+    },
+    "sf-model-7762a0c626d66d64": {
+      "path": "assets/models/city/buildings/sf-building-201006.0054357/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0054357/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0054357/geometry.bin"
+      }
+    },
+    "sf-model-f5aea56d0698ec65": {
+      "path": "assets/models/city/buildings/sf-building-201006.0054448/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0054448/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0054448/geometry.bin"
+      }
+    },
+    "sf-model-e04083d1b3e5d5c2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0055094/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0055094/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0055094/geometry.bin"
+      }
+    },
+    "sf-model-8b16161f6a5530b9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0055194/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0055194/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0055194/geometry.bin"
+      }
+    },
+    "sf-model-2e408e4e425ecc41": {
+      "path": "assets/models/city/buildings/sf-building-201006.0055743/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0055743/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0055743/geometry.bin"
+      }
+    },
+    "sf-model-5aaa394b9b36ff16": {
+      "path": "assets/models/city/buildings/sf-building-201006.0057088/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0057088/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0057088/geometry.bin"
+      }
+    },
+    "sf-model-27f924dd31ad313e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0057384/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0057384/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0057384/geometry.bin"
+      }
+    },
+    "sf-model-76219dbdd88eeae2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0057515/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0057515/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0057515/geometry.bin"
+      }
+    },
+    "sf-model-e4c2d905d6550d63": {
+      "path": "assets/models/city/buildings/sf-building-201006.0057941/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0057941/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0057941/geometry.bin"
+      }
+    },
+    "sf-model-de7cef62848eb9ca": {
+      "path": "assets/models/city/buildings/sf-building-201006.0058215/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0058215/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0058215/geometry.bin"
+      }
+    },
+    "sf-model-3753363209a09922": {
+      "path": "assets/models/city/buildings/sf-building-201006.0058630/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0058630/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0058630/geometry.bin"
+      }
+    },
+    "sf-model-d3ef4c660a6d77c7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0058652/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0058652/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0058652/geometry.bin"
+      }
+    },
+    "sf-model-300403ff2cf85158": {
+      "path": "assets/models/city/buildings/sf-building-201006.0059199/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0059199/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0059199/geometry.bin"
+      }
+    },
+    "sf-model-6dd9331f31f019a1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0059446/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0059446/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0059446/geometry.bin"
+      }
+    },
+    "sf-model-53104bce4f53bf3e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0060579/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0060579/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0060579/geometry.bin"
+      }
+    },
+    "sf-model-01fe1844f72414e0": {
+      "path": "assets/models/city/buildings/sf-building-201006.0060847/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0060847/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0060847/geometry.bin"
+      }
+    },
+    "sf-model-5a582e7627e5961a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0061808/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0061808/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0061808/geometry.bin"
+      }
+    },
+    "sf-model-7a80a3ea37832219": {
+      "path": "assets/models/city/buildings/sf-building-201006.0061841/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0061841/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0061841/geometry.bin"
+      }
+    },
+    "sf-model-558b2803924150c2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0062179/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0062179/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0062179/geometry.bin"
+      }
+    },
+    "sf-model-65f4d82f8f9b3ab6": {
+      "path": "assets/models/city/buildings/sf-building-201006.0063919/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0063919/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0063919/geometry.bin"
+      }
+    },
+    "sf-model-5f3ea67956f4d363": {
+      "path": "assets/models/city/buildings/sf-building-201006.0064073/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0064073/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0064073/geometry.bin"
+      }
+    },
+    "sf-model-3cc51344953845ff": {
+      "path": "assets/models/city/buildings/sf-building-201006.0066241/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0066241/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0066241/geometry.bin"
+      }
+    },
+    "sf-model-301ed9558b801d80": {
+      "path": "assets/models/city/buildings/sf-building-201006.0066294/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0066294/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0066294/geometry.bin"
+      }
+    },
+    "sf-model-415bfe7490eb4299": {
+      "path": "assets/models/city/buildings/sf-building-201006.0067155/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0067155/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0067155/geometry.bin"
+      }
+    },
+    "sf-model-888fe525ce2a1341": {
+      "path": "assets/models/city/buildings/sf-building-201006.0067531/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0067531/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0067531/geometry.bin"
+      }
+    },
+    "sf-model-2b7e4cdfa2877da4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0068115/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0068115/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0068115/geometry.bin"
+      }
+    },
+    "sf-model-5fc61a8cbfbd3836": {
+      "path": "assets/models/city/buildings/sf-building-201006.0068153/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0068153/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0068153/geometry.bin"
+      }
+    },
+    "sf-model-94e1fc5610c48359": {
+      "path": "assets/models/city/buildings/sf-building-201006.0068570/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0068570/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0068570/geometry.bin"
+      }
+    },
+    "sf-model-9641ad9976e0b423": {
+      "path": "assets/models/city/buildings/sf-building-201006.0069878/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0069878/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0069878/geometry.bin"
+      }
+    },
+    "sf-model-e38c290e61ea7ff9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0069913/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0069913/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0069913/geometry.bin"
+      }
+    },
+    "sf-model-6bd6762ddfae43a3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0069989/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0069989/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0069989/geometry.bin"
+      }
+    },
+    "sf-model-f47b8c7f6c48cea3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0070185/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0070185/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0070185/geometry.bin"
+      }
+    },
+    "sf-model-01bfe4670871eee1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0071155/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0071155/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0071155/geometry.bin"
+      }
+    },
+    "sf-model-da23904f5034e166": {
+      "path": "assets/models/city/buildings/sf-building-201006.0071457/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0071457/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0071457/geometry.bin"
+      }
+    },
+    "sf-model-19fe9f9f2565cd8f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0074235/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0074235/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0074235/geometry.bin"
+      }
+    },
+    "sf-model-960f03a7b9a71bfe": {
+      "path": "assets/models/city/buildings/sf-building-201006.0074237/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0074237/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0074237/geometry.bin"
+      }
+    },
+    "sf-model-14f101ad4298265d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0076328/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0076328/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0076328/geometry.bin"
+      }
+    },
+    "sf-model-ba5cfba85f9ef713": {
+      "path": "assets/models/city/buildings/sf-building-201006.0076577/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0076577/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0076577/geometry.bin"
+      }
+    },
+    "sf-model-d64f554b32603ec0": {
+      "path": "assets/models/city/buildings/sf-building-201006.0076739/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0076739/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0076739/geometry.bin"
+      }
+    },
+    "sf-model-048109dc5b656d8c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0076815/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0076815/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0076815/geometry.bin"
+      }
+    },
+    "sf-model-ccd742c599c205f1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0077894/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0077894/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0077894/geometry.bin"
+      }
+    },
+    "sf-model-94c2aa5eb4c90ae1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0078243/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0078243/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0078243/geometry.bin"
+      }
+    },
+    "sf-model-98b7d5216869671f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0078587/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0078587/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0078587/geometry.bin"
+      }
+    },
+    "sf-model-136a36e8e5386571": {
+      "path": "assets/models/city/buildings/sf-building-201006.0079600/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0079600/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0079600/geometry.bin"
+      }
+    },
+    "sf-model-82dd11cdfe5d8824": {
+      "path": "assets/models/city/buildings/sf-building-201006.0079744/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0079744/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0079744/geometry.bin"
+      }
+    },
+    "sf-model-a1a82d315a64dda8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0079794/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0079794/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0079794/geometry.bin"
+      }
+    },
+    "sf-model-ad3ea65b599a2dd7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0079831/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0079831/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0079831/geometry.bin"
+      }
+    },
+    "sf-model-2d11c3f7416af39a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0079996/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0079996/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0079996/geometry.bin"
+      }
+    },
+    "sf-model-c67708a1be100c79": {
+      "path": "assets/models/city/buildings/sf-building-201006.0080998/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0080998/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0080998/geometry.bin"
+      }
+    },
+    "sf-model-c7b9d038c383e428": {
+      "path": "assets/models/city/buildings/sf-building-201006.0081542/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0081542/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0081542/geometry.bin"
+      }
+    },
+    "sf-model-c029a89637ae65af": {
+      "path": "assets/models/city/buildings/sf-building-201006.0082496/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0082496/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0082496/geometry.bin"
+      }
+    },
+    "sf-model-f7e2e12ca5839d6a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0083006/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0083006/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0083006/geometry.bin"
+      }
+    },
+    "sf-model-35666e1afec3a82f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0084308/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0084308/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0084308/geometry.bin"
+      }
+    },
+    "sf-model-4bd2a95f7cd71ccf": {
+      "path": "assets/models/city/buildings/sf-building-201006.0084471/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0084471/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0084471/geometry.bin"
+      }
+    },
+    "sf-model-d19e783a0f511451": {
+      "path": "assets/models/city/buildings/sf-building-201006.0086433/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0086433/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0086433/geometry.bin"
+      }
+    },
+    "sf-model-c57cccf565d185d8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0087907/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0087907/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0087907/geometry.bin"
+      }
+    },
+    "sf-model-0bbf4dc9ccf61046": {
+      "path": "assets/models/city/buildings/sf-building-201006.0088744/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0088744/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0088744/geometry.bin"
+      }
+    },
+    "sf-model-da019cc991e32872": {
+      "path": "assets/models/city/buildings/sf-building-201006.0088766/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0088766/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0088766/geometry.bin"
+      }
+    },
+    "sf-model-3b2fb7c6001dabcc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0088925/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0088925/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0088925/geometry.bin"
+      }
+    },
+    "sf-model-fa026ff877aab77b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0089732/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0089732/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0089732/geometry.bin"
+      }
+    },
+    "sf-model-d3d9337cb97fdd3b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0090069/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0090069/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0090069/geometry.bin"
+      }
+    },
+    "sf-model-5e0426df7ecf32bb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0091145/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0091145/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0091145/geometry.bin"
+      }
+    },
+    "sf-model-94ed560600c6431a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0094802/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0094802/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0094802/geometry.bin"
+      }
+    },
+    "sf-model-a2efe13d88dee77a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0096219/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0096219/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0096219/geometry.bin"
+      }
+    },
+    "sf-model-adc60c304c400f20": {
+      "path": "assets/models/city/buildings/sf-building-201006.0096314/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0096314/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0096314/geometry.bin"
+      }
+    },
+    "sf-model-e830fb06591f9013": {
+      "path": "assets/models/city/buildings/sf-building-201006.0096749/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0096749/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0096749/geometry.bin"
+      }
+    },
+    "sf-model-85dac4a4523175f6": {
+      "path": "assets/models/city/buildings/sf-building-201006.0096907/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0096907/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0096907/geometry.bin"
+      }
+    },
+    "sf-model-9990cf448367e45b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0096918/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0096918/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0096918/geometry.bin"
+      }
+    },
+    "sf-model-28d7cb75e1382812": {
+      "path": "assets/models/city/buildings/sf-building-201006.0097120/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0097120/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0097120/geometry.bin"
+      }
+    },
+    "sf-model-3011729abd6b2ff6": {
+      "path": "assets/models/city/buildings/sf-building-201006.0097328/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0097328/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0097328/geometry.bin"
+      }
+    },
+    "sf-model-ea0a72137abf4da6": {
+      "path": "assets/models/city/buildings/sf-building-201006.0097629/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0097629/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0097629/geometry.bin"
+      }
+    },
+    "sf-model-c4bf0af63897721e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0097687/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0097687/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0097687/geometry.bin"
+      }
+    },
+    "sf-model-6c07c104cc1983b4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0098081/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0098081/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0098081/geometry.bin"
+      }
+    },
+    "sf-model-345776c063ef4645": {
+      "path": "assets/models/city/buildings/sf-building-201006.0098131/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0098131/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0098131/geometry.bin"
+      }
+    },
+    "sf-model-8af62cbad0974f57": {
+      "path": "assets/models/city/buildings/sf-building-201006.0099237/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0099237/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0099237/geometry.bin"
+      }
+    },
+    "sf-model-daa4edd1f1752df3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0100648/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0100648/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0100648/geometry.bin"
+      }
+    },
+    "sf-model-181e9cd9a8429ed4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0101352/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0101352/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0101352/geometry.bin"
+      }
+    },
+    "sf-model-833e1b78dfeaea7d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0102690/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0102690/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0102690/geometry.bin"
+      }
+    },
+    "sf-model-7305917d4e1d0a81": {
+      "path": "assets/models/city/buildings/sf-building-201006.0103619/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0103619/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0103619/geometry.bin"
+      }
+    },
+    "sf-model-09b7bb7f5e39150a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0103814/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0103814/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0103814/geometry.bin"
+      }
+    },
+    "sf-model-82ea4b2a67397c6a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0104834/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0104834/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0104834/geometry.bin"
+      }
+    },
+    "sf-model-3670671320a39c77": {
+      "path": "assets/models/city/buildings/sf-building-201006.0106295/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0106295/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0106295/geometry.bin"
+      }
+    },
+    "sf-model-ecda778e50b6bbdb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0106421/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0106421/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0106421/geometry.bin"
+      }
+    },
+    "sf-model-45badacea7d2850b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0108839/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0108839/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0108839/geometry.bin"
+      }
+    },
+    "sf-model-273631117e9d3c3e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0109639/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0109639/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0109639/geometry.bin"
+      }
+    },
+    "sf-model-7a11e0d08016cca2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0109723/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0109723/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0109723/geometry.bin"
+      }
+    },
+    "sf-model-4a1bc5fc837866e3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0110056/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0110056/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0110056/geometry.bin"
+      }
+    },
+    "sf-model-47149e901f58de70": {
+      "path": "assets/models/city/buildings/sf-building-201006.0110353/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0110353/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0110353/geometry.bin"
+      }
+    },
+    "sf-model-2b22024bf828d5dd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0110625/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0110625/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0110625/geometry.bin"
+      }
+    },
+    "sf-model-00ac5f957ed993be": {
+      "path": "assets/models/city/buildings/sf-building-201006.0111578/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0111578/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0111578/geometry.bin"
+      }
+    },
+    "sf-model-a1bb2ec20da36b4d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0111713/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0111713/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0111713/geometry.bin"
+      }
+    },
+    "sf-model-a73d6b578f543206": {
+      "path": "assets/models/city/buildings/sf-building-201006.0111785/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0111785/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0111785/geometry.bin"
+      }
+    },
+    "sf-model-fa17d270e982bfcd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0112244/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0112244/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0112244/geometry.bin"
+      }
+    },
+    "sf-model-60e419fe8bc47722": {
+      "path": "assets/models/city/buildings/sf-building-201006.0113353/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0113353/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0113353/geometry.bin"
+      }
+    },
+    "sf-model-25d102b58ffe9d03": {
+      "path": "assets/models/city/buildings/sf-building-201006.0114204/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0114204/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0114204/geometry.bin"
+      }
+    },
+    "sf-model-b86c8cbf298f98f2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0114492/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0114492/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0114492/geometry.bin"
+      }
+    },
+    "sf-model-a387c6ab9420d928": {
+      "path": "assets/models/city/buildings/sf-building-201006.0114739/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0114739/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0114739/geometry.bin"
+      }
+    },
+    "sf-model-423bfa83cfaf9e87": {
+      "path": "assets/models/city/buildings/sf-building-201006.0115678/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0115678/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0115678/geometry.bin"
+      }
+    },
+    "sf-model-2c5d2b965783bf1f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0117298/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0117298/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0117298/geometry.bin"
+      }
+    },
+    "sf-model-436ef94214b6e175": {
+      "path": "assets/models/city/buildings/sf-building-201006.0117625/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0117625/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0117625/geometry.bin"
+      }
+    },
+    "sf-model-23eec511156f1c95": {
+      "path": "assets/models/city/buildings/sf-building-201006.0118389/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0118389/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0118389/geometry.bin"
+      }
+    },
+    "sf-model-6012ac7e15a51275": {
+      "path": "assets/models/city/buildings/sf-building-201006.0118675/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0118675/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0118675/geometry.bin"
+      }
+    },
+    "sf-model-0d15dd05420d9e2c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0119290/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0119290/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0119290/geometry.bin"
+      }
+    },
+    "sf-model-c70fb7f1150cf1f4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0119547/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0119547/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0119547/geometry.bin"
+      }
+    },
+    "sf-model-e37aad67150998a4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0120815/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0120815/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0120815/geometry.bin"
+      }
+    },
+    "sf-model-bdc7d92ab662cd4a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0121571/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0121571/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0121571/geometry.bin"
+      }
+    },
+    "sf-model-f7bbec8517bbccef": {
+      "path": "assets/models/city/buildings/sf-building-201006.0121689/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0121689/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0121689/geometry.bin"
+      }
+    },
+    "sf-model-7e07c680f3467e85": {
+      "path": "assets/models/city/buildings/sf-building-201006.0121826/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0121826/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0121826/geometry.bin"
+      }
+    },
+    "sf-model-bc72e2b866a5340d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0121956/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0121956/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0121956/geometry.bin"
+      }
+    },
+    "sf-model-d95dc9ad96003927": {
+      "path": "assets/models/city/buildings/sf-building-201006.0122409/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0122409/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0122409/geometry.bin"
+      }
+    },
+    "sf-model-502f8914d774140e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0122583/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0122583/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0122583/geometry.bin"
+      }
+    },
+    "sf-model-d188ea9aa6af3b45": {
+      "path": "assets/models/city/buildings/sf-building-201006.0122919/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0122919/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0122919/geometry.bin"
+      }
+    },
+    "sf-model-9c03e3fbe15e83b9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0123554/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0123554/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0123554/geometry.bin"
+      }
+    },
+    "sf-model-c14a22dcc3650da4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0123792/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0123792/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0123792/geometry.bin"
+      }
+    },
+    "sf-model-7cc2c56f545fcfc8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0124174/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0124174/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0124174/geometry.bin"
+      }
+    },
+    "sf-model-f8cb882dbe47cef1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0124202/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0124202/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0124202/geometry.bin"
+      }
+    },
+    "sf-model-cc4458c3717fdcc9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0124227/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0124227/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0124227/geometry.bin"
+      }
+    },
+    "sf-model-801536c07e98395b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0124332/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0124332/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0124332/geometry.bin"
+      }
+    },
+    "sf-model-56c4dc352d5ebf3c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0125328/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0125328/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0125328/geometry.bin"
+      }
+    },
+    "sf-model-d27a72f5fc7d78a7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0125611/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0125611/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0125611/geometry.bin"
+      }
+    },
+    "sf-model-3aedbd322da42bff": {
+      "path": "assets/models/city/buildings/sf-building-201006.0125650/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0125650/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0125650/geometry.bin"
+      }
+    },
+    "sf-model-0053082f7ae35088": {
+      "path": "assets/models/city/buildings/sf-building-201006.0125656/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0125656/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0125656/geometry.bin"
+      }
+    },
+    "sf-model-0ca05ee74127fa9d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0126613/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0126613/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0126613/geometry.bin"
+      }
+    },
+    "sf-model-06b86d744809e7d4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0127093/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0127093/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0127093/geometry.bin"
+      }
+    },
+    "sf-model-a51caaa1c151c118": {
+      "path": "assets/models/city/buildings/sf-building-201006.0127850/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0127850/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0127850/geometry.bin"
+      }
+    },
+    "sf-model-54bf4dacf7a43967": {
+      "path": "assets/models/city/buildings/sf-building-201006.0128469/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0128469/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0128469/geometry.bin"
+      }
+    },
+    "sf-model-ad7434e5b396acba": {
+      "path": "assets/models/city/buildings/sf-building-201006.0130060/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0130060/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0130060/geometry.bin"
+      }
+    },
+    "sf-model-c84118d9ba0cbe43": {
+      "path": "assets/models/city/buildings/sf-building-201006.0130264/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0130264/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0130264/geometry.bin"
+      }
+    },
+    "sf-model-2ab8ecf29a0166c8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0130384/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0130384/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0130384/geometry.bin"
+      }
+    },
+    "sf-model-2d5708d2a28349be": {
+      "path": "assets/models/city/buildings/sf-building-201006.0131335/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0131335/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0131335/geometry.bin"
+      }
+    },
+    "sf-model-14fbbf7cdd0f1468": {
+      "path": "assets/models/city/buildings/sf-building-201006.0131745/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0131745/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0131745/geometry.bin"
+      }
+    },
+    "sf-model-e8a1642ebdeb9ee5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0131838/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0131838/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0131838/geometry.bin"
+      }
+    },
+    "sf-model-df6538359941e43f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0131858/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0131858/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0131858/geometry.bin"
+      }
+    },
+    "sf-model-5b67e26c991977aa": {
+      "path": "assets/models/city/buildings/sf-building-201006.0132113/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0132113/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0132113/geometry.bin"
+      }
+    },
+    "sf-model-02e61bb9f28f87ce": {
+      "path": "assets/models/city/buildings/sf-building-201006.0132566/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0132566/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0132566/geometry.bin"
+      }
+    },
+    "sf-model-8fc5da8bb7951c0c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0133303/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0133303/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0133303/geometry.bin"
+      }
+    },
+    "sf-model-194be273029238a2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0133680/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0133680/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0133680/geometry.bin"
+      }
+    },
+    "sf-model-0d29dfb1798ec4cb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0134018/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0134018/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0134018/geometry.bin"
+      }
+    },
+    "sf-model-b65283a87f8d5fc7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0134822/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0134822/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0134822/geometry.bin"
+      }
+    },
+    "sf-model-4d1e4d11d347ba35": {
+      "path": "assets/models/city/buildings/sf-building-201006.0135940/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0135940/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0135940/geometry.bin"
+      }
+    },
+    "sf-model-d28610d51315fae9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0136201/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0136201/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0136201/geometry.bin"
+      }
+    },
+    "sf-model-0bd2be92b3659d92": {
+      "path": "assets/models/city/buildings/sf-building-201006.0136830/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0136830/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0136830/geometry.bin"
+      }
+    },
+    "sf-model-a096708aad9a7c0f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0136939/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0136939/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0136939/geometry.bin"
+      }
+    },
+    "sf-model-2bdd577d285df073": {
+      "path": "assets/models/city/buildings/sf-building-201006.0137289/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0137289/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0137289/geometry.bin"
+      }
+    },
+    "sf-model-75ccda63e5e57cc4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0137477/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0137477/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0137477/geometry.bin"
+      }
+    },
+    "sf-model-96726defddbbd273": {
+      "path": "assets/models/city/buildings/sf-building-201006.0137495/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0137495/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0137495/geometry.bin"
+      }
+    },
+    "sf-model-a60ecffc3bbecdf1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0138064/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0138064/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0138064/geometry.bin"
+      }
+    },
+    "sf-model-11c3f7c95efd5ea9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0138242/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0138242/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0138242/geometry.bin"
+      }
+    },
+    "sf-model-5058cfabb20bf8be": {
+      "path": "assets/models/city/buildings/sf-building-201006.0138798/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0138798/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0138798/geometry.bin"
+      }
+    },
+    "sf-model-ac451eb5671815e4": {
+      "path": "assets/models/city/buildings/sf-building-201006.0139288/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0139288/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0139288/geometry.bin"
+      }
+    },
+    "sf-model-aca8664522e3005c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0140430/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0140430/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0140430/geometry.bin"
+      }
+    },
+    "sf-model-6f4bd6c3903ca0d1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0140561/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0140561/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0140561/geometry.bin"
+      }
+    },
+    "sf-model-e1412190f4302cfc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0140602/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0140602/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0140602/geometry.bin"
+      }
+    },
+    "sf-model-44a0a5581cd4b8e3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0141017/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0141017/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0141017/geometry.bin"
+      }
+    },
+    "sf-model-cfb7c95d19ee2b39": {
+      "path": "assets/models/city/buildings/sf-building-201006.0141073/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0141073/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0141073/geometry.bin"
+      }
+    },
+    "sf-model-292918d461e95210": {
+      "path": "assets/models/city/buildings/sf-building-201006.0141666/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0141666/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0141666/geometry.bin"
+      }
+    },
+    "sf-model-29b1dbcdd3fc5f5a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0141990/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0141990/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0141990/geometry.bin"
+      }
+    },
+    "sf-model-940e10ff8c70925e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0142306/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0142306/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0142306/geometry.bin"
+      }
+    },
+    "sf-model-f58511b9813531ec": {
+      "path": "assets/models/city/buildings/sf-building-201006.0142348/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0142348/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0142348/geometry.bin"
+      }
+    },
+    "sf-model-ed79f27264d2b263": {
+      "path": "assets/models/city/buildings/sf-building-201006.0142871/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0142871/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0142871/geometry.bin"
+      }
+    },
+    "sf-model-495bddc866862bd5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0143043/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0143043/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0143043/geometry.bin"
+      }
+    },
+    "sf-model-b7299c9a0acdb8b3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0143564/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0143564/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0143564/geometry.bin"
+      }
+    },
+    "sf-model-92c011f86a01e256": {
+      "path": "assets/models/city/buildings/sf-building-201006.0143631/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0143631/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0143631/geometry.bin"
+      }
+    },
+    "sf-model-a93e76bb6a181d0a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0144086/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0144086/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0144086/geometry.bin"
+      }
+    },
+    "sf-model-69e758ed554c09d1": {
+      "path": "assets/models/city/buildings/sf-building-201006.0144587/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0144587/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0144587/geometry.bin"
+      }
+    },
+    "sf-model-b8edd0267605be04": {
+      "path": "assets/models/city/buildings/sf-building-201006.0145412/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0145412/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0145412/geometry.bin"
+      }
+    },
+    "sf-model-f25f335bfaac7588": {
+      "path": "assets/models/city/buildings/sf-building-201006.0145679/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0145679/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0145679/geometry.bin"
+      }
+    },
+    "sf-model-d09a027d09db3c8f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0145772/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0145772/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0145772/geometry.bin"
+      }
+    },
+    "sf-model-6f8fc92ec5eb87f7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0146048/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0146048/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0146048/geometry.bin"
+      }
+    },
+    "sf-model-e63cb59454faa916": {
+      "path": "assets/models/city/buildings/sf-building-201006.0146336/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0146336/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0146336/geometry.bin"
+      }
+    },
+    "sf-model-252a9ec253423afc": {
+      "path": "assets/models/city/buildings/sf-building-201006.0146717/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0146717/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0146717/geometry.bin"
+      }
+    },
+    "sf-model-bed0863ad4b625c0": {
+      "path": "assets/models/city/buildings/sf-building-201006.0147470/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0147470/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0147470/geometry.bin"
+      }
+    },
+    "sf-model-661f94c9c61103d9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0147478/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0147478/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0147478/geometry.bin"
+      }
+    },
+    "sf-model-6e3e41cfdc7cd8e7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0147595/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0147595/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0147595/geometry.bin"
+      }
+    },
+    "sf-model-3ac66bce7c5fd5bd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0147728/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0147728/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0147728/geometry.bin"
+      }
+    },
+    "sf-model-2444ec1c33a31a01": {
+      "path": "assets/models/city/buildings/sf-building-201006.0147880/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0147880/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0147880/geometry.bin"
+      }
+    },
+    "sf-model-88f4cc60ed82447e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0148170/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0148170/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0148170/geometry.bin"
+      }
+    },
+    "sf-model-f9fa87066c0469a7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0148288/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0148288/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0148288/geometry.bin"
+      }
+    },
+    "sf-model-a38d2e6002eb8907": {
+      "path": "assets/models/city/buildings/sf-building-201006.0148610/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0148610/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0148610/geometry.bin"
+      }
+    },
+    "sf-model-fc997b779d60a426": {
+      "path": "assets/models/city/buildings/sf-building-201006.0148634/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0148634/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0148634/geometry.bin"
+      }
+    },
+    "sf-model-96881e1adbb1fb37": {
+      "path": "assets/models/city/buildings/sf-building-201006.0148986/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0148986/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0148986/geometry.bin"
+      }
+    },
+    "sf-model-1c05560f99ac3a4f": {
+      "path": "assets/models/city/buildings/sf-building-201006.0149017/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0149017/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0149017/geometry.bin"
+      }
+    },
+    "sf-model-6855c6890e2638ae": {
+      "path": "assets/models/city/buildings/sf-building-201006.0149315/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0149315/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0149315/geometry.bin"
+      }
+    },
+    "sf-model-f6052234ad7ee2fd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0149330/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0149330/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0149330/geometry.bin"
+      }
+    },
+    "sf-model-073c53069bcefee3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0149830/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0149830/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0149830/geometry.bin"
+      }
+    },
+    "sf-model-5f63d0a8e0484f14": {
+      "path": "assets/models/city/buildings/sf-building-201006.0149934/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0149934/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0149934/geometry.bin"
+      }
+    },
+    "sf-model-5985f3b11366a63d": {
+      "path": "assets/models/city/buildings/sf-building-201006.0150131/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0150131/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0150131/geometry.bin"
+      }
+    },
+    "sf-model-2ea44c86e073e267": {
+      "path": "assets/models/city/buildings/sf-building-201006.0150150/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0150150/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0150150/geometry.bin"
+      }
+    },
+    "sf-model-e160fd036e044586": {
+      "path": "assets/models/city/buildings/sf-building-201006.0150170/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0150170/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0150170/geometry.bin"
+      }
+    },
+    "sf-model-759830dea962c535": {
+      "path": "assets/models/city/buildings/sf-building-201006.0150271/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0150271/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0150271/geometry.bin"
+      }
+    },
+    "sf-model-e8e0704672f1602c": {
+      "path": "assets/models/city/buildings/sf-building-201006.0150643/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0150643/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0150643/geometry.bin"
+      }
+    },
+    "sf-model-27b27eeb50bd3890": {
+      "path": "assets/models/city/buildings/sf-building-201006.0151326/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0151326/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0151326/geometry.bin"
+      }
+    },
+    "sf-model-d1f83e5c01dea2ac": {
+      "path": "assets/models/city/buildings/sf-building-201006.0151511/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0151511/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0151511/geometry.bin"
+      }
+    },
+    "sf-model-1541fbf14c3bf1c7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0152455/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0152455/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0152455/geometry.bin"
+      }
+    },
+    "sf-model-c14d848fc6a41c42": {
+      "path": "assets/models/city/buildings/sf-building-201006.0152914/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0152914/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0152914/geometry.bin"
+      }
+    },
+    "sf-model-cfae10ce2f174278": {
+      "path": "assets/models/city/buildings/sf-building-201006.0153877/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0153877/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0153877/geometry.bin"
+      }
+    },
+    "sf-model-4164f29f5d7d31a3": {
+      "path": "assets/models/city/buildings/sf-building-201006.0154435/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0154435/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0154435/geometry.bin"
+      }
+    },
+    "sf-model-d149a1a08fd16b51": {
+      "path": "assets/models/city/buildings/sf-building-201006.0154590/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0154590/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0154590/geometry.bin"
+      }
+    },
+    "sf-model-a88912399256c44a": {
+      "path": "assets/models/city/buildings/sf-building-201006.0154595/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0154595/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0154595/geometry.bin"
+      }
+    },
+    "sf-model-7820a32f1ebdfe26": {
+      "path": "assets/models/city/buildings/sf-building-201006.0154603/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0154603/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0154603/geometry.bin"
+      }
+    },
+    "sf-model-0c4e1d9086931610": {
+      "path": "assets/models/city/buildings/sf-building-201006.0155376/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0155376/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0155376/geometry.bin"
+      }
+    },
+    "sf-model-0ad25a325f9d83bd": {
+      "path": "assets/models/city/buildings/sf-building-201006.0155486/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0155486/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0155486/geometry.bin"
+      }
+    },
+    "sf-model-f1b6e96fdb11f7e8": {
+      "path": "assets/models/city/buildings/sf-building-201006.0156104/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0156104/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0156104/geometry.bin"
+      }
+    },
+    "sf-model-eec1e66433e24f57": {
+      "path": "assets/models/city/buildings/sf-building-201006.0156146/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0156146/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0156146/geometry.bin"
+      }
+    },
+    "sf-model-a0cb15cb8b05bf91": {
+      "path": "assets/models/city/buildings/sf-building-201006.0156479/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0156479/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0156479/geometry.bin"
+      }
+    },
+    "sf-model-285f049e62845ace": {
+      "path": "assets/models/city/buildings/sf-building-201006.0156984/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0156984/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0156984/geometry.bin"
+      }
+    },
+    "sf-model-b78229f85719d205": {
+      "path": "assets/models/city/buildings/sf-building-201006.0156998/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0156998/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0156998/geometry.bin"
+      }
+    },
+    "sf-model-fe0f05ddcafdbb18": {
+      "path": "assets/models/city/buildings/sf-building-201006.0157115/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0157115/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0157115/geometry.bin"
+      }
+    },
+    "sf-model-a8cd7775ca4718fe": {
+      "path": "assets/models/city/buildings/sf-building-201006.0157510/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0157510/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0157510/geometry.bin"
+      }
+    },
+    "sf-model-ec4925aa412a63ee": {
+      "path": "assets/models/city/buildings/sf-building-201006.0157806/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0157806/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0157806/geometry.bin"
+      }
+    },
+    "sf-model-ed3af709f199ef89": {
+      "path": "assets/models/city/buildings/sf-building-201006.0157922/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0157922/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0157922/geometry.bin"
+      }
+    },
+    "sf-model-4f2d7cb70c067579": {
+      "path": "assets/models/city/buildings/sf-building-201006.0158034/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0158034/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0158034/geometry.bin"
+      }
+    },
+    "sf-model-a6d863c15a1166d5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0158545/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0158545/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0158545/geometry.bin"
+      }
+    },
+    "sf-model-2f199e3b17680526": {
+      "path": "assets/models/city/buildings/sf-building-201006.0158634/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0158634/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0158634/geometry.bin"
+      }
+    },
+    "sf-model-2d59027094c52a41": {
+      "path": "assets/models/city/buildings/sf-building-201006.0159382/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0159382/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0159382/geometry.bin"
+      }
+    },
+    "sf-model-1543892df84914d5": {
+      "path": "assets/models/city/buildings/sf-building-201006.0159588/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0159588/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0159588/geometry.bin"
+      }
+    },
+    "sf-model-385eff2b870c37b9": {
+      "path": "assets/models/city/buildings/sf-building-201006.0159943/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0159943/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0159943/geometry.bin"
+      }
+    },
+    "sf-model-c21ef5c717d6d66b": {
+      "path": "assets/models/city/buildings/sf-building-201006.0160029/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0160029/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0160029/geometry.bin"
+      }
+    },
+    "sf-model-e918cd9577951bd7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0160128/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0160128/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0160128/geometry.bin"
+      }
+    },
+    "sf-model-c6db9db4455be356": {
+      "path": "assets/models/city/buildings/sf-building-201006.0160223/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0160223/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0160223/geometry.bin"
+      }
+    },
+    "sf-model-89f8690dd46cb2fb": {
+      "path": "assets/models/city/buildings/sf-building-201006.0160465/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0160465/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0160465/geometry.bin"
+      }
+    },
+    "sf-model-3dd3ba90c11c71a7": {
+      "path": "assets/models/city/buildings/sf-building-201006.0160950/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0160950/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0160950/geometry.bin"
+      }
+    },
+    "sf-model-7d29affceb216d8e": {
+      "path": "assets/models/city/buildings/sf-building-201006.0161045/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0161045/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0161045/geometry.bin"
+      }
+    },
+    "sf-model-fb19b9b4a93f77b2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0161053/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0161053/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0161053/geometry.bin"
+      }
+    },
+    "sf-model-d9ce8015a2fb6cba": {
+      "path": "assets/models/city/buildings/sf-building-201006.0161370/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0161370/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0161370/geometry.bin"
+      }
+    },
+    "sf-model-0db110a2445d8039": {
+      "path": "assets/models/city/buildings/sf-building-201006.0161529/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0161529/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0161529/geometry.bin"
+      }
+    },
+    "sf-model-996b671393432476": {
+      "path": "assets/models/city/buildings/sf-building-201006.0161586/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0161586/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0161586/geometry.bin"
+      }
+    },
+    "sf-model-3f16d1a9c8f46d72": {
+      "path": "assets/models/city/buildings/sf-building-201006.0162694/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0162694/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0162694/geometry.bin"
+      }
+    },
+    "sf-model-b0bfa41e6b5336a2": {
+      "path": "assets/models/city/buildings/sf-building-201006.0162825/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0162825/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0162825/geometry.bin"
+      }
+    },
+    "sf-model-ecbc04123ae32148": {
+      "path": "assets/models/city/buildings/sf-building-201006.0165812/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/buildings/sf-building-201006.0165812/f.gltf",
+        "geometry.bin": "assets/models/city/buildings/sf-building-201006.0165812/geometry.bin"
+      }
+    },
+    "sf-model-053b33ebf3f598ed": {
+      "path": "assets/models/city/roads/sf-road-2546000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-2546000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-2546000/geometry.bin"
+      }
+    },
+    "sf-model-2454e3c0bc93d079": {
+      "path": "assets/models/city/roads/sf-road-2722000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-2722000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-2722000/geometry.bin"
+      }
+    },
+    "sf-model-3426e4a0a3ba35dd": {
+      "path": "assets/models/city/roads/sf-road-2723000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-2723000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-2723000/geometry.bin"
+      }
+    },
+    "sf-model-821d8b68341812d0": {
+      "path": "assets/models/city/roads/sf-road-3092000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-3092000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-3092000/geometry.bin"
+      }
+    },
+    "sf-model-58bbea12469dbf16": {
+      "path": "assets/models/city/roads/sf-road-3517000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-3517000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-3517000/geometry.bin"
+      }
+    },
+    "sf-model-3bd879661e60765f": {
+      "path": "assets/models/city/roads/sf-road-3687000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-3687000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-3687000/geometry.bin"
+      }
+    },
+    "sf-model-687a492553a74b35": {
+      "path": "assets/models/city/roads/sf-road-4294000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-4294000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-4294000/geometry.bin"
+      }
+    },
+    "sf-model-7d32c50797a009f2": {
+      "path": "assets/models/city/roads/sf-road-4295000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-4295000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-4295000/geometry.bin"
+      }
+    },
+    "sf-model-b110553c85d17a97": {
+      "path": "assets/models/city/roads/sf-road-4296000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-4296000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-4296000/geometry.bin"
+      }
+    },
+    "sf-model-aecab1d2b0cbef19": {
+      "path": "assets/models/city/roads/sf-road-4297000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-4297000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-4297000/geometry.bin"
+      }
+    },
+    "sf-model-035a1ed4717a5377": {
+      "path": "assets/models/city/roads/sf-road-4298000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-4298000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-4298000/geometry.bin"
+      }
+    },
+    "sf-model-4ffb4358b6b2cd51": {
+      "path": "assets/models/city/roads/sf-road-5051000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5051000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5051000/geometry.bin"
+      }
+    },
+    "sf-model-f1c2b0e3272f2db5": {
+      "path": "assets/models/city/roads/sf-road-5495000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5495000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5495000/geometry.bin"
+      }
+    },
+    "sf-model-f1e43b8ead4bb9df": {
+      "path": "assets/models/city/roads/sf-road-5496000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5496000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5496000/geometry.bin"
+      }
+    },
+    "sf-model-246c5498d92e5feb": {
+      "path": "assets/models/city/roads/sf-road-5497000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5497000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5497000/geometry.bin"
+      }
+    },
+    "sf-model-d8593ec67b5150f4": {
+      "path": "assets/models/city/roads/sf-road-5498000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5498000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5498000/geometry.bin"
+      }
+    },
+    "sf-model-73130f0a9d030979": {
+      "path": "assets/models/city/roads/sf-road-5499000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5499000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5499000/geometry.bin"
+      }
+    },
+    "sf-model-8f9b77ef4fc90999": {
+      "path": "assets/models/city/roads/sf-road-5500000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5500000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5500000/geometry.bin"
+      }
+    },
+    "sf-model-a6a295557e3ac8e2": {
+      "path": "assets/models/city/roads/sf-road-5501000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5501000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5501000/geometry.bin"
+      }
+    },
+    "sf-model-2bc70e6da147bbcc": {
+      "path": "assets/models/city/roads/sf-road-5502000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5502000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5502000/geometry.bin"
+      }
+    },
+    "sf-model-8db928be19f3cd72": {
+      "path": "assets/models/city/roads/sf-road-5503000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5503000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5503000/geometry.bin"
+      }
+    },
+    "sf-model-0fe022e7b51cfd12": {
+      "path": "assets/models/city/roads/sf-road-5504000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5504000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5504000/geometry.bin"
+      }
+    },
+    "sf-model-834d16531f664494": {
+      "path": "assets/models/city/roads/sf-road-5505000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-5505000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-5505000/geometry.bin"
+      }
+    },
+    "sf-model-9d6236243e9d48a3": {
+      "path": "assets/models/city/roads/sf-road-6161000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6161000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6161000/geometry.bin"
+      }
+    },
+    "sf-model-1047efda56280460": {
+      "path": "assets/models/city/roads/sf-road-6403000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6403000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6403000/geometry.bin"
+      }
+    },
+    "sf-model-96ad1d461dd20fda": {
+      "path": "assets/models/city/roads/sf-road-6404000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6404000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6404000/geometry.bin"
+      }
+    },
+    "sf-model-0de097ac191688f6": {
+      "path": "assets/models/city/roads/sf-road-6405000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6405000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6405000/geometry.bin"
+      }
+    },
+    "sf-model-c1445ad4113a3fc5": {
+      "path": "assets/models/city/roads/sf-road-6406000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6406000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6406000/geometry.bin"
+      }
+    },
+    "sf-model-a183aed20fbdc45d": {
+      "path": "assets/models/city/roads/sf-road-6407000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6407000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6407000/geometry.bin"
+      }
+    },
+    "sf-model-6c47cded47ef4cd7": {
+      "path": "assets/models/city/roads/sf-road-6449000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6449000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6449000/geometry.bin"
+      }
+    },
+    "sf-model-75dda8054ccce1af": {
+      "path": "assets/models/city/roads/sf-road-6450000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6450000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6450000/geometry.bin"
+      }
+    },
+    "sf-model-6e025523c30f17b5": {
+      "path": "assets/models/city/roads/sf-road-6451000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6451000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6451000/geometry.bin"
+      }
+    },
+    "sf-model-621e8641670b7c1e": {
+      "path": "assets/models/city/roads/sf-road-6452000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6452000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6452000/geometry.bin"
+      }
+    },
+    "sf-model-179e8041f7ec7e42": {
+      "path": "assets/models/city/roads/sf-road-6453000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6453000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6453000/geometry.bin"
+      }
+    },
+    "sf-model-b138ce22637b06cd": {
+      "path": "assets/models/city/roads/sf-road-6454000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6454000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6454000/geometry.bin"
+      }
+    },
+    "sf-model-839762ccb087d9f2": {
+      "path": "assets/models/city/roads/sf-road-6455000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6455000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6455000/geometry.bin"
+      }
+    },
+    "sf-model-b20217e6f8d8a718": {
+      "path": "assets/models/city/roads/sf-road-6456000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6456000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6456000/geometry.bin"
+      }
+    },
+    "sf-model-9eb0d11511a1b791": {
+      "path": "assets/models/city/roads/sf-road-6457000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6457000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6457000/geometry.bin"
+      }
+    },
+    "sf-model-6cdfeaf33ff0e653": {
+      "path": "assets/models/city/roads/sf-road-6497000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6497000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6497000/geometry.bin"
+      }
+    },
+    "sf-model-bd8c329aa8467281": {
+      "path": "assets/models/city/roads/sf-road-6573000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6573000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6573000/geometry.bin"
+      }
+    },
+    "sf-model-33d0d981f3fb3511": {
+      "path": "assets/models/city/roads/sf-road-6774000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-6774000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-6774000/geometry.bin"
+      }
+    },
+    "sf-model-5943c9727be40beb": {
+      "path": "assets/models/city/roads/sf-road-7451000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-7451000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-7451000/geometry.bin"
+      }
+    },
+    "sf-model-22aa34e8326806eb": {
+      "path": "assets/models/city/roads/sf-road-7452000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-7452000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-7452000/geometry.bin"
+      }
+    },
+    "sf-model-a90de82743e5a7f0": {
+      "path": "assets/models/city/roads/sf-road-7909000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-7909000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-7909000/geometry.bin"
+      }
+    },
+    "sf-model-eca577f7421e5a52": {
+      "path": "assets/models/city/roads/sf-road-7910000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-7910000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-7910000/geometry.bin"
+      }
+    },
+    "sf-model-441faf051f7db929": {
+      "path": "assets/models/city/roads/sf-road-8689000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-8689000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-8689000/geometry.bin"
+      }
+    },
+    "sf-model-8871f1232fb12a94": {
+      "path": "assets/models/city/roads/sf-road-8943000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-8943000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-8943000/geometry.bin"
+      }
+    },
+    "sf-model-f2d0dc1468a5bc1a": {
+      "path": "assets/models/city/roads/sf-road-9606000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-9606000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-9606000/geometry.bin"
+      }
+    },
+    "sf-model-3bd110addd1b4405": {
+      "path": "assets/models/city/roads/sf-road-10588000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-10588000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-10588000/geometry.bin"
+      }
+    },
+    "sf-model-845f0be25a61c3d8": {
+      "path": "assets/models/city/roads/sf-road-10694000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-10694000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-10694000/geometry.bin"
+      }
+    },
+    "sf-model-a0e455bc62780d57": {
+      "path": "assets/models/city/roads/sf-road-10695000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-10695000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-10695000/geometry.bin"
+      }
+    },
+    "sf-model-4f3d52c308612ee4": {
+      "path": "assets/models/city/roads/sf-road-10696000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-10696000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-10696000/geometry.bin"
+      }
+    },
+    "sf-model-3dbb683a51f25663": {
+      "path": "assets/models/city/roads/sf-road-10697000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-10697000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-10697000/geometry.bin"
+      }
+    },
+    "sf-model-72d21801a3aecd6d": {
+      "path": "assets/models/city/roads/sf-road-10698000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-10698000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-10698000/geometry.bin"
+      }
+    },
+    "sf-model-c2a5571e8e94008b": {
+      "path": "assets/models/city/roads/sf-road-10774000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-10774000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-10774000/geometry.bin"
+      }
+    },
+    "sf-model-a12477e0d0b26d9a": {
+      "path": "assets/models/city/roads/sf-road-12211000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12211000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12211000/geometry.bin"
+      }
+    },
+    "sf-model-3efeda108e17f44d": {
+      "path": "assets/models/city/roads/sf-road-12212000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12212000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12212000/geometry.bin"
+      }
+    },
+    "sf-model-eaedf875f1f5b560": {
+      "path": "assets/models/city/roads/sf-road-12213000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12213000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12213000/geometry.bin"
+      }
+    },
+    "sf-model-1613905f6087f1b2": {
+      "path": "assets/models/city/roads/sf-road-12214000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12214000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12214000/geometry.bin"
+      }
+    },
+    "sf-model-97b86862648495cc": {
+      "path": "assets/models/city/roads/sf-road-12215000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12215000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12215000/geometry.bin"
+      }
+    },
+    "sf-model-8e34779e6943e0c3": {
+      "path": "assets/models/city/roads/sf-road-12841000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12841000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12841000/geometry.bin"
+      }
+    },
+    "sf-model-c315702b71c62425": {
+      "path": "assets/models/city/roads/sf-road-12842000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12842000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12842000/geometry.bin"
+      }
+    },
+    "sf-model-dc107856e19461f4": {
+      "path": "assets/models/city/roads/sf-road-12843000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12843000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12843000/geometry.bin"
+      }
+    },
+    "sf-model-5b1b20c1f69a7555": {
+      "path": "assets/models/city/roads/sf-road-12844000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12844000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12844000/geometry.bin"
+      }
+    },
+    "sf-model-ac5aa16d27926b1c": {
+      "path": "assets/models/city/roads/sf-road-12845000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12845000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12845000/geometry.bin"
+      }
+    },
+    "sf-model-0f30791e8e99a5ff": {
+      "path": "assets/models/city/roads/sf-road-12846000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12846000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12846000/geometry.bin"
+      }
+    },
+    "sf-model-3f03a1997324371e": {
+      "path": "assets/models/city/roads/sf-road-12847000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12847000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12847000/geometry.bin"
+      }
+    },
+    "sf-model-d5e5789f2349b262": {
+      "path": "assets/models/city/roads/sf-road-12848000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12848000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12848000/geometry.bin"
+      }
+    },
+    "sf-model-dd312abe97c74fbe": {
+      "path": "assets/models/city/roads/sf-road-12849000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12849000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12849000/geometry.bin"
+      }
+    },
+    "sf-model-9f7e2293499dbc4e": {
+      "path": "assets/models/city/roads/sf-road-12850000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12850000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12850000/geometry.bin"
+      }
+    },
+    "sf-model-d8652094848d6245": {
+      "path": "assets/models/city/roads/sf-road-12851000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-12851000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-12851000/geometry.bin"
+      }
+    },
+    "sf-model-9e0fecfb8cb10118": {
+      "path": "assets/models/city/roads/sf-road-13178000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-13178000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-13178000/geometry.bin"
+      }
+    },
+    "sf-model-a78e94d555cf7155": {
+      "path": "assets/models/city/roads/sf-road-13179000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-13179000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-13179000/geometry.bin"
+      }
+    },
+    "sf-model-dd76911a7ef4d464": {
+      "path": "assets/models/city/roads/sf-road-13690000/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/roads/sf-road-13690000/f.gltf",
+        "geometry.bin": "assets/models/city/roads/sf-road-13690000/geometry.bin"
+      }
+    },
+    "sf-model-fba3167610569904": {
+      "path": "assets/models/city/trees/broadleaf/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/trees/broadleaf/f.gltf",
+        "geometry.bin": "assets/models/city/trees/broadleaf/geometry.bin"
+      }
+    },
+    "sf-model-da03d9dceb65ce53": {
+      "path": "assets/models/city/terrain/f.gltf",
+      "files": {
+        "f.gltf": "assets/models/city/terrain/f.gltf",
+        "geometry.bin": "assets/models/city/terrain/geometry.bin"
+      }
+    }
+  }
+}

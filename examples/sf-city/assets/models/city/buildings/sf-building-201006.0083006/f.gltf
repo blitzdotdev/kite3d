@@ -1,0 +1,298 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Building 201006.0083006",
+      "children": [
+        1,
+        2,
+        3
+      ],
+      "extras": {
+        "name": "Building 201006.0083006",
+        "cityId": "sf-building:201006.0083006",
+        "heightSource": "DataSF hgt_median_m"
+      }
+    },
+    {
+      "name": "Footprint 0",
+      "mesh": 0
+    },
+    {
+      "name": "Inferred window bays",
+      "mesh": 1
+    },
+    {
+      "name": "Window sills",
+      "mesh": 2
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Footprint 0",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 1
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Inferred window bays",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5
+          },
+          "indices": 6,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Window sills",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 7,
+            "NORMAL": 8
+          },
+          "indices": 9,
+          "material": 3
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Inferred stucco facade",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.6724431569510133,
+          0.5711248294565854,
+          0.4232676699760063,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Flat roof",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.171441100722554,
+          0.181164244239483,
+          0.16202937562896222,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Window glass approximation",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.030713443727452196,
+          0.06662593863608139,
+          0.09989872823822872,
+          1
+        ],
+        "roughnessFactor": 0.3,
+        "metallicFactor": 0.25
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Painted trim",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.76052450467022,
+          0.7156935005005721,
+          0.6307571363387763,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 216,
+      "type": "VEC3",
+      "min": [
+        -13.128496170043945,
+        -1.6763192415237427,
+        -4.742208480834961
+      ],
+      "max": [
+        10.922611236572266,
+        13.279999732971191,
+        4.603550910949707
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 216,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5125,
+      "count": 102,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 114,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 256,
+      "type": "VEC3",
+      "min": [
+        -13.032493591308594,
+        0.8999999761581421,
+        -4.6479949951171875
+      ],
+      "max": [
+        10.788541793823242,
+        12.510000228881836,
+        4.500446319580078
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 256,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5125,
+      "count": 384,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 256,
+      "type": "VEC3",
+      "min": [
+        -13.225862503051758,
+        0.800000011920929,
+        -4.842678546905518
+      ],
+      "max": [
+        10.983141899108887,
+        10.760000228881836,
+        4.689481258392334
+      ]
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 256,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5125,
+      "count": 384,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 2592
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2592,
+      "byteLength": 2592
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5184,
+      "byteLength": 408
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5592,
+      "byteLength": 456
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6048,
+      "byteLength": 3072
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9120,
+      "byteLength": 3072
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12192,
+      "byteLength": 1536
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13728,
+      "byteLength": 3072
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 16800,
+      "byteLength": 3072
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 19872,
+      "byteLength": 1536
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 21408
+    }
+  ]
+}

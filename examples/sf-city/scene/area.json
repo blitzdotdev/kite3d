@@ -1,0 +1,8 @@
+{
+  "name": "North Beach / Washington Square",
+  "bounds": [-122.4122, 37.799, -122.4065, 37.802],
+  "origin": [-122.40935, 37.8005],
+  "verticalOriginM": 15,
+  "tileSizeM": 128,
+  "terrainStepM": 6
+}

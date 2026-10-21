@@ -75,6 +75,10 @@ Run `npx kite3d` with no argument for the full list.
 
 Everything is Apache-2.0 and ships its source, so an agent can grep `node_modules` when the guide is not enough. Built on [threepipe](https://threepipe.org).
 
+## Examples
+
+- [SF city slice](examples/sf-city): real North Beach building, street and tree data, an offline procedural baker, editable assets and persistent overrides.
+
 ## License
 
 Apache-2.0. See [LICENSE](LICENSE).

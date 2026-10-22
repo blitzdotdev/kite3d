@@ -19,12 +19,16 @@
       ],
       "extras": {
         "name": "BRANT ALY",
-        "cityId": "sf-road:3092000"
+        "cityId": "sf-road:3092000",
+        "cityBakedAsset": "assets/models/city/roads/sf-road-3092000/f.gltf"
       }
     },
     {
       "name": "Carriageway",
-      "mesh": 0
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
     }
   ],
   "meshes": [
@@ -34,9 +38,10 @@
         {
           "attributes": {
             "POSITION": 0,
-            "NORMAL": 1
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
           },
-          "indices": 2,
+          "indices": 3,
           "material": 0
         }
       ]
@@ -47,13 +52,16 @@
       "name": "Asphalt",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.09084171117479915,
-          0.10224173307914941,
-          0.10946171076915331,
+          0.12743768042608497,
+          0.14126329113044458,
+          0.1499597898006365,
           1
         ],
         "roughnessFactor": 0.85,
-        "metallicFactor": 0
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        }
       },
       "doubleSided": true
     },
@@ -61,13 +69,16 @@
       "name": "Concrete sidewalk",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.5028864580233624,
-          0.48514994004665124,
-          0.41254261347374327,
+          0.6104955708001716,
+          0.5906188409113381,
+          0.514917665367466,
           1
         ],
         "roughnessFactor": 0.85,
-        "metallicFactor": 0
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 1
+        }
       },
       "doubleSided": true
     },
@@ -111,6 +122,12 @@
     },
     {
       "bufferView": 2,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
       "componentType": 5125,
       "count": 396,
       "type": "SCALAR"
@@ -130,13 +147,44 @@
     {
       "buffer": 0,
       "byteOffset": 6336,
+      "byteLength": 2112
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8448,
       "byteLength": 1584
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 7920
+      "byteLength": 10032
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/materials/asphalt.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/concrete.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
     }
   ]
 }

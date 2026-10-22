@@ -60,7 +60,7 @@ for (const p of generated.placements) {
   const assetDoc = read(p.asset)
   for (const resource of [...(assetDoc.buffers || []), ...(assetDoc.images || [])]) {
     if (!resource.uri || resource.uri.startsWith('data:') || /^https?:/.test(resource.uri)) continue
-    const resolved = resolve(root, p.asset, '..', resource.uri)
+    const resolved = resource.uri.startsWith('/kite3d/') ? resolve(root, resource.uri.slice('/kite3d/'.length)) : resolve(root, p.asset, '..', resource.uri)
     if (!resolved.startsWith(root + '/')) throw new Error(`Asset resource escapes the project: ${resource.uri}`)
     files[resource.uri] = resolved.slice(root.length + 1)
   }

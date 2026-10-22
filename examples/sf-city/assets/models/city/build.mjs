@@ -1,14 +1,18 @@
+import {bakeGroundMaterials, groundMaterial, groundResources} from './materials.mjs'
+import {foliageTexture, foliageCards} from './foliage.mjs'
+import {facadeKit} from './facade-kit.mjs'
 import {strip, corridors, clipped, crossingLift} from './streets.mjs'
 import {THREE, material, surface, asset} from './mesh.mjs'
 import {area, bounds, loadCity, elevation, hash, write, xy, polygonArea} from '../../../scene/data.mjs'
 
-const GENERATOR_VERSION = 2
+const GENERATOR_VERSION = 3
+bakeGroundMaterials()
 const city = loadCity()
 const {ground} = elevation(city)
 const roadCorridors = corridors(city.roads)
 const outerCorridors = corridors(city.roads.map(r => ({...r, width: r.width + 2 * r.sidewalk})))
 const placements = [], collisions = [], tiles = {}
-const palette = ['#d5c7aa', '#d7cfbf', '#c1c8bb', '#b8c3ca', '#cfb7aa', '#d6c7ae', '#c4bcae']
+const palette = ['#dfd6bd', '#bdcfcb', '#d8c2ad', '#a9b9bf', '#d1b8ab', '#ddd2b4', '#adc0ad', '#c4c4bc', '#b5b1a7', '#d4cabd']
 const dark = material('Window glass approximation', '#314959', 0.3, 0.25)
 const roof = material('Flat roof', '#737670')
 const trim = material('Painted trim', '#e2dcd0')
@@ -17,7 +21,7 @@ const seed = (id) => parseInt(hash(id).slice(0, 8), 16) / 2 ** 32
 function record(feature, generated, position, extra = {}) {
   const tile = extra.tile || `${Math.floor(position[0] / area.tileSizeM)}_${Math.floor(position[2] / area.tileSizeM)}`
   const p = {id: feature.id, sourceId: feature.sourceId, name: feature.name || feature.id,
-    asset: feature.asset || generated.path, position, tile, ...extra,
+    asset: feature.asset || generated.path, baked: !feature.asset, position, tile, ...extra,
     triangles: generated.triangles || 0, sourceHash: hash(feature)}
   placements.push(p)
   ;(tiles[tile] ||= []).push(feature.id)
@@ -27,10 +31,11 @@ function building(feature) {
   const [cx, cz] = feature.center
   const groundCorners = feature.polygons.flatMap((p) => p[0].map(([x, z]) => ground(x, z)))
   const base = ground(cx, cz), bottom = Math.min(...groundCorners) - 0.6
-  const height = feature.height, floors = Math.max(1, Math.round(height / 3.2))
+  const height = feature.height
   const top = base + height
   const color = feature.facadeColor || palette[Math.floor(seed(feature.id) * palette.length)]
-  const materials = [material('Inferred stucco facade', color), roof, dark, trim]
+  const materials = [material('SF stucco / painted timber', color), roof, dark, trim,
+    material('Shopfront paint', ['#304f47','#733f35','#263e4a'][Math.floor(seed(feature.id+'shop')*3)]), material('Glazing sky reflection', '#819aab', 0.24, 0.2)]
   const parts = []
   let polygonIndex = 0
   for (const polygon of feature.polygons) {
@@ -40,44 +45,14 @@ function building(feature) {
     const body = new THREE.ExtrudeGeometry(shape, {depth: top - bottom, bevelEnabled: false, steps: 1, curveSegments: 1})
     body.rotateX(-Math.PI / 2); body.translate(0, bottom - base, 0)
     parts.push({name: `Footprint ${polygonIndex++}`, geometry: body, mat: [1, 0]})
-    const windows = [], indices = [], trimPoints = [], trimIndices = []
-    const signed = polygon[0].reduce((s, a, i) => {const b = polygon[0][(i + 1) % polygon[0].length]; return s + a[0] * b[1] - b[0] * a[1]}, 0)
-    for (let i = 0; i < polygon[0].length; i++) {
-      const a = polygon[0][i], b = polygon[0][(i + 1) % polygon[0].length]
-      const length = Math.hypot(b[0] - a[0], b[1] - a[1])
-      if (length < 2.4) continue
-      const ux = (b[0] - a[0]) / length, uz = (b[1] - a[1]) / length
-      const sign = Math.sign(signed), nx = uz * sign, nz = -ux * sign
-      const bays = Math.floor(length / 2.8)
-      for (let f = 0; f < floors; f++) {
-        const y = f * height / floors + 0.9
-        const windowH = Math.min(1.65, height / floors - 1.1)
-        if (windowH <= 0) continue
-        for (let k = 0; k < bays; k++) {
-          const s = length * (k + 0.5) / bays, half = Math.min(0.62, length / bays * 0.23)
-          const x = a[0] + ux * s - cx + nx * 0.055, z = a[1] + uz * s - cz + nz * 0.055
-          const v = windows.length
-          windows.push([x - ux * half, y, z - uz * half], [x + ux * half, y, z + uz * half],
-            [x + ux * half, y + windowH, z + uz * half], [x - ux * half, y + windowH, z - uz * half])
-          indices.push([v, v + 1, v + 2], [v, v + 2, v + 3])
-          const t = trimPoints.length, hw = half + 0.1
-          trimPoints.push([x - ux * hw, y - 0.1, z - uz * hw], [x + ux * hw, y - 0.1, z + uz * hw],
-            [x + ux * hw, y - 0.1, z + uz * hw], [x - ux * hw, y - 0.1, z - uz * hw])
-          // A real sill with depth, rather than an extra coplanar facade sheet.
-          trimPoints[t + 2][0] += nx * 0.18; trimPoints[t + 2][2] += nz * 0.18
-          trimPoints[t + 3][0] += nx * 0.18; trimPoints[t + 3][2] += nz * 0.18
-          trimIndices.push([t, t + 1, t + 2], [t, t + 2, t + 3])
-        }
-      }
-    }
-    if (windows.length) parts.push({name: 'Inferred window bays', geometry: surface(windows, indices), mat: 2})
-    if (trimPoints.length) parts.push({name: 'Window sills', geometry: surface(trimPoints, trimIndices), mat: 3})
   }
+  parts.push(...facadeKit(feature, city.roads, ground, base))
+
   const id = feature.id.replace(':', '-')
   const generated = asset(`assets/models/city/buildings/${id}`, parts, materials,
     {name: `Building ${feature.sourceId}`, cityId: feature.id, heightSource: feature.heightSource})
   record({...feature, name: `Building ${feature.sourceId}`}, generated, [cx, base, cz],
-    {kind: 'building', heightM: height, heightSource: feature.heightSource, facadeSource: 'procedural placeholder',
+    {kind: 'building', heightM: height, heightSource: feature.heightSource, facadeSource: 'authored SF-inspired bay, cornice and storefront modules; inferred assignment',
       sourceDataset: 'ynuv-fyni'})
   collisions.push({id: feature.id, polygons: feature.polygons, bottomM: bottom, topM: top,
     type: 'footprint-prism', integratedPhysics: false})
@@ -162,14 +137,14 @@ function road(feature) {
     }
   }
   if (!points.length) return
-  const parts = [{name: 'Carriageway', geometry: surface(points, triangles), mat: 0}]
-  if (walks.length) parts.push({name: 'Clipped sidewalks with lowered crossing approaches', geometry: surface(walks, wt), mat: 1})
-  if (curbs.length) parts.push({name: 'Raised curb faces', geometry: surface(curbs, ct), mat: 1})
-  if (gutters.length) parts.push({name: 'Concrete drainage margins', geometry: surface(gutters, gt), mat: 1})
+  const parts = [{name: 'Carriageway', geometry: surface(points, triangles, 0.25), mat: 0}]
+  if (walks.length) parts.push({name: 'Clipped sidewalks with lowered crossing approaches', geometry: surface(walks, wt, 0.25), mat: 1})
+  if (curbs.length) parts.push({name: 'Raised curb faces', geometry: surface(curbs, ct, 0.25), mat: 1})
+  if (gutters.length) parts.push({name: 'Concrete drainage margins', geometry: surface(gutters, gt, 0.25), mat: 1})
   if (paint.length) parts.push({name: 'Inferred center markings', geometry: surface(paint, pt), mat: 2})
   const generated = asset(`assets/models/city/roads/${feature.id.replace(':', '-')}`, parts,
-    [material('Asphalt', '#555a5d'), material('Concrete sidewalk', '#bcb9ac'), material('Centerline', '#e4c76a')],
-    {name: feature.name, cityId: feature.id})
+    [groundMaterial('Asphalt', '#64696c', 0), groundMaterial('Concrete sidewalk', '#cdcabe', 1), material('Centerline', '#e4c76a')],
+    {name: feature.name, cityId: feature.id}, groundResources(['asphalt','concrete']))
   const center = feature.points[Math.floor(feature.points.length / 2)]
   record(feature, generated, [0, 0, 0], {kind: 'road', tile: `${Math.floor(center[0] / area.tileSizeM)}_${Math.floor(center[1] / area.tileSizeM)}`,
     widthM: feature.width, widthSource: feature.widthSource, sidewalkSource: feature.sidewalkSource, sourceDataset: '3psu-pn9h'})
@@ -177,10 +152,16 @@ function road(feature) {
 
 function trees() {
   const leaves = [material('Broadleaf canopy', '#667954'), material('Trunk', '#79634c')]
+  write('assets/models/city/trees/broadleaf/leaves.png', foliageTexture())
+  const leafMaterial = {...material('Authored leaf clusters', '#ffffff'), alphaMode: 'MASK', alphaCutoff: 0.5}
+  leafMaterial.pbrMetallicRoughness.baseColorTexture = {index: 0}
   const broadleaf = asset('assets/models/city/trees/broadleaf', [
-    {name: 'Trunk', geometry: new THREE.CylinderGeometry(0.16, 0.24, 4.7, 7).translate(0, 2.35, 0), mat: 1},
-    {name: 'Canopy', geometry: new THREE.IcosahedronGeometry(3.2, 1).scale(1, 1.1, 1).translate(0, 6.5, 0), mat: 0},
-  ], leaves, {name: 'Broadleaf placeholder, 10 m'})
+    {name: 'Tapered trunk', geometry: new THREE.CylinderGeometry(0.13,0.3,5.5,9).translate(0,2.75,0),mat:1},
+    {name: 'Authored foliage cards',geometry:foliageCards(),mat:0},
+  ], [leafMaterial, leaves[1]], {name:'Authored broadleaf canopy, inferred species shape'}, {
+    images: [{uri: 'leaves.png'}], textures: [{source: 0, sampler: 0}],
+    samplers: [{magFilter: 9729, minFilter: 9987, wrapS: 33071, wrapT: 33071}],
+  })
   const palmParts = [{name: 'Trunk', geometry: new THREE.CylinderGeometry(0.16, 0.28, 8.6, 7).translate(0, 4.3, 0), mat: 1}]
   for (let k = 0; k < 8; k++) {
     const angle = k * Math.PI / 4
@@ -198,6 +179,19 @@ function trees() {
   }
 }
 
+// Clipping duplicates vertices. Share normals at coincident points so the lawn does
+// not display a separate lighting triangle for every source grid cell.
+function groundSurface(points, triangles) {
+  const g = surface(points, triangles, 0.25), normals = g.getAttribute('normal')
+  const sums = new Map(), keys = points.map(p => p.map(v => Math.round(v * 10000)).join(':'))
+  for (let i = 0; i < points.length; i++) {
+    const n = sums.get(keys[i]) || new THREE.Vector3()
+    n.x += normals.getX(i); n.y += normals.getY(i); n.z += normals.getZ(i); sums.set(keys[i], n)
+  }
+  for (const n of sums.values()) n.normalize()
+  for (let i = 0; i < points.length; i++) {const n = sums.get(keys[i]); normals.setXYZ(i, n.x, n.y, n.z)}
+  return g
+}
 function terrain() {
   // Authored approximation from the bounding street centerlines, inset for sidewalks.
   // This is not a surveyed park boundary or a claim about present landscaping.
@@ -244,10 +238,10 @@ function terrain() {
     }
   }
   const generated = asset('assets/models/city/terrain', [
-    {name: 'Interpolated ground', geometry: surface(visibleGround, visiblePaved), mat: 0},
-    {name: 'Approximate Washington Square lawn', geometry: surface(visibleGround, visibleGrass), mat: 1},
-  ], [material('Urban ground', '#a8a397'), material('Lawn', '#83906a')],
-  {name: 'Ground from footprint ground samples', elevationSource: 'Interpolated DataSF gnd_mediancm; NAVD88 metres; not 2023 LiDAR'})
+    {name: 'Interpolated ground', geometry: groundSurface(visibleGround, visiblePaved), mat: 0},
+    {name: 'Approximate Washington Square lawn', geometry: groundSurface(visibleGround, visibleGrass), mat: 1},
+  ], [groundMaterial('Urban ground', '#c4c0b2', 0), groundMaterial('Lawn', '#b2c18d', 1)],
+  {name: 'Ground from footprint ground samples', elevationSource: 'Interpolated DataSF gnd_mediancm; NAVD88 metres; not 2023 LiDAR'}, groundResources(['concrete','lawn']))
   record({id: 'sf-terrain:north-beach', name: 'North Beach ground'}, generated, [0, 0, 0], {kind: 'terrain'})
   write('scene/collision.json', {version: 1, origin: area.origin, verticalOriginM: area.verticalOriginM,
     integratedPhysics: false, terrain: {positions, triangles: [...paved, ...grass]}, buildings: collisions})

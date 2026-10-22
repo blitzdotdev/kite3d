@@ -17,84 +17,172 @@
       "children": [
         1,
         2,
-        3
+        3,
+        4,
+        5,
+        6,
+        7
       ],
       "extras": {
         "name": "Building 201006.0015594",
         "cityId": "sf-building:201006.0015594",
-        "heightSource": "DataSF hgt_median_m"
+        "heightSource": "DataSF hgt_median_m",
+        "cityBakedAsset": "assets/models/city/buildings/sf-building-201006.0015594/f.gltf"
       }
     },
     {
-      "name": "Footprint 0",
-      "mesh": 0
+      "name": "Footprint 0 / surface 1",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
     },
     {
-      "name": "Inferred window bays",
-      "mesh": 1
+      "name": "Footprint 0 / surface 2",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
     },
     {
-      "name": "Window sills",
-      "mesh": 2
+      "name": "Facade bay volumes",
+      "mesh": 2,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inset glazing",
+      "mesh": 3,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Cornices and window frames",
+      "mesh": 4,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Sky reflection panels",
+      "mesh": 5,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Storefronts and doors",
+      "mesh": 6,
+      "extras": {
+        "cityBakedPart": true
+      }
     }
   ],
   "meshes": [
     {
-      "name": "Footprint 0",
+      "name": "Footprint 0 / surface 1",
       "primitives": [
         {
           "attributes": {
             "POSITION": 0,
-            "NORMAL": 1
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
           },
-          "indices": 2,
+          "indices": 3,
           "material": 1
-        },
+        }
+      ]
+    },
+    {
+      "name": "Footprint 0 / surface 2",
+      "primitives": [
         {
           "attributes": {
             "POSITION": 0,
-            "NORMAL": 1
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
           },
-          "indices": 3,
+          "indices": 4,
           "material": 0
         }
       ]
     },
     {
-      "name": "Inferred window bays",
+      "name": "Facade bay volumes",
       "primitives": [
         {
           "attributes": {
-            "POSITION": 4,
-            "NORMAL": 5
+            "POSITION": 5,
+            "NORMAL": 6
           },
-          "indices": 6,
+          "indices": 7,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Inset glazing",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9
+          },
+          "indices": 10,
           "material": 2
         }
       ]
     },
     {
-      "name": "Window sills",
+      "name": "Cornices and window frames",
       "primitives": [
         {
           "attributes": {
-            "POSITION": 7,
-            "NORMAL": 8
+            "POSITION": 11,
+            "NORMAL": 12
           },
-          "indices": 9,
+          "indices": 13,
           "material": 3
+        }
+      ]
+    },
+    {
+      "name": "Sky reflection panels",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 14,
+            "NORMAL": 15
+          },
+          "indices": 16,
+          "material": 5
+        }
+      ]
+    },
+    {
+      "name": "Storefronts and doors",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 17,
+            "NORMAL": 18
+          },
+          "indices": 19,
+          "material": 4
         }
       ]
     }
   ],
   "materials": [
     {
-      "name": "Inferred stucco facade",
+      "name": "SF stucco / painted timber",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.6795424696265424,
-          0.623960391667596,
-          0.5209955731953768,
+          0.6866853124288864,
+          0.5394794890033748,
+          0.4178850708380236,
           1
         ],
         "roughnessFactor": 0.85,
@@ -143,6 +231,34 @@
         "metallicFactor": 0
       },
       "doubleSided": true
+    },
+    {
+      "name": "Shopfront paint",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.171441100722554,
+          0.04970656597728775,
+          0.035601314869097636,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Glazing sky reflection",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.21952619971859377,
+          0.3231432091022285,
+          0.407240211891531,
+          1
+        ],
+        "roughnessFactor": 0.24,
+        "metallicFactor": 0.2
+      },
+      "doubleSided": true
     }
   ],
   "accessors": [
@@ -170,70 +286,160 @@
     },
     {
       "bufferView": 2,
+      "componentType": 5126,
+      "count": 276,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
       "componentType": 5125,
       "count": 132,
       "type": "SCALAR"
     },
     {
-      "bufferView": 3,
+      "bufferView": 4,
       "componentType": 5125,
       "count": 144,
       "type": "SCALAR"
     },
     {
-      "bufferView": 4,
-      "componentType": 5126,
-      "count": 320,
-      "type": "VEC3",
-      "min": [
-        -6.136898994445801,
-        0.8999999761581421,
-        -18.135807037353516
-      ],
-      "max": [
-        6.844298839569092,
-        11.520000457763672,
-        14.895570755004883
-      ]
-    },
-    {
       "bufferView": 5,
       "componentType": 5126,
-      "count": 320,
-      "type": "VEC3"
+      "count": 160,
+      "type": "VEC3",
+      "min": [
+        -6.386422157287598,
+        11.8100004196167,
+        -18.408164978027344
+      ],
+      "max": [
+        7.0719780921936035,
+        12.3100004196167,
+        15.277512550354004
+      ]
     },
     {
       "bufferView": 6,
-      "componentType": 5125,
-      "count": 480,
-      "type": "SCALAR"
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC3"
     },
     {
       "bufferView": 7,
-      "componentType": 5126,
-      "count": 320,
-      "type": "VEC3",
-      "min": [
-        -6.3284125328063965,
-        0.800000011920929,
-        -18.334129333496094
-      ],
-      "max": [
-        7.037459373474121,
-        9.770000457763672,
-        15.088774681091309
-      ]
+      "componentType": 5125,
+      "count": 240,
+      "type": "SCALAR"
     },
     {
       "bufferView": 8,
       "componentType": 5126,
-      "count": 320,
-      "type": "VEC3"
+      "count": 252,
+      "type": "VEC3",
+      "min": [
+        -6.130776405334473,
+        -0.27434366941452026,
+        -18.318056106567383
+      ],
+      "max": [
+        6.754526138305664,
+        11.619999885559082,
+        14.89190673828125
+      ]
     },
     {
       "bufferView": 9,
+      "componentType": 5126,
+      "count": 252,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 10,
       "componentType": 5125,
-      "count": 480,
+      "count": 378,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 1136,
+      "type": "VEC3",
+      "min": [
+        -4.629425048828125,
+        -1.144343614578247,
+        -18.900264739990234
+      ],
+      "max": [
+        2.4794769287109375,
+        12.0600004196167,
+        -17.55140495300293
+      ]
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 1136,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5125,
+      "count": 1704,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 32,
+      "type": "VEC3",
+      "min": [
+        -3.5500550270080566,
+        1.8519999980926514,
+        -18.135068893432617
+      ],
+      "max": [
+        1.075663685798645,
+        11.543999671936035,
+        -17.824811935424805
+      ]
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 32,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 17,
+      "componentType": 5126,
+      "count": 32,
+      "type": "VEC3",
+      "min": [
+        -4.096408843994141,
+        -1.0243436098098755,
+        -18.34682273864746
+      ],
+      "max": [
+        -0.021986009553074837,
+        1.3974970579147339,
+        -17.68037986755371
+      ]
+    },
+    {
+      "bufferView": 18,
+      "componentType": 5126,
+      "count": 32,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 19,
+      "componentType": 5125,
+      "count": 48,
       "type": "SCALAR"
     }
   ],
@@ -251,48 +457,98 @@
     {
       "buffer": 0,
       "byteOffset": 6624,
+      "byteLength": 2208
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8832,
       "byteLength": 528
     },
     {
       "buffer": 0,
-      "byteOffset": 7152,
+      "byteOffset": 9360,
       "byteLength": 576
     },
     {
       "buffer": 0,
-      "byteOffset": 7728,
-      "byteLength": 3840
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 11568,
-      "byteLength": 3840
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 15408,
+      "byteOffset": 9936,
       "byteLength": 1920
     },
     {
       "buffer": 0,
-      "byteOffset": 17328,
-      "byteLength": 3840
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 21168,
-      "byteLength": 3840
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 25008,
+      "byteOffset": 11856,
       "byteLength": 1920
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13776,
+      "byteLength": 960
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 14736,
+      "byteLength": 3024
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 17760,
+      "byteLength": 3024
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 20784,
+      "byteLength": 1512
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 22296,
+      "byteLength": 13632
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 35928,
+      "byteLength": 13632
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 49560,
+      "byteLength": 6816
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 56376,
+      "byteLength": 384
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 56760,
+      "byteLength": 384
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 57144,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 57336,
+      "byteLength": 384
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 57720,
+      "byteLength": 384
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 58104,
+      "byteLength": 192
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 26928
+      "byteLength": 58296
     }
   ]
 }

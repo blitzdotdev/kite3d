@@ -73,12 +73,20 @@ test('street clipping removes crossing corridors and lowers their sidewalk appro
 
 // Guards PR #53 review r4346966230: editor replacements lost lights/animation and textured materials in Play.
 test('batching accepts only current references and registrations for the generated kit', async () => {
-    const {isGeneratedPlacement} = await import('../examples/sf-city/lib/generated-placement.js')
-    const placement = {asset: 'assets/models/city/buildings/example/f.gltf'}
+    const {isGeneratedPlacement, bakedMeshes} = await import('../examples/sf-city/lib/generated-placement.js')
+    const placement = {baked: true, asset: 'assets/models/city/buildings/example/f.gltf'}
     const rootPath = '/kite3d/@generated/f.gltf'
     const node = {visible: true, userData: {rootPath, cityGenerated: {rootPath}}}
     const registry = {files: {generated: {path: placement.asset, files: {'f.gltf': placement.asset}}}}
     assert.equal(isGeneratedPlacement(node, placement, registry), true)
+    // Review r4347070699: an authored override inside city/ is still not baked.
+    assert.equal(isGeneratedPlacement(node, {...placement, baked: false}, registry), false)
+    // Review r4347070695: owner-added lights/meshes must not be hidden with the baked parent.
+    const mesh = {isMesh: true, visible: true, userData: {cityBakedPart: true}, children: []}
+    const authored = {isMesh: true, visible: true, userData: {}, children: []}
+    const lightParent = {...mesh, children: [{isLight: true}]}
+    const root = {userData: {cityBakedAsset: placement.asset}, children: [mesh, authored, lightParent]}
+    assert.deepEqual(bakedMeshes({traverse: visit => visit(root)}, placement), [mesh])
     assert.equal(isGeneratedPlacement({...node, userData: {...node.userData, rootPath: '/kite3d/@owner/f.gltf'}}, placement, registry), false)
     assert.equal(isGeneratedPlacement(node, placement, {files: {generated: {path: 'assets/owner/f.gltf'}}}), false)
     assert.equal(isGeneratedPlacement(node, placement, {files: {generated: {path: placement.asset, files: {'f.gltf': 'assets/owner/f.gltf'}}}}), false)
@@ -118,4 +126,30 @@ test('baked center markings stay outside earlier road corridors', async () => {
         }
     }
     assert.ok(checked > 100)
+})
+
+// Guards review r4347070692: unused registered private assets leaked into the public export.
+// Guards review r4347070706: hidden overrides whose source disappeared were never reported.
+test('public export excludes unused registrations and reconciliation reports stale hidden IDs', () => {
+    const root = mkdtempSync(resolve('examples', '.sf-regression-'))
+    try {
+        cpSync('examples/sf-city', root, {recursive: true, filter: p => !p.includes('node_modules') && !p.includes('.kite3d') && !p.includes('/dist')})
+        const read = p => JSON.parse(readFileSync(resolve(root, p), 'utf8'))
+        const write = (p, v) => writeFileSync(resolve(root, p), JSON.stringify(v))
+        const registry = read('assets.json')
+        registry.files.private = {path: 'assets/private.gltf'}
+        write('assets.json', registry)
+        execFileSync(process.execPath, ['scene/export.mjs'], {cwd: root})
+        assert.equal(read('dist/assets.json').files.private, undefined)
+        assert.equal(read('.kite3d/release.json').files['assets/private.gltf'], undefined)
+        const overrides = read('scene/overrides.json')
+        const valid = read('scene/generated.json').placements.find(p => p.kind === 'building').id
+        overrides.features[valid] = {hidden: true}
+        overrides.features['sf-building:removed'] = {hidden: true}
+        write('scene/overrides.json', overrides)
+        const result = JSON.parse(execFileSync(process.execPath, ['--input-type=module', '-e', "import {loadCity} from './scene/data.mjs'; console.log(JSON.stringify(loadCity()))"], {cwd: root, encoding: 'utf8'}))
+        assert.ok(result.unmatchedOverrides.includes('sf-building:removed'))
+        assert.ok(!result.unmatchedOverrides.includes(valid))
+        assert.ok(!result.buildings.some(b => b.id === valid))
+    } finally { rmSync(root, {recursive: true, force: true}) }
 })

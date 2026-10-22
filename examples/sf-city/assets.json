@@ -2938,532 +2938,833 @@
       "path": "assets/models/city/roads/sf-road-2546000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-2546000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-2546000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-2546000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-2454e3c0bc93d079": {
       "path": "assets/models/city/roads/sf-road-2722000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-2722000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-2722000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-2722000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-3426e4a0a3ba35dd": {
       "path": "assets/models/city/roads/sf-road-2723000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-2723000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-2723000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-2723000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-821d8b68341812d0": {
       "path": "assets/models/city/roads/sf-road-3092000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-3092000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-3092000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-3092000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-58bbea12469dbf16": {
       "path": "assets/models/city/roads/sf-road-3517000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-3517000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-3517000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-3517000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-3bd879661e60765f": {
       "path": "assets/models/city/roads/sf-road-3687000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-3687000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-3687000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-3687000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-687a492553a74b35": {
       "path": "assets/models/city/roads/sf-road-4294000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-4294000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-4294000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-4294000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-7d32c50797a009f2": {
       "path": "assets/models/city/roads/sf-road-4295000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-4295000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-4295000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-4295000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-b110553c85d17a97": {
       "path": "assets/models/city/roads/sf-road-4296000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-4296000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-4296000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-4296000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-aecab1d2b0cbef19": {
       "path": "assets/models/city/roads/sf-road-4297000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-4297000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-4297000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-4297000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-035a1ed4717a5377": {
       "path": "assets/models/city/roads/sf-road-4298000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-4298000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-4298000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-4298000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-4ffb4358b6b2cd51": {
       "path": "assets/models/city/roads/sf-road-5051000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5051000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5051000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5051000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-f1c2b0e3272f2db5": {
       "path": "assets/models/city/roads/sf-road-5495000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5495000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5495000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5495000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-f1e43b8ead4bb9df": {
       "path": "assets/models/city/roads/sf-road-5496000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5496000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5496000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5496000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-246c5498d92e5feb": {
       "path": "assets/models/city/roads/sf-road-5497000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5497000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5497000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5497000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-d8593ec67b5150f4": {
       "path": "assets/models/city/roads/sf-road-5498000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5498000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5498000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5498000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-73130f0a9d030979": {
       "path": "assets/models/city/roads/sf-road-5499000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5499000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5499000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5499000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-8f9b77ef4fc90999": {
       "path": "assets/models/city/roads/sf-road-5500000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5500000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5500000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5500000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-a6a295557e3ac8e2": {
       "path": "assets/models/city/roads/sf-road-5501000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5501000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5501000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5501000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-2bc70e6da147bbcc": {
       "path": "assets/models/city/roads/sf-road-5502000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5502000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5502000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5502000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-8db928be19f3cd72": {
       "path": "assets/models/city/roads/sf-road-5503000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5503000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5503000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5503000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-0fe022e7b51cfd12": {
       "path": "assets/models/city/roads/sf-road-5504000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5504000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5504000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5504000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-834d16531f664494": {
       "path": "assets/models/city/roads/sf-road-5505000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-5505000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-5505000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-5505000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-9d6236243e9d48a3": {
       "path": "assets/models/city/roads/sf-road-6161000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6161000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6161000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6161000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-1047efda56280460": {
       "path": "assets/models/city/roads/sf-road-6403000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6403000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6403000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6403000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-96ad1d461dd20fda": {
       "path": "assets/models/city/roads/sf-road-6404000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6404000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6404000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6404000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-0de097ac191688f6": {
       "path": "assets/models/city/roads/sf-road-6405000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6405000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6405000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6405000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-c1445ad4113a3fc5": {
       "path": "assets/models/city/roads/sf-road-6406000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6406000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6406000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6406000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-a183aed20fbdc45d": {
       "path": "assets/models/city/roads/sf-road-6407000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6407000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6407000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6407000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-6c47cded47ef4cd7": {
       "path": "assets/models/city/roads/sf-road-6449000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6449000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6449000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6449000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-75dda8054ccce1af": {
       "path": "assets/models/city/roads/sf-road-6450000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6450000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6450000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6450000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-6e025523c30f17b5": {
       "path": "assets/models/city/roads/sf-road-6451000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6451000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6451000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6451000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-621e8641670b7c1e": {
       "path": "assets/models/city/roads/sf-road-6452000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6452000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6452000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6452000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-179e8041f7ec7e42": {
       "path": "assets/models/city/roads/sf-road-6453000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6453000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6453000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6453000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-b138ce22637b06cd": {
       "path": "assets/models/city/roads/sf-road-6454000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6454000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6454000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6454000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-839762ccb087d9f2": {
       "path": "assets/models/city/roads/sf-road-6455000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6455000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6455000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6455000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-b20217e6f8d8a718": {
       "path": "assets/models/city/roads/sf-road-6456000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6456000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6456000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6456000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-9eb0d11511a1b791": {
       "path": "assets/models/city/roads/sf-road-6457000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6457000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6457000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6457000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-6cdfeaf33ff0e653": {
       "path": "assets/models/city/roads/sf-road-6497000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6497000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6497000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6497000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-bd8c329aa8467281": {
       "path": "assets/models/city/roads/sf-road-6573000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6573000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6573000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6573000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-33d0d981f3fb3511": {
       "path": "assets/models/city/roads/sf-road-6774000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-6774000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-6774000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-6774000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-5943c9727be40beb": {
       "path": "assets/models/city/roads/sf-road-7451000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-7451000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-7451000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-7451000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-22aa34e8326806eb": {
       "path": "assets/models/city/roads/sf-road-7452000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-7452000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-7452000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-7452000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-a90de82743e5a7f0": {
       "path": "assets/models/city/roads/sf-road-7909000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-7909000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-7909000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-7909000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-eca577f7421e5a52": {
       "path": "assets/models/city/roads/sf-road-7910000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-7910000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-7910000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-7910000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-441faf051f7db929": {
       "path": "assets/models/city/roads/sf-road-8689000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-8689000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-8689000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-8689000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-8871f1232fb12a94": {
       "path": "assets/models/city/roads/sf-road-8943000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-8943000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-8943000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-8943000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-f2d0dc1468a5bc1a": {
       "path": "assets/models/city/roads/sf-road-9606000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-9606000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-9606000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-9606000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-3bd110addd1b4405": {
       "path": "assets/models/city/roads/sf-road-10588000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-10588000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-10588000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-10588000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-845f0be25a61c3d8": {
       "path": "assets/models/city/roads/sf-road-10694000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-10694000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-10694000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-10694000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-a0e455bc62780d57": {
       "path": "assets/models/city/roads/sf-road-10695000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-10695000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-10695000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-10695000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-4f3d52c308612ee4": {
       "path": "assets/models/city/roads/sf-road-10696000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-10696000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-10696000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-10696000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-3dbb683a51f25663": {
       "path": "assets/models/city/roads/sf-road-10697000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-10697000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-10697000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-10697000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-72d21801a3aecd6d": {
       "path": "assets/models/city/roads/sf-road-10698000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-10698000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-10698000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-10698000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-c2a5571e8e94008b": {
       "path": "assets/models/city/roads/sf-road-10774000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-10774000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-10774000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-10774000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-a12477e0d0b26d9a": {
       "path": "assets/models/city/roads/sf-road-12211000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12211000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12211000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12211000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-3efeda108e17f44d": {
       "path": "assets/models/city/roads/sf-road-12212000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12212000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12212000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12212000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-eaedf875f1f5b560": {
       "path": "assets/models/city/roads/sf-road-12213000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12213000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12213000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12213000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-1613905f6087f1b2": {
       "path": "assets/models/city/roads/sf-road-12214000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12214000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12214000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12214000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-97b86862648495cc": {
       "path": "assets/models/city/roads/sf-road-12215000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12215000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12215000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12215000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-8e34779e6943e0c3": {
       "path": "assets/models/city/roads/sf-road-12841000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12841000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12841000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12841000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-c315702b71c62425": {
       "path": "assets/models/city/roads/sf-road-12842000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12842000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12842000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12842000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-dc107856e19461f4": {
       "path": "assets/models/city/roads/sf-road-12843000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12843000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12843000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12843000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-5b1b20c1f69a7555": {
       "path": "assets/models/city/roads/sf-road-12844000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12844000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12844000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12844000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-ac5aa16d27926b1c": {
       "path": "assets/models/city/roads/sf-road-12845000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12845000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12845000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12845000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-0f30791e8e99a5ff": {
       "path": "assets/models/city/roads/sf-road-12846000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12846000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12846000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12846000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-3f03a1997324371e": {
       "path": "assets/models/city/roads/sf-road-12847000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12847000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12847000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12847000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-d5e5789f2349b262": {
       "path": "assets/models/city/roads/sf-road-12848000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12848000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12848000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12848000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-dd312abe97c74fbe": {
       "path": "assets/models/city/roads/sf-road-12849000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12849000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12849000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12849000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-9f7e2293499dbc4e": {
       "path": "assets/models/city/roads/sf-road-12850000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12850000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12850000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12850000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-d8652094848d6245": {
       "path": "assets/models/city/roads/sf-road-12851000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-12851000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-12851000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-12851000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-9e0fecfb8cb10118": {
       "path": "assets/models/city/roads/sf-road-13178000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-13178000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-13178000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-13178000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-a78e94d555cf7155": {
       "path": "assets/models/city/roads/sf-road-13179000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-13179000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-13179000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-13179000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-dd76911a7ef4d464": {
       "path": "assets/models/city/roads/sf-road-13690000/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/roads/sf-road-13690000/f.gltf",
-        "geometry.bin": "assets/models/city/roads/sf-road-13690000/geometry.bin"
+        "geometry.bin": "assets/models/city/roads/sf-road-13690000/geometry.bin",
+        "../../materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "../../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/asphalt.png": "assets/models/city/materials/asphalt.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png"
       }
     },
     "sf-model-fba3167610569904": {
       "path": "assets/models/city/trees/broadleaf/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/trees/broadleaf/f.gltf",
-        "geometry.bin": "assets/models/city/trees/broadleaf/geometry.bin"
+        "geometry.bin": "assets/models/city/trees/broadleaf/geometry.bin",
+        "leaves.png": "assets/models/city/trees/broadleaf/leaves.png"
       }
     },
     "sf-model-da03d9dceb65ce53": {
       "path": "assets/models/city/terrain/f.gltf",
       "files": {
         "f.gltf": "assets/models/city/terrain/f.gltf",
-        "geometry.bin": "assets/models/city/terrain/geometry.bin"
+        "geometry.bin": "assets/models/city/terrain/geometry.bin",
+        "../materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "../materials/lawn.png": "assets/models/city/materials/lawn.png",
+        "/kite3d/assets/models/city/materials/concrete.png": "assets/models/city/materials/concrete.png",
+        "/kite3d/assets/models/city/materials/lawn.png": "assets/models/city/materials/lawn.png"
       }
     }
   }

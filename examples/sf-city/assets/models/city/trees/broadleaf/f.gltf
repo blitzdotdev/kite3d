@@ -13,48 +13,70 @@
   ],
   "nodes": [
     {
-      "name": "Broadleaf placeholder, 10 m",
+      "name": "Authored broadleaf canopy, inferred species shape",
       "children": [
         1,
-        2
+        2,
+        3,
+        4
       ],
       "extras": {
-        "name": "Broadleaf placeholder, 10 m"
+        "name": "Authored broadleaf canopy, inferred species shape",
+        "cityBakedAsset": "assets/models/city/trees/broadleaf/f.gltf"
       }
     },
     {
-      "name": "Trunk",
-      "mesh": 0
+      "name": "Tapered trunk / surface 1",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
     },
     {
-      "name": "Canopy",
-      "mesh": 1
+      "name": "Tapered trunk / surface 2",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Tapered trunk / surface 3",
+      "mesh": 2,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Authored foliage cards",
+      "mesh": 3,
+      "extras": {
+        "cityBakedPart": true
+      }
     }
   ],
   "meshes": [
     {
-      "name": "Trunk",
+      "name": "Tapered trunk / surface 1",
       "primitives": [
         {
           "attributes": {
             "POSITION": 0,
-            "NORMAL": 1
-          },
-          "indices": 2,
-          "material": 1
-        },
-        {
-          "attributes": {
-            "POSITION": 0,
-            "NORMAL": 1
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
           },
           "indices": 3,
           "material": 1
-        },
+        }
+      ]
+    },
+    {
+      "name": "Tapered trunk / surface 2",
+      "primitives": [
         {
           "attributes": {
             "POSITION": 0,
-            "NORMAL": 1
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
           },
           "indices": 4,
           "material": 1
@@ -62,14 +84,29 @@
       ]
     },
     {
-      "name": "Canopy",
+      "name": "Tapered trunk / surface 3",
       "primitives": [
         {
           "attributes": {
-            "POSITION": 5,
-            "NORMAL": 6
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
           },
-          "indices": 7,
+          "indices": 5,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Authored foliage cards",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
           "material": 0
         }
       ]
@@ -77,18 +114,23 @@
   ],
   "materials": [
     {
-      "name": "Broadleaf canopy",
+      "name": "Authored leaf clusters",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.13286832154414627,
-          0.1912016827303171,
-          0.08865558627723595,
+          1,
+          1,
+          1,
           1
         ],
         "roughnessFactor": 0.85,
-        "metallicFactor": 0
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        }
       },
-      "doubleSided": true
+      "doubleSided": true,
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.5
     },
     {
       "name": "Trunk",
@@ -109,69 +151,81 @@
     {
       "bufferView": 0,
       "componentType": 5126,
-      "count": 46,
+      "count": 58,
       "type": "VEC3",
       "min": [
-        -0.23398269712924957,
-        9.536743306171047e-8,
-        -0.2162325233221054
+        -0.2954423129558563,
+        0,
+        -0.2819077968597412
       ],
       "max": [
-        0.23398269712924957,
-        4.699999809265137,
-        0.23999999463558197
+        0.2954423129558563,
+        5.5,
+        0.30000001192092896
       ]
     },
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 46,
+      "count": 58,
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "componentType": 5125,
-      "count": 42,
-      "type": "SCALAR"
+      "componentType": 5126,
+      "count": 58,
+      "type": "VEC2"
     },
     {
       "bufferView": 3,
       "componentType": 5125,
-      "count": 21,
+      "count": 54,
       "type": "SCALAR"
     },
     {
       "bufferView": 4,
       "componentType": 5125,
-      "count": 21,
+      "count": 27,
       "type": "SCALAR"
     },
     {
       "bufferView": 5,
-      "componentType": 5126,
-      "count": 240,
-      "type": "VEC3",
-      "min": [
-        -3.200000047683716,
-        2.9800000190734863,
-        -3.200000047683716
-      ],
-      "max": [
-        3.200000047683716,
-        10.020000457763672,
-        3.200000047683716
-      ]
+      "componentType": 5125,
+      "count": 27,
+      "type": "SCALAR"
     },
     {
       "bufferView": 6,
       "componentType": 5126,
-      "count": 240,
-      "type": "VEC3"
+      "count": 288,
+      "type": "VEC3",
+      "min": [
+        -3.219904899597168,
+        3.0015921592712402,
+        -3.1651973724365234
+      ],
+      "max": [
+        3.1848082542419434,
+        10.464583396911621,
+        3.2248635292053223
+      ]
     },
     {
       "bufferView": 7,
+      "componentType": 5126,
+      "count": 288,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 288,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 9,
       "componentType": 5125,
-      "count": 240,
+      "count": 432,
       "type": "SCALAR"
     }
   ],
@@ -179,48 +233,77 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 552
+      "byteLength": 696
     },
     {
       "buffer": 0,
-      "byteOffset": 552,
-      "byteLength": 552
+      "byteOffset": 696,
+      "byteLength": 696
     },
     {
       "buffer": 0,
-      "byteOffset": 1104,
-      "byteLength": 168
+      "byteOffset": 1392,
+      "byteLength": 464
     },
     {
       "buffer": 0,
-      "byteOffset": 1272,
-      "byteLength": 84
+      "byteOffset": 1856,
+      "byteLength": 216
     },
     {
       "buffer": 0,
-      "byteOffset": 1356,
-      "byteLength": 84
+      "byteOffset": 2072,
+      "byteLength": 108
     },
     {
       "buffer": 0,
-      "byteOffset": 1440,
-      "byteLength": 2880
+      "byteOffset": 2180,
+      "byteLength": 108
     },
     {
       "buffer": 0,
-      "byteOffset": 4320,
-      "byteLength": 2880
+      "byteOffset": 2288,
+      "byteLength": 3456
     },
     {
       "buffer": 0,
-      "byteOffset": 7200,
-      "byteLength": 960
+      "byteOffset": 5744,
+      "byteLength": 3456
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9200,
+      "byteLength": 2304
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11504,
+      "byteLength": 1728
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 8160
+      "byteLength": 13232
+    }
+  ],
+  "images": [
+    {
+      "uri": "leaves.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 33071,
+      "wrapT": 33071
     }
   ]
 }

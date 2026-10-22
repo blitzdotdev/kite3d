@@ -8,9 +8,10 @@ export function material(name, color, roughness = 0.85, metallic = 0) {
   return {name, pbrMetallicRoughness: {baseColorFactor: [c.r, c.g, c.b, 1], roughnessFactor: roughness, metallicFactor: metallic}, doubleSided: true}
 }
 
-export function surface(points, indices) {
+export function surface(points, indices, uvScale = 0) {
   const geometry = new THREE.BufferGeometry()
   geometry.setAttribute('position', new THREE.Float32BufferAttribute(points.flat(), 3))
+  if (uvScale) geometry.setAttribute('uv', new THREE.Float32BufferAttribute(points.flatMap(p => [p[0] * uvScale, p[2] * uvScale]), 2))
   geometry.setIndex(indices.flat())
   geometry.computeVertexNormals()
   return geometry
@@ -22,10 +23,10 @@ export function box(width, height, depth, position, yaw = 0) {
   return g
 }
 
-export function asset(path, parts, materials, extras = {}) {
+export function asset(path, parts, materials, extras = {}, resources = {}) {
   const doc = {asset: {version: '2.0', generator: 'Kite3D SF city baker v1'}, scene: 0,
-    scenes: [{nodes: [0]}], nodes: [{name: extras.name || 'Asset', children: [], extras}], meshes: [],
-    materials, accessors: [], bufferViews: [], buffers: []}
+    scenes: [{nodes: [0]}], nodes: [{name: extras.name || 'Asset', children: [], extras: {...extras, cityBakedAsset: `${path}/f.gltf`}}], meshes: [],
+    materials, accessors: [], bufferViews: [], buffers: [], ...resources}
   const buffers = []
   let byteLength = 0, triangleCount = 0
   function accessor(array, components, componentType, type, position = false) {
@@ -53,6 +54,7 @@ export function asset(path, parts, materials, extras = {}) {
       POSITION: accessor(new Float32Array(position.array), 3, 5126, 'VEC3', true),
       NORMAL: accessor(new Float32Array(normal.array), 3, 5126, 'VEC3'),
     }
+    if (geometry.getAttribute('uv')) attributes.TEXCOORD_0 = accessor(new Float32Array(geometry.getAttribute('uv').array), 2, 5126, 'VEC2')
     const indices = geometry.index?.array || Uint32Array.from({length: position.count}, (_, i) => i)
     const groups = geometry.groups.length ? geometry.groups : [{start: 0, count: indices.length, materialIndex: 0}]
     const primitives = groups.map((group) => {
@@ -60,8 +62,13 @@ export function asset(path, parts, materials, extras = {}) {
       triangleCount += list.length / 3
       return {attributes, indices: accessor(list, 1, 5125, 'SCALAR'), material: Array.isArray(mat) ? mat[group.materialIndex] : mat}
     })
-    const mesh = doc.meshes.push({name, primitives}) - 1
-    doc.nodes[0].children.push(doc.nodes.push({name, mesh}) - 1)
+    // One primitive per leaf keeps imported material groups distinguishable from
+    // owner-added children. Runtime batching can then hide only baked leaves.
+    for (const [index, primitive] of primitives.entries()) {
+      const partName = primitives.length === 1 ? name : `${name} / surface ${index + 1}`
+      const mesh = doc.meshes.push({name: partName, primitives: [primitive]}) - 1
+      doc.nodes[0].children.push(doc.nodes.push({name: partName, mesh, extras: {cityBakedPart: true}}) - 1)
+    }
     geometry.dispose()
   }
   const bytes = Buffer.concat(buffers)

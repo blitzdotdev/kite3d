@@ -50,6 +50,7 @@ export function cleanRing(points) {
 export function loadCity() {
   const overrides = read('scene/overrides.json')
   if (overrides.version !== 1 || !overrides.features || Array.isArray(overrides.features)) throw new Error('Invalid overrides schema')
+  const sourceIds = new Set()
   const samples = []
   const buildings = []
   for (const row of read('scene/sources/buildings.json')) {
@@ -61,6 +62,7 @@ export function loadCity() {
     if (Number.isFinite(ground)) samples.push([...center, ground])
     if (!inside(center) || polygons.reduce((s, p) => s + polygonArea(p[0]), 0) < 20) continue
     const id = `sf-building:${row.sf16_bldgid}`
+    sourceIds.add(id)
     const patch = overrides.features[id] || {}
     if (patch.hidden) continue
     const measuredHeight = number(row.hgt_median_m, NaN)
@@ -83,6 +85,7 @@ export function loadCity() {
   }
   const roads = read('scene/sources/roads.json').map((row) => {
     const id = `sf-road:${number(row.cnn, 0)}`, patch = overrides.features[id] || {}
+    sourceIds.add(id)
     const walk = sidewalk.get(String(number(row.cnn, 0))) || []
     const alley = ['ALY', 'STWY', 'WALK'].includes(row.st_type)
     const width = number(patch.widthM, alley ? 3.5 : row.streetname?.includes('COLUMBUS') ? 17 : 10)
@@ -95,14 +98,14 @@ export function loadCity() {
   const trees = read('scene/sources/trees.json').map((row) => {
     const id = `sf-tree:${row.treeid}`, patch = overrides.features[id] || {}
     const position = xy([number(row.longitude, NaN), number(row.latitude, NaN)])
+    if (inside(position)) sourceIds.add(id)
     const palm = /palm|phoenix|washingtonia/i.test(row.species || '')
     return {id, sourceId: row.treeid, species: row.species || 'Unknown species', position,
       height: number(patch.heightM, Math.max(5, Math.min(15, 5 + number(row.mapdbh, 12) * 0.13))),
       heightSource: patch.heightM != null ? 'override' : 'inferred from trunk diameter; not measured tree height',
       kind: palm ? 'palm' : 'broadleaf', asset: patch.asset || null, patch}
   }).filter((tree) => inside(tree.position) && !tree.patch.hidden)
-  const ids = new Set([...buildings, ...roads, ...trees].map((f) => f.id))
-  const unmatchedOverrides = Object.keys(overrides.features).filter((id) => !ids.has(id) && !overrides.features[id].hidden)
+  const unmatchedOverrides = Object.keys(overrides.features).filter((id) => !sourceIds.has(id))
   return {buildings, roads, trees, samples, unmatchedOverrides}
 }
 

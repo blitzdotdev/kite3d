@@ -1,7 +1,12 @@
-import {isGeneratedPlacement} from './lib/generated-placement.js'
-import {Group, InstancedMesh2, Mesh2, mergeGeometries} from 'threepipe'
+import {isGeneratedPlacement, bakedMeshes} from './lib/generated-placement.js'
+import {Group, InstancedMesh2, Mesh2, mergeGeometries, DirectionalLight2, SSAOPlugin, Float32BufferAttribute} from 'threepipe'
 
 export async function main({viewer}) {
+  // Avoid rendering thousands of authored meshes while fetching the manifest and
+  // preparing batches. Always restore rendering, including interrupted startup.
+  const renderingWasEnabled = viewer.renderEnabled
+  viewer.renderEnabled = false
+  try {
   const previousViewer = window.viewer
   window.viewer = viewer
   const camera = viewer.scene.mainCamera
@@ -17,14 +22,30 @@ export async function main({viewer}) {
   const buckets = new Map(), surfaces = new Map(), hidden = []
   const placementById = new Map(manifest.placements.map((p) => [p.id, p]))
   const seenFeatures = new Set()
+  const materialKeys = new WeakMap()
+  function materialKey(material) {
+    if (materialKeys.has(material)) return materialKeys.get(material)
+    const meta = {textures: {}, images: {}}, data = material.toJSON(meta, true)
+    delete data.uuid; delete data.name; delete data.metadata
+    if (data.userData) { data.userData = {...data.userData}; delete data.userData.uuid }
+    for (const [property, texture] of Object.entries(material)) {
+      if (!texture?.isTexture) continue
+      const image = texture.source?.data
+      // Unaddressable/custom texture sources cannot safely share a batch.
+      if (typeof image?.src !== 'string') { materialKeys.set(material, material.uuid); return material.uuid }
+      const value = texture.toJSON(meta)
+      delete value.uuid; delete value.name; value.image = image.src
+      data[property] = value
+    }
+    const key = JSON.stringify(data); materialKeys.set(material, key); return key
+  }
   viewer.scene.modelRoot.traverse((node) => {
     const placement = placementById.get(node.userData?.cityId)
     if (!isGeneratedPlacement(node, placement, registry)) return
     if (seenFeatures.has(placement.id)) return
     seenFeatures.add(placement.id)
     const tree = node.userData.city?.kind === 'tree'
-    const children = []
-    node.traverse((child) => { if (child.isMesh) children.push(child) })
+    const children = bakedMeshes(node, placement)
     if (!children.length || children.some((child) => Array.isArray(child.material))) return
     children.forEach((child) => {
       if (tree) {
@@ -33,25 +54,32 @@ export async function main({viewer}) {
         buckets.get(key).push(child)
       } else {
         const m = child.material
-        // The baked placeholder materials have no textures or custom shader extensions.
-        const key = `${placement.tile}:${JSON.stringify([m.type, m.color?.toArray(), m.roughness, m.metalness, m.side])}`
+        // Compare complete material state, including texture sampling and source URLs.
+        const key = `${placement.tile}:${materialKey(m)}`
         if (!surfaces.has(key)) surfaces.set(key, {material: m, geometries: []})
         const geometry = child.geometry.index ? child.geometry.toNonIndexed() : child.geometry.clone()
+        if (!geometry.getAttribute('uv')) geometry.setAttribute('uv', new Float32BufferAttribute(new Float32Array(geometry.getAttribute('position').count * 2), 2))
         geometry.applyMatrix4(child.matrixWorld)
         surfaces.get(key).geometries.push(geometry)
       }
     })
-    hidden.push(node)
+    hidden.push(...children)
   })
   const runtime = new Group()
   runtime.name = 'SF runtime batches'
+  const lightState = []
+  viewer.scene.modelRoot.traverse(node => {
+    if (node.isLight && node.userData?.cityId?.startsWith('sf-light:')) { lightState.push([node, node.intensity]); node.intensity *= 0.25 }
+  })
   const ownedGeometry = []
   for (const {material, geometries} of surfaces.values()) {
     const merged = mergeGeometries(geometries, false)
     geometries.forEach((geometry) => geometry.dispose())
     if (!merged) throw new Error('Unable to batch generated city surfaces')
     ownedGeometry.push(merged)
-    runtime.add(new Mesh2(merged, material))
+    const mesh = new Mesh2(merged, material)
+    mesh.castShadow = true; mesh.receiveShadow = true
+    runtime.add(mesh)
   }
   for (const meshes of buckets.values()) {
     const first = meshes[0]
@@ -59,8 +87,19 @@ export async function main({viewer}) {
     meshes.forEach((mesh, index) => batch.setMatrixAt(index, mesh.matrixWorld))
     batch.instanceMatrix.needsUpdate = true
     batch.computeBoundingBox(); batch.computeBoundingSphere()
+    batch.castShadow = true; batch.receiveShadow = true
     runtime.add(batch)
   }
+  const sun = new DirectionalLight2('#ffe6c7', 3.2)
+  sun.name = 'City afternoon sun'
+  sun.position.set(-180, 270, 190); sun.lookAt(0, 0, 0)
+  sun.castShadow = true; sun.shadowMapSize.set(2048, 2048)
+  sun.shadowFrustum = 640; sun.shadowNear = 1; sun.shadowFar = 1000
+  sun.shadowBias = -0.002; sun.shadowNormalBias = 1
+  runtime.add(sun)
+  const ownedAO = !viewer.getPlugin(SSAOPlugin)
+  const ao = ownedAO ? await viewer.addPlugin(SSAOPlugin) : viewer.getPlugin(SSAOPlugin)
+  if (ownedAO) { ao.pass.intensity = 0.35; ao.pass.occlusionWorldRadius = 1.2 }
   hidden.forEach((node) => { node.visible = false })
   runtime.userData.excludeFromExport = true
   viewer.scene.addObject(runtime, {addToRoot: true})
@@ -110,19 +149,25 @@ export async function main({viewer}) {
   window.addEventListener('resize', resize)
   window.addEventListener('keydown', keydown)
   resize(); view(0)
-  return () => {
+  return async () => {
     observer.disconnect()
     window.removeEventListener('resize', resize)
     window.removeEventListener('keydown', keydown)
     hud.remove()
+    if (ownedAO) await viewer.removePlugin(ao)
+    lightState.forEach(([light, intensity]) => { light.intensity = intensity; light.setDirty?.() })
     runtime.removeFromParent()
     // InstancedMesh.dispose releases its instance buffers, not the shared source geometry/material.
-    ;[...runtime.children].forEach((mesh) => mesh.dispose())
+    ;[...runtime.children].forEach((mesh) => mesh.dispose?.())
     ownedGeometry.forEach((geometry) => geometry.dispose())
     hidden.forEach((node) => { node.visible = true })
     camera.position.copy(saved.position); camera.target.copy(saved.target)
     camera.setDirty({change: 'transform'})
     window.viewer = previousViewer
+    viewer.setDirty()
+  }
+  } finally {
+    viewer.renderEnabled = renderingWasEnabled
     viewer.setDirty()
   }
 }

@@ -70,3 +70,52 @@ test('street clipping removes crossing corridors and lowers their sidewalk appro
     assert.ok(Math.abs(crossingLift([3.8, 3], masks) - 0.22) < 1e-8)
     assert.deepEqual(clipped(strip([-1, 0], [1, 0], -1, 1), masks), [])
 })
+
+// Guards PR #53 review r4346966230: editor replacements lost lights/animation and textured materials in Play.
+test('batching accepts only current references and registrations for the generated kit', async () => {
+    const {isGeneratedPlacement} = await import('../examples/sf-city/lib/generated-placement.js')
+    const placement = {asset: 'assets/models/city/buildings/example/f.gltf'}
+    const rootPath = '/kite3d/@generated/f.gltf'
+    const node = {visible: true, userData: {rootPath, cityGenerated: {rootPath}}}
+    const registry = {files: {generated: {path: placement.asset, files: {'f.gltf': placement.asset}}}}
+    assert.equal(isGeneratedPlacement(node, placement, registry), true)
+    assert.equal(isGeneratedPlacement({...node, userData: {...node.userData, rootPath: '/kite3d/@owner/f.gltf'}}, placement, registry), false)
+    assert.equal(isGeneratedPlacement(node, placement, {files: {generated: {path: 'assets/owner/f.gltf'}}}), false)
+    assert.equal(isGeneratedPlacement(node, placement, {files: {generated: {path: placement.asset, files: {'f.gltf': 'assets/owner/f.gltf'}}}}), false)
+    assert.equal(isGeneratedPlacement({visible: true, userData: {}}, placement, registry), false)
+})
+
+// Guards PR #53 review r4346966246: centerline dashes extended into earlier-owned crossing streets.
+test('baked center markings stay outside earlier road corridors', async () => {
+    const {loadCity} = await import('../examples/sf-city/scene/data.mjs')
+    const {corridors, clipped} = await import('../examples/sf-city/assets/models/city/streets.mjs')
+    const masks = corridors(loadCity().roads)
+    let checked = 0
+    for (const road of loadCity().roads) {
+        const base = `examples/sf-city/assets/models/city/roads/${road.id.replace(':', '-')}`
+        const doc = JSON.parse(readFileSync(`${base}/f.gltf`))
+        const paint = doc.meshes.find(m => m.name === 'Inferred center markings')
+        if (!paint) continue
+        const data = readFileSync(`${base}/geometry.bin`)
+        const access = index => {
+            const a = doc.accessors[index], v = doc.bufferViews[a.bufferView]
+            const start = (v.byteOffset || 0) + (a.byteOffset || 0)
+            return {a, start}
+        }
+        const earlier = masks.slice(0, masks.findIndex(m => m.id === road.id))
+        for (const primitive of paint.primitives) {
+            const pos = access(primitive.attributes.POSITION), ind = access(primitive.indices)
+            for (let i = 0; i < ind.a.count; i += 3) {
+                const triangle = [0, 1, 2].map(j => {
+                    const index = data.readUInt32LE(ind.start + (i + j) * 4)
+                    return [data.readFloatLE(pos.start + index * 12), data.readFloatLE(pos.start + index * 12 + 8)]
+                })
+                const area = p => Math.abs(p.reduce((n, a, j) => {const b = p[(j + 1) % p.length]; return n + a[0] * b[1] - b[0] * a[1]}, 0)) / 2
+                const remaining = clipped(triangle, earlier).reduce((n, p) => n + area(p), 0)
+                assert.ok(area(triangle) - remaining < 1e-4, `Crossing paint: ${road.name}`)
+                checked++
+            }
+        }
+    }
+    assert.ok(checked > 100)
+})

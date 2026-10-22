@@ -9196,7 +9196,7 @@
       "widthSource": "class/name heuristic",
       "sidewalkSource": "DataSF SIDEWALK_F actual width (ft converted to m)",
       "sourceDataset": "3psu-pn9h",
-      "triangles": 921,
+      "triangles": 917,
       "sourceHash": "29205705ef5acc6ae359f2ec6f9dfc7bc1a90194b24c59303d2faaa3773810d0"
     },
     {
@@ -9424,7 +9424,7 @@
       "widthSource": "class/name heuristic",
       "sidewalkSource": "DataSF SIDEWALK_F actual width (ft converted to m)",
       "sourceDataset": "3psu-pn9h",
-      "triangles": 1925,
+      "triangles": 1921,
       "sourceHash": "9db1f3d08f78b0a24d67c1ec9ae6762895c6cff9aad5b5390474dfe3c82e884f"
     },
     {
@@ -9766,7 +9766,7 @@
       "widthSource": "class/name heuristic",
       "sidewalkSource": "inferred",
       "sourceDataset": "3psu-pn9h",
-      "triangles": 285,
+      "triangles": 279,
       "sourceHash": "62984ef4afa1ee50e2bcb0d33378e414256affb025ae3dfa91f4d1975a18ff8b"
     },
     {
@@ -9861,7 +9861,7 @@
       "widthSource": "class/name heuristic",
       "sidewalkSource": "DataSF SIDEWALK_F actual width (ft converted to m)",
       "sourceDataset": "3psu-pn9h",
-      "triangles": 1355,
+      "triangles": 1349,
       "sourceHash": "92e8b7be5f8fe6c3be89175528bad346a3946ead11e5b20fa396a048b92c0341"
     },
     {
@@ -10070,7 +10070,7 @@
       "widthSource": "class/name heuristic",
       "sidewalkSource": "DataSF SIDEWALK_F actual width (ft converted to m)",
       "sourceDataset": "3psu-pn9h",
-      "triangles": 629,
+      "triangles": 625,
       "sourceHash": "4340e74af7322dee6e9412f42b3764887f8609eaf6a8bf0be2e89da51656f652"
     },
     {
@@ -14963,6 +14963,6 @@
     "roads": 74,
     "trees": 191,
     "tiles": 20,
-    "triangles": 196466
+    "triangles": 196442
   }
 }

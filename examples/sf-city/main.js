@@ -1,3 +1,4 @@
+import {isGeneratedPlacement} from './lib/generated-placement.js'
 import {Group, InstancedMesh2, Mesh2, mergeGeometries} from 'threepipe'
 
 export async function main({viewer}) {
@@ -5,10 +6,11 @@ export async function main({viewer}) {
   window.viewer = viewer
   const camera = viewer.scene.mainCamera
   const saved = {position: camera.position.clone(), target: camera.target.clone()}
-  const manifest = await fetch(new URL('./scene/generated.json', import.meta.url)).then((r) => {
-    if (!r.ok) throw new Error('Unable to load SF city manifest')
-    return r.json()
-  })
+  const [manifest, registry] = await Promise.all(['./scene/generated.json', './assets.json'].map(path =>
+    fetch(new URL(path, import.meta.url)).then(r => {
+      if (!r.ok) throw new Error(`Unable to load SF city data: ${path}`)
+      return r.json()
+    })))
 
   // Runtime-only batching. The saved scene retains every individually editable feature.
   viewer.scene.modelRoot.updateMatrixWorld(true)
@@ -17,7 +19,7 @@ export async function main({viewer}) {
   const seenFeatures = new Set()
   viewer.scene.modelRoot.traverse((node) => {
     const placement = placementById.get(node.userData?.cityId)
-    if (!placement || !placement.asset.startsWith('assets/models/city/') || !node.visible) return
+    if (!isGeneratedPlacement(node, placement, registry)) return
     if (seenFeatures.has(placement.id)) return
     seenFeatures.add(placement.id)
     const tree = node.userData.city?.kind === 'tree'

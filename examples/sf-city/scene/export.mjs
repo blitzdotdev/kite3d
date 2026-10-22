@@ -41,7 +41,7 @@ function copy(path) {
     }
   }
 }
-for (const path of [pkg.mainScene, 'main.js', 'scene/generated.json']) copy(path)
+for (const path of [pkg.mainScene, 'main.js', 'lib/generated-placement.js', 'scene/generated.json']) copy(path)
 for (const entry of Object.values(registry.files)) {
   copy(entry.path)
   for (const path of Object.values(entry.files || {})) copy(path)

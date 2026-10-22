@@ -274,7 +274,7 @@
     {
       "bufferView": 12,
       "componentType": 5126,
-      "count": 44,
+      "count": 32,
       "type": "VEC3",
       "min": [
         -145.33560180664062,
@@ -282,21 +282,21 @@
         -64.75942993164062
       ],
       "max": [
-        -142.3521728515625,
-        7.326623439788818,
-        -45.95561218261719
+        -143.55422973632812,
+        6.581719875335693,
+        -53.864784240722656
       ]
     },
     {
       "bufferView": 13,
       "componentType": 5126,
-      "count": 44,
+      "count": 32,
       "type": "VEC3"
     },
     {
       "bufferView": 14,
       "componentType": 5125,
-      "count": 66,
+      "count": 48,
       "type": "SCALAR"
     }
   ],
@@ -364,23 +364,23 @@
     {
       "buffer": 0,
       "byteOffset": 15708,
-      "byteLength": 528
+      "byteLength": 384
     },
     {
       "buffer": 0,
-      "byteOffset": 16236,
-      "byteLength": 528
+      "byteOffset": 16092,
+      "byteLength": 384
     },
     {
       "buffer": 0,
-      "byteOffset": 16764,
-      "byteLength": 264
+      "byteOffset": 16476,
+      "byteLength": 192
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 17028
+      "byteLength": 16668
     }
   ]
 }

@@ -106,7 +106,7 @@ function road(feature) {
     for (let k = 0; k < count; k++) {
       const polygon = [[k / count, left], [k / count, right], [(k + 1) / count, right], [(k + 1) / count, left]]
         .map(([t, off]) => [a[0] + (b[0] - a[0]) * t + nx * off, a[1] + (b[1] - a[1]) * t + nz * off])
-      for (const part of target === points ? clipped(polygon, asphaltMasks) : [polygon]) {
+      for (const part of (target === points || target === paint) ? clipped(polygon, asphaltMasks) : [polygon]) {
         const v = target.length
         part.forEach(([x, z]) => target.push([x, ground(x, z) + lift, z]))
         for (let j = 1; j + 1 < part.length; j++) tris.push([v, v + j, v + j + 1])

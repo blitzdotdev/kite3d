@@ -23,7 +23,8 @@ test('SF composer preserves editor assets, light extensions and repeated regener
         node.name = 'Owner replacement'
         node.extras.ownerNote = 'Keep this'
         const added = doc.nodes.push({name: 'Owner addition', extras: {rootPath: '/kite3d/@custom/f.gltf'}}) - 1
-        doc.scenes[doc.scene || 0].nodes.push(added)
+        const tile = doc.nodes.find(n => n.extras?.cityId?.startsWith('sf-tile:'))
+        tile.children.push(added)
         sun.extensions.OWNER_extension = {keep: true}
         sun.extensions.KHR_lights_punctual.ownerKey = 42
         doc.extensions.KHR_lights_punctual.lights[0].extras = {keep: true}
@@ -37,7 +38,7 @@ test('SF composer preserves editor assets, light extensions and repeated regener
         assert.deepEqual(read('assets.json').ownerMetadata, {keep: true})
         assert.equal(result.nodes.find(n => n.name === 'Owner replacement').extras.rootPath, '/kite3d/@custom/f.gltf')
         assert.equal(result.nodes.find(n => n.name === 'Owner replacement').extras.ownerNote, 'Keep this')
-        assert.ok(result.scenes[0].nodes.includes(added))
+        assert.ok(result.nodes.find(n => n.extras?.cityId === tile.extras.cityId).children.includes(added))
         assert.deepEqual(result.nodes.find(n => n.extras?.cityId === 'sf-light:sun').extensions, sun.extensions)
         assert.deepEqual(result.extensions.KHR_lights_punctual.lights[0].extras, {keep: true})
         assert.deepEqual(result.extensions.KHR_lights_punctual.lights[0].extensions, {OWNER_extension: {keep: true}})

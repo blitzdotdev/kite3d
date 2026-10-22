@@ -20,6 +20,11 @@ function upsert(id, values) {
   }
   const baseline = old.extras?.cityGenerated || {}
   const next = {...old, ...values}
+  if (values.children && baseline.children) {
+    const previousGenerated = new Set(baseline.children)
+    const addedChildren = (old.children || []).filter(index => !previousGenerated.has(index))
+    next.children = [...new Set([...values.children, ...addedChildren])]
+  }
   if (values.extensions) {
     next.extensions = {...old.extensions}
     for (const [key, value] of Object.entries(values.extensions)) {

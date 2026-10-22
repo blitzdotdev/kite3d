@@ -20,6 +20,12 @@ function upsert(id, values) {
   }
   const baseline = old.extras?.cityGenerated || {}
   const next = {...old, ...values}
+  if (values.extensions) {
+    next.extensions = {...old.extensions}
+    for (const [key, value] of Object.entries(values.extensions)) {
+      next.extensions[key] = {...old.extensions?.[key], ...value}
+    }
+  }
   // An editor change wins until removed or explicitly reconciled. Updating a mesh does not move a placed asset.
   for (const key of ['name', 'translation', 'rotation', 'scale']) {
     const actual = old[key] ?? (key === 'translation' ? [0, 0, 0] : key === 'rotation' ? [0, 0, 0, 1] : key === 'scale' ? [1, 1, 1] : undefined)
@@ -36,7 +42,9 @@ function upsert(id, values) {
   doc.nodes[index] = next; byId.set(id, index)
   return index
 }
-const assets = {version: 1, files: {}}
+// Registrations are editor-owned too: preserved references and user-added nodes need them on reload.
+const assets = existsSync(resolve(root, 'assets.json')) ? read('assets.json') : {version: 1, files: {}}
+assets.files ||= {}
 const groups = {}
 for (const p of generated.placements) {
   // Many placed trees share a source file. One asset identity keeps their geometry shared in Play.
@@ -51,7 +59,11 @@ for (const p of generated.placements) {
     if (!resolved.startsWith(root + '/')) throw new Error(`Asset resource escapes the project: ${resource.uri}`)
     files[resource.uri] = resolved.slice(root.length + 1)
   }
-  assets.files[assetId] = {path: p.asset, files}
+  const registered = assets.files[assetId]
+  // A replacement can keep the same asset ID and change its registered file.
+  if (!registered || registered.path === p.asset) {
+    assets.files[assetId] = {...registered, path: p.asset, files: {...registered?.files, ...files}}
+  }
   const half = (p.yaw || 0) / 2
   const index = upsert(p.id, {name: p.name, translation: p.position, rotation: [0, Math.sin(half), 0, Math.cos(half)],
     scale: p.scale || [1, 1, 1], extras: {rootPath: `/kite3d/@${assetId}/f.gltf`,
@@ -76,7 +88,7 @@ for (const [id, direction, color, intensity] of [
   const name = `City ${id}`
   let light = lightExtension.lights.findIndex((entry) => entry.name === name)
   if (light < 0) light = lightExtension.lights.length
-  lightExtension.lights[light] = {name, type: 'directional', color, intensity}
+  lightExtension.lights[light] = {...lightExtension.lights[light], name, type: 'directional', color, intensity}
   const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, -1), new THREE.Vector3(...direction).normalize())
   const index = upsert(`sf-light:${id}`, {name, rotation: q.toArray(), extensions: {KHR_lights_punctual: {light}}})
   if (!scene.nodes.includes(index)) scene.nodes.push(index)

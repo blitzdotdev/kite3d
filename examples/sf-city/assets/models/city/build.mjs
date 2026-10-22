@@ -1,9 +1,12 @@
-import {THREE, material, surface, box, asset} from './mesh.mjs'
+import {strip, corridors, clipped, crossingLift} from './streets.mjs'
+import {THREE, material, surface, asset} from './mesh.mjs'
 import {area, bounds, loadCity, elevation, hash, write, xy, polygonArea} from '../../../scene/data.mjs'
 
-const GENERATOR_VERSION = 1
+const GENERATOR_VERSION = 2
 const city = loadCity()
 const {ground} = elevation(city)
+const roadCorridors = corridors(city.roads)
+const outerCorridors = corridors(city.roads.map(r => ({...r, width: r.width + 2 * r.sidewalk})))
 const placements = [], collisions = [], tiles = {}
 const palette = ['#d5c7aa', '#d7cfbf', '#c1c8bb', '#b8c3ca', '#cfb7aa', '#d6c7ae', '#c4bcae']
 const dark = material('Window glass approximation', '#314959', 0.3, 0.25)
@@ -93,19 +96,21 @@ function clip(a, b) {
 }
 
 function road(feature) {
-  const points = [], triangles = [], walks = [], wt = [], paint = [], pt = []
-  const strips = (target, tris, a, b, left, right, lift, step = 2) => {
+  const points = [], triangles = [], walks = [], wt = [], paint = [], pt = [], curbs = [], ct = [], gutters = [], gt = []
+  let asphaltMasks = []
+  const strips = (target, tris, a, b, left, right, lift, step = 1) => {
     const len = Math.hypot(b[0] - a[0], b[1] - a[1])
     if (len < 0.01) return
     const nx = -(b[1] - a[1]) / len, nz = (b[0] - a[0]) / len
     const count = Math.ceil(len / step)
     for (let k = 0; k < count; k++) {
-      const v = target.length
-      for (const [t, off] of [[k / count, left], [k / count, right], [(k + 1) / count, right], [(k + 1) / count, left]]) {
-        const x = a[0] + (b[0] - a[0]) * t + nx * off, z = a[1] + (b[1] - a[1]) * t + nz * off
-        target.push([x, ground(x, z) + lift, z])
+      const polygon = [[k / count, left], [k / count, right], [(k + 1) / count, right], [(k + 1) / count, left]]
+        .map(([t, off]) => [a[0] + (b[0] - a[0]) * t + nx * off, a[1] + (b[1] - a[1]) * t + nz * off])
+      for (const part of target === points ? clipped(polygon, asphaltMasks) : [polygon]) {
+        const v = target.length
+        part.forEach(([x, z]) => target.push([x, ground(x, z) + lift, z]))
+        for (let j = 1; j + 1 < part.length; j++) tris.push([v, v + j, v + j + 1])
       }
-      tris.push([v, v + 1, v + 2], [v, v + 2, v + 3])
     }
   }
   const half = feature.width / 2
@@ -113,10 +118,40 @@ function road(feature) {
     const pair = clip(feature.points[i - 1], feature.points[i])
     if (!pair) continue
     const [a, b] = pair, len = Math.hypot(b[0] - a[0], b[1] - a[1])
+    const corridorIndex = roadCorridors.findIndex(s => s.id === feature.id && s.index === i - 1)
+    asphaltMasks = roadCorridors.slice(0, corridorIndex)
     strips(points, triangles, a, b, -half, half, 0.07)
+    const masks = roadCorridors.filter(s => s.id !== feature.id || s.index !== i - 1)
+    const count = Math.ceil(len)
+    const interpolate = t => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]
     if (feature.sidewalk > 0) {
-      strips(walks, wt, a, b, -half - feature.sidewalk, -half, 0.2)
-      strips(walks, wt, a, b, half, half + feature.sidewalk, 0.2)
+      for (let k = 0; k < count; k++) {
+        const start = interpolate(k / count), end = interpolate((k + 1) / count)
+        for (const [left, right] of [[-half - feature.sidewalk, -half], [half, half + feature.sidewalk]]) {
+          for (const polygon of clipped(strip(start, end, left, right), [...masks, ...outerCorridors.slice(0, corridorIndex)])) {
+            const v = walks.length
+            polygon.forEach(p => walks.push([p[0], ground(...p) + crossingLift(p, masks), p[1]]))
+            for (let j = 1; j + 1 < polygon.length; j++) wt.push([v, v + j, v + j + 1])
+            for (let j = 0; j < polygon.length; j++) {
+              const p = polygon[j], q = polygon[(j + 1) % polygon.length]
+              const offset = r => Math.abs(((b[0] - a[0]) * (r[1] - a[1]) - (b[1] - a[1]) * (r[0] - a[0])) / len)
+              // Only the carriageway-facing edge gets a curb; cell seams stay open.
+              if (Math.abs(offset(p) - half) > 1e-5 || Math.abs(offset(q) - half) > 1e-5) continue
+              const c = curbs.length
+              curbs.push([p[0], ground(...p) + 0.07, p[1]], [q[0], ground(...q) + 0.07, q[1]],
+                [q[0], ground(...q) + crossingLift(q, masks), q[1]], [p[0], ground(...p) + crossingLift(p, masks), p[1]])
+              ct.push([c, c + 1, c + 2], [c, c + 2, c + 3])
+            }
+          }
+        }
+        for (const [left, right] of [[-half, -half + 0.3], [half - 0.3, half]]) {
+          for (const polygon of clipped(strip(start, end, left, right), masks)) {
+            const v = gutters.length
+            polygon.forEach(p => gutters.push([p[0], ground(...p) + 0.075, p[1]]))
+            for (let j = 1; j + 1 < polygon.length; j++) gt.push([v, v + j, v + j + 1])
+          }
+        }
+      }
     }
     if (feature.width >= 8) {
       for (let s = 9; s + 3 < len - 9; s += 8) {
@@ -128,7 +163,9 @@ function road(feature) {
   }
   if (!points.length) return
   const parts = [{name: 'Carriageway', geometry: surface(points, triangles), mat: 0}]
-  if (walks.length) parts.push({name: 'Sidewalks (junction clipping pending)', geometry: surface(walks, wt), mat: 1})
+  if (walks.length) parts.push({name: 'Clipped sidewalks with lowered crossing approaches', geometry: surface(walks, wt), mat: 1})
+  if (curbs.length) parts.push({name: 'Raised curb faces', geometry: surface(curbs, ct), mat: 1})
+  if (gutters.length) parts.push({name: 'Concrete drainage margins', geometry: surface(gutters, gt), mat: 1})
   if (paint.length) parts.push({name: 'Inferred center markings', geometry: surface(paint, pt), mat: 2})
   const generated = asset(`assets/models/city/roads/${feature.id.replace(':', '-')}`, parts,
     [material('Asphalt', '#555a5d'), material('Concrete sidewalk', '#bcb9ac'), material('Centerline', '#e4c76a')],
@@ -192,9 +229,23 @@ function terrain() {
       }
     }
   }
+  // The coarse terrain must not poke through finely graded roads on hills.
+  // Remove covered ground triangles rather than hiding the mismatch with a vertical offset.
+  const groundMasks = outerCorridors
+  const visibleGround = [], visiblePaved = [], visibleGrass = []
+  for (const [source, target] of [[paved, visiblePaved], [grass, visibleGrass]]) {
+    for (const triangle of source) {
+      const footprint = triangle.map(i => [positions[i][0], positions[i][2]])
+      for (const polygon of clipped(footprint, groundMasks)) {
+        const v = visibleGround.length
+        polygon.forEach(p => visibleGround.push([p[0], ground(...p), p[1]]))
+        for (let j = 1; j + 1 < polygon.length; j++) target.push([v, v + j, v + j + 1])
+      }
+    }
+  }
   const generated = asset('assets/models/city/terrain', [
-    {name: 'Interpolated ground', geometry: surface(positions, paved), mat: 0},
-    {name: 'Approximate Washington Square lawn', geometry: surface(positions, grass), mat: 1},
+    {name: 'Interpolated ground', geometry: surface(visibleGround, visiblePaved), mat: 0},
+    {name: 'Approximate Washington Square lawn', geometry: surface(visibleGround, visibleGrass), mat: 1},
   ], [material('Urban ground', '#a8a397'), material('Lawn', '#83906a')],
   {name: 'Ground from footprint ground samples', elevationSource: 'Interpolated DataSF gnd_mediancm; NAVD88 metres; not 2023 LiDAR'})
   record({id: 'sf-terrain:north-beach', name: 'North Beach ground'}, generated, [0, 0, 0], {kind: 'terrain'})
@@ -210,6 +261,7 @@ write('scene/generated.json', {version: 1, generatorVersion: GENERATOR_VERSION, 
   assumptions: ['Ground interpolated from older city footprint ground elevations; no 2023 LiDAR processed.',
     'Facades, flat roofs, road widths, markings and tree sizes are inferred placeholders.',
     'Sidewalk widths use positive SIDEWALK_F observations from the 2014 study, with defaults for unknown/variable widths; not surveyed curb geometry.',
+    'Sidewalks are clipped against carriageways; 15 cm curbs and 1.8 m lowered crossing approaches are heuristic, not surveyed or accessibility-certified.',
     'Park lawn is an authored approximation. No traffic simulation, street furniture or physics integration yet.',
     'Tiles are logical ownership groups; production streaming and LOD generation are not implemented.'],
   unmatchedOverrides: city.unmatchedOverrides, tiles, placements,

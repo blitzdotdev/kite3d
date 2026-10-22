@@ -71,9 +71,9 @@ export async function main({viewer}) {
   panel.innerHTML = `<div style="font-size:10px;letter-spacing:2px;color:#b9d3bd">KITE3D / CITY LAB</div>
     <div style="font-size:23px;font-weight:650;margin:5px 0">North Beach, San Francisco</div>
     <div>${manifest.stats.buildings} buildings · ${manifest.stats.roads} streets · ${manifest.stats.trees} mapped trees</div>
-    <div style="color:#c0cbc5;margin-top:8px">Real city geometry. First-pass procedural surfaces.</div>
+    <div style="color:#c0cbc5;margin-top:8px">Mapped layout. Procedural curbs, facades and trees.</div>
     <div data-bookmarks style="display:flex;gap:6px;margin-top:12px"></div>
-    <div style="font-size:10px;color:#a8beb5;margin-top:10px">© City and County of San Francisco / DataSF · PDDL<br>Terrain from city ground samples. Facades and tree sizes inferred.</div>`
+    <div style="font-size:10px;color:#a8beb5;margin-top:10px">© City and County of San Francisco / DataSF · PDDL<br>Terrain from city ground samples. Curb shapes and tree sizes inferred.<br>Drag to orbit · Scroll to zoom · Keys 1–3 for views.</div>`
   hud.append(panel)
   document.body.append(hud)
   const views = [

@@ -17,7 +17,9 @@
       "children": [
         1,
         2,
-        3
+        3,
+        4,
+        5
       ],
       "extras": {
         "name": "FILBERT ST",
@@ -29,12 +31,20 @@
       "mesh": 0
     },
     {
-      "name": "Sidewalks (junction clipping pending)",
+      "name": "Clipped sidewalks with lowered crossing approaches",
       "mesh": 1
     },
     {
-      "name": "Inferred center markings",
+      "name": "Raised curb faces",
       "mesh": 2
+    },
+    {
+      "name": "Concrete drainage margins",
+      "mesh": 3
+    },
+    {
+      "name": "Inferred center markings",
+      "mesh": 4
     }
   ],
   "meshes": [
@@ -52,7 +62,7 @@
       ]
     },
     {
-      "name": "Sidewalks (junction clipping pending)",
+      "name": "Clipped sidewalks with lowered crossing approaches",
       "primitives": [
         {
           "attributes": {
@@ -65,7 +75,7 @@
       ]
     },
     {
-      "name": "Inferred center markings",
+      "name": "Raised curb faces",
       "primitives": [
         {
           "attributes": {
@@ -73,6 +83,32 @@
             "NORMAL": 7
           },
           "indices": 8,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Concrete drainage margins",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 9,
+            "NORMAL": 10
+          },
+          "indices": 11,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred center markings",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13
+          },
+          "indices": 14,
           "material": 2
         }
       ]
@@ -126,63 +162,119 @@
     {
       "bufferView": 0,
       "componentType": 5126,
-      "count": 296,
+      "count": 592,
       "type": "VEC3",
       "min": [
         -147.52362060546875,
         4.538717746734619,
-        -101.86305236816406
+        -101.86148071289062
       ],
       "max": [
         -0.9197517037391663,
-        14.092493057250977,
+        14.092463493347168,
         -69.61516571044922
       ]
     },
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 296,
+      "count": 592,
       "type": "VEC3"
     },
     {
       "bufferView": 2,
       "componentType": 5125,
-      "count": 444,
+      "count": 888,
       "type": "SCALAR"
     },
     {
       "bufferView": 3,
       "componentType": 5126,
-      "count": 592,
+      "count": 1104,
       "type": "VEC3",
       "min": [
-        -148.22018432617188,
-        4.527479648590088,
-        -106.38168334960938
+        -143.2977294921875,
+        4.558847427368164,
+        -105.60733795166016
       ],
       "max": [
-        -0.22318987548351288,
-        14.32272720336914,
-        -65.0965347290039
+        -5.1749138832092285,
+        14.134198188781738,
+        -65.85521697998047
       ]
     },
     {
       "bufferView": 4,
       "componentType": 5126,
-      "count": 592,
+      "count": 1104,
       "type": "VEC3"
     },
     {
       "bufferView": 5,
       "componentType": 5125,
-      "count": 888,
+      "count": 1656,
       "type": "SCALAR"
     },
     {
       "bufferView": 6,
       "componentType": 5126,
-      "count": 128,
+      "count": 1104,
+      "type": "VEC3",
+      "min": [
+        -142.59201049804688,
+        4.727154731750488,
+        -101.0947036743164
+      ],
+      "max": [
+        -5.8666558265686035,
+        13.973919868469238,
+        -70.37532043457031
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 1104,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5125,
+      "count": 1656,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 1104,
+      "type": "VEC3",
+      "min": [
+        -142.59201049804688,
+        4.732154846191406,
+        -101.0947036743164
+      ],
+      "max": [
+        -5.8666558265686035,
+        13.932260513305664,
+        -70.37532043457031
+      ]
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 1104,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5125,
+      "count": 1656,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 204,
       "type": "VEC3",
       "min": [
         -132.15045166015625,
@@ -196,15 +288,15 @@
       ]
     },
     {
-      "bufferView": 7,
+      "bufferView": 13,
       "componentType": 5126,
-      "count": 128,
+      "count": 204,
       "type": "VEC3"
     },
     {
-      "bufferView": 8,
+      "bufferView": 14,
       "componentType": 5125,
-      "count": 192,
+      "count": 306,
       "type": "SCALAR"
     }
   ],
@@ -212,53 +304,83 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 3552
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 3552,
-      "byteLength": 3552
+      "byteLength": 7104
     },
     {
       "buffer": 0,
       "byteOffset": 7104,
-      "byteLength": 1776
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 8880,
       "byteLength": 7104
     },
     {
       "buffer": 0,
-      "byteOffset": 15984,
-      "byteLength": 7104
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 23088,
+      "byteOffset": 14208,
       "byteLength": 3552
     },
     {
       "buffer": 0,
-      "byteOffset": 26640,
-      "byteLength": 1536
+      "byteOffset": 17760,
+      "byteLength": 13248
     },
     {
       "buffer": 0,
-      "byteOffset": 28176,
-      "byteLength": 1536
+      "byteOffset": 31008,
+      "byteLength": 13248
     },
     {
       "buffer": 0,
-      "byteOffset": 29712,
-      "byteLength": 768
+      "byteOffset": 44256,
+      "byteLength": 6624
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 50880,
+      "byteLength": 13248
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 64128,
+      "byteLength": 13248
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 77376,
+      "byteLength": 6624
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 84000,
+      "byteLength": 13248
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 97248,
+      "byteLength": 13248
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 110496,
+      "byteLength": 6624
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 117120,
+      "byteLength": 2448
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 119568,
+      "byteLength": 2448
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122016,
+      "byteLength": 1224
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 30480
+      "byteLength": 123240
     }
   ]
 }

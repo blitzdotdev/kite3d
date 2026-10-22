@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "kite3d dev",
     "city:fetch": "python3 scene/fetch.py",
-    "city:build": "node assets/models/city/build.mjs && node scene/compose.mjs"
+    "city:build": "node assets/models/city/build.mjs && node scene/compose.mjs",
+    "city:export": "node scene/export.mjs"
   },
   "kite3d": {
     "viewer": {
@@ -21,5 +22,8 @@
   "devDependencies": {
     "kite3d": "0.21.0-alpha.8",
     "three": "https://github.com/repalash/three.js-modded/releases/download/v0.163.10003/package.tgz"
+  },
+  "dependencies": {
+    "threepipe": "0.5.1"
   }
 }

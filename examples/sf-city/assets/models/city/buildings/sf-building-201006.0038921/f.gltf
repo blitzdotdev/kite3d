@@ -1,0 +1,550 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Building 201006.0038921",
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extras": {
+        "name": "Building 201006.0038921",
+        "cityId": "sf-building:201006.0038921",
+        "heightSource": "DataSF hgt_median_m",
+        "cityBakedAsset": "assets/models/city/buildings/sf-building-201006.0038921/f.gltf"
+      }
+    },
+    {
+      "name": "Footprint 0 / surface 1",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Footprint 0 / surface 2",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Facade bay volumes",
+      "mesh": 2,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inset glazing",
+      "mesh": 3,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Cornices and window frames",
+      "mesh": 4,
+      "extras": {
+        "cityBakedPart": true
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Footprint 0 / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Footprint 0 / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Facade bay volumes",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6,
+            "TEXCOORD_0": 7
+          },
+          "indices": 8,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Inset glazing",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 9,
+            "NORMAL": 10,
+            "TEXCOORD_0": 11
+          },
+          "indices": 12,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Cornices and window frames",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 13,
+            "NORMAL": 14,
+            "TEXCOORD_0": 15
+          },
+          "indices": 16,
+          "material": 3
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "SF timber",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.55201140150344,
+          0.5028864580233624,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      },
+      "doubleSided": true,
+      "normalTexture": {
+        "index": 1,
+        "scale": 0.35
+      }
+    },
+    {
+      "name": "Flat roof",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.171441100722554,
+          0.181164244239483,
+          0.16202937562896222,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 5
+        }
+      },
+      "doubleSided": true,
+      "normalTexture": {
+        "index": 4,
+        "scale": 0.35
+      }
+    },
+    {
+      "name": "Window glass approximation",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.030713443727452196,
+          0.06662593863608139,
+          0.09989872823822872,
+          1
+        ],
+        "roughnessFactor": 0.3,
+        "metallicFactor": 0.25
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Painted trim",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.76052450467022,
+          0.7156935005005721,
+          0.6307571363387763,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Shopfront paint",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.171441100722554,
+          0.04970656597728775,
+          0.035601314869097636,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Glazing sky reflection",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.21952619971859377,
+          0.3231432091022285,
+          0.407240211891531,
+          1
+        ],
+        "roughnessFactor": 0.24,
+        "metallicFactor": 0.2
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Varied interior blinds",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4452011945063733,
+          0.4178850708380236,
+          0.3049873140591091,
+          1
+        ],
+        "roughnessFactor": 0.95,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 156,
+      "type": "VEC3",
+      "min": [
+        -5.434989929199219,
+        -1.325303554534912,
+        -13.936524391174316
+      ],
+      "max": [
+        6.92489767074585,
+        3,
+        9.47485065460205
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 156,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 156,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 72,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 84,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC3",
+      "min": [
+        -5.553586483001709,
+        2.8499999046325684,
+        -13.954886436462402
+      ],
+      "max": [
+        7.043802261352539,
+        3.3499999046325684,
+        9.593278884887695
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 160,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5125,
+      "count": 240,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 56,
+      "type": "VEC3",
+      "min": [
+        -5.15656042098999,
+        0.75,
+        -9.442052841186523
+      ],
+      "max": [
+        6.747252941131592,
+        2.6500000953674316,
+        9.387394905090332
+      ]
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 56,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 56,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5125,
+      "count": 84,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 224,
+      "type": "VEC3",
+      "min": [
+        -5.663182735443115,
+        2.359999895095825,
+        -13.43379020690918
+      ],
+      "max": [
+        3.8402507305145264,
+        3.0999999046325684,
+        -11.453170776367188
+      ]
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 224,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 224,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5125,
+      "count": 336,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1872
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1872,
+      "byteLength": 1872
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3744,
+      "byteLength": 1248
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4992,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5280,
+      "byteLength": 336
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5616,
+      "byteLength": 1920
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7536,
+      "byteLength": 1920
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9456,
+      "byteLength": 1280
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10736,
+      "byteLength": 960
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11696,
+      "byteLength": 672
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12368,
+      "byteLength": 672
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13040,
+      "byteLength": 448
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13488,
+      "byteLength": 336
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13824,
+      "byteLength": 2688
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 16512,
+      "byteLength": 2688
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 19200,
+      "byteLength": 1792
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 20992,
+      "byteLength": 1344
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 22336
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/materials/timber-color.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/timber-normal.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/timber-roughness.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-color.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-normal.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-roughness.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 2,
+      "sampler": 0
+    },
+    {
+      "source": 3,
+      "sampler": 0
+    },
+    {
+      "source": 4,
+      "sampler": 0
+    },
+    {
+      "source": 5,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ]
+}

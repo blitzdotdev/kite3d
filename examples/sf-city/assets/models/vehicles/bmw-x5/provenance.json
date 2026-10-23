@@ -1,0 +1,28 @@
+{
+  "creator": "BMW Car IT",
+  "source": "https://github.com/bmwcarit/digital-car-3d",
+  "commit": "6261f53b5ac63c6686039d106fbbbfb693339d72",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Closed-car hierarchy assembled; centimetres converted to metres; portable PBR materials authored. Different model from the Honda-like vehicle in the reference photo.",
+  "sourceHashes": {
+    "README.md": "d7531aa327e709d2bc3929bee981c2c7d701da5b367a2ca4a1f92b0ed0f01feb",
+    "O_G05_Wheels.gltf": "9d0223cf8f1b69f4574b54fc88aef6debe570ae1b288760c41f0988f93d3aeca",
+    "O_G05_Taillights.gltf": "db0edff84b4a10455d19c1c58834bc12f01f9224d679b52feb2b4fa4c0f5ca78",
+    "O_G05_Tailgate.gltf": "264094988b510984bfa5dd50659cc4328c1bc5be9746c31b86e2a72326bdd681",
+    "O_G05_SteeringWheel.gltf": "6f153e9b9095d48d9b0ba19f4057d0f8a1fa00895d64061c1caf28ce7f0299f0",
+    "O_G05_Seats.gltf": "c190a5a652653958ae2303373b5e91b4aede95ace8be401d4b238f5f2c9ef4da",
+    "O_G05_LicensePlates.gltf": "025a8d400c66b54ff4ed800fce681a28665ff8c46844bf3ebf6952653a500c42",
+    "O_G05_Interior_non-Color.gltf": "68e9428e65b9721b359d56f7d7b246e147263bb72f2329c1b6742ae5cab6e531",
+    "O_G05_Interior_Color.gltf": "cbe2e135580988137bc4c9d58bab37c547c891b52d0e38db4105763a623529c6",
+    "O_G05_Hood.gltf": "302d499e75b962ed26ed9d130e6e543a7b0f6936914cc3a040961891c5889a56",
+    "O_G05_Headlights.gltf": "2ad4eae379678f279ffd9bb0d5f45c1a0cca8b0ac009b95c9d6d14c0cfab8cb4",
+    "O_G05_Exterior_non-Paint.gltf": "ed4cd39eb83274897b75d7bb1b47c640f848b1aa591445dc95d2a0602bc36d29",
+    "O_G05_Exterior_Paint.gltf": "3574495f09e841ef92b663e47f241b372f17f75d2c2a98e0885e44c2038d49e6",
+    "O_G05_Emblem.gltf": "e11caf53dd67bb0e8feaf29ce05cdc322f45f6227b7301e8d843f1f717a278f9",
+    "O_G05_Doors_F.gltf": "245ff6fddeb786ac9b63b7ea54ccac2ac432d365ec24e50f3c1df66bcb1c0d1e",
+    "O_G05_Doors_B.gltf": "6b8694a7af88b6f57f11575c8569508a249b0f9a6060ba0ef3e30ac130b91592",
+    "LICENSE.txt": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "G05_main.rca": "a8e9c460dd529d47d4383b622f7f0df1af2c9bf17e298bd1480c716d25924865"
+  }
+}

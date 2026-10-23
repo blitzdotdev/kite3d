@@ -1,0 +1,391 @@
+{
+  "checks": [
+    "Kite createGame entry ready",
+    "runtime active",
+    "bookmarks change camera",
+    "orbit controls respond",
+    "canvas resizes",
+    "pagehide disposes runtime leases"
+  ],
+  "errors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "readyMs": 6945,
+  "boot": "Preparing the experimental city…",
+  "initial": {
+    "active": true,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "north": {
+    "active": true,
+    "camera": {
+      "position": [
+        -130,
+        34,
+        -160
+      ],
+      "target": [
+        -65,
+        12,
+        -210
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-2_-2",
+        "-1_-1",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "park": {
+    "active": true,
+    "camera": {
+      "position": [
+        -110,
+        25,
+        -45
+      ],
+      "target": [
+        -65,
+        16,
+        -110
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "desired": [
+        "-1_-1",
+        "-1_-2",
+        "-2_-2",
+        "0_-2",
+        "-1_-3"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "overview": {
+    "active": true,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        15,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "orbit": {
+    "active": true,
+    "camera": {
+      "position": [
+        -216.57056998737787,
+        144.7205471932047,
+        -130.76645503727252
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "resize": {
+    "active": true,
+    "camera": {
+      "position": [
+        -217.91783426598548,
+        149.45483397194798,
+        -152.37693744393144
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      800,
+      600
+    ]
+  },
+  "disposed": {
+    "active": false,
+    "materialPool": {
+      "leases": 0,
+      "images": 0,
+      "textures": 0,
+      "materials": 0
+    },
+    "sources": {
+      "sources": 0,
+      "resources": 0
+    },
+    "ground": {
+      "sources": 0,
+      "resources": 0
+    },
+    "pinned": {
+      "sources": 0,
+      "resources": 0
+    }
+  },
+  "passed": true
+}

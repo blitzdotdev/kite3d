@@ -1,0 +1,33 @@
+{
+  "environment": "Headless Chromium, SwiftShader software rendering; 1000x700; localhost",
+  "readyMs": 32314.299999999814,
+  "marks": [
+    {
+      "name": "city-main",
+      "ms": 27428.299999999814
+    },
+    {
+      "name": "city-collected",
+      "ms": 29472.89999999944
+    },
+    {
+      "name": "city-merged",
+      "ms": 29597.599999999627
+    },
+    {
+      "name": "city-effects",
+      "ms": 29604.5
+    }
+  ],
+  "placedTriangles": 604580,
+  "visibleRuntimeMeshes": 410,
+  "visibleAuthoredMeshes": 0,
+  "webglDrawCallsSingleStreetFrame": 601,
+  "exportBytes": 47041410,
+  "limitations": [
+    "Single run, not a hardware FPS budget",
+    "Draw calls include rendering passes",
+    "Alpha-tested foliage adds overdraw",
+    "No production LOD or streaming"
+  ]
+}

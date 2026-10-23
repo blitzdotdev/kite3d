@@ -1,0 +1,178 @@
+[
+  {
+    "building": "bay",
+    "distance": 75,
+    "path": "/tmp/sf-building-trim-bay-75m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 53.825492095258205,
+        "position": [
+          39.076840622459656,
+          15.570583792837121,
+          56.45229045288463
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 6040
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 53.825492095258205,
+        "position": [
+          39.076840622459656,
+          15.570583792837121,
+          56.45229045288463
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 1072
+      }
+    ]
+  },
+  {
+    "building": "plain",
+    "distance": 75,
+    "path": "/tmp/sf-building-trim-plain-75m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 49.03180431286414,
+        "position": [
+          -51.08819936040521,
+          10.848145397813775,
+          -57.607717431949574
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 612
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 49.03180431286414,
+        "position": [
+          -51.08819936040521,
+          10.848145397813775,
+          -57.607717431949574
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 228
+      }
+    ]
+  },
+  {
+    "building": "masonry",
+    "distance": 75,
+    "path": "/tmp/sf-building-trim-masonry-75m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0002992",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 47.691777471997185,
+        "position": [
+          38.957777245079285,
+          14.784263523729303,
+          56.5255045069923
+        ],
+        "target": [
+          -5.30638313293457,
+          5.046148240566254,
+          -3.231112003326416
+        ],
+        "fov": 50,
+        "triangles": 7800
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0002992",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 47.691777471997185,
+        "position": [
+          38.957777245079285,
+          14.784263523729303,
+          56.5255045069923
+        ],
+        "target": [
+          -5.30638313293457,
+          5.046148240566254,
+          -3.231112003326416
+        ],
+        "fov": 50,
+        "triangles": 1280
+      }
+    ]
+  },
+  {
+    "building": "stucco",
+    "distance": 75,
+    "path": "/tmp/sf-building-trim-stucco-75m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0003946",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 51.75591662981136,
+        "position": [
+          43.589897377525574,
+          16.71196183046863,
+          58.859357274936634
+        ],
+        "target": [
+          -0.6742630004882812,
+          6.973846547305584,
+          -0.8972592353820801
+        ],
+        "fov": 50,
+        "triangles": 4704
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0003946",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 51.75591662981136,
+        "position": [
+          43.589897377525574,
+          16.71196183046863,
+          58.859357274936634
+        ],
+        "target": [
+          -0.6742630004882812,
+          6.973846547305584,
+          -0.8972592353820801
+        ],
+        "fov": 50,
+        "triangles": 608
+      }
+    ]
+  }
+]

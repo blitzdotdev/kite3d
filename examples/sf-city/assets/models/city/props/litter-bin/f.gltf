@@ -1,0 +1,427 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Authored litter bin",
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "extras": {
+        "name": "Authored litter bin",
+        "cityBakedAsset": "assets/models/city/props/litter-bin/f.gltf"
+      }
+    },
+    {
+      "name": "Bin body / surface 1",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Bin body / surface 2",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Bin body / surface 3",
+      "mesh": 2,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Bin rim",
+      "mesh": 3,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Recessed lid / surface 1",
+      "mesh": 4,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Recessed lid / surface 2",
+      "mesh": 5,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Recessed lid / surface 3",
+      "mesh": 6,
+      "extras": {
+        "cityBakedPart": true
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Bin body / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Bin body / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Bin body / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 5,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Bin rim",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Recessed lid / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 10,
+            "NORMAL": 11,
+            "TEXCOORD_0": 12
+          },
+          "indices": 13,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Recessed lid / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 10,
+            "NORMAL": 11,
+            "TEXCOORD_0": 12
+          },
+          "indices": 14,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Recessed lid / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 10,
+            "NORMAL": 11,
+            "TEXCOORD_0": 12
+          },
+          "indices": 15,
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Street furniture dark bronze",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.02955683443236377,
+          0.04518620437910499,
+          0.03954623527052923,
+          1
+        ],
+        "roughnessFactor": 0.48,
+        "metallicFactor": 0.55
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Bin opening",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.005605391621829108,
+          0.010329823026364548,
+          0.008568125615105716,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 100,
+      "type": "VEC3",
+      "min": [
+        -0.27000001072883606,
+        -1.1920929132713809e-8,
+        -0.27000001072883606
+      ],
+      "max": [
+        0.27000001072883606,
+        0.8500000238418579,
+        0.27000001072883606
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 100,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 100,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 96,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 119,
+      "type": "VEC3",
+      "min": [
+        -0.29499998688697815,
+        0.829689085483551,
+        -0.29499998688697815
+      ],
+      "max": [
+        0.29499998688697815,
+        0.8903108835220337,
+        0.29499998688697815
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 119,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 119,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5125,
+      "count": 576,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 100,
+      "type": "VEC3",
+      "min": [
+        -0.23000000417232513,
+        0.7724999785423279,
+        -0.23000000417232513
+      ],
+      "max": [
+        0.23000000417232513,
+        0.8075000047683716,
+        0.23000000417232513
+      ]
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 100,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 100,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5125,
+      "count": 96,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1200
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1200,
+      "byteLength": 1200
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2400,
+      "byteLength": 800
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3200,
+      "byteLength": 384
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3584,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3776,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3968,
+      "byteLength": 1428
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5396,
+      "byteLength": 1428
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6824,
+      "byteLength": 952
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7776,
+      "byteLength": 2304
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10080,
+      "byteLength": 1200
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11280,
+      "byteLength": 1200
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12480,
+      "byteLength": 800
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13280,
+      "byteLength": 384
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13664,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13856,
+      "byteLength": 192
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 14048
+    }
+  ]
+}

@@ -39,6 +39,8 @@ export interface StartGameOptions {
 export interface CreateGameOptions extends StartGameOptions {
     canvas: HTMLCanvasElement
     onError?: (error: unknown) => void
+    /** Opt out of rendering intermediate assets. main() must not await rendered frames. */
+    renderDuringLoad?: boolean
 }
 
 export interface RuntimeProject {
@@ -118,24 +120,31 @@ export async function createGame(options: CreateGameOptions): Promise<CreatedGam
         const base = validateBase(options.base)
         const project = await loadRuntimeProject(base)
         viewer = createViewer(options.canvas, project)
-        // Three's LoadingManager delegates through this importer hook. It covers
-        // glTF buffers/textures and nested imports without patching global fetch.
-        viewer.assetManager.importer.addURLModifier(createProjectAssetURLModifier(base, project.assetsManifest))
-        nested = new RuntimeNestedAssetLoader(viewer, reportError)
+        const renderingWasEnabled = viewer.renderEnabled
+        if (options.renderDuringLoad === false) viewer.renderEnabled = false
+        let running: RunningGame
+        try {
+            // Three's LoadingManager delegates through this importer hook. It covers
+            // glTF buffers/textures and nested imports without patching global fetch.
+            viewer.assetManager.importer.addURLModifier(createProjectAssetURLModifier(base, project.assetsManifest))
+            nested = new RuntimeNestedAssetLoader(viewer, reportError)
 
-        // The project's component types have to exist before the scene loads. A node whose
-        // component type is unknown at load keeps a placeholder that never becomes the real
-        // component, so its script never runs. startGame skips what is registered here.
-        await registerProjectScripts(viewer, project, base)
-        await registerProjectPlugins(viewer, project, base)
+            // The project's component types have to exist before the scene loads. A node whose
+            // component type is unknown at load keeps a placeholder that never becomes the real
+            // component, so its script never runs. startGame skips what is registered here.
+            await registerProjectScripts(viewer, project, base)
+            await registerProjectPlugins(viewer, project, base)
 
-        const sceneUrl = new URL(project.mainScene, base).href
-        const root = await viewer.load(sceneUrl, {importAsModelRoot: true})
-        if (!root?.isObject3D) throw new Error(`The main scene did not load as an Object3D: ${sceneUrl}`)
-        await nested.loadObjectDependencies(root as IObject3D)
-        await nested.waitForPending()
+            const sceneUrl = new URL(project.mainScene, base).href
+            const root = await viewer.load(sceneUrl, {importAsModelRoot: true})
+            if (!root?.isObject3D) throw new Error(`The main scene did not load as an Object3D: ${sceneUrl}`)
+            await nested.loadObjectDependencies(root as IObject3D)
+            await nested.waitForPending()
 
-        const running = await startGame(viewer, project, options)
+            running = await startGame(viewer, project, options)
+        } finally {
+            if (options.renderDuringLoad === false) viewer.renderEnabled = renderingWasEnabled
+        }
         const readyViewer = viewer
         const readyNested = nested
         return {

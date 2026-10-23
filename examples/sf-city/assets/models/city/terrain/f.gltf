@@ -1,0 +1,252 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Ground from footprint ground samples",
+      "children": [
+        1,
+        2
+      ],
+      "extras": {
+        "name": "Ground from footprint ground samples",
+        "elevationSource": "Interpolated DataSF gnd_mediancm; NAVD88 metres; not 2023 LiDAR",
+        "cityBakedAsset": "assets/models/city/terrain/f.gltf"
+      }
+    },
+    {
+      "name": "Interpolated ground",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Approximate Washington Square lawn",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Interpolated ground",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Approximate Washington Square lawn",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Urban ground",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.55201140150344,
+          0.5271151256969157,
+          0.4452011945063733,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Lawn",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4452011945063733,
+          0.5332764040016892,
+          0.2663556047920505,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 1
+        }
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 25283,
+      "type": "VEC3",
+      "min": [
+        -265.6844482421875,
+        -0.3713921308517456,
+        -181.97999572753906
+      ],
+      "max": [
+        265.6844482421875,
+        45.00302505493164,
+        181.97999572753906
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 25283,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 25283,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 28293,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 25283,
+      "type": "VEC3",
+      "min": [
+        -265.6844482421875,
+        -0.3713921308517456,
+        -181.97999572753906
+      ],
+      "max": [
+        265.6844482421875,
+        45.00302505493164,
+        181.97999572753906
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 25283,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 25283,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5125,
+      "count": 0,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 303396
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 303396,
+      "byteLength": 303396
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 606792,
+      "byteLength": 202264
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 809056,
+      "byteLength": 113172
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 922228,
+      "byteLength": 303396
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1225624,
+      "byteLength": 303396
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1529020,
+      "byteLength": 202264
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1731284,
+      "byteLength": 0
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 1731284
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/materials/concrete.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/lawn.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ]
+}

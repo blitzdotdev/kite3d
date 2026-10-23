@@ -1,0 +1,621 @@
+{
+  "version": 1,
+  "captureId": "2026-10-22T19-41-00.040Z-fdbc196a-4bac-4bb1-9c6f-fca11fb0f66a",
+  "status": "partial",
+  "consistency": "observational watermark/count checks, not a transactional snapshot",
+  "startedAt": "2026-10-22T19:41:00.040Z",
+  "completedAt": "2026-10-22T19:41:07.013Z",
+  "pageRows": 5000,
+  "maxDataPages": 8,
+  "dataPagesRequested": 8,
+  "maxConcurrentLayers": 2,
+  "maxResponseBytes": 33554432,
+  "networkRequests": 16,
+  "layers": {
+    "buildings": {
+      "dataset": "ynuv-fyni",
+      "status": "partial",
+      "pageRows": 5000,
+      "priorBatch": null,
+      "offset": 0,
+      "nextOffset": 10000,
+      "rowsPreviouslyCaptured": 0,
+      "rowsThisBatch": 10000,
+      "rowsTotal": 10000,
+      "rawBytesThisBatch": 7719458,
+      "pages": [
+        {
+          "file": "buildings-000000000.json",
+          "offset": 0,
+          "sha256": "3c8bbcf637b4072740e702e0fb830fc8fde0a7fcb0e12127e88cc9549a0b7a07",
+          "bytes": 3895155,
+          "url": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Csf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+          "headers": {
+            "last-modified": "Thu, 22 Oct 2026 17:28:05 GMT",
+            "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZFTHB0RGFvbFJ4MVdaYXBoemcyMVlGNTVOSW8---gzip_CpwNwNT2_4GmlguTDtnYoU4I8g--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "4c84fee9e92dcb5f2913436302be2081",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"sf16_bldgid\",\"shape\",\"gnd_mediancm\",\"gnd_mincm\",\"gnd_maxcm\",\"hgt_median_m\",\"hgt_maxcm\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"multipolygon\",\"text\",\"text\",\"text\",\"text\",\"text\",\"floating_timestamp\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-52e5.xeyc-vqz4",
+          "lastRowId": "row-v4pj_zct3~njm6"
+        },
+        {
+          "file": "buildings-000005000.json",
+          "offset": 5000,
+          "sha256": "12abe05682b7f03fc1efadeda2d7eab2fbe262cb286856037f380a2ca111338b",
+          "bytes": 3824303,
+          "url": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Csf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+          "headers": {
+            "last-modified": "Thu, 22 Oct 2026 17:28:05 GMT",
+            "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZsU2lTOHJ1dWZtSVpYUmpCbzgzejE4S0VRZVE---gziqyx43gMQwJKujHBditPpF0vU8MCw--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "20a53e77efe059c3baecacf79ac41b68",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"sf16_bldgid\",\"shape\",\"gnd_mediancm\",\"gnd_mincm\",\"gnd_maxcm\",\"hgt_median_m\",\"hgt_maxcm\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"multipolygon\",\"text\",\"text\",\"text\",\"text\",\"text\",\"floating_timestamp\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-vaij-77v7.8uss",
+          "lastRowId": "row-t7b5-4nde~yh5a"
+        }
+      ],
+      "terminalEmpty": false,
+      "geometryValidation": "deferred; raw source records preserved, no geometry accepted",
+      "start": {
+        "count": 177023,
+        "lastModified": "Thu, 22 Oct 2026 17:28:05 GMT",
+        "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZqSmk3c0luTXR5UGNXUmxzVm9fWmxoLVEyTGM--gziEr7gZmlCDveTiCkMmG6hofF7pzA---gzip\"",
+        "query": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=count%28*%29+as+count&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:01.174Z"
+      },
+      "end": {
+        "count": 177023,
+        "lastModified": "Thu, 22 Oct 2026 17:28:05 GMT",
+        "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZqSmk3c0luTXR5UGNXUmxzVm9fWmxoLVEyTGM--gziEr7gZmlCDveTiCkMmG6hofF7pzA---gzip\"",
+        "query": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=count%28*%29+as+count&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:05.347Z"
+      }
+    },
+    "roads": {
+      "dataset": "3psu-pn9h",
+      "status": "partial",
+      "pageRows": 5000,
+      "priorBatch": null,
+      "offset": 0,
+      "nextOffset": 10000,
+      "rowsPreviouslyCaptured": 0,
+      "rowsThisBatch": 10000,
+      "rowsTotal": 10000,
+      "rawBytesThisBatch": 4187927,
+      "pages": [
+        {
+          "file": "roads-000000000.json",
+          "offset": 0,
+          "sha256": "c2d50db17fbde694197fdf1bfd71f42feab09569301f3045b547ec7ecb11b1c3",
+          "bytes": 2203828,
+          "url": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ccnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+          "headers": {
+            "last-modified": "Thu, 22 Oct 2026 17:33:20 GMT",
+            "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZ5dzJ3a3FoX2pOMll6YUlNZkxXZDNCRlM1amM---gzirlVoC6-HhpiV2rPKhel0sNV0qTfw--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "25837a247b72a4c0506f86892ae8cb90",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"cnn\",\"streetname\",\"st_type\",\"classcode\",\"oneway\",\"line\",\"f_node_cnn\",\"t_node_cnn\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"text\",\"number\",\"text\",\"line\",\"number\",\"number\",\"floating_timestamp\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-x98r.f2uh-g6y7",
+          "lastRowId": "row-hxz8_7xkv_wbv8"
+        },
+        {
+          "file": "roads-000005000.json",
+          "offset": 5000,
+          "sha256": "19aaac1ccdb71456f6ad405e38f4121e1576b1daf14eba4e232c85504576afe8",
+          "bytes": 1984099,
+          "url": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ccnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+          "headers": {
+            "last-modified": "Thu, 22 Oct 2026 17:33:20 GMT",
+            "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZYZjdBMW9JVDhRREJGNDd3TmxZZ3dkeGhIZHc---gzipagCJnIZK96FrcvuxBgrbxUkBDPg--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "1ea04701f9dde2b656d6229eae5cd62c",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"cnn\",\"streetname\",\"st_type\",\"classcode\",\"oneway\",\"line\",\"f_node_cnn\",\"t_node_cnn\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"text\",\"number\",\"text\",\"line\",\"number\",\"number\",\"floating_timestamp\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-ac2p-u5jz-vsn5",
+          "lastRowId": "row-h5ta_hrue.uhan"
+        }
+      ],
+      "terminalEmpty": false,
+      "geometryValidation": "deferred; raw source records preserved, no geometry accepted",
+      "start": {
+        "count": 16378,
+        "lastModified": "Thu, 22 Oct 2026 17:33:20 GMT",
+        "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZWRDY1UTNkWDR3UUx5UnJMajhOd3IybVJISFU--gzisYGcqZo4ji7QnCzmqYBeBwern_4---gzip\"",
+        "query": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=count%28*%29+as+count&%24where=active+%3D+true&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:00.969Z"
+      },
+      "end": {
+        "count": 16378,
+        "lastModified": "Thu, 22 Oct 2026 17:33:20 GMT",
+        "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZWRDY1UTNkWDR3UUx5UnJMajhOd3IybVJISFU--gzisYGcqZo4ji7QnCzmqYBeBwern_4---gzip\"",
+        "query": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=count%28*%29+as+count&%24where=active+%3D+true&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:02.807Z"
+      }
+    },
+    "trees": {
+      "dataset": "tkzw-k3nq",
+      "status": "partial",
+      "pageRows": 5000,
+      "priorBatch": null,
+      "offset": 0,
+      "nextOffset": 10000,
+      "rowsPreviouslyCaptured": 0,
+      "rowsThisBatch": 10000,
+      "rowsTotal": 10000,
+      "rawBytesThisBatch": 2447239,
+      "pages": [
+        {
+          "file": "trees-000000000.json",
+          "offset": 0,
+          "sha256": "b347e8b72176b0087acbfb33817f2306e2d1429bb8121eac7c68651a7057d7f0",
+          "bytes": 1222992,
+          "url": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ctreeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+          "headers": {
+            "last-modified": "Thu, 22 Oct 2026 16:39:51 GMT",
+            "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4aWU5clNldkFzYzd2aF9Jbk8zNjV1cjZVLU5B---gzipenJZnXg4eLkEpPSy3hDrA19m1QM--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "557545dd014706d083b37e60a89f4c2a",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"treeid\",\"species\",\"latitude\",\"longitude\",\"mapdbh\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"number\",\"number\",\"text\",\"text\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-3th2_xqnp.ub3h",
+          "lastRowId": "row-73w9~7v4p-tjmm"
+        },
+        {
+          "file": "trees-000005000.json",
+          "offset": 5000,
+          "sha256": "fecb3698b30d8a22610a18fbba8eb721bb513e8d165bf5d5a2594ddc00f0cd30",
+          "bytes": 1224247,
+          "url": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ctreeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+          "headers": {
+            "last-modified": "Thu, 22 Oct 2026 16:39:51 GMT",
+            "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4VzBfWGNIcHNFblZrMEEwZElyX1ZuajFBSUxV---gzips8KUWa8gf3ahTlBow_7sO7Wd0Kc--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "62206acba6a562bb1e375a76332d770e",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"treeid\",\"species\",\"latitude\",\"longitude\",\"mapdbh\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"number\",\"number\",\"text\",\"text\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-dysi_niq7~gcpx",
+          "lastRowId": "row-3w4t~wnm3~ubst"
+        }
+      ],
+      "terminalEmpty": false,
+      "geometryValidation": "deferred; raw source records preserved, no geometry accepted",
+      "start": {
+        "count": 144519,
+        "lastModified": "Thu, 22 Oct 2026 16:39:51 GMT",
+        "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4NGhKU0Y3WWx5ekpNcTdTOF8yaGlYSUFvb3ZZ--gzirdWaSArKF9tFVMl2hrV02DOp6Sa---gzip\"",
+        "query": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=count%28*%29+as+count&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:03.478Z"
+      },
+      "end": {
+        "count": 144519,
+        "lastModified": "Thu, 22 Oct 2026 16:39:51 GMT",
+        "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4NGhKU0Y3WWx5ekpNcTdTOF8yaGlYSUFvb3ZZ--gzirdWaSArKF9tFVMl2hrV02DOp6Sa---gzip\"",
+        "query": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=count%28*%29+as+count&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:06.513Z"
+      }
+    },
+    "sidewalks": {
+      "dataset": "4g86-grxu",
+      "status": "partial",
+      "pageRows": 5000,
+      "priorBatch": null,
+      "offset": 0,
+      "nextOffset": 10000,
+      "rowsPreviouslyCaptured": 0,
+      "rowsThisBatch": 10000,
+      "rowsTotal": 10000,
+      "rawBytesThisBatch": 3490615,
+      "pages": [
+        {
+          "file": "sidewalks-000000000.json",
+          "offset": 0,
+          "sha256": "36fe32f3df0f5055949d8aad77d34514b01730b9c53c79cca1322218dace6162",
+          "bytes": 1753796,
+          "url": "https://data.sf.gov/resource/4g86-grxu.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Cobjectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+          "headers": {
+            "last-modified": "Mon, 17 Jun 2024 17:17:04 GMT",
+            "etag": "\"Z29sZi4zNTI2N18zXzI1NkIxMUZkLVNCMFFxanpXUkVvRS11Y01mQlpqSQ---gzinzov14GK68dfOY4mwZT1XsNr9PH--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "4836ff8994428b35331d88d822be694c",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"objectid\",\"cnn\",\"width_min\",\"sidewalk_f\",\"side\",\"shape\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"text\",\"text\",\"text\",\"text\",\"line\",\"floating_timestamp\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-rrhm_2zud_86hw",
+          "lastRowId": "row-mhyk-wqd6_uica"
+        },
+        {
+          "file": "sidewalks-000005000.json",
+          "offset": 5000,
+          "sha256": "0103d71192befe6b62fe5a87e2300121d476b816e143cb25a12a5d720f835bda",
+          "bytes": 1736819,
+          "url": "https://data.sf.gov/resource/4g86-grxu.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Cobjectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+          "headers": {
+            "last-modified": "Mon, 17 Jun 2024 17:17:04 GMT",
+            "etag": "\"Z29sZi4zNTI2N18zXzI1Nkt2NUdDTXAyUnp1blY1ZWtWRW9uNWNOd296bw---gziilfOf8n7US3bjnYJ83k7Bp1KnMV--gzip--gzip\"",
+            "retry-after": null,
+            "x-socrata-requestid": "59b2ef3cc8d8902dc48a52a57e44b845",
+            "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"objectid\",\"cnn\",\"width_min\",\"sidewalk_f\",\"side\",\"shape\",\"data_as_of\"]",
+            "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"text\",\"text\",\"text\",\"text\",\"line\",\"floating_timestamp\"]",
+            "content-type": "application/json;charset=utf-8"
+          },
+          "status": "validated-source-rows",
+          "rows": 5000,
+          "firstRowId": "row-akik.kgi2.3uw5",
+          "lastRowId": "row-2y2c-jmxv~379b"
+        }
+      ],
+      "terminalEmpty": false,
+      "geometryValidation": "deferred; raw source records preserved, no geometry accepted",
+      "start": {
+        "count": 16174,
+        "lastModified": "Mon, 17 Jun 2024 17:17:04 GMT",
+        "etag": "\"Z29sZi4zNTI2N18zXzI1NjdGeXhaQlFvUnZZMzFLVUp3cWNuMmx0OEUxWQ-KlhQHKKUtFCreKSB2uKS9me60_I--gzip--gzip\"",
+        "query": "https://data.sf.gov/resource/4g86-grxu.json?%24select=count%28*%29+as+count&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:05.551Z"
+      },
+      "end": {
+        "count": 16174,
+        "lastModified": "Mon, 17 Jun 2024 17:17:04 GMT",
+        "etag": "\"Z29sZi4zNTI2N18zXzI1NjdGeXhaQlFvUnZZMzFLVUp3cWNuMmx0OEUxWQ-KlhQHKKUtFCreKSB2uKS9me60_I--gzip--gzip\"",
+        "query": "https://data.sf.gov/resource/4g86-grxu.json?%24select=count%28*%29+as+count&%24limit=1",
+        "capturedAt": "2026-10-22T19:41:07.013Z"
+      }
+    }
+  },
+  "requests": [
+    {
+      "layer": "roads",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=count%28*%29+as+count&%24where=active+%3D+true&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:00.052Z",
+      "receivedAt": "2026-10-22T19:41:00.969Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:33:20 GMT",
+        "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZWRDY1UTNkWDR3UUx5UnJMajhOd3IybVJISFU--gzisYGcqZo4ji7QnCzmqYBeBwern_4---gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "b61709f200ef01f8ebf62178c1343076",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 20,
+      "sha256": "fce9b9bcb1b49fb71c9e9c8ae8f18674d07cd3c12aa2f1ca904b1ca04e7b442c"
+    },
+    {
+      "layer": "buildings",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=count%28*%29+as+count&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:00.041Z",
+      "receivedAt": "2026-10-22T19:41:01.174Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:28:05 GMT",
+        "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZqSmk3c0luTXR5UGNXUmxzVm9fWmxoLVEyTGM--gziEr7gZmlCDveTiCkMmG6hofF7pzA---gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "b41ecdbb5d39e37ea5d8b5cda7a37851",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 21,
+      "sha256": "d44f748008ee64ac3f35ab19aad932ef7799fb42682ff6e25853fb5037839b53"
+    },
+    {
+      "layer": "buildings",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Csf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:01.175Z",
+      "receivedAt": "2026-10-22T19:41:01.695Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:28:05 GMT",
+        "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZFTHB0RGFvbFJ4MVdaYXBoemcyMVlGNTVOSW8---gzip_CpwNwNT2_4GmlguTDtnYoU4I8g--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "4c84fee9e92dcb5f2913436302be2081",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"sf16_bldgid\",\"shape\",\"gnd_mediancm\",\"gnd_mincm\",\"gnd_maxcm\",\"hgt_median_m\",\"hgt_maxcm\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"multipolygon\",\"text\",\"text\",\"text\",\"text\",\"text\",\"floating_timestamp\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 3895155,
+      "sha256": "3c8bbcf637b4072740e702e0fb830fc8fde0a7fcb0e12127e88cc9549a0b7a07"
+    },
+    {
+      "layer": "roads",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ccnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:00.971Z",
+      "receivedAt": "2026-10-22T19:41:01.819Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:33:20 GMT",
+        "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZ5dzJ3a3FoX2pOMll6YUlNZkxXZDNCRlM1amM---gzirlVoC6-HhpiV2rPKhel0sNV0qTfw--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "25837a247b72a4c0506f86892ae8cb90",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"cnn\",\"streetname\",\"st_type\",\"classcode\",\"oneway\",\"line\",\"f_node_cnn\",\"t_node_cnn\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"text\",\"number\",\"text\",\"line\",\"number\",\"number\",\"floating_timestamp\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 2203828,
+      "sha256": "c2d50db17fbde694197fdf1bfd71f42feab09569301f3045b547ec7ecb11b1c3"
+    },
+    {
+      "layer": "roads",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ccnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:02.290Z",
+      "receivedAt": "2026-10-22T19:41:02.509Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:33:20 GMT",
+        "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZYZjdBMW9JVDhRREJGNDd3TmxZZ3dkeGhIZHc---gzipagCJnIZK96FrcvuxBgrbxUkBDPg--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "1ea04701f9dde2b656d6229eae5cd62c",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"cnn\",\"streetname\",\"st_type\",\"classcode\",\"oneway\",\"line\",\"f_node_cnn\",\"t_node_cnn\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"text\",\"number\",\"text\",\"line\",\"number\",\"number\",\"floating_timestamp\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 1984099,
+      "sha256": "19aaac1ccdb71456f6ad405e38f4121e1576b1daf14eba4e232c85504576afe8"
+    },
+    {
+      "layer": "roads",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=count%28*%29+as+count&%24where=active+%3D+true&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:02.640Z",
+      "receivedAt": "2026-10-22T19:41:02.807Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:33:20 GMT",
+        "etag": "\"Z29sZi4yNDA2NV8zXzI4OTZWRDY1UTNkWDR3UUx5UnJMajhOd3IybVJISFU--gzisYGcqZo4ji7QnCzmqYBeBwern_4---gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "c5d17d60d3c2140434c83555e97aea1b",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 20,
+      "sha256": "fce9b9bcb1b49fb71c9e9c8ae8f18674d07cd3c12aa2f1ca904b1ca04e7b442c"
+    },
+    {
+      "layer": "trees",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=count%28*%29+as+count&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:02.808Z",
+      "receivedAt": "2026-10-22T19:41:03.478Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 16:39:51 GMT",
+        "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4NGhKU0Y3WWx5ekpNcTdTOF8yaGlYSUFvb3ZZ--gzirdWaSArKF9tFVMl2hrV02DOp6Sa---gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "3d728dabd0b08b797707732ff1f132f4",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 21,
+      "sha256": "33761f30b7d47c3311ecbba76909fbd823a80eea767c0344f9a414f24691c28a"
+    },
+    {
+      "layer": "trees",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ctreeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:03.478Z",
+      "receivedAt": "2026-10-22T19:41:03.849Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 16:39:51 GMT",
+        "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4aWU5clNldkFzYzd2aF9Jbk8zNjV1cjZVLU5B---gzipenJZnXg4eLkEpPSy3hDrA19m1QM--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "557545dd014706d083b37e60a89f4c2a",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"treeid\",\"species\",\"latitude\",\"longitude\",\"mapdbh\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"number\",\"number\",\"text\",\"text\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 1222992,
+      "sha256": "b347e8b72176b0087acbfb33817f2306e2d1429bb8121eac7c68651a7057d7f0"
+    },
+    {
+      "layer": "buildings",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Csf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:02.022Z",
+      "receivedAt": "2026-10-22T19:41:04.512Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:28:05 GMT",
+        "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZsU2lTOHJ1dWZtSVpYUmpCbzgzejE4S0VRZVE---gziqyx43gMQwJKujHBditPpF0vU8MCw--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "20a53e77efe059c3baecacf79ac41b68",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"sf16_bldgid\",\"shape\",\"gnd_mediancm\",\"gnd_mincm\",\"gnd_maxcm\",\"hgt_median_m\",\"hgt_maxcm\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"multipolygon\",\"text\",\"text\",\"text\",\"text\",\"text\",\"floating_timestamp\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 3824303,
+      "sha256": "12abe05682b7f03fc1efadeda2d7eab2fbe262cb286856037f380a2ca111338b"
+    },
+    {
+      "layer": "buildings",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=count%28*%29+as+count&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:04.823Z",
+      "receivedAt": "2026-10-22T19:41:05.347Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 17:28:05 GMT",
+        "etag": "\"Z29sZi4yNTI1Nl8zXzEwODZqSmk3c0luTXR5UGNXUmxzVm9fWmxoLVEyTGM--gziEr7gZmlCDveTiCkMmG6hofF7pzA---gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "0cb0140a4ba99d76b641cdf9b90f825b",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 21,
+      "sha256": "d44f748008ee64ac3f35ab19aad932ef7799fb42682ff6e25853fb5037839b53"
+    },
+    {
+      "layer": "sidewalks",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/4g86-grxu.json?%24select=count%28*%29+as+count&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:05.348Z",
+      "receivedAt": "2026-10-22T19:41:05.551Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Mon, 17 Jun 2024 17:17:04 GMT",
+        "etag": "\"Z29sZi4zNTI2N18zXzI1NjdGeXhaQlFvUnZZMzFLVUp3cWNuMmx0OEUxWQ-KlhQHKKUtFCreKSB2uKS9me60_I--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "6648044911c11a4139ba20dbc7a3bf6d",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 20,
+      "sha256": "e421ed0c622d42afd749f307fe65d4bbd8b7eee2abf9e49b91b1bf7bbad14a9a"
+    },
+    {
+      "layer": "sidewalks",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/4g86-grxu.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Cobjectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=0",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:05.553Z",
+      "receivedAt": "2026-10-22T19:41:05.789Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Mon, 17 Jun 2024 17:17:04 GMT",
+        "etag": "\"Z29sZi4zNTI2N18zXzI1NkIxMUZkLVNCMFFxanpXUkVvRS11Y01mQlpqSQ---gzinzov14GK68dfOY4mwZT1XsNr9PH--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "4836ff8994428b35331d88d822be694c",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"objectid\",\"cnn\",\"width_min\",\"sidewalk_f\",\"side\",\"shape\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"text\",\"text\",\"text\",\"text\",\"line\",\"floating_timestamp\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 1753796,
+      "sha256": "36fe32f3df0f5055949d8aad77d34514b01730b9c53c79cca1322218dace6162"
+    },
+    {
+      "layer": "trees",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Ctreeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:03.982Z",
+      "receivedAt": "2026-10-22T19:41:06.194Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 16:39:51 GMT",
+        "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4VzBfWGNIcHNFblZrMEEwZElyX1ZuajFBSUxV---gzips8KUWa8gf3ahTlBow_7sO7Wd0Kc--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "62206acba6a562bb1e375a76332d770e",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"treeid\",\"species\",\"latitude\",\"longitude\",\"mapdbh\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"number\",\"text\",\"number\",\"number\",\"text\",\"text\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 1224247,
+      "sha256": "fecb3698b30d8a22610a18fbba8eb721bb513e8d165bf5d5a2594ddc00f0cd30"
+    },
+    {
+      "layer": "sidewalks",
+      "kind": "data-page",
+      "url": "https://data.sf.gov/resource/4g86-grxu.json?%24select=%3Aid+as+capture_row_id%2C%3Aupdated_at+as+capture_updated_at%2Cobjectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24order=%3Aid+ASC&%24limit=5000&%24offset=5000",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:06.015Z",
+      "receivedAt": "2026-10-22T19:41:06.247Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Mon, 17 Jun 2024 17:17:04 GMT",
+        "etag": "\"Z29sZi4zNTI2N18zXzI1Nkt2NUdDTXAyUnp1blY1ZWtWRW9uNWNOd296bw---gziilfOf8n7US3bjnYJ83k7Bp1KnMV--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "59b2ef3cc8d8902dc48a52a57e44b845",
+        "x-soda2-fields": "[\"capture_row_id\",\"capture_updated_at\",\"objectid\",\"cnn\",\"width_min\",\"sidewalk_f\",\"side\",\"shape\",\"data_as_of\"]",
+        "x-soda2-types": "[\"row_identifier\",\"fixed_timestamp\",\"text\",\"text\",\"text\",\"text\",\"text\",\"line\",\"floating_timestamp\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 1736819,
+      "sha256": "0103d71192befe6b62fe5a87e2300121d476b816e143cb25a12a5d720f835bda"
+    },
+    {
+      "layer": "trees",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=count%28*%29+as+count&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:06.299Z",
+      "receivedAt": "2026-10-22T19:41:06.513Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Thu, 22 Oct 2026 16:39:51 GMT",
+        "etag": "\"aW5kaWEuMjM3MTUzXzJfMTA4NGhKU0Y3WWx5ekpNcTdTOF8yaGlYSUFvb3ZZ--gzirdWaSArKF9tFVMl2hrV02DOp6Sa---gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "63050c9d8de58bd5caa76bea70177953",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 21,
+      "sha256": "33761f30b7d47c3311ecbba76909fbd823a80eea767c0344f9a414f24691c28a"
+    },
+    {
+      "layer": "sidewalks",
+      "kind": "count",
+      "url": "https://data.sf.gov/resource/4g86-grxu.json?%24select=count%28*%29+as+count&%24limit=1",
+      "attempt": 0,
+      "startedAt": "2026-10-22T19:41:06.399Z",
+      "receivedAt": "2026-10-22T19:41:07.013Z",
+      "status": 200,
+      "headers": {
+        "last-modified": "Mon, 17 Jun 2024 17:17:04 GMT",
+        "etag": "\"Z29sZi4zNTI2N18zXzI1NjdGeXhaQlFvUnZZMzFLVUp3cWNuMmx0OEUxWQ-KlhQHKKUtFCreKSB2uKS9me60_I--gzip--gzip\"",
+        "retry-after": null,
+        "x-socrata-requestid": "3199238f3ea7408324f3c89e011ba41e",
+        "x-soda2-fields": "[\"count\"]",
+        "x-soda2-types": "[\"number\"]",
+        "content-type": "application/json;charset=utf-8"
+      },
+      "bytes": 20,
+      "sha256": "e421ed0c622d42afd749f307fe65d4bbd8b7eee2abf9e49b91b1bf7bbad14a9a"
+    }
+  ],
+  "geometryGenerated": false,
+  "fullSFClaim": false,
+  "existingCapturesChanged": false
+}

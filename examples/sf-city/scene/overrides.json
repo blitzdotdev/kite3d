@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "features": {
+    "sf-building:201006.0004170": {
+      "photoFacade": {
+        "asset": "assets/models/architecture/grant-storefront/f.gltf",
+        "edgeIndex": 28,
+        "flattenCorner": true,
+        "backgroundTower": true
+      }
+    },
+    "sf-road:6404000": {
+      "widthM": 9,
+      "sidewalkM": 1
+    },
+    "sf-building:201006.0011021": {
+      "photoContext": true,
+      "facadeColor": "#e8e6df"
+    }
+  }
+}

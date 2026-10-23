@@ -1,0 +1,127 @@
+{
+  "status": "locally-browser-validated-experimental-lod-candidate",
+  "candidate": 6,
+  "scope": {
+    "streamedFeatures": 153,
+    "activeOwnerGroups": 5,
+    "generatedTreesWithLOD": 46,
+    "pinnedAuthoredTrees": 4,
+    "pinnedTerrain": 1
+  },
+  "lod": {
+    "selection": "actual camera distance to nearest generated tree AABB per owner group",
+    "nearMetres": 100,
+    "farMetres": 220,
+    "hysteresisMetres": 12,
+    "swap": "one detached replacement, old retained until successful atomic swap",
+    "pinnedTrees": "exact authored near assets, never substituted"
+  },
+  "preservation": {
+    "registryAddedKeys": [
+      "candidate-far-0",
+      "candidate-far-1",
+      "candidate-far-2",
+      "candidate-mid-0",
+      "candidate-mid-1",
+      "candidate-mid-2"
+    ],
+    "allOriginalRegistryEntriesPreserved": true,
+    "sceneOverridesGeneratedBytesUnchangedFromCandidate3": true,
+    "sourceHashes": {
+      "assets.json": "bb96523169e4163df8d8fdc9da27f91d4abb172b73631c3bbc606d4b8c3c2d26",
+      "assets/main.scene.gltf": "1868e6e86233fa36aa5867e3eec5f59d01d62fef28ecfb0a612a43d3caec74f6",
+      "scene/generated.json": "37192e7d0c75cfdfbe07c6de9acbf90e60ab2b87c4b5b28b7e8133a2361a35c0",
+      "scene/overrides.json": "92080866b952044c03d140afd7eb34a53473a21de3a38886c04dd2fc0680c309",
+      "assets/models/city/trees/lod-manifest.json": "2d7c8ca0699bbc964e9aa6d87f8a8648f841e51599ff014e7764237635042d8e"
+    }
+  },
+  "validation": {
+    "transitions": [
+      "LOD candidate createGame startup",
+      "actual camera navigation reaches near mid and far",
+      "north resource counts plateau across repeat visits",
+      "overview resource counts plateau across repeat visits",
+      "wide resource counts plateau across repeat visits",
+      "rapid reversal returns to near detail",
+      "LOD viewer disposal releases all leases"
+    ],
+    "failureRetry": [
+      "invalid replacement hash retains all five visible owner groups",
+      "modified LOD geometry rejected by hash",
+      "retry loads attested far variants after restoring bytes",
+      "cancelled near replacement does not retain a sixth lease",
+      "LOD failure and cancellation cleanup releases owned resources",
+      "changed original near asset rejected before LOD substitution",
+      "restored original near asset retries successfully"
+    ],
+    "reentry": [
+      "real right-pan unloads streamed region and shows unavailable surroundings",
+      "overview bookmark reloads exact five-owner selection",
+      "bookmark clears pan inertia and restores exact camera",
+      "resource pool counts stable after unload/reentry"
+    ]
+  },
+  "measuredPeaks": {
+    "activeTiles": 5,
+    "activeDraw": 2088,
+    "reservedTiles": 6,
+    "reservedDraw": 3420,
+    "reservedBytes": 35376744,
+    "reservedTriangles": 249059
+  },
+  "activeLimits": {
+    "owners": 5,
+    "storedTriangles": 185000,
+    "storedBytes": 27262976,
+    "drawPassEstimate": 2100
+  },
+  "reservationLimits": {
+    "ownersIncludingDetached": 6,
+    "storedTriangles": 270000,
+    "storedBytes": 35651584,
+    "drawPassEstimate": 3420
+  },
+  "settledCounts": {
+    "north": {
+      "geometries": 263,
+      "textures": 31
+    },
+    "overview": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "wide": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "pool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "cleanup": "all source and owned pool maps zero"
+  },
+  "storedActiveTrianglesIncludingPinned": {
+    "near": 180824,
+    "mid": 135376,
+    "far": 120472
+  },
+  "limitations": [
+    "Selected153-feature fixture only; no expanded geography.",
+    "LOD removes internal tree wood complexity, not leaf alpha overdraw.",
+    "Stored triangles and configured pass estimates are not measured full-frame triangle totals or hardware FPS.",
+    "Decoded memory and true VRAM bytes remain unmeasured.",
+    "Provisional procedural visual quality, not photographic realism.",
+    "Initial poll-only GPU comparison failed because samples preceded completed frames; unchanged strict equality passed after explicit rendered-frame settling.",
+    "No upload, deployment, GitHub CI or push."
+  ],
+  "package": {
+    "archive": "/tmp/sf-city-streaming-lod-candidate.zip",
+    "entries": 231,
+    "bytes": 8768670,
+    "sha256": "817ba12ac8aa61f4a87d16c21a6e372c4ccc04c49393f087e90058eb909d7390",
+    "crc": "passed",
+    "rootRelativeLayout": true
+  }
+}

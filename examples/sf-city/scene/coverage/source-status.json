@@ -1,0 +1,177 @@
+{
+  "status": "source-only-staging-summary",
+  "originalBounds": [
+    -122.4122,
+    37.799,
+    -122.4065,
+    37.802
+  ],
+  "exactSourceCoverageMasks": [
+    [
+      -122.4122,
+      37.799,
+      -122.4065,
+      37.802
+    ],
+    [
+      -122.41080521583667,
+      37.802,
+      -122.40935,
+      37.802799676607975
+    ],
+    [
+      -122.41080521583667,
+      37.802799676607975,
+      -122.40935,
+      37.80394951491196
+    ],
+    [
+      -122.40935,
+      37.802,
+      -122.40789478416333,
+      37.802799676607975
+    ]
+  ],
+  "additionalAcquiredSquareMetres": 39173.119999985094,
+  "additionalBakedCandidateSquareMetres": 11394.55999999025,
+  "activeGeometryExpanded": false,
+  "publishedExpansion": false,
+  "uniqueFeatureIdsAcrossCaptures": 333,
+  "captures": [
+    {
+      "captureId": "2026-10-22T18-22-06.980Z-729ad3d8-cf8b-4ff9-ad58-af78939954ac",
+      "tile": "-1_-2",
+      "status": "source-ready",
+      "bounds": [
+        -122.41080521583667,
+        37.80164983830399,
+        -122.40935,
+        37.802799676607975
+      ],
+      "manifestPath": "scene/coverage/captures/2026-10-22T18-22-06.980Z-729ad3d8-cf8b-4ff9-ad58-af78939954ac/tile-manifest.json",
+      "manifestSHA256": "b795a2aa813a42f02bcd1885499c1393c0e8e6c7ac549019122bb9e8a41616ef",
+      "layers": {
+        "buildings": {
+          "rows": 79,
+          "dataAsOf": [
+            "2023-09-11T12:00:00.000"
+          ],
+          "payloadSHA256": "b60fbbba4a669acb7f4c34ae6c699b6c72a7d69cb521865b55af4f3f689a701e"
+        },
+        "roads": {
+          "rows": 7,
+          "dataAsOf": [
+            "2026-10-22T03:55:00.000"
+          ],
+          "payloadSHA256": "ddc2c6e8bf2a407dc8a1df205eb9811f37efff973bd254a16506247f59d9e410"
+        },
+        "sidewalks": {
+          "rows": 7,
+          "dataAsOf": [
+            "2024-06-17T10:06:33.830"
+          ],
+          "payloadSHA256": "452cc6225a948ca59730a927f9524fbb5b647fdf9f1f0681be00717c5d37959c"
+        },
+        "trees": {
+          "rows": 20,
+          "dataAsOf": [
+            "2026-09-30"
+          ],
+          "payloadSHA256": "6aa99fd8ed45ee34f7b65309d433b198e13dffc8226d1594eaac38be03ce08d0"
+        }
+      }
+    },
+    {
+      "captureId": "2026-10-22T18-44-27.078Z-4ab2ed4f-2d43-400c-9af9-f1e9399c8ef5",
+      "tile": "0_-2",
+      "status": "source-ready",
+      "bounds": [
+        -122.40935,
+        37.80164983830399,
+        -122.40789478416333,
+        37.802799676607975
+      ],
+      "manifestPath": "scene/coverage/captures/2026-10-22T18-44-27.078Z-4ab2ed4f-2d43-400c-9af9-f1e9399c8ef5/tile-manifest.json",
+      "manifestSHA256": "fa841261b442c062348532dd21d3289b6ddc2cf154c57fcfe18bce50057eeda8",
+      "layers": {
+        "buildings": {
+          "rows": 79,
+          "dataAsOf": [
+            "2023-09-11T12:00:00.000"
+          ],
+          "payloadSHA256": "3304bc35b534afee5c53a38c0b030fe6bba54500eea2b96b2f2749b010628f2d"
+        },
+        "roads": {
+          "rows": 14,
+          "dataAsOf": [
+            "2026-10-22T03:55:00.000"
+          ],
+          "payloadSHA256": "2178579569df23d391a6ddf343bfbe475d388035de257c8f05b7067758bb5cc9"
+        },
+        "sidewalks": {
+          "rows": 14,
+          "dataAsOf": [
+            "2024-06-17T10:06:33.830"
+          ],
+          "payloadSHA256": "ae2344a6f73f6dad1ff9e82a140d3ba5dde44122ed411bbb74b5985c2a7d3021"
+        },
+        "trees": {
+          "rows": 22,
+          "dataAsOf": [
+            "2026-09-30"
+          ],
+          "payloadSHA256": "15056559742b32e7a6b5d86c96db98d3600f1add3ed603f8a3ec84164122329c"
+        }
+      }
+    },
+    {
+      "captureId": "2026-10-22T19-25-02.468Z-e14729a9-1dcf-4652-8b22-a312bc038a75",
+      "tile": "-1_-3",
+      "status": "source-ready",
+      "bounds": [
+        -122.41080521583667,
+        37.802799676607975,
+        -122.40935,
+        37.80394951491196
+      ],
+      "manifestPath": "scene/coverage/captures/2026-10-22T19-25-02.468Z-e14729a9-1dcf-4652-8b22-a312bc038a75/tile-manifest.json",
+      "manifestSHA256": "4f1aad6ba572a50129c12f5ee5a3c843acd0a685db64b22e0daf9a634455564b",
+      "layers": {
+        "buildings": {
+          "rows": 72,
+          "dataAsOf": [
+            "2023-09-11T12:00:00.000"
+          ],
+          "payloadSHA256": "431d7cf3a7e207192759470f1c1635575e964cd0b93101fd1b2969110408bf62"
+        },
+        "roads": {
+          "rows": 8,
+          "dataAsOf": [
+            "2026-10-22T03:55:00.000"
+          ],
+          "payloadSHA256": "24973dce6b8cf3adeb8ffd6fd56d8eab4bfd6052e6efaf40587fe6a03efe13d0"
+        },
+        "sidewalks": {
+          "rows": 8,
+          "dataAsOf": [
+            "2024-06-17T10:06:33.830"
+          ],
+          "payloadSHA256": "68ba9f26dd7559e491ad63f4f189008bf44145962a65fefca2c7ef86b8a14e58"
+        },
+        "trees": {
+          "rows": 29,
+          "dataAsOf": [
+            "2026-09-30"
+          ],
+          "payloadSHA256": "68b225a7ee27b756c278e28effa6903dc8859cb496f2d93dcc95a1e65fbeabec"
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Captured feature counts include overlaps with accepted baseline; they are not new rendered object counts.",
+    "Only tile -1_-2 has been baked; technical streaming viewer renders a selected subset.",
+    "Previous candidate area.bounds is an iteration envelope, never actual acquired coverage.",
+    "Acquisition captures are local immutable staging files, excluded from release exports."
+  ]
+}

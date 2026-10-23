@@ -1,0 +1,240 @@
+{
+  "checks": [
+    "failed tile exposes retry without crashing viewer",
+    "retry restores all five owners",
+    "coverage details expand",
+    "rapid bookmarks preserve reservation cap",
+    "compact mobile panel leaves canvas visible",
+    "post-retry disposal releases pool",
+    "interrupted startup releases pending sources and leases",
+    "reload after interrupted startup succeeds"
+  ],
+  "pageErrors": [],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8723/assets/models/city/buildings/sf-building-201006.0001265/f.gltf",
+      "status": 503
+    }
+  ],
+  "failedTile": {
+    "active": true,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 112630,
+        "bytes": 18188206,
+        "drawCalls": 756,
+        "tiles": 4
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-2_-2",
+        "0_-2"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {
+        "-1_-1": "Error: Snapshot fetch failed: assets/models/city/buildings/sf-building-201006.0001265/f.gltf (503)"
+      }
+    },
+    "materialPool": {
+      "leases": 4,
+      "images": 13,
+      "textures": 15,
+      "materials": 39
+    },
+    "sources": {
+      "sources": 77,
+      "resources": 1875
+    },
+    "gpuCounts": {
+      "geometries": 172,
+      "textures": 28
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "retried": {
+    "active": true,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-2_-2",
+        "0_-2",
+        "-1_-1"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 172,
+      "textures": 28
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "rapid": {
+    "active": true,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        15,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "reserved": {
+        "triangles": 180824,
+        "bytes": 25412728,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-2",
+        "-1_-3",
+        "-2_-2",
+        "0_-2",
+        "-1_-1"
+      ],
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "disposed": {
+    "active": false,
+    "materialPool": {
+      "leases": 0,
+      "images": 0,
+      "textures": 0,
+      "materials": 0
+    },
+    "sources": {
+      "sources": 0,
+      "resources": 0
+    },
+    "ground": {
+      "sources": 0,
+      "resources": 0
+    },
+    "pinned": {
+      "sources": 0,
+      "resources": 0
+    }
+  },
+  "interrupted": {
+    "active": false,
+    "materialPool": {
+      "leases": 0,
+      "images": 0,
+      "textures": 0,
+      "materials": 0
+    },
+    "sources": {
+      "sources": 0,
+      "resources": 0
+    },
+    "ground": {
+      "sources": 0,
+      "resources": 0
+    },
+    "pinned": {
+      "sources": 0,
+      "resources": 0
+    }
+  },
+  "passed": true
+}

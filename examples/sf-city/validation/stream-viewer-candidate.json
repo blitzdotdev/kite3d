@@ -1,0 +1,65 @@
+{
+  "status": "locally-browser-validated-experimental-candidate",
+  "scope": {
+    "streamedFeatures": 153,
+    "ownerGroups": 5,
+    "pinnedAuthoredTrees": 4,
+    "pinnedTerrain": 1,
+    "bakedCandidateFeatures": 862
+  },
+  "treeDetail": "near-only; isolated tree LOD test is NOT integrated in this viewer",
+  "validation": {
+    "baselineCandidate": 2,
+    "finalCandidate": 3,
+    "finalChange": "stopDamping before bookmark placement; affected outside-pan/reentry camera check rerun",
+    "checks": [
+      "failed tile exposes retry without crashing viewer",
+      "retry restores all five owners",
+      "coverage details expand",
+      "rapid bookmarks preserve reservation cap",
+      "compact mobile panel leaves canvas visible",
+      "post-retry disposal releases pool",
+      "interrupted startup releases pending sources and leases",
+      "reload after interrupted startup succeeds",
+      "real right-pan unloads streamed region and shows unavailable surroundings",
+      "overview bookmark reloads exact five-owner selection",
+      "bookmark clears pan inertia and restores exact camera",
+      "resource pool counts stable after unload/reentry"
+    ],
+    "errors": [],
+    "deliberateFailure": "One503 response injected locally to verify tile retry, then restored",
+    "sourceHashesVerified": {
+      "assets.json": "5b7f8150040f6ab5d305118f09faad66d41a2932a9402b938c3de2088b2c919d",
+      "assets/main.scene.gltf": "1868e6e86233fa36aa5867e3eec5f59d01d62fef28ecfb0a612a43d3caec74f6",
+      "scene/generated.json": "37192e7d0c75cfdfbe07c6de9acbf90e60ab2b87c4b5b28b7e8133a2361a35c0",
+      "scene/overrides.json": "92080866b952044c03d140afd7eb34a53473a21de3a38886c04dd2fc0680c309"
+    }
+  },
+  "limits": {
+    "maxTriangles": 185000,
+    "maxStoredBytes": 27262976,
+    "maxDrawPassEstimate": 2100,
+    "maxOwnerGroups": 5,
+    "pinnedCost": {
+      "triangles": 16640,
+      "bytes": 1245878,
+      "drawCalls": 52
+    }
+  },
+  "limitations": [
+    "Experimental selected region, not full San Francisco or the complete baked candidate.",
+    "Gray map union is source-query coverage; model overlays are conservative AABBs.",
+    "Budget counts stored bytes and configured draw-pass estimates, not decoded memory or exact GPU allocation.",
+    "Software-rendered browser checks do not establish hardware FPS.",
+    "No new photorealism claim.",
+    "No publishing or CI was performed."
+  ],
+  "package": {
+    "archive": "/tmp/sf-city-streaming-candidate.zip",
+    "entries": 218,
+    "bytes": 8550822,
+    "sha256": "96492efdb63ed969cc313dd093962f46bcb491fdd6f60077fdd1cca32ae3548e",
+    "crc": "passed",
+    "rootRelativeLayout": true
+  }
+}

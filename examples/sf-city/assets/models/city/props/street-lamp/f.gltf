@@ -1,0 +1,843 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Authored neighborhood street lantern",
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "extras": {
+        "name": "Authored neighborhood street lantern",
+        "cityBakedAsset": "assets/models/city/props/street-lamp/f.gltf"
+      }
+    },
+    {
+      "name": "Fluted base / surface 1",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Fluted base / surface 2",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Fluted base / surface 3",
+      "mesh": 2,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Tapered shaft / surface 1",
+      "mesh": 3,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Tapered shaft / surface 2",
+      "mesh": 4,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Tapered shaft / surface 3",
+      "mesh": 5,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern frame / surface 1",
+      "mesh": 6,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern frame / surface 2",
+      "mesh": 7,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern frame / surface 3",
+      "mesh": 8,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern frame / surface 4",
+      "mesh": 9,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern frame / surface 5",
+      "mesh": 10,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern frame / surface 6",
+      "mesh": 11,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern diffuser / surface 1",
+      "mesh": 12,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern diffuser / surface 2",
+      "mesh": 13,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern diffuser / surface 3",
+      "mesh": 14,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern cap / surface 1",
+      "mesh": 15,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Lantern cap / surface 2",
+      "mesh": 16,
+      "extras": {
+        "cityBakedPart": true
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Fluted base / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Fluted base / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Fluted base / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 5,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Tapered shaft / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Tapered shaft / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 10,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Tapered shaft / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 11,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern frame / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 15,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern frame / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 16,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern frame / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 17,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern frame / surface 4",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 18,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern frame / surface 5",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 19,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern frame / surface 6",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 20,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern diffuser / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 21,
+            "NORMAL": 22,
+            "TEXCOORD_0": 23
+          },
+          "indices": 24,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Lantern diffuser / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 21,
+            "NORMAL": 22,
+            "TEXCOORD_0": 23
+          },
+          "indices": 25,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Lantern diffuser / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 21,
+            "NORMAL": 22,
+            "TEXCOORD_0": 23
+          },
+          "indices": 26,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Lantern cap / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 27,
+            "NORMAL": 28,
+            "TEXCOORD_0": 29
+          },
+          "indices": 30,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Lantern cap / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 27,
+            "NORMAL": 28,
+            "TEXCOORD_0": 29
+          },
+          "indices": 31,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Street furniture dark bronze",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.02955683443236377,
+          0.04518620437910499,
+          0.03954623527052923,
+          1
+        ],
+        "roughnessFactor": 0.48,
+        "metallicFactor": 0.55
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Lamp opal diffuser",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7230551289161951,
+          0.6938717612856897,
+          0.4910208498384856,
+          1
+        ],
+        "roughnessFactor": 0.35,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 76,
+      "type": "VEC3",
+      "min": [
+        -0.25,
+        1.1920929132713809e-8,
+        -0.25
+      ],
+      "max": [
+        0.25,
+        0.6499999761581421,
+        0.25
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 76,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 76,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 72,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5125,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 64,
+      "type": "VEC3",
+      "min": [
+        -0.09986093640327454,
+        0.5500000715255737,
+        -0.10499999672174454
+      ],
+      "max": [
+        0.09986093640327454,
+        5.75,
+        0.10499999672174454
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 64,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 64,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5125,
+      "count": 60,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5125,
+      "count": 30,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5125,
+      "count": 30,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -0.23999999463558197,
+        5.769999980926514,
+        -0.23999999463558197
+      ],
+      "max": [
+        0.23999999463558197,
+        5.889999866485596,
+        0.23999999463558197
+      ]
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 17,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 18,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 19,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 20,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 21,
+      "componentType": 5126,
+      "count": 52,
+      "type": "VEC3",
+      "min": [
+        -0.20000000298023224,
+        5.84499979019165,
+        -0.20000000298023224
+      ],
+      "max": [
+        0.20000000298023224,
+        6.394999980926514,
+        0.20000000298023224
+      ]
+    },
+    {
+      "bufferView": 22,
+      "componentType": 5126,
+      "count": 52,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 23,
+      "componentType": 5126,
+      "count": 52,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 24,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 25,
+      "componentType": 5125,
+      "count": 24,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 26,
+      "componentType": 5125,
+      "count": 24,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 27,
+      "componentType": 5126,
+      "count": 35,
+      "type": "VEC3",
+      "min": [
+        -0.3199999928474426,
+        6.394999980926514,
+        -0.3199999928474426
+      ],
+      "max": [
+        0.3199999928474426,
+        6.625,
+        0.3199999928474426
+      ]
+    },
+    {
+      "bufferView": 28,
+      "componentType": 5126,
+      "count": 35,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 29,
+      "componentType": 5126,
+      "count": 35,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 30,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 31,
+      "componentType": 5125,
+      "count": 24,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 912
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 912,
+      "byteLength": 912
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1824,
+      "byteLength": 608
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2432,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2720,
+      "byteLength": 144
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2864,
+      "byteLength": 144
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3008,
+      "byteLength": 768
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3776,
+      "byteLength": 768
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4544,
+      "byteLength": 512
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5056,
+      "byteLength": 240
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5296,
+      "byteLength": 120
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5416,
+      "byteLength": 120
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5536,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5824,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6112,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6304,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6328,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6352,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6376,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6400,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6424,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6448,
+      "byteLength": 624
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7072,
+      "byteLength": 624
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7696,
+      "byteLength": 416
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8112,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8304,
+      "byteLength": 96
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8400,
+      "byteLength": 96
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8496,
+      "byteLength": 420
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8916,
+      "byteLength": 420
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9336,
+      "byteLength": 280
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9616,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9808,
+      "byteLength": 96
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 9904
+    }
+  ]
+}

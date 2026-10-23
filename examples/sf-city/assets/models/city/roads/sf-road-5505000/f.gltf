@@ -1,0 +1,482 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "FILBERT ST",
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extras": {
+        "name": "FILBERT ST",
+        "cityId": "sf-road:5505000",
+        "cityBakedAsset": "assets/models/city/roads/sf-road-5505000/f.gltf"
+      }
+    },
+    {
+      "name": "Carriageway",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Clipped sidewalks with lowered crossing approaches",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Raised curb faces",
+      "mesh": 2,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Concrete drainage margins",
+      "mesh": 3,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred center markings",
+      "mesh": 4,
+      "extras": {
+        "cityBakedPart": true
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Carriageway",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Clipped sidewalks with lowered crossing approaches",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Raised curb faces",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Concrete drainage margins",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 15,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred center markings",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 16,
+            "NORMAL": 17
+          },
+          "indices": 18,
+          "material": 2
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Asphalt",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.12743768042608497,
+          0.14126329113044458,
+          0.1499597898006365,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Concrete sidewalk",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.36625259558833256,
+          0.34191442489801843,
+          0.28314874041918053,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 1
+        }
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Centerline",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.775822218312646,
+          0.5711248294565854,
+          0.14412847084818123,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 272,
+      "type": "VEC3",
+      "min": [
+        -251.4640655517578,
+        5.813793182373047,
+        -72.15190124511719
+      ],
+      "max": [
+        -184.26406860351562,
+        7.5198564529418945,
+        -53.21373748779297
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 272,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 272,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 408,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 489,
+      "type": "VEC3",
+      "min": [
+        -252.17694091796875,
+        5.939744472503662,
+        -75.45418548583984
+      ],
+      "max": [
+        -183.70408630371094,
+        7.669856071472168,
+        -48.697654724121094
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 489,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 489,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5125,
+      "count": 735,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 476,
+      "type": "VEC3",
+      "min": [
+        -251.4640655517578,
+        5.887772083282471,
+        -71.5329360961914
+      ],
+      "max": [
+        -188.18524169921875,
+        7.669856071472168,
+        -53.21373748779297
+      ]
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 476,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 476,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5125,
+      "count": 714,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 508,
+      "type": "VEC3",
+      "min": [
+        -251.4640655517578,
+        5.818793296813965,
+        -72.15190124511719
+      ],
+      "max": [
+        -184.26406860351562,
+        7.524856090545654,
+        -53.21373748779297
+      ]
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 508,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 508,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5125,
+      "count": 762,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC3",
+      "min": [
+        -237.50601196289062,
+        6.019741535186768,
+        -67.91932678222656
+      ],
+      "max": [
+        -189.10104370117188,
+        7.217240810394287,
+        -60.17021942138672
+      ]
+    },
+    {
+      "bufferView": 17,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 18,
+      "componentType": 5125,
+      "count": 132,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 3264
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3264,
+      "byteLength": 3264
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6528,
+      "byteLength": 2176
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8704,
+      "byteLength": 1632
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10336,
+      "byteLength": 5868
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 16204,
+      "byteLength": 5868
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 22072,
+      "byteLength": 3912
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 25984,
+      "byteLength": 2940
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 28924,
+      "byteLength": 5712
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 34636,
+      "byteLength": 5712
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 40348,
+      "byteLength": 3808
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 44156,
+      "byteLength": 2856
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 47012,
+      "byteLength": 6096
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 53108,
+      "byteLength": 6096
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 59204,
+      "byteLength": 4064
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 63268,
+      "byteLength": 3048
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 66316,
+      "byteLength": 1056
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 67372,
+      "byteLength": 1056
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 68428,
+      "byteLength": 528
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 68956
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/materials/asphalt.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/concrete.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ]
+}

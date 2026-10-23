@@ -1,0 +1,47 @@
+{
+  "capturedAt": "2026-10-21T11:42:06.935534+00:00",
+  "area": {
+    "name": "North Beach / Washington Square",
+    "bounds": [
+      -122.4122,
+      37.799,
+      -122.4065,
+      37.802
+    ],
+    "origin": [
+      -122.40935,
+      37.8005
+    ],
+    "verticalOriginM": 15,
+    "tileSizeM": 128,
+    "terrainStepM": 6
+  },
+  "publisher": "City and County of San Francisco / DataSF",
+  "license": "https://opendatacommons.org/licenses/pddl/1-0/",
+  "layers": {
+    "buildings": {
+      "dataset": "ynuv-fyni",
+      "url": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.4122+37.799%2C-122.4065+37.799%2C-122.4065+37.802%2C-122.4122+37.802%2C-122.4122+37.799%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+      "rows": 468,
+      "sha256": "c359b39cffd5cb2e539f68ea0d1039e413543fccf441f48e0487a40c5e1c4718"
+    },
+    "roads": {
+      "dataset": "3psu-pn9h",
+      "url": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.4122+37.799%2C-122.4065+37.799%2C-122.4065+37.802%2C-122.4122+37.802%2C-122.4122+37.799%29%29%27%29&%24order=cnn&%24limit=5000",
+      "rows": 74,
+      "sha256": "8863b946f072cc8d71ff2dfe1e1582ff90d38346dc9a38a39d68ee923a629f36"
+    },
+    "trees": {
+      "dataset": "tkzw-k3nq",
+      "url": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+between+37.799+and+37.802+AND+longitude+between+-122.4122+and+-122.4065&%24order=treeid&%24limit=5000",
+      "rows": 191,
+      "sha256": "d96821069444a59151562f8f685614ad55355c7147638f95bd393bb59bb084af"
+    },
+    "sidewalks": {
+      "dataset": "4g86-grxu",
+      "url": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.4122+37.799%2C-122.4065+37.799%2C-122.4065+37.802%2C-122.4122+37.802%2C-122.4122+37.799%29%29%27%29&%24order=objectid&%24limit=5000",
+      "rows": 74,
+      "sha256": "d582a6d1e69630f481d93350bdc6216d56670fd39f70917984f5dffbdd5c8900"
+    }
+  }
+}

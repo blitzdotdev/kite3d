@@ -1,0 +1,686 @@
+{
+  "passed": true,
+  "loads": 9,
+  "records": [
+    {
+      "detail": "near",
+      "distance": 50,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 1864,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 1864,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "near"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 113,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "mid"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "far",
+      "distance": 233,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 552,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 552,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "far"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 207,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "mid"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "near",
+      "distance": 87,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 1864,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 1864,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "near"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 113,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "mid"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "far",
+      "distance": 233,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 552,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 552,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "far"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 207,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 876,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "mid"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    },
+    {
+      "detail": "near",
+      "distance": 87,
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      },
+      "state": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 1864,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "activeCost": {
+          "triangles": 1864,
+          "bytes": 300000,
+          "drawCalls": 8,
+          "tiles": 1
+        },
+        "resident": [
+          "one"
+        ],
+        "details": {
+          "one": "near"
+        },
+        "desired": [
+          "one"
+        ],
+        "errors": {}
+      }
+    }
+  ],
+  "peaks": [
+    {
+      "reserved": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      },
+      "active": {
+        "triangles": 0,
+        "bytes": 0,
+        "drawCalls": 0,
+        "tiles": 0
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      },
+      "active": {
+        "triangles": 0,
+        "bytes": 0,
+        "drawCalls": 0,
+        "tiles": 0
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      },
+      "active": {
+        "triangles": 0,
+        "bytes": 0,
+        "drawCalls": 0,
+        "tiles": 0
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      },
+      "active": {
+        "triangles": 0,
+        "bytes": 0,
+        "drawCalls": 0,
+        "tiles": 0
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      },
+      "active": {
+        "triangles": 0,
+        "bytes": 0,
+        "drawCalls": 0,
+        "tiles": 0
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1428,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1428,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1428,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1428,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 552,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 1864,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1428,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1428,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 1428,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 552,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    },
+    {
+      "reserved": {
+        "triangles": 2740,
+        "bytes": 600000,
+        "drawCalls": 16,
+        "tiles": 2
+      },
+      "active": {
+        "triangles": 876,
+        "bytes": 300000,
+        "drawCalls": 8,
+        "tiles": 1
+      }
+    }
+  ],
+  "empty": {
+    "geometries": 2,
+    "textures": 4
+  },
+  "afterLod": {
+    "geometries": 2,
+    "textures": 4
+  },
+  "finalMemory": {
+    "geometries": 2,
+    "textures": 4
+  },
+  "cancelDuringActualAcquire": true,
+  "finalPool": {
+    "leases": 0,
+    "images": 0,
+    "textures": 0,
+    "materials": 0
+  },
+  "pageErrors": []
+}

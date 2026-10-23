@@ -1,0 +1,12 @@
+{
+  "author": "Daniel Zhabotinsky",
+  "title": "Tozzo '98 - Low poly model",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "originalSource": "https://sketchfab.com/3d-models/tozzo-98-low-poly-model-d43bb748da364af2b3f0a9348365f0fb",
+  "retrievedFrom": "https://github.com/Abhirupdatta9/ar-cars-test/blob/main/grey%20sedan.glb",
+  "sourceSha256": "5e8a54028284f4bf905ad67d37d5d9bf1e2930794a66da724c9732d29ec74b89",
+  "licenseEvidence": "Embedded GLB asset.extras author/license/source metadata",
+  "changes": "External textures; orientation and metric normalization; static editable hierarchy; dark paint variant",
+  "photoAccuracy": "Substitute model, not the actual photographed sedan"
+}

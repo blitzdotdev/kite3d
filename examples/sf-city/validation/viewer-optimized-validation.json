@@ -1,0 +1,69 @@
+{
+  "environment": "Chromium SwiftShader, local static viewer, 800x600",
+  "errors": [],
+  "failedRequests": [
+    {
+      "path": "/assets.json",
+      "host": "127.0.0.1",
+      "error": "net::ERR_FAILED"
+    }
+  ],
+  "checks": [
+    "Standalone viewer ready with one HUD and no editor controls",
+    "Orbit drag and scroll zoom change camera",
+    "Keyboard bookmark works",
+    "Viewport resize updates canvas and camera aspect",
+    "Missing registry yields accessible error and retry, not blank canvas",
+    "Retry reload recovers cleanly without duplicate HUD",
+    "Navigation away during startup completes without page crash"
+  ],
+  "readyMs": 73596,
+  "preFrame": {
+    "atMs": 62852.5,
+    "visibleMeshes": 685,
+    "instancedMeshes": 6,
+    "instances": 382,
+    "visibleMaterials": 138,
+    "triangles": 1433661,
+    "transmissiveMeshes": 8,
+    "programs": 0,
+    "memory": {
+      "geometries": 0,
+      "textures": 0
+    }
+  },
+  "firstFrame": {
+    "atMs": 65144.79999999702,
+    "programs": 31,
+    "memory": {
+      "geometries": 644,
+      "textures": 73
+    }
+  },
+  "batchInspection": {
+    "pool": {
+      "bitmapReads": 0,
+      "bitmapReadMs": 0,
+      "bitmapSkipped": 0,
+      "textureSlots": 139,
+      "sharedTextureSlots": 106,
+      "encodedReads": 2702,
+      "encodedFailures": 0,
+      "prepareMs": 16465.29999999702
+    },
+    "runtimeChildren": 484,
+    "extensions": {
+      "SSAOPlugin": 14569
+    },
+    "camera": {
+      "near": 136.11471358255707,
+      "far": 1000,
+      "autoNearFar": true
+    },
+    "fog": null
+  },
+  "resources": {
+    "bytes": 95989618,
+    "requests": 1069
+  }
+}

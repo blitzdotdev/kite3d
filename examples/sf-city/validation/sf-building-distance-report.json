@@ -1,0 +1,354 @@
+[
+  {
+    "building": "bay",
+    "distance": 75,
+    "path": "/tmp/sf-building-bay-75m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 53.825492095258205,
+        "position": [
+          39.076840622459656,
+          15.570583792837121,
+          56.45229045288463
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 6040
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 53.825492095258205,
+        "position": [
+          39.076840622459656,
+          15.570583792837121,
+          56.45229045288463
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 132
+      }
+    ]
+  },
+  {
+    "building": "bay",
+    "distance": 150,
+    "path": "/tmp/sf-building-bay-150m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 150,
+        "distanceToNearBounds": 128.66758922559217,
+        "position": [
+          83.34100100047351,
+          25.30869907600017,
+          116.20890696320335
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 6040
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 150,
+        "distanceToNearBounds": 128.66758922559217,
+        "position": [
+          83.34100100047351,
+          25.30869907600017,
+          116.20890696320335
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 132
+      }
+    ]
+  },
+  {
+    "building": "bay",
+    "distance": 300,
+    "path": "/tmp/sf-building-bay-300m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 300,
+        "distanceToNearBounds": 278.6066732021754,
+        "position": [
+          171.86932175650122,
+          44.78492964232627,
+          235.72213998384078
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 6040
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 300,
+        "distanceToNearBounds": 278.6066732021754,
+        "position": [
+          171.86932175650122,
+          44.78492964232627,
+          235.72213998384078
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 132
+      }
+    ]
+  },
+  {
+    "building": "bay",
+    "distance": 600,
+    "path": "/tmp/sf-building-bay-600m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 600,
+        "distanceToNearBounds": 578.5795865947051,
+        "position": [
+          348.92596326855664,
+          83.73739077497846,
+          474.74860602511563
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 6040
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0005514",
+        "distanceToNearBoundsCenter": 600,
+        "distanceToNearBounds": 578.5795865947051,
+        "position": [
+          348.92596326855664,
+          83.73739077497846,
+          474.74860602511563
+        ],
+        "target": [
+          -5.187319755554199,
+          5.832468509674072,
+          -3.304326057434082
+        ],
+        "fov": 50,
+        "triangles": 132
+      }
+    ]
+  },
+  {
+    "building": "plain",
+    "distance": 75,
+    "path": "/tmp/sf-building-plain-75m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 49.03180431286414,
+        "position": [
+          37.4401213956225,
+          10.848145397813775,
+          61.905515588687855
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 612
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 75,
+        "distanceToNearBounds": 49.03180431286414,
+        "position": [
+          37.4401213956225,
+          10.848145397813775,
+          61.905515588687855
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 24
+      }
+    ]
+  },
+  {
+    "building": "plain",
+    "distance": 150,
+    "path": "/tmp/sf-building-plain-150m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 150,
+        "distanceToNearBounds": 123.56638257418408,
+        "position": [
+          81.70428177363635,
+          20.586260680976824,
+          121.66213209900657
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 612
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 150,
+        "distanceToNearBounds": 123.56638257418408,
+        "position": [
+          81.70428177363635,
+          20.586260680976824,
+          121.66213209900657
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 24
+      }
+    ]
+  },
+  {
+    "building": "plain",
+    "distance": 300,
+    "path": "/tmp/sf-building-plain-300m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 300,
+        "distanceToNearBounds": 273.4002871963723,
+        "position": [
+          170.23260252966406,
+          40.06249124730292,
+          241.175365119644
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 612
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 300,
+        "distanceToNearBounds": 273.4002871963723,
+        "position": [
+          170.23260252966406,
+          40.06249124730292,
+          241.175365119644
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 24
+      }
+    ]
+  },
+  {
+    "building": "plain",
+    "distance": 600,
+    "path": "/tmp/sf-building-plain-600m.png",
+    "errors": [],
+    "measurements": [
+      {
+        "kind": "near",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 600,
+        "distanceToNearBounds": 573.328744536882,
+        "position": [
+          347.2892440417195,
+          79.01495237995512,
+          480.20183116091886
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 612
+      },
+      {
+        "kind": "far",
+        "id": "sf-building:201006.0002575",
+        "distanceToNearBoundsCenter": 600,
+        "distanceToNearBounds": 573.328744536882,
+        "position": [
+          347.2892440417195,
+          79.01495237995512,
+          480.20183116091886
+        ],
+        "target": [
+          -6.824038982391357,
+          1.1100301146507263,
+          2.1488990783691406
+        ],
+        "fov": 50,
+        "triangles": 24
+      }
+    ]
+  }
+]

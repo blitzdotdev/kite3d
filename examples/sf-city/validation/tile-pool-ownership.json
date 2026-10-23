@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "before": [
+    247,
+    132,
+    110,
+    255
+  ],
+  "after": [
+    247,
+    132,
+    110,
+    255
+  ],
+  "initialTextures": 1,
+  "remainingTextures": 1,
+  "finalTextures": 0,
+  "state": {
+    "leases": 0,
+    "images": 0,
+    "textures": 0,
+    "materials": 0
+  }
+}

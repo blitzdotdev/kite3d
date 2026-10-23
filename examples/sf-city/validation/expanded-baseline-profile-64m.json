@@ -1,0 +1,331 @@
+{
+  "passed": true,
+  "errors": [],
+  "requests": 17423,
+  "transferBytes": 97436705,
+  "loaded": {
+    "stage": "ready",
+    "frames": 89,
+    "stages": {
+      "preflightMs": 230.39999999850988,
+      "baselineLoadMs": 84610.60000000149
+    },
+    "loaded": 84,
+    "expected": 84,
+    "peaks": {
+      "geometries": 1169,
+      "textures": 30,
+      "loaded": 84
+    },
+    "memory": {
+      "geometries": 1169,
+      "textures": 30
+    },
+    "lastFrame": {
+      "calls": 5063,
+      "triangles": 1012188,
+      "lines": 0,
+      "points": 0,
+      "cpuFrameMs": 199.5
+    },
+    "samples": [],
+    "pool": {
+      "leases": 84,
+      "images": 16,
+      "textures": 19,
+      "materials": 54
+    },
+    "sources": {
+      "sources": 546,
+      "resources": 15418
+    },
+    "pinned": {
+      "sources": 2,
+      "resources": 8
+    },
+    "profile": {
+      "status": "unvalidated-full-context-profile",
+      "visualAccepted": false,
+      "eligibleFeatures": 853,
+      "groups": 83,
+      "sourceTriangles": 356240,
+      "pinnedTriangles": 16640,
+      "storedBaselineUniqueBytes": 36100234,
+      "storedValidationUniqueBytes": 84959124,
+      "conservativeGroupColdBytes": 272817183,
+      "concurrency": 2,
+      "batchCellSize": 64,
+      "authoredExclusions": [
+        {
+          "id": "sf-building:201006.0004170",
+          "owner": "1_0",
+          "asset": "sf-model-97b11e85c640a5b5"
+        },
+        {
+          "id": "sf-study:grant-parked-1",
+          "owner": "1_0",
+          "asset": "sf-model-a643a65297c6d453"
+        },
+        {
+          "id": "sf-study:grant-parked-2",
+          "owner": "1_0",
+          "asset": "sf-model-077a785066def89b"
+        },
+        {
+          "id": "sf-study:grant-parked-3",
+          "owner": "1_0",
+          "asset": "sf-model-beadbc04a27c1d50"
+        }
+      ],
+      "sourceCoverageMasks": [
+        [
+          -122.4122,
+          37.799,
+          -122.4065,
+          37.802
+        ],
+        [
+          -122.41080521583667,
+          37.802,
+          -122.40935,
+          37.802799676607975
+        ]
+      ],
+      "limitations": [
+        "Byte counts are stored dependency bytes, not decoded CPU memory or VRAM.",
+        "Per-group charges intentionally count shared dependencies repeatedly.",
+        "Full baseline profiling ceilings are fixture bounds, not production performance budgets.",
+        "Trim-only visual acceptance and shadow lifecycle gate are required before browser execution."
+      ]
+    }
+  },
+  "settled": {
+    "stage": "ready",
+    "frames": 90,
+    "stages": {
+      "preflightMs": 230.39999999850988,
+      "baselineLoadMs": 84610.60000000149
+    },
+    "loaded": 84,
+    "expected": 84,
+    "peaks": {
+      "geometries": 1228,
+      "textures": 30,
+      "loaded": 84
+    },
+    "memory": {
+      "geometries": 1228,
+      "textures": 30
+    },
+    "lastFrame": {
+      "calls": 5215,
+      "triangles": 1067433,
+      "lines": 0,
+      "points": 0,
+      "cpuFrameMs": 241.5
+    },
+    "samples": [
+      {
+        "calls": 5215,
+        "triangles": 1067433,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 241.5
+      }
+    ],
+    "pool": {
+      "leases": 84,
+      "images": 16,
+      "textures": 19,
+      "materials": 54
+    },
+    "sources": {
+      "sources": 546,
+      "resources": 15418
+    },
+    "pinned": {
+      "sources": 2,
+      "resources": 8
+    },
+    "profile": {
+      "status": "unvalidated-full-context-profile",
+      "visualAccepted": false,
+      "eligibleFeatures": 853,
+      "groups": 83,
+      "sourceTriangles": 356240,
+      "pinnedTriangles": 16640,
+      "storedBaselineUniqueBytes": 36100234,
+      "storedValidationUniqueBytes": 84959124,
+      "conservativeGroupColdBytes": 272817183,
+      "concurrency": 2,
+      "batchCellSize": 64,
+      "authoredExclusions": [
+        {
+          "id": "sf-building:201006.0004170",
+          "owner": "1_0",
+          "asset": "sf-model-97b11e85c640a5b5"
+        },
+        {
+          "id": "sf-study:grant-parked-1",
+          "owner": "1_0",
+          "asset": "sf-model-a643a65297c6d453"
+        },
+        {
+          "id": "sf-study:grant-parked-2",
+          "owner": "1_0",
+          "asset": "sf-model-077a785066def89b"
+        },
+        {
+          "id": "sf-study:grant-parked-3",
+          "owner": "1_0",
+          "asset": "sf-model-beadbc04a27c1d50"
+        }
+      ],
+      "sourceCoverageMasks": [
+        [
+          -122.4122,
+          37.799,
+          -122.4065,
+          37.802
+        ],
+        [
+          -122.41080521583667,
+          37.802,
+          -122.40935,
+          37.802799676607975
+        ]
+      ],
+      "limitations": [
+        "Byte counts are stored dependency bytes, not decoded CPU memory or VRAM.",
+        "Per-group charges intentionally count shared dependencies repeatedly.",
+        "Full baseline profiling ceilings are fixture bounds, not production performance budgets.",
+        "Trim-only visual acceptance and shadow lifecycle gate are required before browser execution."
+      ]
+    }
+  },
+  "released": {
+    "stage": "released",
+    "frames": 93,
+    "stages": {
+      "preflightMs": 230.39999999850988,
+      "baselineLoadMs": 84610.60000000149
+    },
+    "loaded": 0,
+    "expected": 84,
+    "peaks": {
+      "geometries": 1228,
+      "textures": 30,
+      "loaded": 84
+    },
+    "memory": {
+      "geometries": 14,
+      "textures": 11
+    },
+    "lastFrame": {
+      "calls": 5215,
+      "triangles": 1067433,
+      "lines": 0,
+      "points": 0,
+      "cpuFrameMs": 277.29999999701977
+    },
+    "samples": [
+      {
+        "calls": 5215,
+        "triangles": 1067433,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 241.5
+      },
+      {
+        "calls": 5215,
+        "triangles": 1067433,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 191.10000000149012
+      },
+      {
+        "calls": 5215,
+        "triangles": 1067433,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 227.79999999701977
+      },
+      {
+        "calls": 5215,
+        "triangles": 1067433,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 277.29999999701977
+      }
+    ],
+    "pool": {
+      "leases": 0,
+      "images": 0,
+      "textures": 0,
+      "materials": 0
+    },
+    "sources": {
+      "sources": 0,
+      "resources": 0
+    },
+    "pinned": {
+      "sources": 0,
+      "resources": 0
+    },
+    "profile": {
+      "status": "unvalidated-full-context-profile",
+      "visualAccepted": false,
+      "eligibleFeatures": 853,
+      "groups": 83,
+      "sourceTriangles": 356240,
+      "pinnedTriangles": 16640,
+      "storedBaselineUniqueBytes": 36100234,
+      "storedValidationUniqueBytes": 84959124,
+      "conservativeGroupColdBytes": 272817183,
+      "concurrency": 2,
+      "batchCellSize": 64,
+      "authoredExclusions": [
+        {
+          "id": "sf-building:201006.0004170",
+          "owner": "1_0",
+          "asset": "sf-model-97b11e85c640a5b5"
+        },
+        {
+          "id": "sf-study:grant-parked-1",
+          "owner": "1_0",
+          "asset": "sf-model-a643a65297c6d453"
+        },
+        {
+          "id": "sf-study:grant-parked-2",
+          "owner": "1_0",
+          "asset": "sf-model-077a785066def89b"
+        },
+        {
+          "id": "sf-study:grant-parked-3",
+          "owner": "1_0",
+          "asset": "sf-model-beadbc04a27c1d50"
+        }
+      ],
+      "sourceCoverageMasks": [
+        [
+          -122.4122,
+          37.799,
+          -122.4065,
+          37.802
+        ],
+        [
+          -122.41080521583667,
+          37.802,
+          -122.40935,
+          37.802799676607975
+        ]
+      ],
+      "limitations": [
+        "Byte counts are stored dependency bytes, not decoded CPU memory or VRAM.",
+        "Per-group charges intentionally count shared dependencies repeatedly.",
+        "Full baseline profiling ceilings are fixture bounds, not production performance budgets.",
+        "Trim-only visual acceptance and shadow lifecycle gate are required before browser execution."
+      ]
+    }
+  }
+}

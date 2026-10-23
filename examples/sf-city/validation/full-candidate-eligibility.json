@@ -1,0 +1,4426 @@
+{
+  "snapshot": "/tmp/sf-adjacent-candidate",
+  "eligible": [
+    {
+      "id": "sf-building:201006.0001265",
+      "owner": "-1_-1",
+      "asset": "sf-model-7dda79e5c7e11a9c"
+    },
+    {
+      "id": "sf-building:201006.0002575",
+      "owner": "-2_-1",
+      "asset": "sf-model-d3fe40d03dd62ca9"
+    },
+    {
+      "id": "sf-building:201006.0002980",
+      "owner": "-1_0",
+      "asset": "sf-model-e6d63b04b41dbdaa"
+    },
+    {
+      "id": "sf-building:201006.0002992",
+      "owner": "0_1",
+      "asset": "sf-model-44cf2b8885c47b5c"
+    },
+    {
+      "id": "sf-building:201006.0003146",
+      "owner": "-2_-1",
+      "asset": "sf-model-0178739871b18170"
+    },
+    {
+      "id": "sf-building:201006.0003278",
+      "owner": "-1_-2",
+      "asset": "sf-model-eacb45c7a7aa3153"
+    },
+    {
+      "id": "sf-building:201006.0003510",
+      "owner": "1_1",
+      "asset": "sf-model-b320e983d7976c11"
+    },
+    {
+      "id": "sf-building:201006.0003946",
+      "owner": "-1_0",
+      "asset": "sf-model-1ab0920f29420bc5"
+    },
+    {
+      "id": "sf-building:201006.0004376",
+      "owner": "0_0",
+      "asset": "sf-model-46927fbe0390fa0f"
+    },
+    {
+      "id": "sf-building:201006.0004523",
+      "owner": "-1_0",
+      "asset": "sf-model-9ee206e5e01c9709"
+    },
+    {
+      "id": "sf-building:201006.0004581",
+      "owner": "-1_0",
+      "asset": "sf-model-bebce64a428b4002"
+    },
+    {
+      "id": "sf-building:201006.0004721",
+      "owner": "-1_1",
+      "asset": "sf-model-03a403a5b0cdb0cb"
+    },
+    {
+      "id": "sf-building:201006.0005431",
+      "owner": "0_-2",
+      "asset": "sf-model-c336e86422a989af"
+    },
+    {
+      "id": "sf-building:201006.0005454",
+      "owner": "-2_0",
+      "asset": "sf-model-79919056110e6fa8"
+    },
+    {
+      "id": "sf-building:201006.0005514",
+      "owner": "-2_-1",
+      "asset": "sf-model-8a9f2189462e53e1"
+    },
+    {
+      "id": "sf-building:201006.0005585",
+      "owner": "1_0",
+      "asset": "sf-model-b5417b60455c7505"
+    },
+    {
+      "id": "sf-building:201006.0005619",
+      "owner": "0_1",
+      "asset": "sf-model-00434b3e7fa23c00"
+    },
+    {
+      "id": "sf-building:201006.0005946",
+      "owner": "0_-1",
+      "asset": "sf-model-b5f69c7679e3f743"
+    },
+    {
+      "id": "sf-building:201006.0006131",
+      "owner": "0_-1",
+      "asset": "sf-model-d3d2e63b92cd0366"
+    },
+    {
+      "id": "sf-building:201006.0006530",
+      "owner": "0_-1",
+      "asset": "sf-model-977c8cd1ea8ee2c8"
+    },
+    {
+      "id": "sf-building:201006.0006749",
+      "owner": "0_1",
+      "asset": "sf-model-721198f25a9ff211"
+    },
+    {
+      "id": "sf-building:201006.0006787",
+      "owner": "-1_0",
+      "asset": "sf-model-e34affa98812c824"
+    },
+    {
+      "id": "sf-building:201006.0006847",
+      "owner": "0_-1",
+      "asset": "sf-model-fc87ce99cba5ba4b"
+    },
+    {
+      "id": "sf-building:201006.0007112",
+      "owner": "1_0",
+      "asset": "sf-model-9965183cb68f4150"
+    },
+    {
+      "id": "sf-building:201006.0007333",
+      "owner": "1_-1",
+      "asset": "sf-model-d1b9ff391cbc591a"
+    },
+    {
+      "id": "sf-building:201006.0007763",
+      "owner": "1_0",
+      "asset": "sf-model-723c9237cd463f66"
+    },
+    {
+      "id": "sf-building:201006.0007782",
+      "owner": "-1_0",
+      "asset": "sf-model-ad1f510413e34715"
+    },
+    {
+      "id": "sf-building:201006.0007895",
+      "owner": "0_-1",
+      "asset": "sf-model-1b3dc7fae9f44668"
+    },
+    {
+      "id": "sf-building:201006.0008276",
+      "owner": "-1_-2",
+      "asset": "sf-model-4812d6362b0ead7b"
+    },
+    {
+      "id": "sf-building:201006.0008445",
+      "owner": "0_1",
+      "asset": "sf-model-7648b22260a17bf8"
+    },
+    {
+      "id": "sf-building:201006.0008684",
+      "owner": "-2_-1",
+      "asset": "sf-model-1690523dd03ecfa9"
+    },
+    {
+      "id": "sf-building:201006.0008828",
+      "owner": "-2_0",
+      "asset": "sf-model-b7a6e4a1017d7bd2"
+    },
+    {
+      "id": "sf-building:201006.0008976",
+      "owner": "-1_-2",
+      "asset": "sf-model-ea415082132badfe"
+    },
+    {
+      "id": "sf-building:201006.0009076",
+      "owner": "1_0",
+      "asset": "sf-model-c76b34bcd53b668f"
+    },
+    {
+      "id": "sf-building:201006.0009236",
+      "owner": "1_0",
+      "asset": "sf-model-1b8f4903787583bd"
+    },
+    {
+      "id": "sf-building:201006.0009276",
+      "owner": "1_1",
+      "asset": "sf-model-46da0c7194ea665d"
+    },
+    {
+      "id": "sf-building:201006.0009496",
+      "owner": "-2_1",
+      "asset": "sf-model-35d7e7af30efe1ab"
+    },
+    {
+      "id": "sf-building:201006.0009733",
+      "owner": "0_0",
+      "asset": "sf-model-e3c2ec7677dd13a9"
+    },
+    {
+      "id": "sf-building:201006.0009976",
+      "owner": "-2_-1",
+      "asset": "sf-model-99fe877f79a61b4a"
+    },
+    {
+      "id": "sf-building:201006.0010008",
+      "owner": "-2_-2",
+      "asset": "sf-model-446ee391a9707e8e"
+    },
+    {
+      "id": "sf-building:201006.0010590",
+      "owner": "1_0",
+      "asset": "sf-model-7486a743087f077a"
+    },
+    {
+      "id": "sf-building:201006.0010727",
+      "owner": "-1_1",
+      "asset": "sf-model-131b648a1a50bfbc"
+    },
+    {
+      "id": "sf-building:201006.0010868",
+      "owner": "0_-1",
+      "asset": "sf-model-a7a9e5c63afaad97"
+    },
+    {
+      "id": "sf-building:201006.0010869",
+      "owner": "-2_-2",
+      "asset": "sf-model-828f14c0c866c51b"
+    },
+    {
+      "id": "sf-building:201006.0010935",
+      "owner": "1_0",
+      "asset": "sf-model-bfab8834bcf2f15c"
+    },
+    {
+      "id": "sf-building:201006.0011021",
+      "owner": "1_0",
+      "asset": "sf-model-24c50f3484093945"
+    },
+    {
+      "id": "sf-building:201006.0011332",
+      "owner": "-2_0",
+      "asset": "sf-model-ebf61556fa451642"
+    },
+    {
+      "id": "sf-building:201006.0011381",
+      "owner": "-2_-2",
+      "asset": "sf-model-27bb24cf9c97db12"
+    },
+    {
+      "id": "sf-building:201006.0011443",
+      "owner": "1_0",
+      "asset": "sf-model-69f446aedff2d80f"
+    },
+    {
+      "id": "sf-building:201006.0012477",
+      "owner": "1_-1",
+      "asset": "sf-model-dce5bef719183ff8"
+    },
+    {
+      "id": "sf-building:201006.0012608",
+      "owner": "0_-2",
+      "asset": "sf-model-62f2f547fbcf2c83"
+    },
+    {
+      "id": "sf-building:201006.0012623",
+      "owner": "0_-2",
+      "asset": "sf-model-1237ada059caed8c"
+    },
+    {
+      "id": "sf-building:201006.0012769",
+      "owner": "0_-2",
+      "asset": "sf-model-2fd9c8ccad5c31ac"
+    },
+    {
+      "id": "sf-building:201006.0013310",
+      "owner": "0_1",
+      "asset": "sf-model-712f8e194dc388e6"
+    },
+    {
+      "id": "sf-building:201006.0013391",
+      "owner": "-1_-2",
+      "asset": "sf-model-c0497b4bde631418"
+    },
+    {
+      "id": "sf-building:201006.0013629",
+      "owner": "1_0",
+      "asset": "sf-model-ed6843c078c6416a"
+    },
+    {
+      "id": "sf-building:201006.0013687",
+      "owner": "0_0",
+      "asset": "sf-model-649611e5b555dd1b"
+    },
+    {
+      "id": "sf-building:201006.0013801",
+      "owner": "-1_0",
+      "asset": "sf-model-a516f8fbf650ff06"
+    },
+    {
+      "id": "sf-building:201006.0013835",
+      "owner": "-2_-1",
+      "asset": "sf-model-6b24a564bae99019"
+    },
+    {
+      "id": "sf-building:201006.0013890",
+      "owner": "0_0",
+      "asset": "sf-model-645f20420710d076"
+    },
+    {
+      "id": "sf-building:201006.0014313",
+      "owner": "-1_-2",
+      "asset": "sf-model-43a3ddb486835c0f"
+    },
+    {
+      "id": "sf-building:201006.0014663",
+      "owner": "-2_0",
+      "asset": "sf-model-6bd46e9a2fcd1561"
+    },
+    {
+      "id": "sf-building:201006.0014731",
+      "owner": "0_0",
+      "asset": "sf-model-795762921a017217"
+    },
+    {
+      "id": "sf-building:201006.0014868",
+      "owner": "0_0",
+      "asset": "sf-model-20d68e93a8e4ee97"
+    },
+    {
+      "id": "sf-building:201006.0015061",
+      "owner": "0_-1",
+      "asset": "sf-model-6f4802d55814abba"
+    },
+    {
+      "id": "sf-building:201006.0015279",
+      "owner": "-2_0",
+      "asset": "sf-model-b96671489e2aab43"
+    },
+    {
+      "id": "sf-building:201006.0015594",
+      "owner": "-2_-1",
+      "asset": "sf-model-a7b9edee15f5eeac"
+    },
+    {
+      "id": "sf-building:201006.0015968",
+      "owner": "0_0",
+      "asset": "sf-model-5136d00f666391d7"
+    },
+    {
+      "id": "sf-building:201006.0016242",
+      "owner": "-1_-1",
+      "asset": "sf-model-5da3b56b410ce76f"
+    },
+    {
+      "id": "sf-building:201006.0016245",
+      "owner": "-1_0",
+      "asset": "sf-model-48d96ca6a516f755"
+    },
+    {
+      "id": "sf-building:201006.0016425",
+      "owner": "-2_0",
+      "asset": "sf-model-b9d170fdf057412c"
+    },
+    {
+      "id": "sf-building:201006.0016746",
+      "owner": "-1_-2",
+      "asset": "sf-model-c0f4a460e53e93c8"
+    },
+    {
+      "id": "sf-building:201006.0016970",
+      "owner": "-1_-2",
+      "asset": "sf-model-9259825cc03a77a8"
+    },
+    {
+      "id": "sf-building:201006.0017254",
+      "owner": "0_1",
+      "asset": "sf-model-92a1c69fda34e60f"
+    },
+    {
+      "id": "sf-building:201006.0017396",
+      "owner": "-2_0",
+      "asset": "sf-model-19175f84891c2209"
+    },
+    {
+      "id": "sf-building:201006.0017470",
+      "owner": "1_-1",
+      "asset": "sf-model-817b52b8ccb7896d"
+    },
+    {
+      "id": "sf-building:201006.0017798",
+      "owner": "0_-2",
+      "asset": "sf-model-d5b4c5d92bf8773f"
+    },
+    {
+      "id": "sf-building:201006.0018675",
+      "owner": "-2_-1",
+      "asset": "sf-model-2abcefce418a3200"
+    },
+    {
+      "id": "sf-building:201006.0018707",
+      "owner": "-2_-1",
+      "asset": "sf-model-8485f6b0a151b6a2"
+    },
+    {
+      "id": "sf-building:201006.0018717",
+      "owner": "-1_-2",
+      "asset": "sf-model-f402b7e2304d2d0d"
+    },
+    {
+      "id": "sf-building:201006.0018849",
+      "owner": "0_0",
+      "asset": "sf-model-06b98b56c9b24fc1"
+    },
+    {
+      "id": "sf-building:201006.0018872",
+      "owner": "0_-2",
+      "asset": "sf-model-b30b5bf817e0c6eb"
+    },
+    {
+      "id": "sf-building:201006.0019017",
+      "owner": "0_-1",
+      "asset": "sf-model-0d8f72a37daec6cd"
+    },
+    {
+      "id": "sf-building:201006.0019178",
+      "owner": "0_-2",
+      "asset": "sf-model-b7f99798f60f7525"
+    },
+    {
+      "id": "sf-building:201006.0019291",
+      "owner": "0_-1",
+      "asset": "sf-model-355069ef86408337"
+    },
+    {
+      "id": "sf-building:201006.0019589",
+      "owner": "1_-1",
+      "asset": "sf-model-3580b247165eadb7"
+    },
+    {
+      "id": "sf-building:201006.0019799",
+      "owner": "0_0",
+      "asset": "sf-model-175196db7c8894a1"
+    },
+    {
+      "id": "sf-building:201006.0020169",
+      "owner": "-2_0",
+      "asset": "sf-model-f05a09128d1e05c7"
+    },
+    {
+      "id": "sf-building:201006.0020724",
+      "owner": "-2_0",
+      "asset": "sf-model-f7faabf3cd96785d"
+    },
+    {
+      "id": "sf-building:201006.0021080",
+      "owner": "-2_0",
+      "asset": "sf-model-f1231e456a4035b9"
+    },
+    {
+      "id": "sf-building:201006.0021297",
+      "owner": "0_-1",
+      "asset": "sf-model-b7d6ebf874ec1480"
+    },
+    {
+      "id": "sf-building:201006.0021577",
+      "owner": "0_-1",
+      "asset": "sf-model-046bfcc6f2e1d4cb"
+    },
+    {
+      "id": "sf-building:201006.0021627",
+      "owner": "-1_-2",
+      "asset": "sf-model-5ae4f8052e8c9307"
+    },
+    {
+      "id": "sf-building:201006.0021828",
+      "owner": "-1_0",
+      "asset": "sf-model-c6f31108f88e99c8"
+    },
+    {
+      "id": "sf-building:201006.0021835",
+      "owner": "-2_0",
+      "asset": "sf-model-8969da4cdeb4154c"
+    },
+    {
+      "id": "sf-building:201006.0021854",
+      "owner": "1_-2",
+      "asset": "sf-model-e715317e8a1d0a48"
+    },
+    {
+      "id": "sf-building:201006.0022442",
+      "owner": "-2_-1",
+      "asset": "sf-model-957d677d60696ac0"
+    },
+    {
+      "id": "sf-building:201006.0022595",
+      "owner": "1_1",
+      "asset": "sf-model-4b1a42f2b9a310a4"
+    },
+    {
+      "id": "sf-building:201006.0022675",
+      "owner": "0_-1",
+      "asset": "sf-model-e8d26c1ccd433b49"
+    },
+    {
+      "id": "sf-building:201006.0022682",
+      "owner": "-1_-1",
+      "asset": "sf-model-2cc511fb6f503cce"
+    },
+    {
+      "id": "sf-building:201006.0022834",
+      "owner": "1_1",
+      "asset": "sf-model-3da7a68926611769"
+    },
+    {
+      "id": "sf-building:201006.0023034",
+      "owner": "1_-1",
+      "asset": "sf-model-0458084db5e8ebd1"
+    },
+    {
+      "id": "sf-building:201006.0023074",
+      "owner": "0_-2",
+      "asset": "sf-model-52affe336435455d"
+    },
+    {
+      "id": "sf-building:201006.0023138",
+      "owner": "1_-1",
+      "asset": "sf-model-432dd84395d3dc9a"
+    },
+    {
+      "id": "sf-building:201006.0023157",
+      "owner": "0_0",
+      "asset": "sf-model-5bac7644c9080096"
+    },
+    {
+      "id": "sf-building:201006.0023315",
+      "owner": "-2_1",
+      "asset": "sf-model-b21d9ee7daa5503c"
+    },
+    {
+      "id": "sf-building:201006.0023731",
+      "owner": "0_-1",
+      "asset": "sf-model-bbf022fc748530a6"
+    },
+    {
+      "id": "sf-building:201006.0023830",
+      "owner": "-2_0",
+      "asset": "sf-model-ff5fc026137d4212"
+    },
+    {
+      "id": "sf-building:201006.0024752",
+      "owner": "1_-1",
+      "asset": "sf-model-87f655c854705a29"
+    },
+    {
+      "id": "sf-building:201006.0024832",
+      "owner": "0_-1",
+      "asset": "sf-model-3f7cec00d6208f9a"
+    },
+    {
+      "id": "sf-building:201006.0024877",
+      "owner": "-2_0",
+      "asset": "sf-model-34784569c911dbab"
+    },
+    {
+      "id": "sf-building:201006.0025454",
+      "owner": "0_-1",
+      "asset": "sf-model-9e6d111173da36d3"
+    },
+    {
+      "id": "sf-building:201006.0025797",
+      "owner": "0_-1",
+      "asset": "sf-model-bb242504602ffe2e"
+    },
+    {
+      "id": "sf-building:201006.0025920",
+      "owner": "-2_0",
+      "asset": "sf-model-854d1aced43016bb"
+    },
+    {
+      "id": "sf-building:201006.0026024",
+      "owner": "0_-1",
+      "asset": "sf-model-37e8526cc264fb16"
+    },
+    {
+      "id": "sf-building:201006.0026254",
+      "owner": "-2_0",
+      "asset": "sf-model-55193ee469609178"
+    },
+    {
+      "id": "sf-building:201006.0026304",
+      "owner": "1_1",
+      "asset": "sf-model-0c3f46ce5dbb5fc4"
+    },
+    {
+      "id": "sf-building:201006.0026578",
+      "owner": "0_0",
+      "asset": "sf-model-270d744c362e1bc0"
+    },
+    {
+      "id": "sf-building:201006.0026982",
+      "owner": "1_0",
+      "asset": "sf-model-5e51cbb5a422bbc1"
+    },
+    {
+      "id": "sf-building:201006.0027158",
+      "owner": "1_0",
+      "asset": "sf-model-df3ea3c582fc5e61"
+    },
+    {
+      "id": "sf-building:201006.0027278",
+      "owner": "-1_1",
+      "asset": "sf-model-50af2b92d9250f61"
+    },
+    {
+      "id": "sf-building:201006.0027876",
+      "owner": "0_0",
+      "asset": "sf-model-c0106861f510f0b0"
+    },
+    {
+      "id": "sf-building:201006.0027931",
+      "owner": "0_-1",
+      "asset": "sf-model-39fd4cb472d283eb"
+    },
+    {
+      "id": "sf-building:201006.0027972",
+      "owner": "1_0",
+      "asset": "sf-model-ae662debc9552e70"
+    },
+    {
+      "id": "sf-building:201006.0028318",
+      "owner": "-1_-2",
+      "asset": "sf-model-b0603baa654683c1"
+    },
+    {
+      "id": "sf-building:201006.0028326",
+      "owner": "-2_-2",
+      "asset": "sf-model-6155224f46ab2724"
+    },
+    {
+      "id": "sf-building:201006.0028518",
+      "owner": "0_0",
+      "asset": "sf-model-0a918453e61be9f5"
+    },
+    {
+      "id": "sf-building:201006.0028639",
+      "owner": "0_0",
+      "asset": "sf-model-063e86edbdfa1451"
+    },
+    {
+      "id": "sf-building:201006.0029116",
+      "owner": "-1_-2",
+      "asset": "sf-model-78402491a011675a"
+    },
+    {
+      "id": "sf-building:201006.0029182",
+      "owner": "0_-1",
+      "asset": "sf-model-b35f63b0a10dd28b"
+    },
+    {
+      "id": "sf-building:201006.0029328",
+      "owner": "1_-2",
+      "asset": "sf-model-5f41f567262cdad7"
+    },
+    {
+      "id": "sf-building:201006.0029689",
+      "owner": "0_0",
+      "asset": "sf-model-faf012bb6e3853c5"
+    },
+    {
+      "id": "sf-building:201006.0030444",
+      "owner": "0_-1",
+      "asset": "sf-model-354bf2c739e15e08"
+    },
+    {
+      "id": "sf-building:201006.0030818",
+      "owner": "0_0",
+      "asset": "sf-model-45e71cd57a635149"
+    },
+    {
+      "id": "sf-building:201006.0030905",
+      "owner": "1_0",
+      "asset": "sf-model-0cb62295daf9dd87"
+    },
+    {
+      "id": "sf-building:201006.0031007",
+      "owner": "-2_0",
+      "asset": "sf-model-caa0367e34dc4413"
+    },
+    {
+      "id": "sf-building:201006.0031475",
+      "owner": "-1_-1",
+      "asset": "sf-model-779b5689a68d311a"
+    },
+    {
+      "id": "sf-building:201006.0031757",
+      "owner": "1_-1",
+      "asset": "sf-model-3812af4f98ee2a1f"
+    },
+    {
+      "id": "sf-building:201006.0032117",
+      "owner": "1_0",
+      "asset": "sf-model-9162345fc44a8d04"
+    },
+    {
+      "id": "sf-building:201006.0032267",
+      "owner": "0_-1",
+      "asset": "sf-model-6377a699c8c8dd51"
+    },
+    {
+      "id": "sf-building:201006.0032425",
+      "owner": "0_0",
+      "asset": "sf-model-6c219cd06d258593"
+    },
+    {
+      "id": "sf-building:201006.0032893",
+      "owner": "0_0",
+      "asset": "sf-model-1a12a77ccba2a23b"
+    },
+    {
+      "id": "sf-building:201006.0034152",
+      "owner": "0_-1",
+      "asset": "sf-model-be8499ecb2558ebc"
+    },
+    {
+      "id": "sf-building:201006.0034469",
+      "owner": "1_0",
+      "asset": "sf-model-7ea920e51367faab"
+    },
+    {
+      "id": "sf-building:201006.0034483",
+      "owner": "0_0",
+      "asset": "sf-model-54c7a5a6f3c94f54"
+    },
+    {
+      "id": "sf-building:201006.0034531",
+      "owner": "-2_0",
+      "asset": "sf-model-7363419cfa4792e3"
+    },
+    {
+      "id": "sf-building:201006.0034858",
+      "owner": "0_1",
+      "asset": "sf-model-e22fe3387a7b8242"
+    },
+    {
+      "id": "sf-building:201006.0035355",
+      "owner": "-2_0",
+      "asset": "sf-model-cf19a2a9e40e5de9"
+    },
+    {
+      "id": "sf-building:201006.0035487",
+      "owner": "-2_0",
+      "asset": "sf-model-8aeb1e6b6f523299"
+    },
+    {
+      "id": "sf-building:201006.0035993",
+      "owner": "-2_-1",
+      "asset": "sf-model-1ca94e87d7eb2bb7"
+    },
+    {
+      "id": "sf-building:201006.0036074",
+      "owner": "0_-2",
+      "asset": "sf-model-bc02667edea8b339"
+    },
+    {
+      "id": "sf-building:201006.0036250",
+      "owner": "-2_1",
+      "asset": "sf-model-df6de64d0de02d24"
+    },
+    {
+      "id": "sf-building:201006.0036252",
+      "owner": "-2_0",
+      "asset": "sf-model-dabc556a08b486dc"
+    },
+    {
+      "id": "sf-building:201006.0036381",
+      "owner": "-2_-1",
+      "asset": "sf-model-b599cfcf05dbb45d"
+    },
+    {
+      "id": "sf-building:201006.0036808",
+      "owner": "-2_-1",
+      "asset": "sf-model-6102a0070d6a3a93"
+    },
+    {
+      "id": "sf-building:201006.0037689",
+      "owner": "0_0",
+      "asset": "sf-model-b334ff0ec52458ab"
+    },
+    {
+      "id": "sf-building:201006.0037903",
+      "owner": "1_1",
+      "asset": "sf-model-8252ddc85d9dfbdd"
+    },
+    {
+      "id": "sf-building:201006.0038136",
+      "owner": "1_1",
+      "asset": "sf-model-6e080528ce12c53e"
+    },
+    {
+      "id": "sf-building:201006.0038197",
+      "owner": "1_-1",
+      "asset": "sf-model-bcb47956f4aa8c79"
+    },
+    {
+      "id": "sf-building:201006.0038827",
+      "owner": "0_-2",
+      "asset": "sf-model-9b819090a0598683"
+    },
+    {
+      "id": "sf-building:201006.0038860",
+      "owner": "-2_-2",
+      "asset": "sf-model-d2e5b49620c2c965"
+    },
+    {
+      "id": "sf-building:201006.0038921",
+      "owner": "1_0",
+      "asset": "sf-model-50cee28c1e2bc020"
+    },
+    {
+      "id": "sf-building:201006.0039020",
+      "owner": "-2_-2",
+      "asset": "sf-model-77ea8ed7ed40d88a"
+    },
+    {
+      "id": "sf-building:201006.0039134",
+      "owner": "-2_-1",
+      "asset": "sf-model-620e3ee2ba705fef"
+    },
+    {
+      "id": "sf-building:201006.0039267",
+      "owner": "1_-1",
+      "asset": "sf-model-929d4c3d22c9311a"
+    },
+    {
+      "id": "sf-building:201006.0039370",
+      "owner": "-2_-2",
+      "asset": "sf-model-312144cbc7598448"
+    },
+    {
+      "id": "sf-building:201006.0039792",
+      "owner": "1_-1",
+      "asset": "sf-model-5aa839e0de613686"
+    },
+    {
+      "id": "sf-building:201006.0040215",
+      "owner": "1_0",
+      "asset": "sf-model-9415725eb2484dcc"
+    },
+    {
+      "id": "sf-building:201006.0040702",
+      "owner": "-1_-2",
+      "asset": "sf-model-ae70da1711d1fce7"
+    },
+    {
+      "id": "sf-building:201006.0041336",
+      "owner": "1_-1",
+      "asset": "sf-model-58fbdaa545ca3a3d"
+    },
+    {
+      "id": "sf-building:201006.0041871",
+      "owner": "0_0",
+      "asset": "sf-model-4e40216bff29db1a"
+    },
+    {
+      "id": "sf-building:201006.0042002",
+      "owner": "1_0",
+      "asset": "sf-model-c22787a20cea74fb"
+    },
+    {
+      "id": "sf-building:201006.0042087",
+      "owner": "-2_0",
+      "asset": "sf-model-08210ad502bed83a"
+    },
+    {
+      "id": "sf-building:201006.0042122",
+      "owner": "1_-1",
+      "asset": "sf-model-17616318779040e1"
+    },
+    {
+      "id": "sf-building:201006.0042445",
+      "owner": "0_-1",
+      "asset": "sf-model-d4e7145db525669d"
+    },
+    {
+      "id": "sf-building:201006.0044106",
+      "owner": "-1_0",
+      "asset": "sf-model-cd772b4719876210"
+    },
+    {
+      "id": "sf-building:201006.0044120",
+      "owner": "-2_-2",
+      "asset": "sf-model-d01dac68bfb2b0aa"
+    },
+    {
+      "id": "sf-building:201006.0044165",
+      "owner": "-2_0",
+      "asset": "sf-model-9647403f395fb5db"
+    },
+    {
+      "id": "sf-building:201006.0044281",
+      "owner": "-2_-1",
+      "asset": "sf-model-a9184179f7462d5b"
+    },
+    {
+      "id": "sf-building:201006.0044500",
+      "owner": "0_0",
+      "asset": "sf-model-3fc4ef22ab33ec83"
+    },
+    {
+      "id": "sf-building:201006.0045127",
+      "owner": "-2_0",
+      "asset": "sf-model-971b0439d870babb"
+    },
+    {
+      "id": "sf-building:201006.0045147",
+      "owner": "1_-1",
+      "asset": "sf-model-9893beb889604f27"
+    },
+    {
+      "id": "sf-building:201006.0045551",
+      "owner": "-1_-2",
+      "asset": "sf-model-1b40acb8c33979ca"
+    },
+    {
+      "id": "sf-building:201006.0046128",
+      "owner": "-1_0",
+      "asset": "sf-model-843390a4f6e23318"
+    },
+    {
+      "id": "sf-building:201006.0047035",
+      "owner": "1_0",
+      "asset": "sf-model-b739cb275d8e197f"
+    },
+    {
+      "id": "sf-building:201006.0047096",
+      "owner": "-1_0",
+      "asset": "sf-model-0a76b5e23a03630f"
+    },
+    {
+      "id": "sf-building:201006.0048128",
+      "owner": "-2_-2",
+      "asset": "sf-model-1febec1a0800d8f2"
+    },
+    {
+      "id": "sf-building:201006.0048191",
+      "owner": "1_-1",
+      "asset": "sf-model-6930e61971fc500b"
+    },
+    {
+      "id": "sf-building:201006.0048854",
+      "owner": "1_-1",
+      "asset": "sf-model-4bf55b4c4fc0fdbc"
+    },
+    {
+      "id": "sf-building:201006.0049741",
+      "owner": "-2_0",
+      "asset": "sf-model-afbcaebfbf0bec16"
+    },
+    {
+      "id": "sf-building:201006.0049889",
+      "owner": "1_1",
+      "asset": "sf-model-c6e8a01ba3f89027"
+    },
+    {
+      "id": "sf-building:201006.0050569",
+      "owner": "-1_0",
+      "asset": "sf-model-3f18bef374f64404"
+    },
+    {
+      "id": "sf-building:201006.0050983",
+      "owner": "-2_1",
+      "asset": "sf-model-bfdefe3ecfea17e0"
+    },
+    {
+      "id": "sf-building:201006.0052180",
+      "owner": "1_-1",
+      "asset": "sf-model-dd7d922acfc1a697"
+    },
+    {
+      "id": "sf-building:201006.0052665",
+      "owner": "-2_0",
+      "asset": "sf-model-1e85ef2545f31127"
+    },
+    {
+      "id": "sf-building:201006.0052744",
+      "owner": "-2_-2",
+      "asset": "sf-model-0be0476efeb88962"
+    },
+    {
+      "id": "sf-building:201006.0053633",
+      "owner": "-2_1",
+      "asset": "sf-model-b0506a6d9e1db36a"
+    },
+    {
+      "id": "sf-building:201006.0053684",
+      "owner": "-2_1",
+      "asset": "sf-model-ed3ad19d8a0e7487"
+    },
+    {
+      "id": "sf-building:201006.0053938",
+      "owner": "-1_-1",
+      "asset": "sf-model-b23dbf14df87502e"
+    },
+    {
+      "id": "sf-building:201006.0054357",
+      "owner": "0_-1",
+      "asset": "sf-model-7762a0c626d66d64"
+    },
+    {
+      "id": "sf-building:201006.0054448",
+      "owner": "1_-2",
+      "asset": "sf-model-f5aea56d0698ec65"
+    },
+    {
+      "id": "sf-building:201006.0055094",
+      "owner": "-2_0",
+      "asset": "sf-model-e04083d1b3e5d5c2"
+    },
+    {
+      "id": "sf-building:201006.0055194",
+      "owner": "1_-2",
+      "asset": "sf-model-8b16161f6a5530b9"
+    },
+    {
+      "id": "sf-building:201006.0055743",
+      "owner": "0_-2",
+      "asset": "sf-model-2e408e4e425ecc41"
+    },
+    {
+      "id": "sf-building:201006.0057088",
+      "owner": "-2_0",
+      "asset": "sf-model-5aaa394b9b36ff16"
+    },
+    {
+      "id": "sf-building:201006.0057384",
+      "owner": "-2_-2",
+      "asset": "sf-model-27f924dd31ad313e"
+    },
+    {
+      "id": "sf-building:201006.0057515",
+      "owner": "-2_0",
+      "asset": "sf-model-76219dbdd88eeae2"
+    },
+    {
+      "id": "sf-building:201006.0057636",
+      "owner": "-1_-2",
+      "asset": "sf-model-c153772cf26230e9"
+    },
+    {
+      "id": "sf-building:201006.0057941",
+      "owner": "1_0",
+      "asset": "sf-model-e4c2d905d6550d63"
+    },
+    {
+      "id": "sf-building:201006.0058215",
+      "owner": "1_-1",
+      "asset": "sf-model-de7cef62848eb9ca"
+    },
+    {
+      "id": "sf-building:201006.0058630",
+      "owner": "-1_0",
+      "asset": "sf-model-3753363209a09922"
+    },
+    {
+      "id": "sf-building:201006.0058652",
+      "owner": "-2_-2",
+      "asset": "sf-model-d3ef4c660a6d77c7"
+    },
+    {
+      "id": "sf-building:201006.0059199",
+      "owner": "-2_0",
+      "asset": "sf-model-300403ff2cf85158"
+    },
+    {
+      "id": "sf-building:201006.0059446",
+      "owner": "-1_-2",
+      "asset": "sf-model-6dd9331f31f019a1"
+    },
+    {
+      "id": "sf-building:201006.0060579",
+      "owner": "1_-2",
+      "asset": "sf-model-53104bce4f53bf3e"
+    },
+    {
+      "id": "sf-building:201006.0060847",
+      "owner": "1_0",
+      "asset": "sf-model-01fe1844f72414e0"
+    },
+    {
+      "id": "sf-building:201006.0061808",
+      "owner": "-1_1",
+      "asset": "sf-model-5a582e7627e5961a"
+    },
+    {
+      "id": "sf-building:201006.0061841",
+      "owner": "-1_0",
+      "asset": "sf-model-7a80a3ea37832219"
+    },
+    {
+      "id": "sf-building:201006.0062179",
+      "owner": "-2_1",
+      "asset": "sf-model-558b2803924150c2"
+    },
+    {
+      "id": "sf-building:201006.0063919",
+      "owner": "-2_1",
+      "asset": "sf-model-65f4d82f8f9b3ab6"
+    },
+    {
+      "id": "sf-building:201006.0064073",
+      "owner": "1_-1",
+      "asset": "sf-model-5f3ea67956f4d363"
+    },
+    {
+      "id": "sf-building:201006.0065332",
+      "owner": "-1_-2",
+      "asset": "sf-model-47db44e1820810f7"
+    },
+    {
+      "id": "sf-building:201006.0066241",
+      "owner": "0_-1",
+      "asset": "sf-model-3cc51344953845ff"
+    },
+    {
+      "id": "sf-building:201006.0066294",
+      "owner": "0_-1",
+      "asset": "sf-model-301ed9558b801d80"
+    },
+    {
+      "id": "sf-building:201006.0066305",
+      "owner": "-1_-2",
+      "asset": "sf-model-efe8b79791c7987d"
+    },
+    {
+      "id": "sf-building:201006.0067155",
+      "owner": "0_-1",
+      "asset": "sf-model-415bfe7490eb4299"
+    },
+    {
+      "id": "sf-building:201006.0067531",
+      "owner": "-2_0",
+      "asset": "sf-model-888fe525ce2a1341"
+    },
+    {
+      "id": "sf-building:201006.0068115",
+      "owner": "-2_0",
+      "asset": "sf-model-2b7e4cdfa2877da4"
+    },
+    {
+      "id": "sf-building:201006.0068153",
+      "owner": "-2_0",
+      "asset": "sf-model-5fc61a8cbfbd3836"
+    },
+    {
+      "id": "sf-building:201006.0068570",
+      "owner": "-1_1",
+      "asset": "sf-model-94e1fc5610c48359"
+    },
+    {
+      "id": "sf-building:201006.0069878",
+      "owner": "1_-2",
+      "asset": "sf-model-9641ad9976e0b423"
+    },
+    {
+      "id": "sf-building:201006.0069913",
+      "owner": "1_0",
+      "asset": "sf-model-e38c290e61ea7ff9"
+    },
+    {
+      "id": "sf-building:201006.0069989",
+      "owner": "0_0",
+      "asset": "sf-model-6bd6762ddfae43a3"
+    },
+    {
+      "id": "sf-building:201006.0070185",
+      "owner": "-1_0",
+      "asset": "sf-model-f47b8c7f6c48cea3"
+    },
+    {
+      "id": "sf-building:201006.0071155",
+      "owner": "1_-1",
+      "asset": "sf-model-01bfe4670871eee1"
+    },
+    {
+      "id": "sf-building:201006.0071156",
+      "owner": "-1_-2",
+      "asset": "sf-model-8274127a7158d534"
+    },
+    {
+      "id": "sf-building:201006.0071331",
+      "owner": "-1_-2",
+      "asset": "sf-model-ccc1bcfa21737a30"
+    },
+    {
+      "id": "sf-building:201006.0071457",
+      "owner": "1_-1",
+      "asset": "sf-model-da23904f5034e166"
+    },
+    {
+      "id": "sf-building:201006.0071775",
+      "owner": "-1_-2",
+      "asset": "sf-model-b09c19b5e52137b4"
+    },
+    {
+      "id": "sf-building:201006.0074235",
+      "owner": "1_-1",
+      "asset": "sf-model-19fe9f9f2565cd8f"
+    },
+    {
+      "id": "sf-building:201006.0074237",
+      "owner": "-2_0",
+      "asset": "sf-model-960f03a7b9a71bfe"
+    },
+    {
+      "id": "sf-building:201006.0076328",
+      "owner": "-1_0",
+      "asset": "sf-model-14f101ad4298265d"
+    },
+    {
+      "id": "sf-building:201006.0076577",
+      "owner": "1_-1",
+      "asset": "sf-model-ba5cfba85f9ef713"
+    },
+    {
+      "id": "sf-building:201006.0076739",
+      "owner": "-1_0",
+      "asset": "sf-model-d64f554b32603ec0"
+    },
+    {
+      "id": "sf-building:201006.0076815",
+      "owner": "-2_0",
+      "asset": "sf-model-048109dc5b656d8c"
+    },
+    {
+      "id": "sf-building:201006.0077528",
+      "owner": "-1_-2",
+      "asset": "sf-model-897658127f7d2250"
+    },
+    {
+      "id": "sf-building:201006.0077883",
+      "owner": "-1_-2",
+      "asset": "sf-model-5f9a12fc5b02eb1e"
+    },
+    {
+      "id": "sf-building:201006.0077894",
+      "owner": "1_-1",
+      "asset": "sf-model-ccd742c599c205f1"
+    },
+    {
+      "id": "sf-building:201006.0078243",
+      "owner": "0_-1",
+      "asset": "sf-model-94c2aa5eb4c90ae1"
+    },
+    {
+      "id": "sf-building:201006.0078349",
+      "owner": "-1_-2",
+      "asset": "sf-model-967047a5df08c6f1"
+    },
+    {
+      "id": "sf-building:201006.0078587",
+      "owner": "1_0",
+      "asset": "sf-model-98b7d5216869671f"
+    },
+    {
+      "id": "sf-building:201006.0079600",
+      "owner": "0_-1",
+      "asset": "sf-model-136a36e8e5386571"
+    },
+    {
+      "id": "sf-building:201006.0079744",
+      "owner": "-2_1",
+      "asset": "sf-model-82dd11cdfe5d8824"
+    },
+    {
+      "id": "sf-building:201006.0079794",
+      "owner": "-2_0",
+      "asset": "sf-model-a1a82d315a64dda8"
+    },
+    {
+      "id": "sf-building:201006.0079831",
+      "owner": "1_-1",
+      "asset": "sf-model-ad3ea65b599a2dd7"
+    },
+    {
+      "id": "sf-building:201006.0079996",
+      "owner": "0_-1",
+      "asset": "sf-model-2d11c3f7416af39a"
+    },
+    {
+      "id": "sf-building:201006.0080998",
+      "owner": "-2_0",
+      "asset": "sf-model-c67708a1be100c79"
+    },
+    {
+      "id": "sf-building:201006.0081542",
+      "owner": "-2_0",
+      "asset": "sf-model-c7b9d038c383e428"
+    },
+    {
+      "id": "sf-building:201006.0081547",
+      "owner": "-1_-2",
+      "asset": "sf-model-1303ae617354d60a"
+    },
+    {
+      "id": "sf-building:201006.0082095",
+      "owner": "-1_-2",
+      "asset": "sf-model-0ae1e0c6eea50a40"
+    },
+    {
+      "id": "sf-building:201006.0082496",
+      "owner": "0_0",
+      "asset": "sf-model-c029a89637ae65af"
+    },
+    {
+      "id": "sf-building:201006.0083006",
+      "owner": "-1_-2",
+      "asset": "sf-model-f7e2e12ca5839d6a"
+    },
+    {
+      "id": "sf-building:201006.0084308",
+      "owner": "1_0",
+      "asset": "sf-model-35666e1afec3a82f"
+    },
+    {
+      "id": "sf-building:201006.0084471",
+      "owner": "-2_0",
+      "asset": "sf-model-4bd2a95f7cd71ccf"
+    },
+    {
+      "id": "sf-building:201006.0084756",
+      "owner": "-1_-2",
+      "asset": "sf-model-ddad9274776f2c31"
+    },
+    {
+      "id": "sf-building:201006.0086433",
+      "owner": "1_-1",
+      "asset": "sf-model-d19e783a0f511451"
+    },
+    {
+      "id": "sf-building:201006.0086801",
+      "owner": "-1_-2",
+      "asset": "sf-model-29a394adfe1ddcd0"
+    },
+    {
+      "id": "sf-building:201006.0087655",
+      "owner": "-1_-2",
+      "asset": "sf-model-8df2bce315fce309"
+    },
+    {
+      "id": "sf-building:201006.0087907",
+      "owner": "1_-1",
+      "asset": "sf-model-c57cccf565d185d8"
+    },
+    {
+      "id": "sf-building:201006.0088026",
+      "owner": "-1_-2",
+      "asset": "sf-model-3225609f223e5a8d"
+    },
+    {
+      "id": "sf-building:201006.0088744",
+      "owner": "0_0",
+      "asset": "sf-model-0bbf4dc9ccf61046"
+    },
+    {
+      "id": "sf-building:201006.0088766",
+      "owner": "-1_1",
+      "asset": "sf-model-da019cc991e32872"
+    },
+    {
+      "id": "sf-building:201006.0088925",
+      "owner": "0_0",
+      "asset": "sf-model-3b2fb7c6001dabcc"
+    },
+    {
+      "id": "sf-building:201006.0089732",
+      "owner": "1_0",
+      "asset": "sf-model-fa026ff877aab77b"
+    },
+    {
+      "id": "sf-building:201006.0090069",
+      "owner": "-1_-2",
+      "asset": "sf-model-d3d9337cb97fdd3b"
+    },
+    {
+      "id": "sf-building:201006.0091145",
+      "owner": "0_-1",
+      "asset": "sf-model-5e0426df7ecf32bb"
+    },
+    {
+      "id": "sf-building:201006.0093595",
+      "owner": "-1_-2",
+      "asset": "sf-model-5704fb66c3fb4522"
+    },
+    {
+      "id": "sf-building:201006.0094802",
+      "owner": "0_0",
+      "asset": "sf-model-94ed560600c6431a"
+    },
+    {
+      "id": "sf-building:201006.0095869",
+      "owner": "-1_-2",
+      "asset": "sf-model-bdd97919d27a9111"
+    },
+    {
+      "id": "sf-building:201006.0096219",
+      "owner": "1_0",
+      "asset": "sf-model-a2efe13d88dee77a"
+    },
+    {
+      "id": "sf-building:201006.0096314",
+      "owner": "1_-1",
+      "asset": "sf-model-adc60c304c400f20"
+    },
+    {
+      "id": "sf-building:201006.0096749",
+      "owner": "1_0",
+      "asset": "sf-model-e830fb06591f9013"
+    },
+    {
+      "id": "sf-building:201006.0096907",
+      "owner": "0_-1",
+      "asset": "sf-model-85dac4a4523175f6"
+    },
+    {
+      "id": "sf-building:201006.0096918",
+      "owner": "1_-1",
+      "asset": "sf-model-9990cf448367e45b"
+    },
+    {
+      "id": "sf-building:201006.0097120",
+      "owner": "-2_1",
+      "asset": "sf-model-28d7cb75e1382812"
+    },
+    {
+      "id": "sf-building:201006.0097328",
+      "owner": "-1_-2",
+      "asset": "sf-model-3011729abd6b2ff6"
+    },
+    {
+      "id": "sf-building:201006.0097629",
+      "owner": "1_-1",
+      "asset": "sf-model-ea0a72137abf4da6"
+    },
+    {
+      "id": "sf-building:201006.0097687",
+      "owner": "1_-1",
+      "asset": "sf-model-c4bf0af63897721e"
+    },
+    {
+      "id": "sf-building:201006.0098081",
+      "owner": "1_0",
+      "asset": "sf-model-6c07c104cc1983b4"
+    },
+    {
+      "id": "sf-building:201006.0098131",
+      "owner": "-1_-2",
+      "asset": "sf-model-345776c063ef4645"
+    },
+    {
+      "id": "sf-building:201006.0099237",
+      "owner": "-2_1",
+      "asset": "sf-model-8af62cbad0974f57"
+    },
+    {
+      "id": "sf-building:201006.0100648",
+      "owner": "0_0",
+      "asset": "sf-model-daa4edd1f1752df3"
+    },
+    {
+      "id": "sf-building:201006.0101352",
+      "owner": "0_-1",
+      "asset": "sf-model-181e9cd9a8429ed4"
+    },
+    {
+      "id": "sf-building:201006.0102690",
+      "owner": "1_1",
+      "asset": "sf-model-833e1b78dfeaea7d"
+    },
+    {
+      "id": "sf-building:201006.0103619",
+      "owner": "0_-2",
+      "asset": "sf-model-7305917d4e1d0a81"
+    },
+    {
+      "id": "sf-building:201006.0103814",
+      "owner": "1_1",
+      "asset": "sf-model-09b7bb7f5e39150a"
+    },
+    {
+      "id": "sf-building:201006.0104834",
+      "owner": "0_-1",
+      "asset": "sf-model-82ea4b2a67397c6a"
+    },
+    {
+      "id": "sf-building:201006.0106295",
+      "owner": "1_-1",
+      "asset": "sf-model-3670671320a39c77"
+    },
+    {
+      "id": "sf-building:201006.0106421",
+      "owner": "0_0",
+      "asset": "sf-model-ecda778e50b6bbdb"
+    },
+    {
+      "id": "sf-building:201006.0108839",
+      "owner": "1_0",
+      "asset": "sf-model-45badacea7d2850b"
+    },
+    {
+      "id": "sf-building:201006.0109287",
+      "owner": "-1_-2",
+      "asset": "sf-model-156dee4ec2fb0fe4"
+    },
+    {
+      "id": "sf-building:201006.0109639",
+      "owner": "-1_1",
+      "asset": "sf-model-273631117e9d3c3e"
+    },
+    {
+      "id": "sf-building:201006.0109723",
+      "owner": "-2_-1",
+      "asset": "sf-model-7a11e0d08016cca2"
+    },
+    {
+      "id": "sf-building:201006.0110056",
+      "owner": "0_-1",
+      "asset": "sf-model-4a1bc5fc837866e3"
+    },
+    {
+      "id": "sf-building:201006.0110353",
+      "owner": "1_0",
+      "asset": "sf-model-47149e901f58de70"
+    },
+    {
+      "id": "sf-building:201006.0110625",
+      "owner": "1_0",
+      "asset": "sf-model-2b22024bf828d5dd"
+    },
+    {
+      "id": "sf-building:201006.0111578",
+      "owner": "1_-1",
+      "asset": "sf-model-00ac5f957ed993be"
+    },
+    {
+      "id": "sf-building:201006.0111713",
+      "owner": "-2_1",
+      "asset": "sf-model-a1bb2ec20da36b4d"
+    },
+    {
+      "id": "sf-building:201006.0111785",
+      "owner": "1_-1",
+      "asset": "sf-model-a73d6b578f543206"
+    },
+    {
+      "id": "sf-building:201006.0112244",
+      "owner": "0_0",
+      "asset": "sf-model-fa17d270e982bfcd"
+    },
+    {
+      "id": "sf-building:201006.0113353",
+      "owner": "0_0",
+      "asset": "sf-model-60e419fe8bc47722"
+    },
+    {
+      "id": "sf-building:201006.0114204",
+      "owner": "1_-1",
+      "asset": "sf-model-25d102b58ffe9d03"
+    },
+    {
+      "id": "sf-building:201006.0114492",
+      "owner": "0_-1",
+      "asset": "sf-model-b86c8cbf298f98f2"
+    },
+    {
+      "id": "sf-building:201006.0114739",
+      "owner": "-1_1",
+      "asset": "sf-model-a387c6ab9420d928"
+    },
+    {
+      "id": "sf-building:201006.0115678",
+      "owner": "1_0",
+      "asset": "sf-model-423bfa83cfaf9e87"
+    },
+    {
+      "id": "sf-building:201006.0117298",
+      "owner": "1_0",
+      "asset": "sf-model-2c5d2b965783bf1f"
+    },
+    {
+      "id": "sf-building:201006.0117625",
+      "owner": "0_-1",
+      "asset": "sf-model-436ef94214b6e175"
+    },
+    {
+      "id": "sf-building:201006.0118389",
+      "owner": "1_-1",
+      "asset": "sf-model-23eec511156f1c95"
+    },
+    {
+      "id": "sf-building:201006.0118675",
+      "owner": "0_0",
+      "asset": "sf-model-6012ac7e15a51275"
+    },
+    {
+      "id": "sf-building:201006.0119290",
+      "owner": "1_-1",
+      "asset": "sf-model-0d15dd05420d9e2c"
+    },
+    {
+      "id": "sf-building:201006.0119547",
+      "owner": "0_0",
+      "asset": "sf-model-c70fb7f1150cf1f4"
+    },
+    {
+      "id": "sf-building:201006.0119771",
+      "owner": "-1_-2",
+      "asset": "sf-model-c16ae31d671aa822"
+    },
+    {
+      "id": "sf-building:201006.0120815",
+      "owner": "1_0",
+      "asset": "sf-model-e37aad67150998a4"
+    },
+    {
+      "id": "sf-building:201006.0121067",
+      "owner": "-1_-2",
+      "asset": "sf-model-a0449f04e071a46d"
+    },
+    {
+      "id": "sf-building:201006.0121571",
+      "owner": "1_-1",
+      "asset": "sf-model-bdc7d92ab662cd4a"
+    },
+    {
+      "id": "sf-building:201006.0121689",
+      "owner": "1_-1",
+      "asset": "sf-model-f7bbec8517bbccef"
+    },
+    {
+      "id": "sf-building:201006.0121826",
+      "owner": "1_-2",
+      "asset": "sf-model-7e07c680f3467e85"
+    },
+    {
+      "id": "sf-building:201006.0121894",
+      "owner": "-1_-2",
+      "asset": "sf-model-df901dcc93ff07e9"
+    },
+    {
+      "id": "sf-building:201006.0121956",
+      "owner": "-2_0",
+      "asset": "sf-model-bc72e2b866a5340d"
+    },
+    {
+      "id": "sf-building:201006.0122237",
+      "owner": "-1_-2",
+      "asset": "sf-model-afb9c0b78cd59fb7"
+    },
+    {
+      "id": "sf-building:201006.0122276",
+      "owner": "-1_-2",
+      "asset": "sf-model-f2a0ddf98ed4ec37"
+    },
+    {
+      "id": "sf-building:201006.0122409",
+      "owner": "-2_0",
+      "asset": "sf-model-d95dc9ad96003927"
+    },
+    {
+      "id": "sf-building:201006.0122583",
+      "owner": "0_0",
+      "asset": "sf-model-502f8914d774140e"
+    },
+    {
+      "id": "sf-building:201006.0122919",
+      "owner": "-1_1",
+      "asset": "sf-model-d188ea9aa6af3b45"
+    },
+    {
+      "id": "sf-building:201006.0123554",
+      "owner": "1_-1",
+      "asset": "sf-model-9c03e3fbe15e83b9"
+    },
+    {
+      "id": "sf-building:201006.0123792",
+      "owner": "1_-2",
+      "asset": "sf-model-c14a22dcc3650da4"
+    },
+    {
+      "id": "sf-building:201006.0124174",
+      "owner": "-2_-2",
+      "asset": "sf-model-7cc2c56f545fcfc8"
+    },
+    {
+      "id": "sf-building:201006.0124202",
+      "owner": "1_-1",
+      "asset": "sf-model-f8cb882dbe47cef1"
+    },
+    {
+      "id": "sf-building:201006.0124227",
+      "owner": "1_-1",
+      "asset": "sf-model-cc4458c3717fdcc9"
+    },
+    {
+      "id": "sf-building:201006.0124332",
+      "owner": "0_0",
+      "asset": "sf-model-801536c07e98395b"
+    },
+    {
+      "id": "sf-building:201006.0125328",
+      "owner": "1_0",
+      "asset": "sf-model-56c4dc352d5ebf3c"
+    },
+    {
+      "id": "sf-building:201006.0125452",
+      "owner": "-1_-2",
+      "asset": "sf-model-819643dbc4330477"
+    },
+    {
+      "id": "sf-building:201006.0125611",
+      "owner": "0_-1",
+      "asset": "sf-model-d27a72f5fc7d78a7"
+    },
+    {
+      "id": "sf-building:201006.0125650",
+      "owner": "0_-1",
+      "asset": "sf-model-3aedbd322da42bff"
+    },
+    {
+      "id": "sf-building:201006.0125656",
+      "owner": "0_0",
+      "asset": "sf-model-0053082f7ae35088"
+    },
+    {
+      "id": "sf-building:201006.0126613",
+      "owner": "1_-2",
+      "asset": "sf-model-0ca05ee74127fa9d"
+    },
+    {
+      "id": "sf-building:201006.0127093",
+      "owner": "1_0",
+      "asset": "sf-model-06b86d744809e7d4"
+    },
+    {
+      "id": "sf-building:201006.0127850",
+      "owner": "-2_0",
+      "asset": "sf-model-a51caaa1c151c118"
+    },
+    {
+      "id": "sf-building:201006.0128469",
+      "owner": "1_0",
+      "asset": "sf-model-54bf4dacf7a43967"
+    },
+    {
+      "id": "sf-building:201006.0130060",
+      "owner": "1_-1",
+      "asset": "sf-model-ad7434e5b396acba"
+    },
+    {
+      "id": "sf-building:201006.0130264",
+      "owner": "-2_-2",
+      "asset": "sf-model-c84118d9ba0cbe43"
+    },
+    {
+      "id": "sf-building:201006.0130384",
+      "owner": "-2_0",
+      "asset": "sf-model-2ab8ecf29a0166c8"
+    },
+    {
+      "id": "sf-building:201006.0131335",
+      "owner": "1_-1",
+      "asset": "sf-model-2d5708d2a28349be"
+    },
+    {
+      "id": "sf-building:201006.0131745",
+      "owner": "1_0",
+      "asset": "sf-model-14fbbf7cdd0f1468"
+    },
+    {
+      "id": "sf-building:201006.0131838",
+      "owner": "0_0",
+      "asset": "sf-model-e8a1642ebdeb9ee5"
+    },
+    {
+      "id": "sf-building:201006.0131858",
+      "owner": "-1_-2",
+      "asset": "sf-model-df6538359941e43f"
+    },
+    {
+      "id": "sf-building:201006.0132113",
+      "owner": "1_1",
+      "asset": "sf-model-5b67e26c991977aa"
+    },
+    {
+      "id": "sf-building:201006.0132566",
+      "owner": "1_-1",
+      "asset": "sf-model-02e61bb9f28f87ce"
+    },
+    {
+      "id": "sf-building:201006.0133303",
+      "owner": "-1_0",
+      "asset": "sf-model-8fc5da8bb7951c0c"
+    },
+    {
+      "id": "sf-building:201006.0133680",
+      "owner": "1_0",
+      "asset": "sf-model-194be273029238a2"
+    },
+    {
+      "id": "sf-building:201006.0134018",
+      "owner": "1_0",
+      "asset": "sf-model-0d29dfb1798ec4cb"
+    },
+    {
+      "id": "sf-building:201006.0134822",
+      "owner": "1_0",
+      "asset": "sf-model-b65283a87f8d5fc7"
+    },
+    {
+      "id": "sf-building:201006.0135940",
+      "owner": "1_0",
+      "asset": "sf-model-4d1e4d11d347ba35"
+    },
+    {
+      "id": "sf-building:201006.0136201",
+      "owner": "-1_-2",
+      "asset": "sf-model-d28610d51315fae9"
+    },
+    {
+      "id": "sf-building:201006.0136830",
+      "owner": "1_0",
+      "asset": "sf-model-0bd2be92b3659d92"
+    },
+    {
+      "id": "sf-building:201006.0136939",
+      "owner": "-2_-1",
+      "asset": "sf-model-a096708aad9a7c0f"
+    },
+    {
+      "id": "sf-building:201006.0137289",
+      "owner": "1_-1",
+      "asset": "sf-model-2bdd577d285df073"
+    },
+    {
+      "id": "sf-building:201006.0137477",
+      "owner": "-1_1",
+      "asset": "sf-model-75ccda63e5e57cc4"
+    },
+    {
+      "id": "sf-building:201006.0137495",
+      "owner": "0_0",
+      "asset": "sf-model-96726defddbbd273"
+    },
+    {
+      "id": "sf-building:201006.0138064",
+      "owner": "-2_-1",
+      "asset": "sf-model-a60ecffc3bbecdf1"
+    },
+    {
+      "id": "sf-building:201006.0138242",
+      "owner": "1_0",
+      "asset": "sf-model-11c3f7c95efd5ea9"
+    },
+    {
+      "id": "sf-building:201006.0138798",
+      "owner": "0_0",
+      "asset": "sf-model-5058cfabb20bf8be"
+    },
+    {
+      "id": "sf-building:201006.0139288",
+      "owner": "0_0",
+      "asset": "sf-model-ac451eb5671815e4"
+    },
+    {
+      "id": "sf-building:201006.0140430",
+      "owner": "-2_0",
+      "asset": "sf-model-aca8664522e3005c"
+    },
+    {
+      "id": "sf-building:201006.0140561",
+      "owner": "1_-1",
+      "asset": "sf-model-6f4bd6c3903ca0d1"
+    },
+    {
+      "id": "sf-building:201006.0140602",
+      "owner": "1_-1",
+      "asset": "sf-model-e1412190f4302cfc"
+    },
+    {
+      "id": "sf-building:201006.0141017",
+      "owner": "1_-2",
+      "asset": "sf-model-44a0a5581cd4b8e3"
+    },
+    {
+      "id": "sf-building:201006.0141073",
+      "owner": "1_-1",
+      "asset": "sf-model-cfb7c95d19ee2b39"
+    },
+    {
+      "id": "sf-building:201006.0141666",
+      "owner": "0_-1",
+      "asset": "sf-model-292918d461e95210"
+    },
+    {
+      "id": "sf-building:201006.0141990",
+      "owner": "1_-1",
+      "asset": "sf-model-29b1dbcdd3fc5f5a"
+    },
+    {
+      "id": "sf-building:201006.0142306",
+      "owner": "-1_-2",
+      "asset": "sf-model-940e10ff8c70925e"
+    },
+    {
+      "id": "sf-building:201006.0142348",
+      "owner": "0_-2",
+      "asset": "sf-model-f58511b9813531ec"
+    },
+    {
+      "id": "sf-building:201006.0142871",
+      "owner": "1_0",
+      "asset": "sf-model-ed79f27264d2b263"
+    },
+    {
+      "id": "sf-building:201006.0143043",
+      "owner": "1_0",
+      "asset": "sf-model-495bddc866862bd5"
+    },
+    {
+      "id": "sf-building:201006.0143564",
+      "owner": "1_-1",
+      "asset": "sf-model-b7299c9a0acdb8b3"
+    },
+    {
+      "id": "sf-building:201006.0143631",
+      "owner": "-1_-2",
+      "asset": "sf-model-92c011f86a01e256"
+    },
+    {
+      "id": "sf-building:201006.0144086",
+      "owner": "1_-1",
+      "asset": "sf-model-a93e76bb6a181d0a"
+    },
+    {
+      "id": "sf-building:201006.0144587",
+      "owner": "-1_-2",
+      "asset": "sf-model-69e758ed554c09d1"
+    },
+    {
+      "id": "sf-building:201006.0145412",
+      "owner": "1_-1",
+      "asset": "sf-model-b8edd0267605be04"
+    },
+    {
+      "id": "sf-building:201006.0145679",
+      "owner": "0_0",
+      "asset": "sf-model-f25f335bfaac7588"
+    },
+    {
+      "id": "sf-building:201006.0145772",
+      "owner": "-2_0",
+      "asset": "sf-model-d09a027d09db3c8f"
+    },
+    {
+      "id": "sf-building:201006.0146048",
+      "owner": "-1_0",
+      "asset": "sf-model-6f8fc92ec5eb87f7"
+    },
+    {
+      "id": "sf-building:201006.0146336",
+      "owner": "0_0",
+      "asset": "sf-model-e63cb59454faa916"
+    },
+    {
+      "id": "sf-building:201006.0146717",
+      "owner": "1_-1",
+      "asset": "sf-model-252a9ec253423afc"
+    },
+    {
+      "id": "sf-building:201006.0147470",
+      "owner": "-2_0",
+      "asset": "sf-model-bed0863ad4b625c0"
+    },
+    {
+      "id": "sf-building:201006.0147478",
+      "owner": "0_0",
+      "asset": "sf-model-661f94c9c61103d9"
+    },
+    {
+      "id": "sf-building:201006.0147595",
+      "owner": "-1_-2",
+      "asset": "sf-model-6e3e41cfdc7cd8e7"
+    },
+    {
+      "id": "sf-building:201006.0147728",
+      "owner": "1_-1",
+      "asset": "sf-model-3ac66bce7c5fd5bd"
+    },
+    {
+      "id": "sf-building:201006.0147880",
+      "owner": "0_0",
+      "asset": "sf-model-2444ec1c33a31a01"
+    },
+    {
+      "id": "sf-building:201006.0147905",
+      "owner": "-1_-2",
+      "asset": "sf-model-e007477351d2a7c0"
+    },
+    {
+      "id": "sf-building:201006.0148170",
+      "owner": "0_-1",
+      "asset": "sf-model-88f4cc60ed82447e"
+    },
+    {
+      "id": "sf-building:201006.0148288",
+      "owner": "0_-1",
+      "asset": "sf-model-f9fa87066c0469a7"
+    },
+    {
+      "id": "sf-building:201006.0148610",
+      "owner": "1_-1",
+      "asset": "sf-model-a38d2e6002eb8907"
+    },
+    {
+      "id": "sf-building:201006.0148634",
+      "owner": "-2_-1",
+      "asset": "sf-model-fc997b779d60a426"
+    },
+    {
+      "id": "sf-building:201006.0148986",
+      "owner": "-2_0",
+      "asset": "sf-model-96881e1adbb1fb37"
+    },
+    {
+      "id": "sf-building:201006.0149017",
+      "owner": "1_-1",
+      "asset": "sf-model-1c05560f99ac3a4f"
+    },
+    {
+      "id": "sf-building:201006.0149315",
+      "owner": "0_0",
+      "asset": "sf-model-6855c6890e2638ae"
+    },
+    {
+      "id": "sf-building:201006.0149330",
+      "owner": "1_0",
+      "asset": "sf-model-f6052234ad7ee2fd"
+    },
+    {
+      "id": "sf-building:201006.0149830",
+      "owner": "1_-1",
+      "asset": "sf-model-073c53069bcefee3"
+    },
+    {
+      "id": "sf-building:201006.0149934",
+      "owner": "0_-2",
+      "asset": "sf-model-5f63d0a8e0484f14"
+    },
+    {
+      "id": "sf-building:201006.0150131",
+      "owner": "-1_-2",
+      "asset": "sf-model-5985f3b11366a63d"
+    },
+    {
+      "id": "sf-building:201006.0150150",
+      "owner": "0_-1",
+      "asset": "sf-model-2ea44c86e073e267"
+    },
+    {
+      "id": "sf-building:201006.0150170",
+      "owner": "1_-1",
+      "asset": "sf-model-e160fd036e044586"
+    },
+    {
+      "id": "sf-building:201006.0150271",
+      "owner": "1_-1",
+      "asset": "sf-model-759830dea962c535"
+    },
+    {
+      "id": "sf-building:201006.0150643",
+      "owner": "1_0",
+      "asset": "sf-model-e8e0704672f1602c"
+    },
+    {
+      "id": "sf-building:201006.0151326",
+      "owner": "0_-1",
+      "asset": "sf-model-27b27eeb50bd3890"
+    },
+    {
+      "id": "sf-building:201006.0151511",
+      "owner": "1_-1",
+      "asset": "sf-model-d1f83e5c01dea2ac"
+    },
+    {
+      "id": "sf-building:201006.0152455",
+      "owner": "-1_0",
+      "asset": "sf-model-1541fbf14c3bf1c7"
+    },
+    {
+      "id": "sf-building:201006.0152914",
+      "owner": "0_-2",
+      "asset": "sf-model-c14d848fc6a41c42"
+    },
+    {
+      "id": "sf-building:201006.0153877",
+      "owner": "-2_0",
+      "asset": "sf-model-cfae10ce2f174278"
+    },
+    {
+      "id": "sf-building:201006.0154435",
+      "owner": "-2_0",
+      "asset": "sf-model-4164f29f5d7d31a3"
+    },
+    {
+      "id": "sf-building:201006.0154590",
+      "owner": "-1_-2",
+      "asset": "sf-model-d149a1a08fd16b51"
+    },
+    {
+      "id": "sf-building:201006.0154595",
+      "owner": "1_-1",
+      "asset": "sf-model-a88912399256c44a"
+    },
+    {
+      "id": "sf-building:201006.0154603",
+      "owner": "0_-1",
+      "asset": "sf-model-7820a32f1ebdfe26"
+    },
+    {
+      "id": "sf-building:201006.0155376",
+      "owner": "1_-1",
+      "asset": "sf-model-0c4e1d9086931610"
+    },
+    {
+      "id": "sf-building:201006.0155486",
+      "owner": "-2_0",
+      "asset": "sf-model-0ad25a325f9d83bd"
+    },
+    {
+      "id": "sf-building:201006.0156082",
+      "owner": "-1_-2",
+      "asset": "sf-model-d21c71ed95827e59"
+    },
+    {
+      "id": "sf-building:201006.0156104",
+      "owner": "-2_0",
+      "asset": "sf-model-f1b6e96fdb11f7e8"
+    },
+    {
+      "id": "sf-building:201006.0156146",
+      "owner": "-1_-2",
+      "asset": "sf-model-eec1e66433e24f57"
+    },
+    {
+      "id": "sf-building:201006.0156479",
+      "owner": "1_-1",
+      "asset": "sf-model-a0cb15cb8b05bf91"
+    },
+    {
+      "id": "sf-building:201006.0156984",
+      "owner": "1_-1",
+      "asset": "sf-model-285f049e62845ace"
+    },
+    {
+      "id": "sf-building:201006.0156998",
+      "owner": "-2_-1",
+      "asset": "sf-model-b78229f85719d205"
+    },
+    {
+      "id": "sf-building:201006.0157010",
+      "owner": "-1_-2",
+      "asset": "sf-model-c0bd7fd299ddb7f5"
+    },
+    {
+      "id": "sf-building:201006.0157115",
+      "owner": "-1_-2",
+      "asset": "sf-model-fe0f05ddcafdbb18"
+    },
+    {
+      "id": "sf-building:201006.0157510",
+      "owner": "-2_0",
+      "asset": "sf-model-a8cd7775ca4718fe"
+    },
+    {
+      "id": "sf-building:201006.0157806",
+      "owner": "0_0",
+      "asset": "sf-model-ec4925aa412a63ee"
+    },
+    {
+      "id": "sf-building:201006.0157922",
+      "owner": "-2_-1",
+      "asset": "sf-model-ed3af709f199ef89"
+    },
+    {
+      "id": "sf-building:201006.0158034",
+      "owner": "-1_-2",
+      "asset": "sf-model-4f2d7cb70c067579"
+    },
+    {
+      "id": "sf-building:201006.0158545",
+      "owner": "0_0",
+      "asset": "sf-model-a6d863c15a1166d5"
+    },
+    {
+      "id": "sf-building:201006.0158634",
+      "owner": "1_0",
+      "asset": "sf-model-2f199e3b17680526"
+    },
+    {
+      "id": "sf-building:201006.0159382",
+      "owner": "1_-1",
+      "asset": "sf-model-2d59027094c52a41"
+    },
+    {
+      "id": "sf-building:201006.0159588",
+      "owner": "-1_1",
+      "asset": "sf-model-1543892df84914d5"
+    },
+    {
+      "id": "sf-building:201006.0159943",
+      "owner": "-2_0",
+      "asset": "sf-model-385eff2b870c37b9"
+    },
+    {
+      "id": "sf-building:201006.0160029",
+      "owner": "1_-1",
+      "asset": "sf-model-c21ef5c717d6d66b"
+    },
+    {
+      "id": "sf-building:201006.0160128",
+      "owner": "-2_0",
+      "asset": "sf-model-e918cd9577951bd7"
+    },
+    {
+      "id": "sf-building:201006.0160223",
+      "owner": "-2_0",
+      "asset": "sf-model-c6db9db4455be356"
+    },
+    {
+      "id": "sf-building:201006.0160465",
+      "owner": "1_-1",
+      "asset": "sf-model-89f8690dd46cb2fb"
+    },
+    {
+      "id": "sf-building:201006.0160950",
+      "owner": "1_-1",
+      "asset": "sf-model-3dd3ba90c11c71a7"
+    },
+    {
+      "id": "sf-building:201006.0161045",
+      "owner": "-1_-2",
+      "asset": "sf-model-7d29affceb216d8e"
+    },
+    {
+      "id": "sf-building:201006.0161053",
+      "owner": "-2_0",
+      "asset": "sf-model-fb19b9b4a93f77b2"
+    },
+    {
+      "id": "sf-building:201006.0161370",
+      "owner": "0_-1",
+      "asset": "sf-model-d9ce8015a2fb6cba"
+    },
+    {
+      "id": "sf-building:201006.0161529",
+      "owner": "1_0",
+      "asset": "sf-model-0db110a2445d8039"
+    },
+    {
+      "id": "sf-building:201006.0161586",
+      "owner": "1_-1",
+      "asset": "sf-model-996b671393432476"
+    },
+    {
+      "id": "sf-building:201006.0162694",
+      "owner": "-2_-1",
+      "asset": "sf-model-3f16d1a9c8f46d72"
+    },
+    {
+      "id": "sf-building:201006.0162825",
+      "owner": "1_-1",
+      "asset": "sf-model-b0bfa41e6b5336a2"
+    },
+    {
+      "id": "sf-building:201006.0165048",
+      "owner": "-1_-2",
+      "asset": "sf-model-f23ac29ea2253755"
+    },
+    {
+      "id": "sf-building:201006.0165812",
+      "owner": "-2_0",
+      "asset": "sf-model-ecbc04123ae32148"
+    },
+    {
+      "id": "sf-building:201006.0165873",
+      "owner": "-1_-2",
+      "asset": "sf-model-f5d095b07cddebcd"
+    },
+    {
+      "id": "sf-park:bench-0",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-1",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-10",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-11",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-12",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-2",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-3",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-4",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-5",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-6",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-7",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-8",
+      "owner": "-1_-1",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:bench-9",
+      "owner": "-1_0",
+      "asset": "sf-model-d69c6a8a61d782af"
+    },
+    {
+      "id": "sf-park:franklin-base",
+      "owner": "-1_-1",
+      "asset": "sf-model-8b7b37594c63a8ba"
+    },
+    {
+      "id": "sf-park:washington-square",
+      "owner": "0_0",
+      "asset": "sf-model-0fc063fcf01a99ba"
+    },
+    {
+      "id": "sf-prop:10695000-1-0",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:10695000-1-0-bin",
+      "owner": "-1_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:10695000-1-1",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:10695000-1-2",
+      "owner": "-2_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:10696000-1-0",
+      "owner": "-2_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:10696000-1-0-bin",
+      "owner": "-2_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:10698000-1-0",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:10698000-1-0-bin",
+      "owner": "-2_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:10698000-1-1",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:10698000-1-2",
+      "owner": "-2_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12212000-1-0",
+      "owner": "0_1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12212000-1-0-bin",
+      "owner": "0_1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12213000-1-1",
+      "owner": "0_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12213000-1-2",
+      "owner": "0_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12214000-1-0",
+      "owner": "0_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12214000-1-0-bin",
+      "owner": "0_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12214000-1-1",
+      "owner": "0_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12215000-1-0",
+      "owner": "-1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12215000-1-0-bin",
+      "owner": "-1_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12215000-1-1",
+      "owner": "-1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12215000-1-2",
+      "owner": "-1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12216000-1-0",
+      "owner": "-1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12216000-1-0-bin",
+      "owner": "-1_-2",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12216000-1-1",
+      "owner": "-1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12841000-1-0",
+      "owner": "1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12841000-1-0-bin",
+      "owner": "1_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12842000-1-0",
+      "owner": "1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12842000-1-0-bin",
+      "owner": "1_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12842000-1-1",
+      "owner": "1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12846000-1-0",
+      "owner": "0_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12846000-1-0-bin",
+      "owner": "0_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12848000-1-1",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12849000-1-0",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12849000-1-0-bin",
+      "owner": "-1_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:12850000-1-1",
+      "owner": "-2_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12851000-1-0",
+      "owner": "-2_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:12851000-1-0-bin",
+      "owner": "-2_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:4294000-1-1",
+      "owner": "0_1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:4294000-1-2",
+      "owner": "0_1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:4295000-1-1",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:4295000-1-2",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:4296000-1-1",
+      "owner": "-1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:4297000-1-0",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:4297000-1-0-bin",
+      "owner": "-2_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:4298000-1-1",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5496000-1-0",
+      "owner": "1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5496000-1-0-bin",
+      "owner": "1_-2",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:5497000-1-0",
+      "owner": "1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5497000-1-0-bin",
+      "owner": "1_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:5500000-1-0",
+      "owner": "0_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5500000-1-0-bin",
+      "owner": "0_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:5502000-1-0",
+      "owner": "0_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5502000-1-0-bin",
+      "owner": "0_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:5503000-1-0",
+      "owner": "-1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5503000-1-0-bin",
+      "owner": "-1_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:5503000-1-1",
+      "owner": "-1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5503000-1-2",
+      "owner": "-1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5503000-1-3",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5503000-1-3-bin",
+      "owner": "-2_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:5505000-1-0",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:5505000-1-0-bin",
+      "owner": "-2_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:5505000-1-1",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6403000-1-2",
+      "owner": "1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6406000-1-0",
+      "owner": "1_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6406000-1-0-bin",
+      "owner": "1_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6407000-1-0",
+      "owner": "1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6407000-1-0-bin",
+      "owner": "1_-2",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6450000-1-0",
+      "owner": "1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6450000-1-0-bin",
+      "owner": "1_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6450000-1-1",
+      "owner": "1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6452000-1-0",
+      "owner": "1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6452000-1-0-bin",
+      "owner": "1_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6453000-1-0",
+      "owner": "0_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6453000-1-0-bin",
+      "owner": "0_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6453000-1-1",
+      "owner": "0_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6454000-1-0",
+      "owner": "0_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6454000-1-0-bin",
+      "owner": "0_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6454000-1-1",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6454000-1-2",
+      "owner": "-1_1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6454000-1-3",
+      "owner": "-1_0",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6454000-1-3-bin",
+      "owner": "-1_0",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6455000-1-0",
+      "owner": "-1_1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6455000-1-0-bin",
+      "owner": "-2_1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6455000-1-1",
+      "owner": "-2_1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6456000-1-0",
+      "owner": "-2_1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6456000-1-0-bin",
+      "owner": "-2_1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6494000-1-1",
+      "owner": "-1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6495000-1-0",
+      "owner": "-1_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6495000-1-0-bin",
+      "owner": "-1_-2",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6497000-1-0",
+      "owner": "-2_-2",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6497000-1-0-bin",
+      "owner": "-2_-2",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-prop:6573000-2-0",
+      "owner": "-2_-1",
+      "asset": "sf-model-2357f13da7686b4c"
+    },
+    {
+      "id": "sf-prop:6573000-2-0-bin",
+      "owner": "-2_-1",
+      "asset": "sf-model-c384fd9b27b1fda3"
+    },
+    {
+      "id": "sf-road:10588000",
+      "owner": "1_1",
+      "asset": "sf-model-3bd110addd1b4405"
+    },
+    {
+      "id": "sf-road:10694000",
+      "owner": "-1_1",
+      "asset": "sf-model-845f0be25a61c3d8"
+    },
+    {
+      "id": "sf-road:10695000",
+      "owner": "-2_0",
+      "asset": "sf-model-a0e455bc62780d57"
+    },
+    {
+      "id": "sf-road:10696000",
+      "owner": "-2_-1",
+      "asset": "sf-model-4f3d52c308612ee4"
+    },
+    {
+      "id": "sf-road:10697000",
+      "owner": "-2_-1",
+      "asset": "sf-model-3dbb683a51f25663"
+    },
+    {
+      "id": "sf-road:10698000",
+      "owner": "-2_-2",
+      "asset": "sf-model-72d21801a3aecd6d"
+    },
+    {
+      "id": "sf-road:10774000",
+      "owner": "0_0",
+      "asset": "sf-model-c2a5571e8e94008b"
+    },
+    {
+      "id": "sf-road:12211000",
+      "owner": "0_1",
+      "asset": "sf-model-a12477e0d0b26d9a"
+    },
+    {
+      "id": "sf-road:12212000",
+      "owner": "0_0",
+      "asset": "sf-model-3efeda108e17f44d"
+    },
+    {
+      "id": "sf-road:12213000",
+      "owner": "0_0",
+      "asset": "sf-model-eaedf875f1f5b560"
+    },
+    {
+      "id": "sf-road:12214000",
+      "owner": "-1_-1",
+      "asset": "sf-model-1613905f6087f1b2"
+    },
+    {
+      "id": "sf-road:12215000",
+      "owner": "-1_-2",
+      "asset": "sf-model-97b86862648495cc"
+    },
+    {
+      "id": "sf-road:12216000",
+      "owner": "-1_-3",
+      "asset": "sf-model-5b87c790507dd809"
+    },
+    {
+      "id": "sf-road:12758000",
+      "owner": "-1_-3",
+      "asset": "sf-model-cc1327124045abab"
+    },
+    {
+      "id": "sf-road:12841000",
+      "owner": "1_-1",
+      "asset": "sf-model-8e34779e6943e0c3"
+    },
+    {
+      "id": "sf-road:12842000",
+      "owner": "1_-1",
+      "asset": "sf-model-c315702b71c62425"
+    },
+    {
+      "id": "sf-road:12843000",
+      "owner": "0_-1",
+      "asset": "sf-model-dc107856e19461f4"
+    },
+    {
+      "id": "sf-road:12844000",
+      "owner": "0_-1",
+      "asset": "sf-model-5b1b20c1f69a7555"
+    },
+    {
+      "id": "sf-road:12845000",
+      "owner": "0_-1",
+      "asset": "sf-model-ac5aa16d27926b1c"
+    },
+    {
+      "id": "sf-road:12846000",
+      "owner": "0_0",
+      "asset": "sf-model-0f30791e8e99a5ff"
+    },
+    {
+      "id": "sf-road:12847000",
+      "owner": "0_0",
+      "asset": "sf-model-3f03a1997324371e"
+    },
+    {
+      "id": "sf-road:12848000",
+      "owner": "-1_0",
+      "asset": "sf-model-d5e5789f2349b262"
+    },
+    {
+      "id": "sf-road:12849000",
+      "owner": "-2_0",
+      "asset": "sf-model-dd312abe97c74fbe"
+    },
+    {
+      "id": "sf-road:12850000",
+      "owner": "-2_0",
+      "asset": "sf-model-9f7e2293499dbc4e"
+    },
+    {
+      "id": "sf-road:12851000",
+      "owner": "-3_0",
+      "asset": "sf-model-d8652094848d6245"
+    },
+    {
+      "id": "sf-road:13178000",
+      "owner": "1_-1",
+      "asset": "sf-model-9e0fecfb8cb10118"
+    },
+    {
+      "id": "sf-road:13179000",
+      "owner": "1_-2",
+      "asset": "sf-model-a78e94d555cf7155"
+    },
+    {
+      "id": "sf-road:13690000",
+      "owner": "-3_0",
+      "asset": "sf-model-dd76911a7ef4d464"
+    },
+    {
+      "id": "sf-road:2546000",
+      "owner": "-2_0",
+      "asset": "sf-model-053b33ebf3f598ed"
+    },
+    {
+      "id": "sf-road:2722000",
+      "owner": "1_0",
+      "asset": "sf-model-2454e3c0bc93d079"
+    },
+    {
+      "id": "sf-road:2723000",
+      "owner": "0_-1",
+      "asset": "sf-model-3426e4a0a3ba35dd"
+    },
+    {
+      "id": "sf-road:3092000",
+      "owner": "-1_-2",
+      "asset": "sf-model-821d8b68341812d0"
+    },
+    {
+      "id": "sf-road:3517000",
+      "owner": "0_-1",
+      "asset": "sf-model-58bbea12469dbf16"
+    },
+    {
+      "id": "sf-road:3687000",
+      "owner": "-1_1",
+      "asset": "sf-model-3bd879661e60765f"
+    },
+    {
+      "id": "sf-road:4294000",
+      "owner": "0_0",
+      "asset": "sf-model-687a492553a74b35"
+    },
+    {
+      "id": "sf-road:4295000",
+      "owner": "-1_0",
+      "asset": "sf-model-7d32c50797a009f2"
+    },
+    {
+      "id": "sf-road:4296000",
+      "owner": "-2_-1",
+      "asset": "sf-model-b110553c85d17a97"
+    },
+    {
+      "id": "sf-road:4297000",
+      "owner": "-2_-1",
+      "asset": "sf-model-aecab1d2b0cbef19"
+    },
+    {
+      "id": "sf-road:4298000",
+      "owner": "-3_-2",
+      "asset": "sf-model-035a1ed4717a5377"
+    },
+    {
+      "id": "sf-road:5051000",
+      "owner": "-2_1",
+      "asset": "sf-model-4ffb4358b6b2cd51"
+    },
+    {
+      "id": "sf-road:5495000",
+      "owner": "1_-2",
+      "asset": "sf-model-f1c2b0e3272f2db5"
+    },
+    {
+      "id": "sf-road:5496000",
+      "owner": "1_-2",
+      "asset": "sf-model-f1e43b8ead4bb9df"
+    },
+    {
+      "id": "sf-road:5497000",
+      "owner": "1_-1",
+      "asset": "sf-model-246c5498d92e5feb"
+    },
+    {
+      "id": "sf-road:5498000",
+      "owner": "1_-1",
+      "asset": "sf-model-d8593ec67b5150f4"
+    },
+    {
+      "id": "sf-road:5499000",
+      "owner": "0_-1",
+      "asset": "sf-model-73130f0a9d030979"
+    },
+    {
+      "id": "sf-road:5500000",
+      "owner": "0_-1",
+      "asset": "sf-model-8f9b77ef4fc90999"
+    },
+    {
+      "id": "sf-road:5501000",
+      "owner": "0_-1",
+      "asset": "sf-model-a6a295557e3ac8e2"
+    },
+    {
+      "id": "sf-road:5502000",
+      "owner": "-1_-1",
+      "asset": "sf-model-2bc70e6da147bbcc"
+    },
+    {
+      "id": "sf-road:5503000",
+      "owner": "-2_-1",
+      "asset": "sf-model-8db928be19f3cd72"
+    },
+    {
+      "id": "sf-road:5504000",
+      "owner": "-2_-1",
+      "asset": "sf-model-0fe022e7b51cfd12"
+    },
+    {
+      "id": "sf-road:5505000",
+      "owner": "-3_-1",
+      "asset": "sf-model-834d16531f664494"
+    },
+    {
+      "id": "sf-road:6161000",
+      "owner": "1_-2",
+      "asset": "sf-model-9d6236243e9d48a3"
+    },
+    {
+      "id": "sf-road:6403000",
+      "owner": "1_0",
+      "asset": "sf-model-1047efda56280460"
+    },
+    {
+      "id": "sf-road:6404000",
+      "owner": "1_-1",
+      "asset": "sf-model-96ad1d461dd20fda"
+    },
+    {
+      "id": "sf-road:6405000",
+      "owner": "1_-1",
+      "asset": "sf-model-0de097ac191688f6"
+    },
+    {
+      "id": "sf-road:6406000",
+      "owner": "1_-1",
+      "asset": "sf-model-c1445ad4113a3fc5"
+    },
+    {
+      "id": "sf-road:6407000",
+      "owner": "0_-2",
+      "asset": "sf-model-a183aed20fbdc45d"
+    },
+    {
+      "id": "sf-road:6449000",
+      "owner": "1_0",
+      "asset": "sf-model-6c47cded47ef4cd7"
+    },
+    {
+      "id": "sf-road:6450000",
+      "owner": "1_0",
+      "asset": "sf-model-75dda8054ccce1af"
+    },
+    {
+      "id": "sf-road:6451000",
+      "owner": "1_0",
+      "asset": "sf-model-6e025523c30f17b5"
+    },
+    {
+      "id": "sf-road:6452000",
+      "owner": "0_0",
+      "asset": "sf-model-621e8641670b7c1e"
+    },
+    {
+      "id": "sf-road:6453000",
+      "owner": "0_0",
+      "asset": "sf-model-179e8041f7ec7e42"
+    },
+    {
+      "id": "sf-road:6454000",
+      "owner": "-1_1",
+      "asset": "sf-model-b138ce22637b06cd"
+    },
+    {
+      "id": "sf-road:6455000",
+      "owner": "-2_1",
+      "asset": "sf-model-839762ccb087d9f2"
+    },
+    {
+      "id": "sf-road:6456000",
+      "owner": "-2_1",
+      "asset": "sf-model-b20217e6f8d8a718"
+    },
+    {
+      "id": "sf-road:6457000",
+      "owner": "-3_1",
+      "asset": "sf-model-9eb0d11511a1b791"
+    },
+    {
+      "id": "sf-road:6493000",
+      "owner": "-1_-2",
+      "asset": "sf-model-ab7ea893c1e88165"
+    },
+    {
+      "id": "sf-road:6494000",
+      "owner": "-1_-2",
+      "asset": "sf-model-a259e4278ff12866"
+    },
+    {
+      "id": "sf-road:6495000",
+      "owner": "-2_-2",
+      "asset": "sf-model-1c4b3bcfdbf831e3"
+    },
+    {
+      "id": "sf-road:6497000",
+      "owner": "-3_-2",
+      "asset": "sf-model-6cdfeaf33ff0e653"
+    },
+    {
+      "id": "sf-road:6573000",
+      "owner": "-2_-1",
+      "asset": "sf-model-bd8c329aa8467281"
+    },
+    {
+      "id": "sf-road:6774000",
+      "owner": "1_-1",
+      "asset": "sf-model-33d0d981f3fb3511"
+    },
+    {
+      "id": "sf-road:7451000",
+      "owner": "0_-1",
+      "asset": "sf-model-5943c9727be40beb"
+    },
+    {
+      "id": "sf-road:7452000",
+      "owner": "0_-1",
+      "asset": "sf-model-22aa34e8326806eb"
+    },
+    {
+      "id": "sf-road:7909000",
+      "owner": "0_-2",
+      "asset": "sf-model-a90de82743e5a7f0"
+    },
+    {
+      "id": "sf-road:7910000",
+      "owner": "0_-2",
+      "asset": "sf-model-eca577f7421e5a52"
+    },
+    {
+      "id": "sf-road:8689000",
+      "owner": "1_0",
+      "asset": "sf-model-441faf051f7db929"
+    },
+    {
+      "id": "sf-road:8943000",
+      "owner": "0_-2",
+      "asset": "sf-model-8871f1232fb12a94"
+    },
+    {
+      "id": "sf-road:9606000",
+      "owner": "1_-1",
+      "asset": "sf-model-f2d0dc1468a5bc1a"
+    },
+    {
+      "id": "sf-study:grant-background-tower",
+      "owner": "1_0",
+      "asset": "sf-model-60e2e652b3f8f927"
+    },
+    {
+      "id": "sf-terrain:north-beach",
+      "owner": "0_0",
+      "asset": "sf-model-da03d9dceb65ce53"
+    },
+    {
+      "id": "sf-tree:102125",
+      "owner": "0_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:104607",
+      "owner": "-1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:106126",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:110681",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:112676",
+      "owner": "0_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:113953",
+      "owner": "-2_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:122822",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:122823",
+      "owner": "-1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:125858",
+      "owner": "-2_1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:125859",
+      "owner": "-2_1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:126542",
+      "owner": "-2_1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:127892",
+      "owner": "0_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:127893",
+      "owner": "0_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:127895",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:136504",
+      "owner": "0_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:136898",
+      "owner": "-1_1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:136899",
+      "owner": "-1_1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:136900",
+      "owner": "-1_1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142467",
+      "owner": "1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142469",
+      "owner": "1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142474",
+      "owner": "0_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142478",
+      "owner": "0_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142479",
+      "owner": "1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142480",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142481",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142482",
+      "owner": "1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142483",
+      "owner": "1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142484",
+      "owner": "1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142485",
+      "owner": "0_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142486",
+      "owner": "0_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142487",
+      "owner": "0_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142488",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142489",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142490",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142491",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142492",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142493",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142494",
+      "owner": "1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142495",
+      "owner": "1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142496",
+      "owner": "0_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142498",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142500",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142501",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142502",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142503",
+      "owner": "0_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142511",
+      "owner": "0_1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142616",
+      "owner": "-2_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142617",
+      "owner": "-2_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142618",
+      "owner": "-2_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142619",
+      "owner": "-2_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142621",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142622",
+      "owner": "-1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142624",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142625",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142626",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142627",
+      "owner": "-2_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142629",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142630",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142747",
+      "owner": "-2_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142748",
+      "owner": "-2_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142749",
+      "owner": "-2_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142750",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142751",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142752",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142753",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142754",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142755",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142756",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142757",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142758",
+      "owner": "1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142761",
+      "owner": "1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142762",
+      "owner": "1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142763",
+      "owner": "1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142764",
+      "owner": "1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142903",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142904",
+      "owner": "0_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142905",
+      "owner": "0_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142906",
+      "owner": "1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142907",
+      "owner": "1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142908",
+      "owner": "1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142909",
+      "owner": "1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142910",
+      "owner": "1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142911",
+      "owner": "1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142915",
+      "owner": "1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142916",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142917",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:142919",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142921",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142922",
+      "owner": "1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142924",
+      "owner": "0_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:142925",
+      "owner": "0_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:142926",
+      "owner": "0_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143072",
+      "owner": "-1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:143077",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143078",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143079",
+      "owner": "0_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:143087",
+      "owner": "1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:143088",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:143089",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:143090",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:143091",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:143103",
+      "owner": "1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143104",
+      "owner": "-1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:143105",
+      "owner": "1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143106",
+      "owner": "1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143107",
+      "owner": "0_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:143108",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143109",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143110",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:143111",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:143112",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:143490",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:172882",
+      "owner": "-2_1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:172885",
+      "owner": "-2_1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:172886",
+      "owner": "-2_1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:172887",
+      "owner": "-2_1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:172888",
+      "owner": "-2_1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:18519",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:18523",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:20256",
+      "owner": "0_1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:254739",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:258339",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:258410",
+      "owner": "-2_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:261345",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:261346",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:266499",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:272293",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:276249",
+      "owner": "-2_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:276860",
+      "owner": "-2_1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:29734",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:29738",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:29752",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:29753",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:29754",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:30428",
+      "owner": "1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:30437",
+      "owner": "0_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:30462",
+      "owner": "1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:30463",
+      "owner": "1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:30464",
+      "owner": "1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:30468",
+      "owner": "1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:30470",
+      "owner": "1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:30472",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:30475",
+      "owner": "1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:32018",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:32359",
+      "owner": "0_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:32360",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:34478",
+      "owner": "-2_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:34479",
+      "owner": "-2_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:34480",
+      "owner": "-2_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:46083",
+      "owner": "-1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4634",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4635",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4636",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4637",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:4638",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4639",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4643",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:4644",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4649",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:4651",
+      "owner": "-1_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4655",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4658",
+      "owner": "-1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:4659",
+      "owner": "-1_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4661",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4662",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4663",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4664",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:4665",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4666",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:4667",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4668",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4669",
+      "owner": "-2_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:4674",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4675",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4676",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4677",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4678",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4680",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4682",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:4685",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:4689",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:51497",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:62689",
+      "owner": "0_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:64087",
+      "owner": "1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:64341",
+      "owner": "-1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:64780",
+      "owner": "0_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:65984",
+      "owner": "0_0",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:66363",
+      "owner": "1_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:67211",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:71248",
+      "owner": "-2_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:71420",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:71422",
+      "owner": "-1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:71545",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:71546",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:71972",
+      "owner": "-2_0",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:72303",
+      "owner": "-1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:72455",
+      "owner": "0_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:73571",
+      "owner": "-2_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:73615",
+      "owner": "-2_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:73675",
+      "owner": "0_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:73728",
+      "owner": "-1_-2",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:73754",
+      "owner": "-1_-2",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:84812",
+      "owner": "-1_-1",
+      "asset": "sf-model-68e87d350748fa4f"
+    },
+    {
+      "id": "sf-tree:84813",
+      "owner": "-1_-1",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:94039",
+      "owner": "-2_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-tree:96851",
+      "owner": "-1_-2",
+      "asset": "sf-model-fba3167610569904"
+    },
+    {
+      "id": "sf-tree:98674",
+      "owner": "0_0",
+      "asset": "sf-model-68e87d350748fa4f"
+    }
+  ],
+  "pinnedCandidates": [
+    {
+      "id": "sf-park:poplar-0",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-park:poplar-1",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-park:poplar-2",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    },
+    {
+      "id": "sf-park:poplar-3",
+      "owner": "-1_-1",
+      "asset": "sf-model-db882e221d80e5d5"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "sf-building:201006.0004170",
+      "owner": "1_0",
+      "asset": "sf-model-97b11e85c640a5b5"
+    },
+    {
+      "id": "sf-study:grant-parked-1",
+      "owner": "1_0",
+      "asset": "sf-model-a643a65297c6d453"
+    },
+    {
+      "id": "sf-study:grant-parked-2",
+      "owner": "1_0",
+      "asset": "sf-model-077a785066def89b"
+    },
+    {
+      "id": "sf-study:grant-parked-3",
+      "owner": "1_0",
+      "asset": "sf-model-beadbc04a27c1d50"
+    }
+  ],
+  "owners": {
+    "-1_-1": {
+      "eligible": 53,
+      "pinnedCandidates": 4,
+      "rejected": 0
+    },
+    "-2_-1": {
+      "eligible": 72,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-1_0": {
+      "eligible": 69,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "0_1": {
+      "eligible": 14,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-1_-2": {
+      "eligible": 91,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "1_1": {
+      "eligible": 12,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "1_0": {
+      "eligible": 72,
+      "pinnedCandidates": 0,
+      "rejected": 4
+    },
+    "0_0": {
+      "eligible": 80,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-1_1": {
+      "eligible": 19,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "0_-2": {
+      "eligible": 21,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-2_0": {
+      "eligible": 72,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "0_-1": {
+      "eligible": 82,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "1_-1": {
+      "eligible": 107,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-2_1": {
+      "eligible": 28,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-2_-2": {
+      "eligible": 27,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "1_-2": {
+      "eligible": 27,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-1_-3": {
+      "eligible": 2,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-3_0": {
+      "eligible": 2,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-3_-2": {
+      "eligible": 2,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-3_-1": {
+      "eligible": 1,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    },
+    "-3_1": {
+      "eligible": 1,
+      "pinnedCandidates": 0,
+      "rejected": 0
+    }
+  }
+}

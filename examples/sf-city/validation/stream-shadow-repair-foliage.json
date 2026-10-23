@@ -1,0 +1,24 @@
+[
+  {
+    "passed": true,
+    "alpha": [
+      {
+        "alphaTest": 0.5,
+        "map": true,
+        "castShadow": true
+      }
+    ],
+    "mode": "before"
+  },
+  {
+    "passed": true,
+    "alpha": [
+      {
+        "alphaTest": 0.5,
+        "map": true,
+        "castShadow": true
+      }
+    ],
+    "mode": "repaired"
+  }
+]

@@ -1,0 +1,692 @@
+{
+  "checks": [
+    "LOD candidate createGame startup",
+    "actual camera navigation reaches near mid and far"
+  ],
+  "errors": [],
+  "records": [
+    {
+      "cycle": 0,
+      "view": "north",
+      "active": true,
+      "camera": {
+        "position": [
+          -130,
+          33.999999999999986,
+          -160
+        ],
+        "target": [
+          -65,
+          12,
+          -210
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "near",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "near"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-2_-2",
+          "-1_-1",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 250,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    },
+    {
+      "cycle": 0,
+      "view": "overview",
+      "active": true,
+      "camera": {
+        "position": [
+          -180,
+          125,
+          -50
+        ],
+        "target": [
+          -65,
+          14.999999999999998,
+          -180
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 135376,
+          "bytes": 25838268,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 135376,
+          "bytes": 25838268,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "mid",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "mid"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 276,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    },
+    {
+      "cycle": 0,
+      "view": "wide",
+      "active": true,
+      "camera": {
+        "position": [
+          -380,
+          280,
+          220
+        ],
+        "target": [
+          -65,
+          14.999999999999998,
+          -180
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 120472,
+          "bytes": 25739138,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 120472,
+          "bytes": 25739138,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "far",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "far"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 155,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    },
+    {
+      "cycle": 0,
+      "view": "north",
+      "active": true,
+      "camera": {
+        "position": [
+          -130,
+          33.999999999999986,
+          -160
+        ],
+        "target": [
+          -65,
+          12,
+          -210
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "near",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "near"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-2_-2",
+          "-1_-1",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 263,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    },
+    {
+      "cycle": 1,
+      "view": "north",
+      "active": true,
+      "camera": {
+        "position": [
+          -130,
+          34,
+          -160
+        ],
+        "target": [
+          -65,
+          12,
+          -210
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "near",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "near"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-2_-2",
+          "-1_-1",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 263,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    },
+    {
+      "cycle": 1,
+      "view": "overview",
+      "active": true,
+      "camera": {
+        "position": [
+          -180,
+          125,
+          -50
+        ],
+        "target": [
+          -65,
+          14.999999999999998,
+          -180
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 135376,
+          "bytes": 25838268,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 135376,
+          "bytes": 25838268,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "mid",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "mid"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 251,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    },
+    {
+      "cycle": 1,
+      "view": "wide",
+      "active": true,
+      "camera": {
+        "position": [
+          -380,
+          280,
+          220
+        ],
+        "target": [
+          -65,
+          14.999999999999998,
+          -180
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 120472,
+          "bytes": 25739138,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 120472,
+          "bytes": 25739138,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "far",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "far"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 276,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    },
+    {
+      "cycle": 1,
+      "view": "north",
+      "active": true,
+      "camera": {
+        "position": [
+          -130,
+          33.999999999999986,
+          -160
+        ],
+        "target": [
+          -65,
+          12,
+          -210
+        ]
+      },
+      "tiles": {
+        "running": 0,
+        "blocked": {},
+        "waiting": [],
+        "waitingReasons": {},
+        "reserved": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "activeCost": {
+          "triangles": 180824,
+          "bytes": 25412728,
+          "drawCalls": 2088,
+          "tiles": 5
+        },
+        "resident": [
+          "-1_-3",
+          "-1_-1",
+          "-2_-2",
+          "0_-2",
+          "-1_-2"
+        ],
+        "details": {
+          "-1_-3": "near",
+          "-1_-1": "near",
+          "-2_-2": "near",
+          "0_-2": "near",
+          "-1_-2": "near"
+        },
+        "desired": [
+          "-1_-2",
+          "-1_-3",
+          "-2_-2",
+          "-1_-1",
+          "0_-2"
+        ],
+        "errors": {}
+      },
+      "materialPool": {
+        "leases": 5,
+        "images": 15,
+        "textures": 18,
+        "materials": 45
+      },
+      "sources": {
+        "sources": 86,
+        "resources": 2808
+      },
+      "gpuCounts": {
+        "geometries": 250,
+        "textures": 31
+      },
+      "canvas": [
+        1100,
+        760
+      ]
+    }
+  ],
+  "peaks": {
+    "activeTiles": 5,
+    "activeDraw": 2088,
+    "reservedTiles": 6,
+    "reservedDraw": 3420,
+    "reservedBytes": 35376744,
+    "reservedTriangles": 249059
+  },
+  "initial": {
+    "active": true,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-1_-1": "mid",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-2": "mid"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1100,
+      760
+    ]
+  },
+  "passed": false,
+  "failure": "Error: north resource counts plateau across repeat visits\n    at assert (file:///tmp/check-stream-viewer-lod.mjs:4:176)\n    at file:///tmp/check-stream-viewer-lod.mjs:16:126"
+}

@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "diagnostic": {
+    "gpuBefore": {
+      "geometries": 8,
+      "textures": 13
+    },
+    "beforePixel": "02be9750b5ead2ef7a175ba8d7da714553bea6c819a3ed6298caaba13247762f",
+    "controlPixel": "870dffc2934acf3997c091f14ea050956cf1c67a416d49b4d849487c03b5cd77",
+    "controlDiff": {
+      "changed": 1,
+      "max": 1,
+      "sum": 1
+    },
+    "cameraBefore": [
+      0.7071067811865475,
+      -2.7755575615628914e-17,
+      -0.7071067811865476,
+      0,
+      -0.408248290463863,
+      0.816496580927726,
+      -0.40824829046386296,
+      0,
+      0.5773502691896258,
+      0.5773502691896257,
+      0.5773502691896257,
+      0,
+      23.386982490018866,
+      115.98977485960518,
+      -135.11001989559497,
+      1
+    ],
+    "controlCamera": [
+      0.7071067811865475,
+      -2.7755575615628914e-17,
+      -0.7071067811865476,
+      0,
+      -0.408248290463863,
+      0.816496580927726,
+      -0.40824829046386296,
+      0,
+      0.5773502691896258,
+      0.5773502691896257,
+      0.5773502691896257,
+      0,
+      23.386982490018866,
+      115.98977485960518,
+      -135.11001989559497,
+      1
+    ],
+    "loaded": {
+      "leases": 2,
+      "images": 7,
+      "textures": 7,
+      "materials": 5
+    },
+    "afterPixel": "02be9750b5ead2ef7a175ba8d7da714553bea6c819a3ed6298caaba13247762f",
+    "afterDiff": {
+      "changed": 1,
+      "max": 1,
+      "sum": 1
+    },
+    "cameraAfter": [
+      0.7071067811865475,
+      -2.7755575615628914e-17,
+      -0.7071067811865476,
+      0,
+      -0.408248290463863,
+      0.816496580927726,
+      -0.40824829046386296,
+      0,
+      0.5773502691896258,
+      0.5773502691896257,
+      0.5773502691896257,
+      0,
+      23.386982490018866,
+      115.98977485960518,
+      -135.11001989559497,
+      1
+    ],
+    "gpuAfter": {
+      "geometries": 8,
+      "textures": 13
+    }
+  },
+  "loaded": {
+    "leases": 2,
+    "images": 7,
+    "textures": 7,
+    "materials": 5
+  },
+  "survivingLeaseVerified": true,
+  "gpuBefore": {
+    "geometries": 8,
+    "textures": 13
+  },
+  "gpuAfter": {
+    "geometries": 8,
+    "textures": 13
+  },
+  "beforePixel": "02be9750b5ead2ef7a175ba8d7da714553bea6c819a3ed6298caaba13247762f",
+  "afterPixel": "02be9750b5ead2ef7a175ba8d7da714553bea6c819a3ed6298caaba13247762f",
+  "finalPool": {
+    "leases": 0,
+    "images": 0,
+    "textures": 0,
+    "materials": 0
+  },
+  "sourceHashesUnchanged": true,
+  "semanticIds": [
+    "sf-building:201006.0165873",
+    "sf-tree:104607"
+  ],
+  "shearNormalsVerified": true,
+  "pageErrors": []
+}

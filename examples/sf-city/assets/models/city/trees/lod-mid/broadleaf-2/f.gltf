@@ -1,0 +1,268 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Broadleaf 2 mid candidate",
+      "children": [
+        1,
+        2
+      ],
+      "extras": {
+        "name": "Broadleaf 2 mid candidate",
+        "detail": "mid",
+        "cityBakedAsset": "assets/models/city/trees/lod-mid/broadleaf-2/f.gltf"
+      }
+    },
+    {
+      "name": "Connected simplified trunk and branches",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Preserved terminal foliage sprays",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Connected simplified trunk and branches",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "COLOR_0": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Preserved terminal foliage sprays",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6,
+            "COLOR_0": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Authored leaf clusters",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "doubleSided": true,
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.5
+    },
+    {
+      "name": "Trunk",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.1912016827303171,
+          0.12477181755144427,
+          0.0722718506743852,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 399,
+      "type": "VEC3",
+      "min": [
+        -1.4480525255203247,
+        -0.06428664922714233,
+        -1.2881091833114624
+      ],
+      "max": [
+        1.5120798349380493,
+        7.786095142364502,
+        1.5659862756729126
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 399,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 399,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 399,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 1332,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 864,
+      "type": "VEC3",
+      "min": [
+        -3.064408540725708,
+        3.988415002822876,
+        -2.983724355697632
+      ],
+      "max": [
+        3.163217067718506,
+        10,
+        3.4112424850463867
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 864,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 864,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 864,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5125,
+      "count": 1296,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 4788
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4788,
+      "byteLength": 4788
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9576,
+      "byteLength": 4788
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 14364,
+      "byteLength": 3192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 17556,
+      "byteLength": 5328
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 22884,
+      "byteLength": 10368
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 33252,
+      "byteLength": 10368
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 43620,
+      "byteLength": 10368
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 53988,
+      "byteLength": 6912
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 60900,
+      "byteLength": 5184
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 66084
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/trees/broadleaf/leaves.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 33071,
+      "wrapT": 33071
+    }
+  ]
+}

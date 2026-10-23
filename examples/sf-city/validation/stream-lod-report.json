@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "loads": 9,
+  "records": [
+    {
+      "detail": "near",
+      "distance": 50,
+      "asset": "sf-model-db882e221d80e5d5",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 113,
+      "asset": "candidate-mid-2",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "far",
+      "distance": 233,
+      "asset": "candidate-far-2",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 207,
+      "asset": "candidate-mid-2",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "near",
+      "distance": 87,
+      "asset": "sf-model-db882e221d80e5d5",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 113,
+      "asset": "candidate-mid-2",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "far",
+      "distance": 233,
+      "asset": "candidate-far-2",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "mid",
+      "distance": 207,
+      "asset": "candidate-mid-2",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    },
+    {
+      "detail": "near",
+      "distance": 87,
+      "asset": "sf-model-db882e221d80e5d5",
+      "memory": {
+        "geometries": 4,
+        "textures": 5
+      },
+      "pool": {
+        "leases": 1,
+        "images": 1,
+        "textures": 1,
+        "materials": 2
+      }
+    }
+  ],
+  "empty": {
+    "geometries": 2,
+    "textures": 4
+  },
+  "afterLod": {
+    "geometries": 2,
+    "textures": 4
+  },
+  "finalMemory": {
+    "geometries": 2,
+    "textures": 4
+  },
+  "cancelDuringActualAcquire": true,
+  "finalPool": {
+    "leases": 0,
+    "images": 0,
+    "textures": 0,
+    "materials": 0
+  },
+  "pageErrors": []
+}

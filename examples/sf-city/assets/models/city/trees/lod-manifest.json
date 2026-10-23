@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "status": "offline-candidate",
+  "runtimeEnabled": false,
+  "method": "Simplified internal wood; exact near foliage positions, normals, colors, UVs and indices retained.",
+  "limitations": "No distance switching or browser silhouette validation yet. Stored triangles do not measure alpha overdraw or GPU frame time.",
+  "entries": [
+    {
+      "variant": 0,
+      "detail": "mid",
+      "path": "assets/models/city/trees/lod-mid/broadleaf/f.gltf",
+      "triangles": 876,
+      "bytes": 66084,
+      "nearAsset": "assets/models/city/trees/broadleaf/f.gltf",
+      "nearSourceSHA256": "1ac28cef7561dc625376a776bef98c2aa783d8de98d2afc4597e2daeb7a4835f",
+      "nearDependencies": {
+        "assets/models/city/trees/broadleaf/f.gltf": "1ac28cef7561dc625376a776bef98c2aa783d8de98d2afc4597e2daeb7a4835f",
+        "assets/models/city/trees/broadleaf/geometry.bin": "5c6b9c45fdfe85da5cd226baaf9f4f00c711fdf14168282efd4a3bc12ac90b9f",
+        "assets/models/city/trees/broadleaf/leaves.png": "67a86560741d15c470b9a0441ed06f33397dcf4f4540f6df0ecb75a4f0b47337"
+      }
+    },
+    {
+      "variant": 0,
+      "detail": "far",
+      "path": "assets/models/city/trees/lod-far/broadleaf/f.gltf",
+      "triangles": 552,
+      "bytes": 49568,
+      "nearAsset": "assets/models/city/trees/broadleaf/f.gltf",
+      "nearSourceSHA256": "1ac28cef7561dc625376a776bef98c2aa783d8de98d2afc4597e2daeb7a4835f",
+      "nearDependencies": {
+        "assets/models/city/trees/broadleaf/f.gltf": "1ac28cef7561dc625376a776bef98c2aa783d8de98d2afc4597e2daeb7a4835f",
+        "assets/models/city/trees/broadleaf/geometry.bin": "5c6b9c45fdfe85da5cd226baaf9f4f00c711fdf14168282efd4a3bc12ac90b9f",
+        "assets/models/city/trees/broadleaf/leaves.png": "67a86560741d15c470b9a0441ed06f33397dcf4f4540f6df0ecb75a4f0b47337"
+      }
+    },
+    {
+      "variant": 1,
+      "detail": "mid",
+      "path": "assets/models/city/trees/lod-mid/broadleaf-1/f.gltf",
+      "triangles": 876,
+      "bytes": 66084,
+      "nearAsset": "assets/models/city/trees/broadleaf-1/f.gltf",
+      "nearSourceSHA256": "4823fa3c650eaec101bf0885aea083477ab22b0ef2f2349252f9cf530083babb",
+      "nearDependencies": {
+        "assets/models/city/trees/broadleaf-1/f.gltf": "4823fa3c650eaec101bf0885aea083477ab22b0ef2f2349252f9cf530083babb",
+        "assets/models/city/trees/broadleaf-1/geometry.bin": "3e1ee1a884dfcb551d9893d917bb85a27c1ad167eca63fa03a3c5a346c8327ae",
+        "assets/models/city/trees/broadleaf/leaves.png": "67a86560741d15c470b9a0441ed06f33397dcf4f4540f6df0ecb75a4f0b47337"
+      }
+    },
+    {
+      "variant": 1,
+      "detail": "far",
+      "path": "assets/models/city/trees/lod-far/broadleaf-1/f.gltf",
+      "triangles": 552,
+      "bytes": 49568,
+      "nearAsset": "assets/models/city/trees/broadleaf-1/f.gltf",
+      "nearSourceSHA256": "4823fa3c650eaec101bf0885aea083477ab22b0ef2f2349252f9cf530083babb",
+      "nearDependencies": {
+        "assets/models/city/trees/broadleaf-1/f.gltf": "4823fa3c650eaec101bf0885aea083477ab22b0ef2f2349252f9cf530083babb",
+        "assets/models/city/trees/broadleaf-1/geometry.bin": "3e1ee1a884dfcb551d9893d917bb85a27c1ad167eca63fa03a3c5a346c8327ae",
+        "assets/models/city/trees/broadleaf/leaves.png": "67a86560741d15c470b9a0441ed06f33397dcf4f4540f6df0ecb75a4f0b47337"
+      }
+    },
+    {
+      "variant": 2,
+      "detail": "mid",
+      "path": "assets/models/city/trees/lod-mid/broadleaf-2/f.gltf",
+      "triangles": 876,
+      "bytes": 66084,
+      "nearAsset": "assets/models/city/trees/broadleaf-2/f.gltf",
+      "nearSourceSHA256": "28876886e3046e9e949a1fa25f441950d08235db2440adccbf7a0c52d2692a89",
+      "nearDependencies": {
+        "assets/models/city/trees/broadleaf-2/f.gltf": "28876886e3046e9e949a1fa25f441950d08235db2440adccbf7a0c52d2692a89",
+        "assets/models/city/trees/broadleaf-2/geometry.bin": "827f4471ad1c501f697dbf7a01bb0d6f2599e26f5b392a08e78b09aa4636679c",
+        "assets/models/city/trees/broadleaf/leaves.png": "67a86560741d15c470b9a0441ed06f33397dcf4f4540f6df0ecb75a4f0b47337"
+      }
+    },
+    {
+      "variant": 2,
+      "detail": "far",
+      "path": "assets/models/city/trees/lod-far/broadleaf-2/f.gltf",
+      "triangles": 552,
+      "bytes": 49568,
+      "nearAsset": "assets/models/city/trees/broadleaf-2/f.gltf",
+      "nearSourceSHA256": "28876886e3046e9e949a1fa25f441950d08235db2440adccbf7a0c52d2692a89",
+      "nearDependencies": {
+        "assets/models/city/trees/broadleaf-2/f.gltf": "28876886e3046e9e949a1fa25f441950d08235db2440adccbf7a0c52d2692a89",
+        "assets/models/city/trees/broadleaf-2/geometry.bin": "827f4471ad1c501f697dbf7a01bb0d6f2599e26f5b392a08e78b09aa4636679c",
+        "assets/models/city/trees/broadleaf/leaves.png": "67a86560741d15c470b9a0441ed06f33397dcf4f4540f6df0ecb75a4f0b47337"
+      }
+    }
+  ]
+}

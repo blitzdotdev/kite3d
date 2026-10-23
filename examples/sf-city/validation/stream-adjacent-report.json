@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "pass": 0,
+      "tile": "-1_-2",
+      "pool": {
+        "sources": 68,
+        "resources": 1677
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 963,
+          "textures": 372
+        },
+        "render": {
+          "calls": 1076,
+          "triangles": 97183,
+          "lines": 0,
+          "points": 0
+        }
+      }
+    },
+    {
+      "pass": 0,
+      "tile": "-1_-1",
+      "pool": {
+        "sources": 14,
+        "resources": 976
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 907,
+          "textures": 45
+        },
+        "render": {
+          "calls": 2897,
+          "triangles": 129724,
+          "lines": 0,
+          "points": 0
+        }
+      }
+    },
+    {
+      "pass": 1,
+      "tile": "-1_-2",
+      "pool": {
+        "sources": 68,
+        "resources": 1677
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 963,
+          "textures": 372
+        },
+        "render": {
+          "calls": 1076,
+          "triangles": 97183,
+          "lines": 0,
+          "points": 0
+        }
+      }
+    },
+    {
+      "pass": 1,
+      "tile": "-1_-1",
+      "pool": {
+        "sources": 14,
+        "resources": 976
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 907,
+          "textures": 45
+        },
+        "render": {
+          "calls": 2897,
+          "triangles": 129724,
+          "lines": 0,
+          "points": 0
+        }
+      }
+    }
+  ],
+  "combined": {
+    "owners": [
+      "-1_-1",
+      "-1_-2",
+      "0_-2",
+      "-2_-2",
+      "-1_-3"
+    ],
+    "features": 153,
+    "memory": {
+      "geometries": 1934,
+      "textures": 447
+    },
+    "render": {
+      "calls": 5263,
+      "triangles": 321704,
+      "lines": 0,
+      "points": 0
+    },
+    "storedBudget": {
+      "triangles": 164184,
+      "bytes": 24166850
+    }
+  },
+  "semanticFeatures": 144,
+  "checks": [
+    "adjacent candidate and baseline neighbor switched twice",
+    "sidewalk and curb parts present",
+    "world origins and bounds invariant across reloads",
+    "budget rejection",
+    "pinned monolithic terrain accounted separately"
+  ],
+  "finalPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "groundPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "pinnedAuthoredPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "pinnedAuthoredIds": [
+    "sf-park:poplar-0",
+    "sf-park:poplar-1",
+    "sf-park:poplar-2",
+    "sf-park:poplar-3"
+  ],
+  "finalMemory": {
+    "geometries": 14,
+    "textures": 6
+  },
+  "pageErrors": []
+}

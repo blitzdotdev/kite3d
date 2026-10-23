@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "usePool": true,
+  "useBatch": true,
+  "renderSettings": {
+    "msaa": true,
+    "gbuffer": true,
+    "ssao": {
+      "intensity": 0.35,
+      "radius": 1.2
+    },
+    "shadowMap": 2048,
+    "shadowBias": -0.0002,
+    "shadowFrustum": 310,
+    "shadowNormalBias": 0.181640625
+  },
+  "materialPool": {
+    "leases": 0,
+    "images": 0,
+    "textures": 0,
+    "materials": 0
+  },
+  "records": [],
+  "combined": {
+    "admissionEstimates": {
+      "ownerDrawUnits": {
+        "-1_-1": 333,
+        "0_-2": 15,
+        "-2_-2": 11,
+        "-1_-3": 4,
+        "-1_-2": 146
+      },
+      "pinnedDrawUnits": 9,
+      "passMultiplier": 4,
+      "fixedPassReserve": 16
+    },
+    "loadMs": 7194.39999999851,
+    "firstFrame": {
+      "calls": 1260,
+      "triangles": 469701,
+      "lines": 0,
+      "points": 0,
+      "cpuFrameMs": 50.099999994039536
+    },
+    "owners": [
+      "-1_-1",
+      "-1_-2",
+      "0_-2",
+      "-2_-2",
+      "-1_-3"
+    ],
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "poolStats": {
+      "blobReads": 442,
+      "decodedImages": 15,
+      "sourceCacheHits": 140
+    },
+    "features": 153,
+    "memory": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "render": {
+      "calls": 1260,
+      "triangles": 469701,
+      "lines": 0,
+      "points": 0,
+      "cpuFrameMs": 44.899999998509884
+    },
+    "storedBudget": {
+      "triangles": 164184,
+      "bytes": 24166850
+    },
+    "orbit": [
+      {
+        "calls": 1260,
+        "triangles": 469701,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 54.20000000298023
+      },
+      {
+        "calls": 1260,
+        "triangles": 469701,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 57.400000005960464
+      },
+      {
+        "calls": 1260,
+        "triangles": 469701,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 64.30000000447035
+      },
+      {
+        "calls": 1258,
+        "triangles": 469557,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 64.89999999850988
+      },
+      {
+        "calls": 1258,
+        "triangles": 469557,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 51.70000000298023
+      }
+    ]
+  },
+  "semanticFeatures": 0,
+  "checks": [
+    "combined153-feature full-visible draw-unit count for conservative pass estimate",
+    "pinned terrain and authored draw units counted",
+    "final pools empty"
+  ],
+  "finalPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "groundPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "pinnedAuthoredPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "pinnedAuthoredIds": [
+    "sf-park:poplar-0",
+    "sf-park:poplar-1",
+    "sf-park:poplar-2",
+    "sf-park:poplar-3"
+  ],
+  "finalMemory": {
+    "geometries": 14,
+    "textures": 11
+  },
+  "pageErrors": []
+}

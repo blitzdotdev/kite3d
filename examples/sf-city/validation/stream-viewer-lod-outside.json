@@ -1,0 +1,214 @@
+{
+  "errors": [],
+  "checks": [
+    "real right-pan unloads streamed region and shows unavailable surroundings",
+    "overview bookmark reloads exact five-owner selection",
+    "bookmark clears pan inertia and restores exact camera",
+    "resource pool counts stable after unload/reentry"
+  ],
+  "before": {
+    "active": true,
+    "renderedFrames": 3,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-1_-1": "mid",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-2": "mid"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "outside": {
+    "active": true,
+    "renderedFrames": 25,
+    "camera": {
+      "position": [
+        194.0414869878607,
+        125.00000000000003,
+        280.88285387387674
+      ],
+      "target": [
+        309.0414869878607,
+        15.000000000000007,
+        150.8828538738767
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 16640,
+        "bytes": 1245878,
+        "drawCalls": 52,
+        "tiles": 0
+      },
+      "activeCost": {
+        "triangles": 16640,
+        "bytes": 1245878,
+        "drawCalls": 52,
+        "tiles": 0
+      },
+      "resident": [],
+      "details": {},
+      "desired": [],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 0,
+      "images": 0,
+      "textures": 0,
+      "materials": 0
+    },
+    "sources": {
+      "sources": 0,
+      "resources": 0
+    },
+    "gpuCounts": {
+      "geometries": 17,
+      "textures": 13
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "returned": {
+    "active": true,
+    "renderedFrames": 46,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-1_-1": "mid",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-2": "mid"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1200,
+      800
+    ]
+  },
+  "passed": true
+}

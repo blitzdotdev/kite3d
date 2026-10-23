@@ -1,0 +1,481 @@
+{
+  "checks": [
+    "invalid replacement hash retains all five visible owner groups",
+    "modified LOD geometry rejected by hash",
+    "retry loads attested far variants after restoring bytes",
+    "cancelled near replacement does not retain a sixth lease",
+    "LOD failure and cancellation cleanup releases owned resources",
+    "changed original near asset rejected before LOD substitution",
+    "restored original near asset retries successfully"
+  ],
+  "errors": [],
+  "peakReservations": 6,
+  "before": {
+    "active": true,
+    "renderedFrames": 3,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-1_-1": "mid",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-2": "mid"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1100,
+      760
+    ]
+  },
+  "failed": {
+    "active": true,
+    "renderedFrames": 5,
+    "camera": {
+      "position": [
+        -380,
+        280,
+        220
+      ],
+      "target": [
+        -65,
+        15,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-1_-1": "mid",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-2": "mid"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {
+        "-1_-2": "Error: Snapshot changed: assets/models/city/trees/lod-far/broadleaf/geometry.bin",
+        "-1_-1": "Error: Snapshot changed: assets/models/city/trees/lod-far/broadleaf/geometry.bin"
+      }
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1100,
+      760
+    ]
+  },
+  "retried": {
+    "active": true,
+    "renderedFrames": 10,
+    "camera": {
+      "position": [
+        -380,
+        280,
+        220
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 120472,
+        "bytes": 25739138,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 120472,
+        "bytes": 25739138,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-1_-1": "far",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-2": "far"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 251,
+      "textures": 31
+    },
+    "canvas": [
+      1100,
+      760
+    ]
+  },
+  "cancelled": {
+    "active": true,
+    "renderedFrames": 18,
+    "camera": {
+      "position": [
+        -380,
+        280,
+        220
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 120472,
+        "bytes": 25739138,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 120472,
+        "bytes": 25739138,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-1_-1": "far",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-2": "far"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "canvas": [
+      1100,
+      760
+    ]
+  },
+  "disposed": {
+    "active": false,
+    "materialPool": {
+      "leases": 0,
+      "images": 0,
+      "textures": 0,
+      "materials": 0
+    },
+    "sources": {
+      "sources": 0,
+      "resources": 0
+    },
+    "ground": {
+      "sources": 0,
+      "resources": 0
+    },
+    "pinned": {
+      "sources": 0,
+      "resources": 0
+    }
+  },
+  "editedNear": {
+    "active": true,
+    "renderedFrames": 4,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 24635,
+        "bytes": 8812935,
+        "drawCalls": 172,
+        "tiles": 3
+      },
+      "activeCost": {
+        "triangles": 24635,
+        "bytes": 8812935,
+        "drawCalls": 172,
+        "tiles": 3
+      },
+      "resident": [
+        "-1_-3",
+        "-2_-2",
+        "0_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-2_-2": "near",
+        "0_-2": "near"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {
+        "-1_-1": "Error: Snapshot changed: assets/models/city/trees/broadleaf/f.gltf",
+        "-1_-2": "Error: Snapshot changed: assets/models/city/trees/broadleaf/f.gltf"
+      }
+    },
+    "materialPool": {
+      "leases": 3,
+      "images": 12,
+      "textures": 14,
+      "materials": 16
+    },
+    "sources": {
+      "sources": 9,
+      "resources": 198
+    },
+    "gpuCounts": {
+      "geometries": 47,
+      "textures": 27
+    },
+    "canvas": [
+      1280,
+      720
+    ]
+  },
+  "restoredNear": {
+    "active": true,
+    "renderedFrames": 14,
+    "camera": {
+      "position": [
+        -180,
+        125,
+        -50
+      ],
+      "target": [
+        -65,
+        14.999999999999998,
+        -180
+      ]
+    },
+    "tiles": {
+      "running": 0,
+      "blocked": {},
+      "waiting": [],
+      "waitingReasons": {},
+      "reserved": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "activeCost": {
+        "triangles": 135376,
+        "bytes": 25838268,
+        "drawCalls": 2088,
+        "tiles": 5
+      },
+      "resident": [
+        "-1_-3",
+        "-2_-2",
+        "0_-2",
+        "-1_-1",
+        "-1_-2"
+      ],
+      "details": {
+        "-1_-3": "near",
+        "-2_-2": "near",
+        "0_-2": "near",
+        "-1_-1": "mid",
+        "-1_-2": "mid"
+      },
+      "desired": [
+        "-1_-2",
+        "-1_-3",
+        "-1_-1",
+        "-2_-2",
+        "0_-2"
+      ],
+      "errors": {}
+    },
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "sources": {
+      "sources": 86,
+      "resources": 2808
+    },
+    "gpuCounts": {
+      "geometries": 174,
+      "textures": 31
+    },
+    "canvas": [
+      1280,
+      720
+    ]
+  },
+  "passed": true
+}

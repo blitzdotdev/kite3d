@@ -1,0 +1,265 @@
+{
+  "passed": true,
+  "usePool": true,
+  "useBatch": true,
+  "renderSettings": {
+    "msaa": true,
+    "gbuffer": true,
+    "ssao": {
+      "intensity": 0.35,
+      "radius": 1.2
+    },
+    "shadowMap": 2048,
+    "shadowBias": -0.0002,
+    "shadowFrustum": 310,
+    "shadowNormalBias": 0.181640625
+  },
+  "materialPool": {
+    "leases": 0,
+    "images": 0,
+    "textures": 0,
+    "materials": 0
+  },
+  "records": [
+    {
+      "pass": 0,
+      "tile": "-1_-2",
+      "pool": {
+        "sources": 68,
+        "resources": 1677
+      },
+      "materialPool": {
+        "leases": 1,
+        "images": 13,
+        "textures": 15,
+        "materials": 38
+      },
+      "poolStats": {
+        "blobReads": 1244,
+        "decodedImages": 67,
+        "sourceCacheHits": 396
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 142,
+          "textures": 28
+        },
+        "render": {
+          "calls": 453,
+          "triangles": 298998,
+          "lines": 0,
+          "points": 0,
+          "cpuFrameMs": 15.400000005960464
+        }
+      }
+    },
+    {
+      "pass": 0,
+      "tile": "-1_-1",
+      "pool": {
+        "sources": 14,
+        "resources": 976
+      },
+      "materialPool": {
+        "leases": 1,
+        "images": 13,
+        "textures": 15,
+        "materials": 24
+      },
+      "poolStats": {
+        "blobReads": 1244,
+        "decodedImages": 67,
+        "sourceCacheHits": 396
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 144,
+          "textures": 28
+        },
+        "render": {
+          "calls": 732,
+          "triangles": 181731,
+          "lines": 0,
+          "points": 0,
+          "cpuFrameMs": 17
+        }
+      }
+    },
+    {
+      "pass": 1,
+      "tile": "-1_-2",
+      "pool": {
+        "sources": 68,
+        "resources": 1677
+      },
+      "materialPool": {
+        "leases": 1,
+        "images": 13,
+        "textures": 15,
+        "materials": 38
+      },
+      "poolStats": {
+        "blobReads": 1244,
+        "decodedImages": 67,
+        "sourceCacheHits": 396
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 142,
+          "textures": 28
+        },
+        "render": {
+          "calls": 453,
+          "triangles": 298998,
+          "lines": 0,
+          "points": 0,
+          "cpuFrameMs": 16.200000002980232
+        }
+      }
+    },
+    {
+      "pass": 1,
+      "tile": "-1_-1",
+      "pool": {
+        "sources": 14,
+        "resources": 976
+      },
+      "materialPool": {
+        "leases": 1,
+        "images": 13,
+        "textures": 15,
+        "materials": 24
+      },
+      "poolStats": {
+        "blobReads": 1244,
+        "decodedImages": 67,
+        "sourceCacheHits": 396
+      },
+      "renderer": {
+        "memory": {
+          "geometries": 144,
+          "textures": 28
+        },
+        "render": {
+          "calls": 732,
+          "triangles": 181731,
+          "lines": 0,
+          "points": 0,
+          "cpuFrameMs": 25.899999998509884
+        }
+      }
+    }
+  ],
+  "combined": {
+    "loadMs": 6301.89999999851,
+    "firstFrame": {
+      "calls": 1260,
+      "triangles": 469701,
+      "lines": 0,
+      "points": 0,
+      "cpuFrameMs": 37.600000001490116
+    },
+    "owners": [
+      "-1_-1",
+      "-1_-2",
+      "0_-2",
+      "-2_-2",
+      "-1_-3"
+    ],
+    "materialPool": {
+      "leases": 5,
+      "images": 15,
+      "textures": 18,
+      "materials": 45
+    },
+    "poolStats": {
+      "blobReads": 1244,
+      "decodedImages": 67,
+      "sourceCacheHits": 396
+    },
+    "features": 153,
+    "memory": {
+      "geometries": 276,
+      "textures": 31
+    },
+    "render": {
+      "calls": 1260,
+      "triangles": 469701,
+      "lines": 0,
+      "points": 0,
+      "cpuFrameMs": 67.39999999850988
+    },
+    "storedBudget": {
+      "triangles": 164184,
+      "bytes": 24166850
+    },
+    "orbit": [
+      {
+        "calls": 1260,
+        "triangles": 469701,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 88.30000000447035
+      },
+      {
+        "calls": 1260,
+        "triangles": 469701,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 52.30000000447035
+      },
+      {
+        "calls": 1260,
+        "triangles": 469701,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 48.099999994039536
+      },
+      {
+        "calls": 1258,
+        "triangles": 469557,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 57.399999998509884
+      },
+      {
+        "calls": 740,
+        "triangles": 288733,
+        "lines": 0,
+        "points": 0,
+        "cpuFrameMs": 38.599999994039536
+      }
+    ]
+  },
+  "semanticFeatures": 144,
+  "checks": [
+    "adjacent candidate and baseline neighbor switched twice",
+    "sidewalk and curb parts present",
+    "world origins and bounds invariant across reloads",
+    "budget rejection",
+    "pinned monolithic terrain accounted separately"
+  ],
+  "finalPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "groundPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "pinnedAuthoredPool": {
+    "sources": 0,
+    "resources": 0
+  },
+  "pinnedAuthoredIds": [
+    "sf-park:poplar-0",
+    "sf-park:poplar-1",
+    "sf-park:poplar-2",
+    "sf-park:poplar-3"
+  ],
+  "finalMemory": {
+    "geometries": 14,
+    "textures": 11
+  },
+  "pageErrors": []
+}

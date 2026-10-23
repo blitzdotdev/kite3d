@@ -1,0 +1,135 @@
+{
+  "passed": false,
+  "error": "Error: GPU cleanup mismatch\n    at assert (http://127.0.0.1:8721/chunk-measure/check.js:3:34)\n    at http://127.0.0.1:8721/chunk-measure/check.js:5:1940",
+  "diagnostic": {
+    "records": [
+      {
+        "id": "chunk--2_-2-9d477601e6c6",
+        "cycle": 0,
+        "features": 10,
+        "visibleDrawUnits": 83,
+        "conservativeDrawCalls": 332,
+        "sourcePrimitiveBound": 3732,
+        "costAttestation": {
+          "method": "unbatched-source-primitive-upper-bound",
+          "passMultiplier": 4,
+          "featureIdsSHA256": "9d477601e6c6745fb1ec815e3b42166d4aa8c954858b675fb04b3026a39fc2d6",
+          "dependenciesSHA256": "e7fdf53035bebba2f3752e5c75f33398763331b060979dfb0caaa2ceadc2eac1",
+          "sourcePrimitiveDraws": 933
+        },
+        "memory": {
+          "geometries": 97,
+          "textures": 18
+        },
+        "render": {
+          "calls": 170,
+          "triangles": 40489,
+          "lines": 0,
+          "points": 0,
+          "cpuFrameMs": 5.700000002980232
+        },
+        "sourceResources": {
+          "sources": 6,
+          "resources": 821
+        },
+        "pool": {
+          "leases": 1,
+          "images": 7,
+          "textures": 7,
+          "materials": 11
+        }
+      },
+      {
+        "id": "chunk-2_1-5a5dcfb62ecc",
+        "cycle": 0,
+        "features": 15,
+        "visibleDrawUnits": 43,
+        "conservativeDrawCalls": 172,
+        "sourcePrimitiveBound": 5220,
+        "costAttestation": {
+          "method": "unbatched-source-primitive-upper-bound",
+          "passMultiplier": 4,
+          "featureIdsSHA256": "5a5dcfb62eccf123f6db06196b11654fd7b998bc4be31d44dc2a129d95fe1c4e",
+          "dependenciesSHA256": "ac11dfdaf6295978276da720c23d259c353bdcf2d49bdb0bff05274151d0e098",
+          "sourcePrimitiveDraws": 1305
+        },
+        "memory": {
+          "geometries": 57,
+          "textures": 26
+        },
+        "render": {
+          "calls": 90,
+          "triangles": 33617,
+          "lines": 0,
+          "points": 0,
+          "cpuFrameMs": 5.5
+        },
+        "sourceResources": {
+          "sources": 13,
+          "resources": 1388
+        },
+        "pool": {
+          "leases": 1,
+          "images": 12,
+          "textures": 14,
+          "materials": 23
+        }
+      },
+      {
+        "id": "chunk--2_-2-9d477601e6c6",
+        "cycle": 1,
+        "features": 10,
+        "visibleDrawUnits": 83,
+        "conservativeDrawCalls": 332,
+        "sourcePrimitiveBound": 3732,
+        "costAttestation": {
+          "method": "unbatched-source-primitive-upper-bound",
+          "passMultiplier": 4,
+          "featureIdsSHA256": "9d477601e6c6745fb1ec815e3b42166d4aa8c954858b675fb04b3026a39fc2d6",
+          "dependenciesSHA256": "e7fdf53035bebba2f3752e5c75f33398763331b060979dfb0caaa2ceadc2eac1",
+          "sourcePrimitiveDraws": 933
+        },
+        "memory": {
+          "geometries": 97,
+          "textures": 20
+        },
+        "render": {
+          "calls": 170,
+          "triangles": 40489,
+          "lines": 0,
+          "points": 0,
+          "cpuFrameMs": 14.799999997019768
+        },
+        "sourceResources": {
+          "sources": 6,
+          "resources": 821
+        },
+        "pool": {
+          "leases": 1,
+          "images": 7,
+          "textures": 7,
+          "materials": 11
+        }
+      }
+    ],
+    "empty": {
+      "geometries": 2,
+      "textures": 8
+    },
+    "after": {
+      "geometries": 14,
+      "textures": 13
+    },
+    "pool": {
+      "leases": 0,
+      "images": 0,
+      "textures": 0,
+      "materials": 0
+    },
+    "adapter": {
+      "sources": 0,
+      "resources": 0
+    }
+  },
+  "pageErrors": []
+}

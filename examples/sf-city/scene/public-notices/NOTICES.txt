@@ -1,0 +1,14 @@
+North Beach / Washington Square - Kite3D viewer demo
+
+Static demo: serve index.html over HTTP(S), preserving all relative paths. No editor, login or API key is required. Do not open index.html directly with file://.
+
+Map data: City and County of San Francisco / DataSF, PDDL. Building footprints, street lines and tree inventory are data-derived; facades, materials, tree shapes and much street detail are inferred. Ground interpolates older footprint elevations, not LiDAR.
+Park layout: original geometry approximately traced from SF Rec & Park July 25 2018 concept plan, page 6, not a surveyed as-built. https://sfrecpark.org/DocumentCenter/View/1878/Community-Meeting-07-25-2018-PDF
+Church silhouette: original approximate model informed by published dimensions and inspected photo. https://www.salesiansspp.org/our-history . Reference photos and plan pixels are not distributed.
+
+BMW X5 2018: BMW Car IT, CC BY 4.0. https://github.com/bmwcarit/digital-car-3d at6261f53b5ac63c6686039d106fbbbfb693339d72. Adapted materials to glTF PBR and normalized model assembly; no endorsement implied. License in licenses/BMW-CC-BY-4.0.txt.
+Tozzo '98: Daniel Zhabotinsky, CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ . https://sketchfab.com/3d-models/tozzo-98-low-poly-model-d43bb748da364af2b3f0a9348365f0fb . Adapted scale/orientation, externalized textures and static hierarchy. This is an approximate substitute vehicle, not the photographed car. No endorsement implied.
+
+Generated architecture, textures, park furniture and foliage are original procedural assets. Runtime software license notices are retained in bundled JavaScript and included license files.
+
+This is the locally validated checkpoint before subsequent church and batching work. Seven browser checks passed: normal load/no editor, orbit/zoom, bookmarks, resize, failed-load screen, retry recovery, interrupted navigation. Loading remains heavy (about109MB uncompressed); no hardware-GPU FPS claim.

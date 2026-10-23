@@ -54,6 +54,7 @@ export function asset(path, parts, materials, extras = {}, resources = {}) {
       POSITION: accessor(new Float32Array(position.array), 3, 5126, 'VEC3', true),
       NORMAL: accessor(new Float32Array(normal.array), 3, 5126, 'VEC3'),
     }
+    if (geometry.getAttribute('color')) attributes.COLOR_0 = accessor(new Float32Array(geometry.getAttribute('color').array), 3, 5126, 'VEC3')
     if (geometry.getAttribute('uv')) attributes.TEXCOORD_0 = accessor(new Float32Array(geometry.getAttribute('uv').array), 2, 5126, 'VEC2')
     const indices = geometry.index?.array || Uint32Array.from({length: position.count}, (_, i) => i)
     const groups = geometry.groups.length ? geometry.groups : [{start: 0, count: indices.length, materialIndex: 0}]

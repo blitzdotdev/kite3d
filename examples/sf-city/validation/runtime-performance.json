@@ -1,0 +1,627 @@
+{
+  "environment": "Local Chromium SwiftShader, 800x600; CPU/submission wall time is not hardware GPU FPS",
+  "method": "Accumulate renderer.info across every reset from preFrame to postFrame; preserve autoReset=true required by ThreePipe; includes shadow and postprocessing passes. Static and orbit frames measured separately.",
+  "comparisonScope": "Published checkpoint versus same later church/old-tree candidate before and after runtime deduplication. New-tree final release is validated separately.",
+  "runs": {
+    "published": {
+      "readyMs": 69392,
+      "visible": {
+        "meshes": 1569,
+        "materials": 1213,
+        "textures": 2706,
+        "images": 2702,
+        "instancedMeshes": 75,
+        "instances": 4775,
+        "imageTypes": {
+          "HTMLImageElement": 3720
+        }
+      },
+      "rendererMemory": {
+        "geometries": 1436,
+        "textures": 2716
+      },
+      "pool": null,
+      "frames": [
+        {
+          "phase": "static",
+          "atMs": 102806.60000000149,
+          "wallMs": 269.1000000014901,
+          "calls": 4965,
+          "triangles": 3977282,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "static",
+          "atMs": 106449.30000000075,
+          "wallMs": 328.69999999925494,
+          "calls": 4965,
+          "triangles": 3977282,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "static",
+          "atMs": 110045.5,
+          "wallMs": 256.69999999925494,
+          "calls": 4965,
+          "triangles": 3977282,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 113627,
+          "wallMs": 328.29999999701977,
+          "calls": 4965,
+          "triangles": 3977282,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 117184.5,
+          "wallMs": 328.19999999925494,
+          "calls": 4965,
+          "triangles": 3977282,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 121053.5,
+          "wallMs": 415.29999999701977,
+          "calls": 4965,
+          "triangles": 3977282,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 124699.30000000075,
+          "wallMs": 294.3999999985099,
+          "calls": 4965,
+          "triangles": 3977282,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        }
+      ],
+      "firstFrame": {
+        "phase": "startup",
+        "atMs": 79510.30000000075,
+        "wallMs": 10117.39999999851,
+        "calls": 4988,
+        "triangles": 3977558,
+        "lines": 0,
+        "points": 0,
+        "shadowUpdates": 1,
+        "programs": 29,
+        "textures": 2715
+      },
+      "interactionSequenceMs": 14657.10000000149
+    },
+    "bitmap": {
+      "readyMs": 66162.40000000224,
+      "visible": {
+        "meshes": 1523,
+        "materials": 1094,
+        "textures": 2706,
+        "images": 2702,
+        "instancedMeshes": 27,
+        "instances": 4775,
+        "imageTypes": {
+          "HTMLImageElement": 3720
+        }
+      },
+      "rendererMemory": {
+        "geometries": 1414,
+        "textures": 2716
+      },
+      "pool": {
+        "bitmapReads": 0,
+        "bitmapReadMs": 0,
+        "bitmapSkipped": 0,
+        "textureSlots": 3522,
+        "sharedTextureSlots": 846
+      },
+      "frames": [
+        {
+          "phase": "static",
+          "atMs": 102780,
+          "wallMs": 369.69999999925494,
+          "calls": 4683,
+          "triangles": 3994625,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "static",
+          "atMs": 106736.69999999925,
+          "wallMs": 370.69999999925494,
+          "calls": 4683,
+          "triangles": 3994625,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "static",
+          "atMs": 110483.90000000224,
+          "wallMs": 338.6000000014901,
+          "calls": 4683,
+          "triangles": 3994625,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 114223.19999999925,
+          "wallMs": 361.0999999977648,
+          "calls": 4683,
+          "triangles": 3994625,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 117984.80000000075,
+          "wallMs": 373,
+          "calls": 4683,
+          "triangles": 3994625,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 121728.40000000224,
+          "wallMs": 356,
+          "calls": 4683,
+          "triangles": 3994625,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        },
+        {
+          "phase": "orbit",
+          "atMs": 125591,
+          "wallMs": 374.0999999977648,
+          "calls": 4683,
+          "triangles": 3994625,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 31,
+          "textures": 2715
+        }
+      ],
+      "firstFrame": {
+        "phase": "startup",
+        "atMs": 76477.40000000224,
+        "wallMs": 10314.20000000298,
+        "calls": 4706,
+        "triangles": 3994901,
+        "lines": 0,
+        "points": 0,
+        "shadowUpdates": 1,
+        "programs": 29,
+        "textures": 2715
+      },
+      "interactionSequenceMs": 15109.199999999255
+    },
+    "sharedpixels": {
+      "readyMs": 105865,
+      "visible": {
+        "meshes": 798,
+        "materials": 140,
+        "textures": 65,
+        "images": 61,
+        "instancedMeshes": 27,
+        "instances": 4775,
+        "imageTypes": {
+          "HTMLImageElement": 1141
+        }
+      },
+      "rendererMemory": {
+        "geometries": 689,
+        "textures": 75
+      },
+      "pool": {
+        "bitmapReads": 2676,
+        "bitmapReadMs": 34948.89999992028,
+        "bitmapSkipped": 7,
+        "textureSlots": 141,
+        "sharedTextureSlots": 106
+      },
+      "frames": [
+        {
+          "phase": "static",
+          "atMs": 121083.30000000075,
+          "wallMs": 283,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 74
+        },
+        {
+          "phase": "static",
+          "atMs": 124664.60000000149,
+          "wallMs": 258.19999999925494,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 74
+        },
+        {
+          "phase": "static",
+          "atMs": 128053.80000000075,
+          "wallMs": 254.89999999850988,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 74
+        },
+        {
+          "phase": "orbit",
+          "atMs": 131555.5,
+          "wallMs": 214.89999999850988,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 74
+        },
+        {
+          "phase": "orbit",
+          "atMs": 135855.6000000015,
+          "wallMs": 308,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 74
+        },
+        {
+          "phase": "orbit",
+          "atMs": 139562.90000000224,
+          "wallMs": 214.5,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 74
+        },
+        {
+          "phase": "orbit",
+          "atMs": 143327.90000000224,
+          "wallMs": 210.10000000149012,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 74
+        }
+      ],
+      "firstFrame": {
+        "phase": "startup",
+        "atMs": 108303.10000000149,
+        "wallMs": 2436.89999999851,
+        "calls": 2550,
+        "triangles": 4053067,
+        "lines": 0,
+        "points": 0,
+        "shadowUpdates": 1,
+        "programs": 30,
+        "textures": 74
+      },
+      "interactionSequenceMs": 15282.599999997765
+    },
+    "encoded": {
+      "readyMs": 73252.10000000149,
+      "visible": {
+        "meshes": 798,
+        "materials": 138,
+        "textures": 64,
+        "images": 60,
+        "instancedMeshes": 27,
+        "instances": 4775,
+        "imageTypes": {
+          "HTMLImageElement": 1141
+        }
+      },
+      "rendererMemory": {
+        "geometries": 689,
+        "textures": 74
+      },
+      "pool": {
+        "bitmapReads": 0,
+        "bitmapReadMs": 0,
+        "bitmapSkipped": 0,
+        "textureSlots": 139,
+        "sharedTextureSlots": 106,
+        "encodedReads": 2702,
+        "encodedFailures": 0,
+        "prepareMs": 14576.5
+      },
+      "frames": [
+        {
+          "phase": "static",
+          "atMs": 87620.40000000224,
+          "wallMs": 246.10000000149012,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 73
+        },
+        {
+          "phase": "static",
+          "atMs": 91243.60000000149,
+          "wallMs": 265.19999999925494,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 73
+        },
+        {
+          "phase": "static",
+          "atMs": 95330,
+          "wallMs": 243.59999999776483,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 98746.70000000298,
+          "wallMs": 226.80000000074506,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 102470.80000000075,
+          "wallMs": 275.3999999985099,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 106237.30000000075,
+          "wallMs": 280.80000000074506,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 110061.20000000298,
+          "wallMs": 300.20000000298023,
+          "calls": 2527,
+          "triangles": 4052791,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 32,
+          "textures": 73
+        }
+      ],
+      "firstFrame": {
+        "phase": "startup",
+        "atMs": 75670.40000000224,
+        "wallMs": 2417.5,
+        "calls": 2550,
+        "triangles": 4053067,
+        "lines": 0,
+        "points": 0,
+        "shadowUpdates": 1,
+        "programs": 30,
+        "textures": 73
+      },
+      "interactionSequenceMs": 14733.70000000298
+    },
+    "final-corrected-trees": {
+      "readyMs": 57949.199999999255,
+      "visible": {
+        "meshes": 685,
+        "materials": 138,
+        "textures": 64,
+        "images": 60,
+        "instancedMeshes": 6,
+        "instances": 382,
+        "imageTypes": {
+          "HTMLImageElement": 1141
+        }
+      },
+      "rendererMemory": {
+        "geometries": 644,
+        "textures": 73
+      },
+      "pool": {
+        "bitmapReads": 0,
+        "bitmapReadMs": 0,
+        "bitmapSkipped": 0,
+        "textureSlots": 139,
+        "sharedTextureSlots": 106,
+        "encodedReads": 2702,
+        "encodedFailures": 0,
+        "prepareMs": 15530.89999999851
+      },
+      "frames": [
+        {
+          "phase": "static",
+          "atMs": 72257.19999999925,
+          "wallMs": 190.10000000149012,
+          "calls": 2125,
+          "triangles": 5808319,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 33,
+          "textures": 73
+        },
+        {
+          "phase": "static",
+          "atMs": 76414,
+          "wallMs": 189.90000000223517,
+          "calls": 2125,
+          "triangles": 5808319,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 33,
+          "textures": 73
+        },
+        {
+          "phase": "static",
+          "atMs": 80821.5,
+          "wallMs": 179.60000000149012,
+          "calls": 2125,
+          "triangles": 5808319,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 33,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 84930.59999999776,
+          "wallMs": 182.29999999701977,
+          "calls": 2125,
+          "triangles": 5808319,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 33,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 89162.80000000075,
+          "wallMs": 201.80000000074506,
+          "calls": 2125,
+          "triangles": 5808319,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 33,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 93317.19999999925,
+          "wallMs": 200.80000000074506,
+          "calls": 2125,
+          "triangles": 5808319,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 33,
+          "textures": 73
+        },
+        {
+          "phase": "orbit",
+          "atMs": 97262.69999999925,
+          "wallMs": 246.80000000074506,
+          "calls": 2125,
+          "triangles": 5808319,
+          "lines": 0,
+          "points": 0,
+          "shadowUpdates": 1,
+          "programs": 33,
+          "textures": 73
+        }
+      ],
+      "firstFrame": {
+        "phase": "startup",
+        "atMs": 60384.39999999851,
+        "wallMs": 2434.5,
+        "calls": 2148,
+        "triangles": 5808595,
+        "lines": 0,
+        "points": 0,
+        "shadowUpdates": 1,
+        "programs": 31,
+        "textures": 73
+      },
+      "interactionSequenceMs": 16448.300000000745
+    }
+  }
+}

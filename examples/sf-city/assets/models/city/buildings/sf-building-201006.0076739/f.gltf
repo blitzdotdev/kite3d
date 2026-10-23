@@ -21,7 +21,17 @@
         4,
         5,
         6,
-        7
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
       ],
       "extras": {
         "name": "Building 201006.0076739",
@@ -59,7 +69,7 @@
       }
     },
     {
-      "name": "Cornices and window frames",
+      "name": "Interior blind variation",
       "mesh": 4,
       "extras": {
         "cityBakedPart": true
@@ -73,8 +83,78 @@
       }
     },
     {
-      "name": "Storefronts and doors",
+      "name": "Cornices and window frames",
       "mesh": 6,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Storefronts and doors",
+      "mesh": 7,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 1",
+      "mesh": 8,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 2",
+      "mesh": 9,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 3",
+      "mesh": 10,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 4",
+      "mesh": 11,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 5",
+      "mesh": 12,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 6",
+      "mesh": 13,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop vent / surface 1",
+      "mesh": 14,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop vent / surface 2",
+      "mesh": 15,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Inferred rooftop vent / surface 3",
+      "mesh": 16,
       "extras": {
         "cityBakedPart": true
       }
@@ -115,9 +195,10 @@
         {
           "attributes": {
             "POSITION": 5,
-            "NORMAL": 6
+            "NORMAL": 6,
+            "TEXCOORD_0": 7
           },
-          "indices": 7,
+          "indices": 8,
           "material": 0
         }
       ]
@@ -127,24 +208,26 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 8,
-            "NORMAL": 9
+            "POSITION": 9,
+            "NORMAL": 10,
+            "TEXCOORD_0": 11
           },
-          "indices": 10,
+          "indices": 12,
           "material": 2
         }
       ]
     },
     {
-      "name": "Cornices and window frames",
+      "name": "Interior blind variation",
       "primitives": [
         {
           "attributes": {
-            "POSITION": 11,
-            "NORMAL": 12
+            "POSITION": 13,
+            "NORMAL": 14,
+            "TEXCOORD_0": 15
           },
-          "indices": 13,
-          "material": 3
+          "indices": 16,
+          "material": 6
         }
       ]
     },
@@ -153,11 +236,26 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 14,
-            "NORMAL": 15
+            "POSITION": 17,
+            "NORMAL": 18,
+            "TEXCOORD_0": 19
           },
-          "indices": 16,
+          "indices": 20,
           "material": 5
+        }
+      ]
+    },
+    {
+      "name": "Cornices and window frames",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 21,
+            "NORMAL": 22,
+            "TEXCOORD_0": 23
+          },
+          "indices": 24,
+          "material": 3
         }
       ]
     },
@@ -166,18 +264,145 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 17,
-            "NORMAL": 18
+            "POSITION": 25,
+            "NORMAL": 26,
+            "TEXCOORD_0": 27
           },
-          "indices": 19,
+          "indices": 28,
           "material": 4
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 29,
+            "NORMAL": 30,
+            "TEXCOORD_0": 31
+          },
+          "indices": 32,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 29,
+            "NORMAL": 30,
+            "TEXCOORD_0": 31
+          },
+          "indices": 33,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 29,
+            "NORMAL": 30,
+            "TEXCOORD_0": 31
+          },
+          "indices": 34,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 4",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 29,
+            "NORMAL": 30,
+            "TEXCOORD_0": 31
+          },
+          "indices": 35,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 5",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 29,
+            "NORMAL": 30,
+            "TEXCOORD_0": 31
+          },
+          "indices": 36,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop service enclosure / surface 6",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 29,
+            "NORMAL": 30,
+            "TEXCOORD_0": 31
+          },
+          "indices": 37,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop vent / surface 1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 38,
+            "NORMAL": 39,
+            "TEXCOORD_0": 40
+          },
+          "indices": 41,
+          "material": 3
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop vent / surface 2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 38,
+            "NORMAL": 39,
+            "TEXCOORD_0": 40
+          },
+          "indices": 42,
+          "material": 3
+        }
+      ]
+    },
+    {
+      "name": "Inferred rooftop vent / surface 3",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 38,
+            "NORMAL": 39,
+            "TEXCOORD_0": 40
+          },
+          "indices": 43,
+          "material": 3
         }
       ]
     }
   ],
   "materials": [
     {
-      "name": "SF stucco / painted timber",
+      "name": "SF stucco",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6583748172725346,
@@ -186,9 +411,19 @@
           1
         ],
         "roughnessFactor": 0.85,
-        "metallicFactor": 0
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
       },
-      "doubleSided": true
+      "doubleSided": true,
+      "normalTexture": {
+        "index": 1,
+        "scale": 0.35
+      }
     },
     {
       "name": "Flat roof",
@@ -200,9 +435,19 @@
           1
         ],
         "roughnessFactor": 0.85,
-        "metallicFactor": 0
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 5
+        }
       },
-      "doubleSided": true
+      "doubleSided": true,
+      "normalTexture": {
+        "index": 4,
+        "scale": 0.35
+      }
     },
     {
       "name": "Window glass approximation",
@@ -259,6 +504,20 @@
         "metallicFactor": 0.2
       },
       "doubleSided": true
+    },
+    {
+      "name": "Varied interior blinds",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4452011945063733,
+          0.4178850708380236,
+          0.3049873140591091,
+          1
+        ],
+        "roughnessFactor": 0.95,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
     }
   ],
   "accessors": [
@@ -305,11 +564,11 @@
     {
       "bufferView": 5,
       "componentType": 5126,
-      "count": 224,
+      "count": 128,
       "type": "VEC3",
       "min": [
         -8.207173347473145,
-        3.1700000762939453,
+        12.210000038146973,
         -5.569779872894287
       ],
       "max": [
@@ -321,17 +580,23 @@
     {
       "bufferView": 6,
       "componentType": 5126,
-      "count": 224,
+      "count": 128,
       "type": "VEC3"
     },
     {
       "bufferView": 7,
-      "componentType": 5125,
-      "count": 336,
-      "type": "SCALAR"
+      "componentType": 5126,
+      "count": 128,
+      "type": "VEC2"
     },
     {
       "bufferView": 8,
+      "componentType": 5125,
+      "count": 192,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
       "componentType": 5126,
       "count": 204,
       "type": "VEC3",
@@ -347,47 +612,59 @@
       ]
     },
     {
-      "bufferView": 9,
+      "bufferView": 10,
       "componentType": 5126,
       "count": 204,
       "type": "VEC3"
     },
     {
-      "bufferView": 10,
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 204,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 12,
       "componentType": 5125,
       "count": 306,
       "type": "SCALAR"
     },
     {
-      "bufferView": 11,
+      "bufferView": 13,
       "componentType": 5126,
-      "count": 2912,
+      "count": 56,
       "type": "VEC3",
       "min": [
-        -6.620869159698486,
-        -0.15679453313350677,
-        -4.488192081451416
+        -5.335369110107422,
+        1.232805609703064,
+        -3.62813663482666
       ],
       "max": [
-        12.71288013458252,
-        12.460000038146973,
-        4.966751575469971
+        10.939013481140137,
+        11.824999809265137,
+        4.294614791870117
       ]
     },
     {
-      "bufferView": 12,
+      "bufferView": 14,
       "componentType": 5126,
-      "count": 2912,
+      "count": 56,
       "type": "VEC3"
     },
     {
-      "bufferView": 13,
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 56,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 16,
       "componentType": 5125,
-      "count": 4368,
+      "count": 84,
       "type": "SCALAR"
     },
     {
-      "bufferView": 14,
+      "bufferView": 17,
       "componentType": 5126,
       "count": 80,
       "type": "VEC3",
@@ -403,19 +680,59 @@
       ]
     },
     {
-      "bufferView": 15,
+      "bufferView": 18,
       "componentType": 5126,
       "count": 80,
       "type": "VEC3"
     },
     {
-      "bufferView": 16,
+      "bufferView": 19,
+      "componentType": 5126,
+      "count": 80,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 20,
       "componentType": 5125,
       "count": 120,
       "type": "SCALAR"
     },
     {
-      "bufferView": 17,
+      "bufferView": 21,
+      "componentType": 5126,
+      "count": 2336,
+      "type": "VEC3",
+      "min": [
+        -6.472764492034912,
+        -0.15679453313350677,
+        -4.339569091796875
+      ],
+      "max": [
+        12.512602806091309,
+        12.020000457763672,
+        4.607278347015381
+      ]
+    },
+    {
+      "bufferView": 22,
+      "componentType": 5126,
+      "count": 2336,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 23,
+      "componentType": 5126,
+      "count": 2336,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 24,
+      "componentType": 5125,
+      "count": 3504,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 25,
       "componentType": 5126,
       "count": 144,
       "type": "VEC3",
@@ -431,15 +748,131 @@
       ]
     },
     {
-      "bufferView": 18,
+      "bufferView": 26,
       "componentType": 5126,
       "count": 144,
       "type": "VEC3"
     },
     {
-      "bufferView": 19,
+      "bufferView": 27,
+      "componentType": 5126,
+      "count": 144,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 28,
       "componentType": 5125,
       "count": 216,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 29,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -0.8999999761581421,
+        12.359999656677246,
+        -0.6000000238418579
+      ],
+      "max": [
+        0.8999999761581421,
+        13.010000228881836,
+        0.6000000238418579
+      ]
+    },
+    {
+      "bufferView": 30,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 31,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 32,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 33,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 34,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 35,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 36,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 37,
+      "componentType": 5125,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 38,
+      "componentType": 5126,
+      "count": 52,
+      "type": "VEC3",
+      "min": [
+        0.39000001549720764,
+        12.859999656677246,
+        -0.1599999964237213
+      ],
+      "max": [
+        0.7099999785423279,
+        13.65999984741211,
+        0.1599999964237213
+      ]
+    },
+    {
+      "bufferView": 39,
+      "componentType": 5126,
+      "count": 52,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 40,
+      "componentType": 5126,
+      "count": 52,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 41,
+      "componentType": 5125,
+      "count": 48,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 42,
+      "componentType": 5125,
+      "count": 24,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 43,
+      "componentType": 5125,
+      "count": 24,
       "type": "SCALAR"
     }
   ],
@@ -472,83 +905,257 @@
     {
       "buffer": 0,
       "byteOffset": 9936,
-      "byteLength": 2688
+      "byteLength": 1536
     },
     {
       "buffer": 0,
-      "byteOffset": 12624,
-      "byteLength": 2688
+      "byteOffset": 11472,
+      "byteLength": 1536
     },
     {
       "buffer": 0,
-      "byteOffset": 15312,
-      "byteLength": 1344
+      "byteOffset": 13008,
+      "byteLength": 1024
     },
     {
       "buffer": 0,
-      "byteOffset": 16656,
+      "byteOffset": 14032,
+      "byteLength": 768
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 14800,
       "byteLength": 2448
     },
     {
       "buffer": 0,
-      "byteOffset": 19104,
+      "byteOffset": 17248,
       "byteLength": 2448
     },
     {
       "buffer": 0,
-      "byteOffset": 21552,
+      "byteOffset": 19696,
+      "byteLength": 1632
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 21328,
       "byteLength": 1224
     },
     {
       "buffer": 0,
-      "byteOffset": 22776,
-      "byteLength": 34944
+      "byteOffset": 22552,
+      "byteLength": 672
     },
     {
       "buffer": 0,
-      "byteOffset": 57720,
-      "byteLength": 34944
+      "byteOffset": 23224,
+      "byteLength": 672
     },
     {
       "buffer": 0,
-      "byteOffset": 92664,
-      "byteLength": 17472
+      "byteOffset": 23896,
+      "byteLength": 448
     },
     {
       "buffer": 0,
-      "byteOffset": 110136,
+      "byteOffset": 24344,
+      "byteLength": 336
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 24680,
       "byteLength": 960
     },
     {
       "buffer": 0,
-      "byteOffset": 111096,
+      "byteOffset": 25640,
       "byteLength": 960
     },
     {
       "buffer": 0,
-      "byteOffset": 112056,
+      "byteOffset": 26600,
+      "byteLength": 640
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 27240,
       "byteLength": 480
     },
     {
       "buffer": 0,
-      "byteOffset": 112536,
+      "byteOffset": 27720,
+      "byteLength": 28032
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 55752,
+      "byteLength": 28032
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 83784,
+      "byteLength": 18688
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 102472,
+      "byteLength": 14016
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 116488,
       "byteLength": 1728
     },
     {
       "buffer": 0,
-      "byteOffset": 114264,
+      "byteOffset": 118216,
       "byteLength": 1728
     },
     {
       "buffer": 0,
-      "byteOffset": 115992,
+      "byteOffset": 119944,
+      "byteLength": 1152
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 121096,
       "byteLength": 864
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 121960,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122248,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122536,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122728,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122752,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122776,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122800,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122824,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122848,
+      "byteLength": 24
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 122872,
+      "byteLength": 624
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 123496,
+      "byteLength": 624
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 124120,
+      "byteLength": 416
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 124536,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 124728,
+      "byteLength": 96
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 124824,
+      "byteLength": 96
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 116856
+      "byteLength": 124920
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/materials/stucco-color.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/stucco-normal.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/stucco-roughness.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-color.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-normal.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-roughness.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 2,
+      "sampler": 0
+    },
+    {
+      "source": 3,
+      "sampler": 0
+    },
+    {
+      "source": 4,
+      "sampler": 0
+    },
+    {
+      "source": 5,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
     }
   ]
 }

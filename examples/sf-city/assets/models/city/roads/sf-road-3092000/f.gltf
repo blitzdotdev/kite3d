@@ -69,9 +69,9 @@
       "name": "Concrete sidewalk",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.6104955708001716,
-          0.5906188409113381,
-          0.514917665367466,
+          0.36625259558833256,
+          0.34191442489801843,
+          0.28314874041918053,
           1
         ],
         "roughnessFactor": 0.85,

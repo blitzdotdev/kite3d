@@ -1,0 +1,721 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Kite3D SF city baker v1"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Washington Square plan-derived layout",
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "extras": {
+        "name": "Washington Square plan-derived layout",
+        "cityBakedAsset": "assets/models/city/park/washington-square/f.gltf"
+      }
+    },
+    {
+      "name": "Plan-derived concrete circulation",
+      "mesh": 0,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Kidney-shaped central lawn",
+      "mesh": 1,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "mesh": 2,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "mesh": 3,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "mesh": 4,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "mesh": 5,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "mesh": 6,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "mesh": 7,
+      "extras": {
+        "cityBakedPart": true
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Plan-derived concrete circulation",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Kidney-shaped central lawn",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 15,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 16,
+            "NORMAL": 17,
+            "TEXCOORD_0": 18
+          },
+          "indices": 19,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 20,
+            "NORMAL": 21,
+            "TEXCOORD_0": 22
+          },
+          "indices": 23,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 24,
+            "NORMAL": 25,
+            "TEXCOORD_0": 26
+          },
+          "indices": 27,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Plan-derived planting pocket",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 28,
+            "NORMAL": 29,
+            "TEXCOORD_0": 30
+          },
+          "indices": 31,
+          "material": 2
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Park concrete",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5972017883558645,
+          0.5711248294565854,
+          0.4969329950515914,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Park lawn",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.26225065751888765,
+          0.3813260114221238,
+          0.12477181755144427,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 1
+        }
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "Low planting beds",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.09989872823822872,
+          0.14702726648767014,
+          0.054480276435339814,
+          1
+        ],
+        "roughnessFactor": 0.85,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 2438,
+      "type": "VEC3",
+      "min": [
+        -135.64747619628906,
+        5.073943614959717,
+        -90.28346252441406
+      ],
+      "max": [
+        7.625152111053467,
+        13.780718803405762,
+        13.240694046020508
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2438,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 2438,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 13572,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 1076,
+      "type": "VEC3",
+      "min": [
+        -98.774169921875,
+        8.671468734741211,
+        -69.31290435791016
+      ],
+      "max": [
+        -7.7483344078063965,
+        13.357893943786621,
+        -2.371572971343994
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 1076,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 1076,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5125,
+      "count": 6066,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 50,
+      "type": "VEC3",
+      "min": [
+        -134.57008361816406,
+        5.215555191040039,
+        -72.5470199584961
+      ],
+      "max": [
+        -113.56610107421875,
+        8.001838684082031,
+        -42.71674346923828
+      ]
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 50,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 50,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5125,
+      "count": 222,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 47,
+      "type": "VEC3",
+      "min": [
+        -108.53002166748047,
+        7.032179832458496,
+        -78.71163177490234
+      ],
+      "max": [
+        -72.01079559326172,
+        11.472723960876465,
+        -66.80980682373047
+      ]
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 47,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 47,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5125,
+      "count": 216,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5126,
+      "count": 108,
+      "type": "VEC3",
+      "min": [
+        -59.13815689086914,
+        10.26099681854248,
+        -88.17359161376953
+      ],
+      "max": [
+        -12.34326457977295,
+        13.489100456237793,
+        -72.00875854492188
+      ]
+    },
+    {
+      "bufferView": 17,
+      "componentType": 5126,
+      "count": 108,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 18,
+      "componentType": 5126,
+      "count": 108,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 19,
+      "componentType": 5125,
+      "count": 534,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 20,
+      "componentType": 5126,
+      "count": 171,
+      "type": "VEC3",
+      "min": [
+        -11.1641206741333,
+        10.633465766906738,
+        -72.95008850097656
+      ],
+      "max": [
+        7.035580158233643,
+        13.513714790344238,
+        -1.5067561864852905
+      ]
+    },
+    {
+      "bufferView": 21,
+      "componentType": 5126,
+      "count": 171,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 22,
+      "componentType": 5126,
+      "count": 171,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 23,
+      "componentType": 5125,
+      "count": 780,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 24,
+      "componentType": 5126,
+      "count": 83,
+      "type": "VEC3",
+      "min": [
+        -71.5828857421875,
+        10.79135799407959,
+        -10.238341331481934
+      ],
+      "max": [
+        -48.17497634887695,
+        11.02765941619873,
+        12.953967094421387
+      ]
+    },
+    {
+      "bufferView": 25,
+      "componentType": 5126,
+      "count": 83,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 26,
+      "componentType": 5126,
+      "count": 83,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 27,
+      "componentType": 5125,
+      "count": 381,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 28,
+      "componentType": 5126,
+      "count": 61,
+      "type": "VEC3",
+      "min": [
+        -30.459291458129883,
+        10.643793106079102,
+        -9.989500045776367
+      ],
+      "max": [
+        -3.001405954360962,
+        10.995465278625488,
+        5.6830291748046875
+      ]
+    },
+    {
+      "bufferView": 29,
+      "componentType": 5126,
+      "count": 61,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 30,
+      "componentType": 5126,
+      "count": 61,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 31,
+      "componentType": 5125,
+      "count": 276,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 29256
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 29256,
+      "byteLength": 29256
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 58512,
+      "byteLength": 19504
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 78016,
+      "byteLength": 54288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 132304,
+      "byteLength": 12912
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 145216,
+      "byteLength": 12912
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 158128,
+      "byteLength": 8608
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 166736,
+      "byteLength": 24264
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 191000,
+      "byteLength": 600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 191600,
+      "byteLength": 600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 192200,
+      "byteLength": 400
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 192600,
+      "byteLength": 888
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 193488,
+      "byteLength": 564
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 194052,
+      "byteLength": 564
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 194616,
+      "byteLength": 376
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 194992,
+      "byteLength": 864
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 195856,
+      "byteLength": 1296
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 197152,
+      "byteLength": 1296
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 198448,
+      "byteLength": 864
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 199312,
+      "byteLength": 2136
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 201448,
+      "byteLength": 2052
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 203500,
+      "byteLength": 2052
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 205552,
+      "byteLength": 1368
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 206920,
+      "byteLength": 3120
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 210040,
+      "byteLength": 996
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 211036,
+      "byteLength": 996
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 212032,
+      "byteLength": 664
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 212696,
+      "byteLength": 1524
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 214220,
+      "byteLength": 732
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 214952,
+      "byteLength": 732
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 215684,
+      "byteLength": 488
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 216172,
+      "byteLength": 1104
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "geometry.bin",
+      "byteLength": 217276
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/materials/concrete.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/lawn.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ]
+}

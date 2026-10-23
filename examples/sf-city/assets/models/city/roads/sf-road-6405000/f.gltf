@@ -156,9 +156,9 @@
       "name": "Concrete sidewalk",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.6104955708001716,
-          0.5906188409113381,
-          0.514917665367466,
+          0.36625259558833256,
+          0.34191442489801843,
+          0.28314874041918053,
           1
         ],
         "roughnessFactor": 0.85,
@@ -188,7 +188,7 @@
     {
       "bufferView": 0,
       "componentType": 5126,
-      "count": 141,
+      "count": 153,
       "type": "VEC3",
       "min": [
         144.9889678955078,
@@ -196,7 +196,7 @@
         -50.103057861328125
       ],
       "max": [
-        160.23455810546875,
+        160.23599243164062,
         21.935108184814453,
         -14.58354663848877
       ]
@@ -204,19 +204,19 @@
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 141,
+      "count": 153,
       "type": "VEC3"
     },
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 141,
+      "count": 153,
       "type": "VEC2"
     },
     {
       "bufferView": 3,
       "componentType": 5125,
-      "count": 213,
+      "count": 231,
       "type": "SCALAR"
     },
     {
@@ -354,103 +354,103 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 1692
+      "byteLength": 1836
     },
     {
       "buffer": 0,
-      "byteOffset": 1692,
-      "byteLength": 1692
+      "byteOffset": 1836,
+      "byteLength": 1836
     },
     {
       "buffer": 0,
-      "byteOffset": 3384,
-      "byteLength": 1128
+      "byteOffset": 3672,
+      "byteLength": 1224
     },
     {
       "buffer": 0,
-      "byteOffset": 4512,
-      "byteLength": 852
+      "byteOffset": 4896,
+      "byteLength": 924
     },
     {
       "buffer": 0,
-      "byteOffset": 5364,
+      "byteOffset": 5820,
       "byteLength": 2832
     },
     {
       "buffer": 0,
-      "byteOffset": 8196,
+      "byteOffset": 8652,
       "byteLength": 2832
     },
     {
       "buffer": 0,
-      "byteOffset": 11028,
+      "byteOffset": 11484,
       "byteLength": 1888
     },
     {
       "buffer": 0,
-      "byteOffset": 12916,
+      "byteOffset": 13372,
       "byteLength": 1416
     },
     {
       "buffer": 0,
-      "byteOffset": 14332,
+      "byteOffset": 14788,
       "byteLength": 2832
     },
     {
       "buffer": 0,
-      "byteOffset": 17164,
+      "byteOffset": 17620,
       "byteLength": 2832
     },
     {
       "buffer": 0,
-      "byteOffset": 19996,
+      "byteOffset": 20452,
       "byteLength": 1888
     },
     {
       "buffer": 0,
-      "byteOffset": 21884,
+      "byteOffset": 22340,
       "byteLength": 1416
     },
     {
       "buffer": 0,
-      "byteOffset": 23300,
+      "byteOffset": 23756,
       "byteLength": 2880
     },
     {
       "buffer": 0,
-      "byteOffset": 26180,
+      "byteOffset": 26636,
       "byteLength": 2880
     },
     {
       "buffer": 0,
-      "byteOffset": 29060,
+      "byteOffset": 29516,
       "byteLength": 1920
     },
     {
       "buffer": 0,
-      "byteOffset": 30980,
+      "byteOffset": 31436,
       "byteLength": 1440
     },
     {
       "buffer": 0,
-      "byteOffset": 32420,
+      "byteOffset": 32876,
       "byteLength": 336
     },
     {
       "buffer": 0,
-      "byteOffset": 32756,
+      "byteOffset": 33212,
       "byteLength": 336
     },
     {
       "buffer": 0,
-      "byteOffset": 33092,
+      "byteOffset": 33548,
       "byteLength": 168
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 33260
+      "byteLength": 33716
     }
   ],
   "images": [

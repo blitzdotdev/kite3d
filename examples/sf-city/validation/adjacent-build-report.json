@@ -1,0 +1,530 @@
+{
+  "status": "isolated-geometry-candidate",
+  "destination": "/tmp/sf-adjacent-candidate",
+  "captureId": "2026-10-22T18-22-06.980Z-729ad3d8-cf8b-4ff9-ad58-af78939954ac",
+  "tile": "-1_-2",
+  "origin": [
+    -122.40935,
+    37.8005
+  ],
+  "verticalOriginM": 15,
+  "coverageMasks": [
+    [
+      -122.4122,
+      37.799,
+      -122.4065,
+      37.802
+    ],
+    [
+      -122.41080521583667,
+      37.802,
+      -122.40935,
+      37.802799676607975
+    ]
+  ],
+  "addedCoverageSquareMetres": 11394.55999999025,
+  "sources": {
+    "buildings": {
+      "baselineRows": 468,
+      "capturedRows": 79,
+      "duplicates": 38,
+      "added": 41,
+      "total": 509,
+      "sha256": "ec0e66dcfb22348cef0ff65ab1643cead6f12cc7876e8fcff1c886ca5428eebd"
+    },
+    "roads": {
+      "baselineRows": 74,
+      "capturedRows": 7,
+      "duplicates": 2,
+      "added": 5,
+      "total": 79,
+      "sha256": "1b8bbd524d646bdd28e3f1ee63ac9d69abfb5c6fdb13397eaf6200bb4b70d021"
+    },
+    "trees": {
+      "baselineRows": 191,
+      "capturedRows": 20,
+      "duplicates": 4,
+      "added": 16,
+      "total": 207,
+      "sha256": "92dba01d35d4e71cbe8a3039466b678a0c1889d911f04e431e73c5a444c912d2"
+    },
+    "sidewalks": {
+      "baselineRows": 74,
+      "capturedRows": 7,
+      "duplicates": 2,
+      "added": 5,
+      "total": 79,
+      "sha256": "2ea226909587061e63018d6e72b7f4490bbdf44a2a7a0f26a1963bcc5cfd88c3"
+    }
+  },
+  "conflicts": [
+    {
+      "layer": "roads",
+      "sourceId": "12215000",
+      "resolution": "preserved-baseline-record"
+    },
+    {
+      "layer": "roads",
+      "sourceId": "3092000",
+      "resolution": "preserved-baseline-record"
+    }
+  ],
+  "baselinePlacements": 794,
+  "candidatePlacements": 862,
+  "addedPlacements": [
+    {
+      "id": "sf-building:201006.0065332",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0071775",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0077528",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0077883",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0081547",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0082095",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0088026",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0119771",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0121894",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0122276",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0008276",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0008976",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0013391",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0014313",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0016746",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0016970",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0018717",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0021627",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0028318",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0029116",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0040702",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0057636",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0066305",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0071156",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0071331",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0078349",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0084756",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0086801",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0087655",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0093595",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0095869",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0109287",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0121067",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0122237",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0125452",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0147905",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0156082",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0157010",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0165048",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-building:201006.0165873",
+      "kind": "building",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-road:12216000",
+      "kind": "road",
+      "tile": "-1_-3"
+    },
+    {
+      "id": "sf-road:12758000",
+      "kind": "road",
+      "tile": "-1_-3"
+    },
+    {
+      "id": "sf-road:6493000",
+      "kind": "road",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-road:6494000",
+      "kind": "road",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-road:6495000",
+      "kind": "road",
+      "tile": "-2_-2"
+    },
+    {
+      "id": "sf-tree:104607",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:110681",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:142621",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:142622",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:143072",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:143088",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:143089",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:143090",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:143091",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:143104",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:46083",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:71420",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:71422",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:72303",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:73754",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-tree:96851",
+      "kind": "tree",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-prop:12215000-1-2",
+      "kind": "street-prop",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-prop:12216000-1-0",
+      "kind": "street-prop",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-prop:12216000-1-0-bin",
+      "kind": "street-prop",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-prop:12216000-1-1",
+      "kind": "street-prop",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-prop:6494000-1-1",
+      "kind": "street-prop",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-prop:6495000-1-0",
+      "kind": "street-prop",
+      "tile": "-1_-2"
+    },
+    {
+      "id": "sf-prop:6495000-1-0-bin",
+      "kind": "street-prop",
+      "tile": "-1_-2"
+    }
+  ],
+  "preservedOwners": true,
+  "overridesUnchanged": true,
+  "rebakedBaselineAssetCount": 100,
+  "rebakedBaselineIds": [
+    "sf-building:201006.0003278",
+    "sf-building:201006.0005514",
+    "sf-building:201006.0010869",
+    "sf-building:201006.0019178",
+    "sf-building:201006.0022682",
+    "sf-building:201006.0025797",
+    "sf-building:201006.0038827",
+    "sf-building:201006.0039020",
+    "sf-building:201006.0039134",
+    "sf-building:201006.0039370",
+    "sf-building:201006.0045551",
+    "sf-building:201006.0048128",
+    "sf-building:201006.0055743",
+    "sf-building:201006.0057384",
+    "sf-building:201006.0058652",
+    "sf-building:201006.0059446",
+    "sf-building:201006.0083006",
+    "sf-building:201006.0090069",
+    "sf-building:201006.0097328",
+    "sf-building:201006.0098131",
+    "sf-building:201006.0103619",
+    "sf-building:201006.0125650",
+    "sf-building:201006.0131858",
+    "sf-building:201006.0142306",
+    "sf-building:201006.0156146",
+    "sf-road:2546000",
+    "sf-road:2722000",
+    "sf-road:2723000",
+    "sf-road:3092000",
+    "sf-road:3517000",
+    "sf-road:3687000",
+    "sf-road:4294000",
+    "sf-road:4295000",
+    "sf-road:4296000",
+    "sf-road:4297000",
+    "sf-road:4298000",
+    "sf-road:5051000",
+    "sf-road:5495000",
+    "sf-road:5496000",
+    "sf-road:5497000",
+    "sf-road:5498000",
+    "sf-road:5499000",
+    "sf-road:5500000",
+    "sf-road:5501000",
+    "sf-road:5502000",
+    "sf-road:5503000",
+    "sf-road:5504000",
+    "sf-road:5505000",
+    "sf-road:6161000",
+    "sf-road:6403000",
+    "sf-road:6404000",
+    "sf-road:6405000",
+    "sf-road:6406000",
+    "sf-road:6407000",
+    "sf-road:6449000",
+    "sf-road:6450000",
+    "sf-road:6451000",
+    "sf-road:6452000",
+    "sf-road:6453000",
+    "sf-road:6454000",
+    "sf-road:6455000",
+    "sf-road:6456000",
+    "sf-road:6457000",
+    "sf-road:6497000",
+    "sf-road:6573000",
+    "sf-road:6774000",
+    "sf-road:7451000",
+    "sf-road:7452000",
+    "sf-road:7909000",
+    "sf-road:7910000",
+    "sf-road:8689000",
+    "sf-road:8943000",
+    "sf-road:9606000",
+    "sf-road:10588000",
+    "sf-road:10694000",
+    "sf-road:10695000",
+    "sf-road:10696000",
+    "sf-road:10697000",
+    "sf-road:10698000",
+    "sf-road:10774000",
+    "sf-road:12211000",
+    "sf-road:12212000",
+    "sf-road:12213000",
+    "sf-road:12214000",
+    "sf-road:12215000",
+    "sf-road:12841000",
+    "sf-road:12842000",
+    "sf-road:12843000",
+    "sf-road:12844000",
+    "sf-road:12845000",
+    "sf-road:12846000",
+    "sf-road:12847000",
+    "sf-road:12848000",
+    "sf-road:12849000",
+    "sf-road:12850000",
+    "sf-road:12851000",
+    "sf-road:13178000",
+    "sf-road:13179000",
+    "sf-road:13690000",
+    "sf-terrain:north-beach"
+  ],
+  "limitations": [
+    "All geometry rebaked coherently against union elevation samples; old terrain is not mixed into new ground.",
+    "Saved scene overrides survive compose; authored manual asset modifications need review because generated assets are rebaked in this isolated copy.",
+    "Road and terrain triangles clipped exactly to union; complete mapped boundary building footprints may extend beyond it.",
+    "Street props follow source roads and require boundary review.",
+    "Collision metadata is an unintegrated bounding-envelope draft; not valid for masked runtime physics.",
+    "Terrain remains monolithic and must stay pinned until derived partitioning is validated.",
+    "No new city coverage is accepted or deployed until streamer traversal and visual seam checks pass."
+  ]
+}

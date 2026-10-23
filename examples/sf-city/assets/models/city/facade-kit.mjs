@@ -1,7 +1,7 @@
 // Authored North Beach-inspired modules, fitted heuristically to mapped footprints.
 // These are reusable architectural shapes, not reconstructions of observed facades.
 import {surface} from './mesh.mjs'
-export function facadeKit(feature, roads, ground, base) {
+export function facadeKit(feature, roads, ground, base, skipEdge = -1) {
   const [cx, cz] = feature.center, height = feature.height
   const buckets = new Map()
   function quad(mat, corners) {
@@ -13,6 +13,7 @@ export function facadeKit(feature, roads, ground, base) {
     const ring = polygon[0]
     const signed = ring.reduce((s,a,i)=>{const b=ring[(i+1)%ring.length];return s+a[0]*b[1]-b[0]*a[1]},0)
     for (let i=0;i<ring.length;i++) {
+      if(polygon===feature.polygons[0] && i===skipEdge)continue
       const a=ring[i],b=ring[(i+1)%ring.length],length=Math.hypot(b[0]-a[0],b[1]-a[1])
       if(length<2.4)continue
       const ux=(b[0]-a[0])/length,uz=(b[1]-a[1])/length,nx=uz*Math.sign(signed),nz=-ux*Math.sign(signed)
@@ -39,6 +40,8 @@ export function facadeKit(feature, roads, ground, base) {
       function window(s,y,w,h,d=0.035){
         panel(s,y,w,h,d,2)
         if (!street) return
+        const variant=(Math.floor(s*13)+Math.floor(y*7)+feature.sourceId.length)%5
+        if(variant<3)panel(s,y+h*(.72-variant*.15),w*.9,h*(.23+variant*.15),d+.012,6)
         panel(s,y+h*0.58,w*0.92,h*0.38,d+0.008,5)
         for(const x of [s-w/2-0.055,s+w/2+0.055])block(x,y-0.08,0.11,h+0.16,d,d+0.12,3)
         for(const yy of [y-0.08,y+h])block(s,yy,w+0.22,0.1,d,d+0.16,3)
@@ -48,7 +51,7 @@ export function facadeKit(feature, roads, ground, base) {
       }
       // Roof parapet and a two-step projecting cornice define the street silhouette.
       block(length/2,height-0.15,length,0.5,0,0.12,0)
-      if(street){
+      if(street&&feature.family!=='stucco'){
         block(length/2,height-0.32,length+0.12,0.14,0,0.32,3)
         block(length/2,height-0.08,length+0.3,0.18,0,0.52,3)
         for(let s=0.5;s<length-0.4;s+=0.8)block(s,height-0.64,0.16,0.3,0,0.3,3)
@@ -68,11 +71,19 @@ export function facadeKit(feature, roads, ground, base) {
             // Canvas awning; authored profile, inferred placement.
             quad(4,[point(s-storeW/2,storeY+storeH,0.16),point(s+storeW/2,storeY+storeH,0.16),point(s+storeW/2,storeY+storeH-0.35,1.05),point(s-storeW/2,storeY+storeH-0.35,1.05)])
             panel(s,storeY+storeH-0.55,storeW,0.2,1.05,4)
-          }else if(f>0&&street&&height<26&&bays>=2&&k%2===0&&feature.style!=='plain'){
+          }else if(f>0&&street&&height<26&&bays>=2&&k%2===0&&feature.style!=='plain'&&feature.family==='timber'){
             // Projecting three-sided bay with opaque spandrel and framed front glazing.
             const bw=Math.min(2.25,length/bays*0.78),deep=0.72,sy=f*floorH+0.08
-            block(s,sy,bw,floorH-0.12,0,deep,0)
-            window(s,y,bw-0.42,h,deep+0.025)
+            const frontW=bw*.7
+            panel(s,sy,frontW,floorH-.12,deep,0)
+            for(const side of [-1,1]){
+              const back=s+side*bw/2,front=s+side*frontW/2
+              quad(0,[point(back,sy,0),point(front,sy,deep),point(front,sy+floorH-.12,deep),point(back,sy+floorH-.12,0)])
+              const q=(t,yy)=>point(back+(front-back)*t,yy,deep*t+.012)
+              quad(2,[q(.15,y),q(.85,y),q(.85,y+h),q(.15,y+h)])
+            }
+            quad(1,[point(s-bw/2,sy+floorH-.12,0),point(s-frontW/2,sy+floorH-.12,deep),point(s+frontW/2,sy+floorH-.12,deep),point(s+bw/2,sy+floorH-.12,0)])
+            window(s,y,frontW-0.22,h,deep+0.025)
             block(s,sy+floorH-0.15,bw+0.18,0.12,deep,deep+0.14,3)
           }else window(s,y,w,h)
         }
@@ -85,5 +96,5 @@ export function facadeKit(feature, roads, ground, base) {
       }
     }
   }
-  return [...buckets].map(([mat,b])=>({name:['Facade bay volumes','Roof','Inset glazing','Cornices and window frames','Storefronts and doors','Sky reflection panels'][mat],geometry:surface(b.points,b.triangles),mat}))
+  return [...buckets].map(([mat,b])=>({name:['Facade bay volumes','Roof','Inset glazing','Cornices and window frames','Storefronts and doors','Sky reflection panels','Interior blind variation'][mat],geometry:surface(b.points,b.triangles),mat}))
 }

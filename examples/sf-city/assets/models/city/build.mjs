@@ -1,17 +1,27 @@
+import {broadleafGeometry} from './tree-geometry.mjs'
+import {washingtonSquare,parkBoundary} from './washington-square.mjs'
+import {churchParts} from './church.mjs'
+import {siteTree} from './tree-siting.mjs'
+import {streetFurniture} from './furniture.mjs'
+import {bakeBuildingMaterials, buildingResources, metricUV} from './building-materials.mjs'
+import {grantContext} from './grant-context.mjs'
+import {grantBackground} from './grant-background.mjs'
+import {photoFacade, retainedWalls} from './photo-facade.mjs'
 import {bakeGroundMaterials, groundMaterial, groundResources} from './materials.mjs'
-import {foliageTexture, foliageCards} from './foliage.mjs'
+import {foliageTexture, palmCrown} from './foliage.mjs'
 import {facadeKit} from './facade-kit.mjs'
 import {strip, corridors, clipped, crossingLift} from './streets.mjs'
 import {THREE, material, surface, asset} from './mesh.mjs'
 import {area, bounds, loadCity, elevation, hash, write, xy, polygonArea} from '../../../scene/data.mjs'
 
-const GENERATOR_VERSION = 3
+const GENERATOR_VERSION = 5
 bakeGroundMaterials()
+bakeBuildingMaterials()
 const city = loadCity()
 const {ground} = elevation(city)
 const roadCorridors = corridors(city.roads)
 const outerCorridors = corridors(city.roads.map(r => ({...r, width: r.width + 2 * r.sidewalk})))
-const placements = [], collisions = [], tiles = {}
+const placements = [], collisions = [], tiles = {}, photoStudies = []
 const palette = ['#dfd6bd', '#bdcfcb', '#d8c2ad', '#a9b9bf', '#d1b8ab', '#ddd2b4', '#adc0ad', '#c4c4bc', '#b5b1a7', '#d4cabd']
 const dark = material('Window glass approximation', '#314959', 0.3, 0.25)
 const roof = material('Flat roof', '#737670')
@@ -28,15 +38,30 @@ function record(feature, generated, position, extra = {}) {
 }
 
 function building(feature) {
+  if(feature.patch.photoFacade?.flattenCorner){
+    // Reversible photo-estimated visual override, never a mutation of the source snapshot.
+    const polygons=feature.polygons.map(p=>p.map(r=>r.map(v=>[...v]))),ring=polygons[0][0],end=ring[28],north=ring[29]
+    const length=Math.hypot(end[0]-north[0],end[1]-north[1]),u=[(end[0]-north[0])/length,(end[1]-north[1])/length],out=[-u[1],u[0]]
+    for(let i=23;i<28;i++){const z=Math.min(0,(ring[i][0]-end[0])*out[0]+(ring[i][1]-end[1])*out[1]);ring[i]=[end[0]+out[0]*z,end[1]+out[1]*z]}
+    feature={...feature,polygons,footprintCorrection:'Photo-estimated flattened south corner; original DataSF footprint retained in source snapshot'}
+  }
   const [cx, cz] = feature.center
   const groundCorners = feature.polygons.flatMap((p) => p[0].map(([x, z]) => ground(x, z)))
   const base = ground(cx, cz), bottom = Math.min(...groundCorners) - 0.6
   const height = feature.height
   const top = base + height
-  const color = feature.facadeColor || palette[Math.floor(seed(feature.id) * palette.length)]
-  const materials = [material('SF stucco / painted timber', color), roof, dark, trim,
-    material('Shopfront paint', ['#304f47','#733f35','#263e4a'][Math.floor(seed(feature.id+'shop')*3)]), material('Glazing sky reflection', '#819aab', 0.24, 0.2)]
+  let color = feature.facadeColor || palette[Math.floor(seed(feature.id) * palette.length)]
+  const landmark=feature.id==='sf-building:201006.0001265'
+  const family=landmark?'stone':height>26?'masonry':['timber','stucco','masonry'][Math.floor(seed(feature.id+'family')*3)]
+  if(!feature.facadeColor&&family==='masonry')color=['#a77662','#bc9480','#9c8073','#c8bba5'][Math.floor(seed(feature.id+'brick')*4)]
+  if(landmark)color='#ded8c8'
+  feature={...feature, family}
+  const materials = [material('SF '+family, color), structuredClone(roof), structuredClone(dark), structuredClone(trim),
+    material('Shopfront paint', ['#304f47','#733f35','#263e4a'][Math.floor(seed(feature.id+'shop')*3)]), material('Glazing sky reflection', '#819aab', 0.24, 0.2), material('Varied interior blinds', '#b2ad96',.95)]
+  if(landmark){materials[2]=material('Church recessed openings','#171c20',.7);materials[4]=material('Church timber doors','#514131',.8)}
   const parts = []
+  const photo = photoFacade(feature, ground, base, top, bottom, materials.length)
+  if(photo){materials.push(...photo.materials);photoStudies.push(photo)}
   let polygonIndex = 0
   for (const polygon of feature.polygons) {
     if (polygonArea(polygon[0]) < 2) continue
@@ -44,15 +69,29 @@ function building(feature) {
     for (const hole of polygon.slice(1)) shape.holes.push(new THREE.Path(hole.map(([x, z]) => new THREE.Vector2(x - cx, -(z - cz)))))
     const body = new THREE.ExtrudeGeometry(shape, {depth: top - bottom, bevelEnabled: false, steps: 1, curveSegments: 1})
     body.rotateX(-Math.PI / 2); body.translate(0, bottom - base, 0)
-    parts.push({name: `Footprint ${polygonIndex++}`, geometry: body, mat: [1, 0]})
+    if(photo){const cap=body.groups[0];body.setIndex(Array.from({length:cap.count},(_,i)=>cap.start+i));body.clearGroups()}
+    parts.push({name: `Footprint ${polygonIndex++}`, geometry: body, mat: photo ? 1 : [1, 0]})
   }
-  parts.push(...facadeKit(feature, city.roads, ground, base))
+  if(landmark)parts.push(...churchParts(feature,base,ground))
+  else if(feature.patch.photoContext)parts.push(...grantContext(feature,city,base))
+  else parts.push(...facadeKit(feature, city.roads, ground, base, photo ? photo.edge : -1))
+  if(photo)parts.push(...retainedWalls(feature, photo, base, bottom, top),...photo.parts)
 
+  if(!photo&&!landmark){
+    const ring=feature.polygons[0][0];let contains=false
+    for(let i=0,j=ring.length-1;i<ring.length;j=i++){const a=ring[i],b=ring[j];if((a[1]>cz)!==(b[1]>cz)&&cx<(b[0]-a[0])*(cz-a[1])/(b[1]-a[1])+a[0])contains=!contains}
+    if(contains&&height>5){
+      parts.push({name:'Inferred rooftop service enclosure',geometry:new THREE.BoxGeometry(1.8,.65,1.2).translate(0,height+.325,0),mat:1})
+      parts.push({name:'Inferred rooftop vent',geometry:new THREE.CylinderGeometry(.16,.16,.8,8).translate(.55,height+.9,0),mat:3})
+    }
+  }
+  const resources=photo?.resources || buildingResources(family,materials)
+  if(!photo)for(const part of parts)metricUV(part.geometry)
   const id = feature.id.replace(':', '-')
   const generated = asset(`assets/models/city/buildings/${id}`, parts, materials,
-    {name: `Building ${feature.sourceId}`, cityId: feature.id, heightSource: feature.heightSource})
+    {name: `Building ${feature.sourceId}`, cityId: feature.id, heightSource: feature.heightSource, ...(photo ? {photoFacade:photo.provenance} : {})}, resources)
   record({...feature, name: `Building ${feature.sourceId}`}, generated, [cx, base, cz],
-    {kind: 'building', heightM: height, heightSource: feature.heightSource, facadeSource: 'authored SF-inspired bay, cornice and storefront modules; inferred assignment',
+    {kind: 'building', footprintCorrection: feature.footprintCorrection, heightM: height, heightSource: feature.heightSource, architecturalFamily: family, landmarkSource: landmark ? 'scene/sources/park-landmark-provenance.json' : undefined, visualSpireHeightM: landmark ? 58.2168 : undefined, facadeSource: landmark ? 'Original approximate church silhouette from published dimensions and inspected facade photograph; hidden sides and detail inferred' : photo ? 'Partial photo-derived Grant frontage; inferred offset; footprint correction explicitly recorded when enabled' : feature.patch.photoContext ? 'Photo-estimated Grant background north elevation; mapped footprint and height retained, openings not surveyed' : 'authored SF-inspired bay, cornice and storefront modules; inferred assignment',
       sourceDataset: 'ynuv-fyni'})
   collisions.push({id: feature.id, polygons: feature.polygons, bottomM: bottom, topM: top,
     type: 'footprint-prism', integratedPhysics: false})
@@ -143,7 +182,7 @@ function road(feature) {
   if (gutters.length) parts.push({name: 'Concrete drainage margins', geometry: surface(gutters, gt, 0.25), mat: 1})
   if (paint.length) parts.push({name: 'Inferred center markings', geometry: surface(paint, pt), mat: 2})
   const generated = asset(`assets/models/city/roads/${feature.id.replace(':', '-')}`, parts,
-    [groundMaterial('Asphalt', '#64696c', 0), groundMaterial('Concrete sidewalk', '#cdcabe', 1), material('Centerline', '#e4c76a')],
+    [groundMaterial('Asphalt', '#64696c', 0), groundMaterial('Concrete sidewalk', '#a39e91', 1), material('Centerline', '#e4c76a')],
     {name: feature.name, cityId: feature.id}, groundResources(['asphalt','concrete']))
   const center = feature.points[Math.floor(feature.points.length / 2)]
   record(feature, generated, [0, 0, 0], {kind: 'road', tile: `${Math.floor(center[0] / area.tileSizeM)}_${Math.floor(center[1] / area.tileSizeM)}`,
@@ -155,25 +194,24 @@ function trees() {
   write('assets/models/city/trees/broadleaf/leaves.png', foliageTexture())
   const leafMaterial = {...material('Authored leaf clusters', '#ffffff'), alphaMode: 'MASK', alphaCutoff: 0.5}
   leafMaterial.pbrMetallicRoughness.baseColorTexture = {index: 0}
-  const broadleaf = asset('assets/models/city/trees/broadleaf', [
-    {name: 'Tapered trunk', geometry: new THREE.CylinderGeometry(0.13,0.3,5.5,9).translate(0,2.75,0),mat:1},
-    {name: 'Authored foliage cards',geometry:foliageCards(),mat:0},
+  const broadleaves = [0,1,2].map(variant=>{
+  const template=broadleafGeometry(variant)
+  return asset('assets/models/city/trees/broadleaf'+(variant?'-'+variant:''), [
+    {name:'Connected tapered trunk and branches',geometry:template.wood,mat:1},
+    {name:'Twig-attached foliage sprays',geometry:template.leaves,mat:0},
   ], [leafMaterial, leaves[1]], {name:'Authored broadleaf canopy, inferred species shape'}, {
-    images: [{uri: 'leaves.png'}], textures: [{source: 0, sampler: 0}],
+    images: [{uri: '/kite3d/assets/models/city/trees/broadleaf/leaves.png'}], textures: [{source: 0, sampler: 0}],
     samplers: [{magFilter: 9729, minFilter: 9987, wrapS: 33071, wrapT: 33071}],
   })
-  const palmParts = [{name: 'Trunk', geometry: new THREE.CylinderGeometry(0.16, 0.28, 8.6, 7).translate(0, 4.3, 0), mat: 1}]
-  for (let k = 0; k < 8; k++) {
-    const angle = k * Math.PI / 4
-    palmParts.push({name: `Palm frond ${k + 1}`, mat: 0,
-      geometry: surface([[0, 9.7, 0], [Math.cos(angle + 0.3) * 1.7, 10, Math.sin(angle + 0.3) * 1.7],
-        [Math.cos(angle) * 3.5, 8.6, Math.sin(angle) * 3.5], [Math.cos(angle - 0.3) * 1.7, 10, Math.sin(angle - 0.3) * 1.7]], [[0, 1, 2], [0, 2, 3]])})
-  }
-  const palm = asset('assets/models/city/trees/palm', palmParts, leaves, {name: 'Palm placeholder, 10 m'})
+  })
+  const palmParts = [{name: 'Trunk', geometry: new THREE.CylinderGeometry(0.16, 0.28, 8.6, 12).translate(0, 4.3, 0), mat: 1}]
+  palmParts.push(...palmCrown())
+  const palm = asset('assets/models/city/trees/palm', palmParts, leaves, {name: 'Original pinnate palm archetype, inferred 10 m crown'})
   for (const tree of city.trees) {
-    const [x, z] = tree.position
-    record({...tree, name: `${tree.species.split(' :: ')[0]} #${tree.sourceId}`}, tree.kind === 'palm' ? palm : broadleaf,
-      [x, ground(x, z), z], {kind: 'tree', heightM: tree.height, heightSource: tree.heightSource, species: tree.species,
+    const siting=siteTree(tree.position,city.roads,city.buildings)
+    const [x, z] = siting.position
+    record({...tree, name: `${tree.species.split(' :: ')[0]} #${tree.sourceId}`}, tree.kind === 'palm' ? palm : broadleaves[Math.floor(seed(tree.id+'crown')*3)],
+      [x, ground(x, z), z], {kind: 'tree', sourcePosition:siting.sourcePosition, placementCorrection:siting.placementCorrection, placementWarning:siting.placementWarning, heightM: tree.height, heightSource: tree.heightSource, species: tree.species,
         scale: [tree.height / 10, tree.height / 10, tree.height / 10], yaw: seed(tree.id) * Math.PI * 2,
         sourceDataset: 'tkzw-k3nq'})
   }
@@ -193,20 +231,6 @@ function groundSurface(points, triangles) {
   return g
 }
 function terrain() {
-  // Authored approximation from the bounding street centerlines, inset for sidewalks.
-  // This is not a surveyed park boundary or a claim about present landscaping.
-  const park = [[-122.410206544, 37.800315499], [-122.409189818, 37.800445061], [-122.409369117, 37.801370656],
-    [-122.411018517, 37.801169752], [-122.41095374, 37.800832982]].map(xy)
-  const pc = [0, 1].map((i) => park.reduce((s, p) => s + p[i], 0) / park.length)
-  for (const p of park) {const d = Math.hypot(p[0] - pc[0], p[1] - pc[1]); p[0] += (pc[0] - p[0]) * 11 / d; p[1] += (pc[1] - p[1]) * 11 / d}
-  function inPark(x, z) {
-    let inside = false
-    for (let i = 0, j = park.length - 1; i < park.length; j = i++) {
-      const a = park[i], b = park[j]
-      if ((a[1] > z) !== (b[1] > z) && x < (b[0] - a[0]) * (z - a[1]) / (b[1] - a[1]) + a[0]) inside = !inside
-    }
-    return inside
-  }
   const positions = [], paved = [], grass = [], grid = []
   const countX = Math.ceil((bounds[2] - bounds[0] + 30) / area.terrainStepM)
   const countZ = Math.ceil((bounds[3] - bounds[1] + 30) / area.terrainStepM)
@@ -217,15 +241,15 @@ function terrain() {
       const z = bounds[1] - 15 + j * (bounds[3] - bounds[1] + 30) / countZ
       grid[j][i] = positions.length; positions.push([x, ground(x, z), z])
       if (i && j) {
-        const previous = positions[grid[j - 1][i - 1]]
-        const list = inPark((x + previous[0]) / 2, (z + previous[2]) / 2) ? grass : paved
+        const list = paved
         list.push([grid[j - 1][i - 1], grid[j][i], grid[j - 1][i]], [grid[j - 1][i - 1], grid[j][i - 1], grid[j][i]])
       }
     }
   }
   // The coarse terrain must not poke through finely graded roads on hills.
   // Remove covered ground triangles rather than hiding the mismatch with a vertical offset.
-  const groundMasks = outerCorridors
+  const parkBox=[Math.min(...parkBoundary.map(p=>p[0])),Math.min(...parkBoundary.map(p=>p[1])),Math.max(...parkBoundary.map(p=>p[0])),Math.max(...parkBoundary.map(p=>p[1]))]
+  const groundMasks = [...outerCorridors,{polygon:parkBoundary,box:parkBox}]
   const visibleGround = [], visiblePaved = [], visibleGrass = []
   for (const [source, target] of [[paved, visiblePaved], [grass, visibleGrass]]) {
     for (const triangle of source) {
@@ -250,15 +274,34 @@ function terrain() {
 for (const feature of city.buildings) building(feature)
 for (const feature of city.roads) road(feature)
 trees(); terrain()
+streetFurniture(city,ground,bounds,record)
+washingtonSquare(ground,record)
+// Authored parked props are separate editable references, never merged into building geometry.
+for(const photo of photoStudies){
+  if(photo.backgroundTower){
+    const generated=grantBackground()
+    record({id:'sf-study:grant-background-tower',name:'Grant study / inferred distant tower'},generated,photo.point([54,0,-5.5]),{kind:'photo-background',yaw:photo.provenance.yaw,scale:[1,photo.provenance.scaleY,1],sourceDataset:'Single-photo silhouette and placement estimate, not a mapped tower'})
+  }
+  const road=city.roads.find(r=>r.id==='sf-road:6404000')
+  for(const [index,x,path]of [[0,7.44,'assets/models/vehicles/bmw-x5/f.gltf'],[1,13.44,'assets/models/vehicles/tozzo-98/f.gltf'],[2,18.94,'assets/models/vehicles/tozzo-98/dark.gltf']]){
+    const wall=photo.point([x,0,0]),a=road.points[0],b=road.points[1],dx=b[0]-a[0],dz=b[1]-a[1],t=((wall[0]-a[0])*dx+(wall[2]-a[1])*dz)/(dx*dx+dz*dz),cx=a[0]+t*dx,cz=a[1]+t*dz
+    const distance=Math.hypot(wall[0]-cx,wall[2]-cz),nx=(wall[0]-cx)/distance,nz=(wall[2]-cz)/distance,offset=road.width/2-.95-.18,px=cx+nx*offset,pz=cz+nz*offset
+    const along=new THREE.Vector3(-nz,0,nx),rise=(ground(px+along.x*2,pz+along.z*2)-ground(px-along.x*2,pz-along.z*2))/4
+    along.y=rise;along.normalize();const outward=new THREE.Vector3(-nx,0,-nz),up=outward.clone().cross(along).normalize(),rotation=new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(along,up,outward)).toArray()
+    const spec={id:`sf-study:grant-parked-${index+1}`,name:index===0?'Grant study / BMW X5 (CC BY 4.0)':'Grant study / Tozzo sedan (CC BY 4.0)',asset:path}
+    record(spec,{path},[px,ground(px,pz)+.035,pz],{kind:'authored-vehicle',rotation,scale:index===0?[.9,.9,.9]:[1,1,1],sourceDataset:'Photo-inferred parking; licensed substitute vehicle model'})
+  }
+}
 const provenance = JSON.parse((await import('node:fs')).readFileSync(new URL('../../../scene/sources/provenance.json', import.meta.url), 'utf8'))
 write('scene/generated.json', {version: 1, generatorVersion: GENERATOR_VERSION, area, provenance,
   assumptions: ['Ground interpolated from older city footprint ground elevations; no 2023 LiDAR processed.',
     'Facades, flat roofs, road widths, markings and tree sizes are inferred placeholders.',
     'Sidewalk widths use positive SIDEWALK_F observations from the 2014 study, with defaults for unknown/variable widths; not surveyed curb geometry.',
     'Sidewalks are clipped against carriageways; 15 cm curbs and 1.8 m lowered crossing approaches are heuristic, not surveyed or accessibility-certified.',
-    'Park lawn is an authored approximation. No traffic simulation, street furniture or physics integration yet.',
+    'Park contours and bench positions are traced approximately from the 2018 city concept plan, not surveyed as-built. Street lanterns and bins use inferred sidewalk placements; no traffic simulation or physics integration.',
     'Tiles are logical ownership groups; production streaming and LOD generation are not implemented.'],
   unmatchedOverrides: city.unmatchedOverrides, tiles, placements,
+  photoStudies: photoStudies.map(p=>p.provenance), views: photoStudies.map(p=>p.view),
   stats: {buildings: city.buildings.length, roads: city.roads.length, trees: city.trees.length,
     tiles: Object.keys(tiles).length, triangles: placements.reduce((s, p) => s + p.triangles, 0)}})
 console.log(`Baked ${city.buildings.length} buildings, ${city.roads.length} roads and ${city.trees.length} trees`)

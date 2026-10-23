@@ -1,0 +1,37 @@
+{
+  "environment": "Chromium SwiftShader, local static viewer, 800x600",
+  "errors": [],
+  "failedRequests": [
+    {
+      "path": "/assets.json",
+      "host": "127.0.0.1",
+      "error": "net::ERR_FAILED"
+    }
+  ],
+  "checks": [
+    "Standalone viewer ready with one HUD and no editor controls",
+    "Orbit drag and scroll zoom change camera",
+    "Keyboard bookmark works",
+    "Viewport resize updates canvas and camera aspect",
+    "Missing registry yields accessible error and retry, not blank canvas",
+    "Retry reload recovers cleanly without duplicate HUD",
+    "Navigation away during startup completes without page crash"
+  ],
+  "readyMs": 96903,
+  "preFrame": {
+    "atMs": 66277.80000000075,
+    "visibleMeshes": 1569,
+    "visibleMaterials": 1213,
+    "triangles": 1174380,
+    "transmissiveMeshes": 8,
+    "programs": 0,
+    "memory": {
+      "geometries": 0,
+      "textures": 0
+    }
+  },
+  "resources": {
+    "bytes": 108874812,
+    "requests": 1065
+  }
+}

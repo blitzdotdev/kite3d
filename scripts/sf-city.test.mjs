@@ -79,6 +79,13 @@ test('batching accepts only current references and registrations for the generat
     const node = {visible: true, userData: {rootPath, cityGenerated: {rootPath}}}
     const registry = {files: {generated: {path: placement.asset, files: {'f.gltf': placement.asset}}}}
     assert.equal(isGeneratedPlacement(node, placement, registry), true)
+    // Reviews r4347541802/r4347541815: moving placements froze and hidden tiles reappeared in Play.
+    assert.equal(isGeneratedPlacement({...node, parent: {visible: false}}, placement, registry), false)
+    assert.equal(isGeneratedPlacement({...node, parent: {visible: true, parent: {visible: false}}}, placement, registry), false)
+    assert.equal(isGeneratedPlacement({...node, userData: {...node.userData, EntityComponentPlugin: {motion: {type: 'Move'}}}}, placement, registry), false)
+    assert.equal(isGeneratedPlacement({...node, parent: {userData: {EntityComponentPlugin: {motion: {type: 'Move'}}}}}, placement, registry), false)
+    assert.equal(isGeneratedPlacement({...node, animations: [{}]}, placement, registry), false)
+
     // Review r4347070699: an authored override inside city/ is still not baked.
     assert.equal(isGeneratedPlacement(node, {...placement, baked: false}, registry), false)
     // Review r4347070695: owner-added lights/meshes must not be hidden with the baked parent.
@@ -152,4 +159,24 @@ test('public export excludes unused registrations and reconciliation reports sta
         assert.ok(!result.unmatchedOverrides.includes(valid))
         assert.ok(!result.buildings.some(b => b.id === valid))
     } finally { rmSync(root, {recursive: true, force: true}) }
+})
+
+// Guards the manually inspected Grant render: inward retained-wall normals caused
+// diamond-shaped self-shadow acne even with normal maps disabled.
+test('photo facade retained walls face away from solid building volume', async () => {
+    const {retainedWalls} = await import('../examples/sf-city/assets/models/city/photo-facade.mjs')
+    for (const reverse of [false, true]) {
+        const outer = [[0, 0], [10, 0], [10, 10], [0, 10]]
+        const hole = [[3, 3], [3, 7], [7, 7], [7, 3]]
+        if (reverse) { outer.reverse(); hole.reverse() }
+        const parts = retainedWalls({center: [5, 5], polygons: [[outer, hole]]}, {edge: -1}, 0, 0, 8)
+        for (const [i, part] of parts.entries()) {
+            const position = part.geometry.getAttribute('position'), normal = part.geometry.getAttribute('normal')
+            const mx = (position.getX(0) + position.getX(1)) / 2
+            const mz = (position.getZ(0) + position.getZ(1)) / 2
+            const away = mx * normal.getX(0) + mz * normal.getZ(0)
+            assert.ok(i < 4 ? away > 0 : away < 0, `Wrong solid-facing normal at wall ${i}`)
+            part.geometry.dispose()
+        }
+    }
 })

@@ -109,7 +109,7 @@
     {
       "bufferView": 0,
       "componentType": 5126,
-      "count": 27054,
+      "count": 25283,
       "type": "VEC3",
       "min": [
         -265.6844482421875,
@@ -125,25 +125,25 @@
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 27054,
+      "count": 25283,
       "type": "VEC3"
     },
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 27054,
+      "count": 25283,
       "type": "VEC2"
     },
     {
       "bufferView": 3,
       "componentType": 5125,
-      "count": 28314,
+      "count": 28293,
       "type": "SCALAR"
     },
     {
       "bufferView": 4,
       "componentType": 5126,
-      "count": 27054,
+      "count": 25283,
       "type": "VEC3",
       "min": [
         -265.6844482421875,
@@ -159,19 +159,19 @@
     {
       "bufferView": 5,
       "componentType": 5126,
-      "count": 27054,
+      "count": 25283,
       "type": "VEC3"
     },
     {
       "bufferView": 6,
       "componentType": 5126,
-      "count": 27054,
+      "count": 25283,
       "type": "VEC2"
     },
     {
       "bufferView": 7,
       "componentType": 5125,
-      "count": 1884,
+      "count": 0,
       "type": "SCALAR"
     }
   ],
@@ -179,48 +179,48 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 324648
+      "byteLength": 303396
     },
     {
       "buffer": 0,
-      "byteOffset": 324648,
-      "byteLength": 324648
+      "byteOffset": 303396,
+      "byteLength": 303396
     },
     {
       "buffer": 0,
-      "byteOffset": 649296,
-      "byteLength": 216432
+      "byteOffset": 606792,
+      "byteLength": 202264
     },
     {
       "buffer": 0,
-      "byteOffset": 865728,
-      "byteLength": 113256
+      "byteOffset": 809056,
+      "byteLength": 113172
     },
     {
       "buffer": 0,
-      "byteOffset": 978984,
-      "byteLength": 324648
+      "byteOffset": 922228,
+      "byteLength": 303396
     },
     {
       "buffer": 0,
-      "byteOffset": 1303632,
-      "byteLength": 324648
+      "byteOffset": 1225624,
+      "byteLength": 303396
     },
     {
       "buffer": 0,
-      "byteOffset": 1628280,
-      "byteLength": 216432
+      "byteOffset": 1529020,
+      "byteLength": 202264
     },
     {
       "buffer": 0,
-      "byteOffset": 1844712,
-      "byteLength": 7536
+      "byteOffset": 1731284,
+      "byteLength": 0
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 1852248
+      "byteLength": 1731284
     }
   ],
   "images": [

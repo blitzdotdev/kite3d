@@ -1,0 +1,36 @@
+{
+  "environment": "Headless Chromium SwiftShader, local editor, 1400x710 browser viewport; individual runs, not production FPS",
+  "baseline": {
+    "editorFirstBuildingMs": 12604,
+    "mainStartMs": 60747.6,
+    "dataEnvironmentMs": 61106.9,
+    "collectedMs": 108456.2,
+    "mergedMs": 108825.6,
+    "effectsMs": 108837.1,
+    "collectionDurationMs": 47349.3,
+    "resourceTransferBytes": 206001333
+  },
+  "optimized": {
+    "editorFirstBuildingMs": 13205,
+    "mainStartMs": 68062,
+    "dataEnvironmentMs": 68457.9,
+    "collectedMs": 69139.8,
+    "mergedMs": 69593.7,
+    "effectsMs": 69607.6,
+    "collectionDurationMs": 681.9,
+    "overviewCaptureElapsedMs": 113201
+  },
+  "change": "Seed Three Source image-serialization cache with actual image URL; preserve complete material and texture sampler comparisons, never encode source pixels merely to compare batch keys. Unaddressable texture sources stay isolated.",
+  "validation": [
+    "Equivalent texture source/material signatures match",
+    "Different repeat and roughness remain distinct",
+    "9 existing local tests passed",
+    "Optimized browser capture, camera shadow following and Stop listener cleanup passed"
+  ],
+  "limitations": [
+    "Editor first-building marker does not mean all assets are loaded",
+    "Editor Play reimports assets; BMW geometry transferred twice in baseline",
+    "Shader compile and first render are not yet separately timed",
+    "Subsequent simultaneous software-rendered scene/viewer checks caused a browser crash; those are not comparative benchmarks"
+  ]
+}

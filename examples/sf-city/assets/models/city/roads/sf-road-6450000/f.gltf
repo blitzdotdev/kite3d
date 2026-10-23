@@ -156,9 +156,9 @@
       "name": "Concrete sidewalk",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.6104955708001716,
-          0.5906188409113381,
-          0.514917665367466,
+          0.36625259558833256,
+          0.34191442489801843,
+          0.28314874041918053,
           1
         ],
         "roughnessFactor": 0.85,
@@ -188,10 +188,10 @@
     {
       "bufferView": 0,
       "componentType": 5126,
-      "count": 341,
+      "count": 344,
       "type": "VEC3",
       "min": [
-        176.08673095703125,
+        175.59300231933594,
         17.771677017211914,
         72.69346618652344
       ],
@@ -204,29 +204,29 @@
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 341,
+      "count": 344,
       "type": "VEC3"
     },
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 341,
+      "count": 344,
       "type": "VEC2"
     },
     {
       "bufferView": 3,
       "componentType": 5125,
-      "count": 513,
+      "count": 516,
       "type": "SCALAR"
     },
     {
       "bufferView": 4,
       "componentType": 5126,
-      "count": 499,
+      "count": 507,
       "type": "VEC3",
       "min": [
-        177.4712371826172,
-        17.89919090270996,
+        175.85812377929688,
+        17.92623519897461,
         68.9683837890625
       ],
       "max": [
@@ -238,29 +238,29 @@
     {
       "bufferView": 5,
       "componentType": 5126,
-      "count": 499,
+      "count": 507,
       "type": "VEC3"
     },
     {
       "bufferView": 6,
       "componentType": 5126,
-      "count": 499,
+      "count": 507,
       "type": "VEC2"
     },
     {
       "bufferView": 7,
       "componentType": 5125,
-      "count": 747,
+      "count": 759,
       "type": "SCALAR"
     },
     {
       "bufferView": 8,
       "componentType": 5126,
-      "count": 484,
+      "count": 492,
       "type": "VEC3",
       "min": [
-        178.19358825683594,
-        17.962221145629883,
+        176.58045959472656,
+        17.868688583374023,
         73.4828872680664
       ],
       "max": [
@@ -272,28 +272,28 @@
     {
       "bufferView": 9,
       "componentType": 5126,
-      "count": 484,
+      "count": 492,
       "type": "VEC3"
     },
     {
       "bufferView": 10,
       "componentType": 5126,
-      "count": 484,
+      "count": 492,
       "type": "VEC2"
     },
     {
       "bufferView": 11,
       "componentType": 5125,
-      "count": 726,
+      "count": 738,
       "type": "SCALAR"
     },
     {
       "bufferView": 12,
       "componentType": 5126,
-      "count": 507,
+      "count": 511,
       "type": "VEC3",
       "min": [
-        176.08673095703125,
+        175.59300231933594,
         17.77667808532715,
         73.4828872680664
       ],
@@ -306,19 +306,19 @@
     {
       "bufferView": 13,
       "componentType": 5126,
-      "count": 507,
+      "count": 511,
       "type": "VEC3"
     },
     {
       "bufferView": 14,
       "componentType": 5126,
-      "count": 507,
+      "count": 511,
       "type": "VEC2"
     },
     {
       "bufferView": 15,
       "componentType": 5125,
-      "count": 759,
+      "count": 765,
       "type": "SCALAR"
     },
     {
@@ -354,103 +354,103 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 4092
+      "byteLength": 4128
     },
     {
       "buffer": 0,
-      "byteOffset": 4092,
-      "byteLength": 4092
+      "byteOffset": 4128,
+      "byteLength": 4128
     },
     {
       "buffer": 0,
-      "byteOffset": 8184,
-      "byteLength": 2728
+      "byteOffset": 8256,
+      "byteLength": 2752
     },
     {
       "buffer": 0,
-      "byteOffset": 10912,
-      "byteLength": 2052
+      "byteOffset": 11008,
+      "byteLength": 2064
     },
     {
       "buffer": 0,
-      "byteOffset": 12964,
-      "byteLength": 5988
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 18952,
-      "byteLength": 5988
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 24940,
-      "byteLength": 3992
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 28932,
-      "byteLength": 2988
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 31920,
-      "byteLength": 5808
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 37728,
-      "byteLength": 5808
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 43536,
-      "byteLength": 3872
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 47408,
-      "byteLength": 2904
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 50312,
+      "byteOffset": 13072,
       "byteLength": 6084
     },
     {
       "buffer": 0,
-      "byteOffset": 56396,
+      "byteOffset": 19156,
       "byteLength": 6084
     },
     {
       "buffer": 0,
-      "byteOffset": 62480,
+      "byteOffset": 25240,
       "byteLength": 4056
     },
     {
       "buffer": 0,
-      "byteOffset": 66536,
+      "byteOffset": 29296,
       "byteLength": 3036
     },
     {
       "buffer": 0,
-      "byteOffset": 69572,
+      "byteOffset": 32332,
+      "byteLength": 5904
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 38236,
+      "byteLength": 5904
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 44140,
+      "byteLength": 3936
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 48076,
+      "byteLength": 2952
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 51028,
+      "byteLength": 6132
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 57160,
+      "byteLength": 6132
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 63292,
+      "byteLength": 4088
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 67380,
+      "byteLength": 3060
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 70440,
       "byteLength": 1344
     },
     {
       "buffer": 0,
-      "byteOffset": 70916,
+      "byteOffset": 71784,
       "byteLength": 1344
     },
     {
       "buffer": 0,
-      "byteOffset": 72260,
+      "byteOffset": 73128,
       "byteLength": 672
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 72932
+      "byteLength": 73800
     }
   ],
   "images": [

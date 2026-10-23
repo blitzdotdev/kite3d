@@ -21,7 +21,9 @@
         4,
         5,
         6,
-        7
+        7,
+        8,
+        9
       ],
       "extras": {
         "name": "Building 201006.0057941",
@@ -66,15 +68,29 @@
       }
     },
     {
-      "name": "Sky reflection panels",
+      "name": "Roof",
       "mesh": 5,
       "extras": {
         "cityBakedPart": true
       }
     },
     {
-      "name": "Storefronts and doors",
+      "name": "Interior blind variation",
       "mesh": 6,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Sky reflection panels",
+      "mesh": 7,
+      "extras": {
+        "cityBakedPart": true
+      }
+    },
+    {
+      "name": "Storefronts and doors",
+      "mesh": 8,
       "extras": {
         "cityBakedPart": true
       }
@@ -115,9 +131,10 @@
         {
           "attributes": {
             "POSITION": 5,
-            "NORMAL": 6
+            "NORMAL": 6,
+            "TEXCOORD_0": 7
           },
-          "indices": 7,
+          "indices": 8,
           "material": 0
         }
       ]
@@ -127,10 +144,11 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 8,
-            "NORMAL": 9
+            "POSITION": 9,
+            "NORMAL": 10,
+            "TEXCOORD_0": 11
           },
-          "indices": 10,
+          "indices": 12,
           "material": 2
         }
       ]
@@ -140,11 +158,40 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 11,
-            "NORMAL": 12
+            "POSITION": 13,
+            "NORMAL": 14,
+            "TEXCOORD_0": 15
           },
-          "indices": 13,
+          "indices": 16,
           "material": 3
+        }
+      ]
+    },
+    {
+      "name": "Roof",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 17,
+            "NORMAL": 18,
+            "TEXCOORD_0": 19
+          },
+          "indices": 20,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Interior blind variation",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 21,
+            "NORMAL": 22,
+            "TEXCOORD_0": 23
+          },
+          "indices": 24,
+          "material": 6
         }
       ]
     },
@@ -153,10 +200,11 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 14,
-            "NORMAL": 15
+            "POSITION": 25,
+            "NORMAL": 26,
+            "TEXCOORD_0": 27
           },
-          "indices": 16,
+          "indices": 28,
           "material": 5
         }
       ]
@@ -166,10 +214,11 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 17,
-            "NORMAL": 18
+            "POSITION": 29,
+            "NORMAL": 30,
+            "TEXCOORD_0": 31
           },
-          "indices": 19,
+          "indices": 32,
           "material": 4
         }
       ]
@@ -177,7 +226,7 @@
   ],
   "materials": [
     {
-      "name": "SF stucco / painted timber",
+      "name": "SF timber",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.508881320845802,
@@ -186,9 +235,19 @@
           1
         ],
         "roughnessFactor": 0.85,
-        "metallicFactor": 0
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
       },
-      "doubleSided": true
+      "doubleSided": true,
+      "normalTexture": {
+        "index": 1,
+        "scale": 0.35
+      }
     },
     {
       "name": "Flat roof",
@@ -200,9 +259,19 @@
           1
         ],
         "roughnessFactor": 0.85,
-        "metallicFactor": 0
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 5
+        }
       },
-      "doubleSided": true
+      "doubleSided": true,
+      "normalTexture": {
+        "index": 4,
+        "scale": 0.35
+      }
     },
     {
       "name": "Window glass approximation",
@@ -259,6 +328,20 @@
         "metallicFactor": 0.2
       },
       "doubleSided": true
+    },
+    {
+      "name": "Varied interior blinds",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4452011945063733,
+          0.4178850708380236,
+          0.3049873140591091,
+          1
+        ],
+        "roughnessFactor": 0.95,
+        "metallicFactor": 0
+      },
+      "doubleSided": true
     }
   ],
   "accessors": [
@@ -305,10 +388,10 @@
     {
       "bufferView": 5,
       "componentType": 5126,
-      "count": 192,
+      "count": 168,
       "type": "VEC3",
       "min": [
-        -11.625545501708984,
+        -11.574594497680664,
         3.2774999141693115,
         -5.529423236846924
       ],
@@ -321,22 +404,28 @@
     {
       "bufferView": 6,
       "componentType": 5126,
-      "count": 192,
+      "count": 168,
       "type": "VEC3"
     },
     {
       "bufferView": 7,
-      "componentType": 5125,
-      "count": 288,
-      "type": "SCALAR"
+      "componentType": 5126,
+      "count": 168,
+      "type": "VEC2"
     },
     {
       "bufferView": 8,
+      "componentType": 5125,
+      "count": 252,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
       "componentType": 5126,
-      "count": 208,
+      "count": 256,
       "type": "VEC3",
       "min": [
-        -11.618556022644043,
+        -11.582700729370117,
         0.75,
         -5.293346881866455
       ],
@@ -347,24 +436,30 @@
       ]
     },
     {
-      "bufferView": 9,
-      "componentType": 5126,
-      "count": 208,
-      "type": "VEC3"
-    },
-    {
       "bufferView": 10,
-      "componentType": 5125,
-      "count": 312,
-      "type": "SCALAR"
+      "componentType": 5126,
+      "count": 256,
+      "type": "VEC3"
     },
     {
       "bufferView": 11,
       "componentType": 5126,
+      "count": 256,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5125,
+      "count": 384,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
       "count": 1392,
       "type": "VEC3",
       "min": [
-        -11.891355514526367,
+        -11.855500221252441,
         0.7742017507553101,
         -2.987370252609253
       ],
@@ -375,47 +470,127 @@
       ]
     },
     {
-      "bufferView": 12,
+      "bufferView": 14,
       "componentType": 5126,
       "count": 1392,
       "type": "VEC3"
     },
     {
-      "bufferView": 13,
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 1392,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 16,
       "componentType": 5125,
       "count": 2088,
       "type": "SCALAR"
     },
     {
-      "bufferView": 14,
+      "bufferView": 17,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -11.574594497680664,
+        6.355000019073486,
+        -1.9762301445007324
+      ],
+      "max": [
+        -9.367668151855469,
+        12.75,
+        8.147842407226562
+      ]
+    },
+    {
+      "bufferView": 18,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 19,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 20,
+      "componentType": 5125,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 21,
+      "componentType": 5126,
+      "count": 20,
+      "type": "VEC3",
+      "min": [
+        -11.584335327148438,
+        5.0304999351501465,
+        -1.3526029586791992
+      ],
+      "max": [
+        -10.088687896728516,
+        12.147500038146973,
+        7.752780914306641
+      ]
+    },
+    {
+      "bufferView": 22,
+      "componentType": 5126,
+      "count": 20,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 23,
+      "componentType": 5126,
+      "count": 20,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 24,
+      "componentType": 5125,
+      "count": 30,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 25,
       "componentType": 5126,
       "count": 36,
       "type": "VEC3",
       "min": [
-        -11.615413665771484,
+        -11.582427024841309,
         5.049499988555908,
-        -1.582597255706787
+        -1.366601586341858
       ],
       "max": [
         -10.082544326782227,
         12.166500091552734,
-        7.9815673828125
+        7.765571594238281
       ]
     },
     {
-      "bufferView": 15,
+      "bufferView": 26,
       "componentType": 5126,
       "count": 36,
       "type": "VEC3"
     },
     {
-      "bufferView": 16,
+      "bufferView": 27,
+      "componentType": 5126,
+      "count": 36,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 28,
       "componentType": 5125,
       "count": 54,
       "type": "SCALAR"
     },
     {
-      "bufferView": 17,
+      "bufferView": 29,
       "componentType": 5126,
       "count": 16,
       "type": "VEC3",
@@ -431,13 +606,19 @@
       ]
     },
     {
-      "bufferView": 18,
+      "bufferView": 30,
       "componentType": 5126,
       "count": 16,
       "type": "VEC3"
     },
     {
-      "bufferView": 19,
+      "bufferView": 31,
+      "componentType": 5126,
+      "count": 16,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 32,
       "componentType": 5125,
       "count": 24,
       "type": "SCALAR"
@@ -472,83 +653,202 @@
     {
       "buffer": 0,
       "byteOffset": 2592,
-      "byteLength": 2304
+      "byteLength": 2016
     },
     {
       "buffer": 0,
-      "byteOffset": 4896,
-      "byteLength": 2304
+      "byteOffset": 4608,
+      "byteLength": 2016
     },
     {
       "buffer": 0,
-      "byteOffset": 7200,
-      "byteLength": 1152
+      "byteOffset": 6624,
+      "byteLength": 1344
     },
     {
       "buffer": 0,
-      "byteOffset": 8352,
-      "byteLength": 2496
+      "byteOffset": 7968,
+      "byteLength": 1008
     },
     {
       "buffer": 0,
-      "byteOffset": 10848,
-      "byteLength": 2496
+      "byteOffset": 8976,
+      "byteLength": 3072
     },
     {
       "buffer": 0,
-      "byteOffset": 13344,
-      "byteLength": 1248
+      "byteOffset": 12048,
+      "byteLength": 3072
     },
     {
       "buffer": 0,
-      "byteOffset": 14592,
+      "byteOffset": 15120,
+      "byteLength": 2048
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 17168,
+      "byteLength": 1536
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 18704,
       "byteLength": 16704
     },
     {
       "buffer": 0,
-      "byteOffset": 31296,
+      "byteOffset": 35408,
       "byteLength": 16704
     },
     {
       "buffer": 0,
-      "byteOffset": 48000,
+      "byteOffset": 52112,
+      "byteLength": 11136
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 63248,
       "byteLength": 8352
     },
     {
       "buffer": 0,
-      "byteOffset": 56352,
+      "byteOffset": 71600,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 71888,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 72176,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 72368,
+      "byteLength": 144
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 72512,
+      "byteLength": 240
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 72752,
+      "byteLength": 240
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 72992,
+      "byteLength": 160
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 73152,
+      "byteLength": 120
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 73272,
       "byteLength": 432
     },
     {
       "buffer": 0,
-      "byteOffset": 56784,
+      "byteOffset": 73704,
       "byteLength": 432
     },
     {
       "buffer": 0,
-      "byteOffset": 57216,
+      "byteOffset": 74136,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 74424,
       "byteLength": 216
     },
     {
       "buffer": 0,
-      "byteOffset": 57432,
+      "byteOffset": 74640,
       "byteLength": 192
     },
     {
       "buffer": 0,
-      "byteOffset": 57624,
+      "byteOffset": 74832,
       "byteLength": 192
     },
     {
       "buffer": 0,
-      "byteOffset": 57816,
+      "byteOffset": 75024,
+      "byteLength": 128
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 75152,
       "byteLength": 96
     }
   ],
   "buffers": [
     {
       "uri": "geometry.bin",
-      "byteLength": 57912
+      "byteLength": 75248
+    }
+  ],
+  "images": [
+    {
+      "uri": "/kite3d/assets/models/city/materials/timber-color.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/timber-normal.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/timber-roughness.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-color.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-normal.png"
+    },
+    {
+      "uri": "/kite3d/assets/models/city/materials/roof-roughness.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 2,
+      "sampler": 0
+    },
+    {
+      "source": 3,
+      "sampler": 0
+    },
+    {
+      "source": 4,
+      "sampler": 0
+    },
+    {
+      "source": 5,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
     }
   ]
 }

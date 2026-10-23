@@ -70,7 +70,7 @@ for (const p of generated.placements) {
     assets.files[assetId] = {...registered, path: p.asset, files: {...registered?.files, ...files}}
   }
   const half = (p.yaw || 0) / 2
-  const index = upsert(p.id, {name: p.name, translation: p.position, rotation: [0, Math.sin(half), 0, Math.cos(half)],
+  const index = upsert(p.id, {name: p.name, translation: p.position, rotation: p.rotation || [0, Math.sin(half), 0, Math.cos(half)],
     scale: p.scale || [1, 1, 1], extras: {rootPath: `/kite3d/@${assetId}/f.gltf`,
       sProperties: ['name', 'position', 'quaternion', 'scale', 'visible'],
       city: {kind: p.kind, sourceId: p.sourceId, sourceDataset: p.sourceDataset, heightSource: p.heightSource,

@@ -1,0 +1,378 @@
+{
+  "version": 1,
+  "status": "Partial Grant facade integrated into mapped building; visual match and street props unfinished",
+  "reference": {
+    "title": "North Beach, San Francisco Historic Context Statement",
+    "url": "https://nesfc.org/wp-content/uploads/2024/09/North-Beach-HCS-Final-adopted-by-HPC-2.pdf",
+    "pdfPage": 146,
+    "printedPage": 140,
+    "figure": 128,
+    "caption": "Storefronts. Grant Ave. between Green St. and Filbert St.",
+    "photographer": "Dennis Hearne",
+    "documentAdopted": "2022-12-07",
+    "license": "No redistribution license established. Reference pixels retained only in temporary local comparison; not included in project or public export.",
+    "inspectedPixels": true
+  },
+  "asset": "assets/models/architecture/grant-storefront/f.gltf",
+  "camera": {
+    "position": [
+      -11.887023030830223,
+      2.1023498009021364,
+      8.673465270245288
+    ],
+    "target": [
+      6.433640268345217,
+      2.1023498009021364,
+      0.6514146422421145
+    ],
+    "fov": 19.492978488164614,
+    "principalPointY": 245.20692888185891,
+    "referenceImageSize": [
+      566,
+      378
+    ],
+    "projectionMatrixYShift": 0.29739115810507366
+  },
+  "dimensions": "Facade dimensions inferred from a single photograph, integrated into mapped building sf-building:201006.0004170. Partial-frontage offset and unobserved depth remain estimates.",
+  "observed": [
+    "turquoise tall-transom shopfront",
+    "burgundy rounded entry awning",
+    "chamfered sage and ivory bays with burgundy sash",
+    "narrow intervening flat windows",
+    "shorter white adjoining facade",
+    "Central turquoise-shop entrance with visible dark security grille"
+  ],
+  "remaining": [
+    "Background tower and neighboring roofline remain photo-estimated and need closer silhouette matching",
+    "Glazing, merchandising and building wear still look synthetic",
+    "Partial-frontage offset and historical building identification need independent confirmation",
+    "Vehicle types remain licensed substitutes"
+  ],
+  "validation": {
+    "render": "validation/grant-photo-study.png",
+    "renderer": "Fixed-camera direct Three.js diagnostic with SwiftShader, physical glass and SSAO; not Kite3D lifecycle validation or a production performance budget",
+    "localScriptTests": "9 passed, including retained-wall normal orientation after manually observed shadow acne",
+    "githubCI": "not used; no pushes after instruction",
+    "historicalStudyMetrics": {
+      "triangles": 9350,
+      "assetBytes": 710600,
+      "unbatchedDrawCalls": 603,
+      "diagnosticBatchedDrawCalls": 42,
+      "batchComparisonMeanAbsoluteByteError": 8.2986111111e-05,
+      "diagnosticFrameTrianglesWithVehicles": 13388
+    },
+    "architectureTriangles": 76100,
+    "architectureBinaryBytes": 7765840,
+    "vehicleUniqueMeshTriangles": 326058,
+    "vehicleBinaryBytes": 15745704,
+    "bufferChecks": "Both assets: finite accessors, valid byte bounds and index ranges",
+    "diagnosticLoadMs": 13252,
+    "diagnosticBrowserErrors": [],
+    "editorLifecycle": "Passed in isolated fixture: camera/environment restoration, save, full city regeneration, owner edit retention, reload, repeated and interrupted Play cleanup",
+    "integratedRender": "validation/grant-city-integration.png",
+    "comparison": "Independent inspection finds threshold contact, grille occlusion and adjacent canopy closer without obvious collision. Pale step edges remain prominent; whole-image gaps remain uniform glazing, sparse small detail, simplified upper molding and clean repeated surfaces.",
+    "latestFlow": "Passed local offset-camera inspection, shadow-follow and Stop-listener cleanup, owner-edit preservation through full regeneration, reload, repeated Play/Stop and interrupted Play cleanup after threshold and canopy corrections.",
+    "shadowDiagnosis": {
+      "cause": "Retained footprint wall triangles faced inward; double-sided materials hid the winding error while shadow normal bias displaced samples into solid geometry",
+      "controls": "Normal-map removal did not help; received-shadow disable removed the pattern; corrected winding with cast shadows enabled removed the pattern",
+      "fix": "Orient retained walls away from solid volume, including holes. Focus the runtime shadow map around camera target at street scale and remove tracking listener on Stop."
+    },
+    "glassShadowDiagnosis": "Generated fully transmissive panes were casting opaque depth-map shadows onto recessed interiors. Clear transmission >= 0.95 runtime batches now omit shadow casting; authored materials and scene stay unchanged. No refractive caustics claimed.",
+    "lightingStudy": {
+      "method": "Fixed camera, unchanged geometry within each comparison. Sun color, exposure and environment control varied separately in unsaved browser diagnostics.",
+      "observed": "Neutral sun removes the strong yellow cast and is adopted. Exposure 1.2 brightens road/trim without resolving interiors and is rejected. Material envMapIntensity test was ineffective because scene intensity takes precedence. Corrected scene environment intensity 1.7 visibly washes glazing and is rejected; original intensity/exposure retained.",
+      "limitation": "Software renderer and authored HDR environment; not captured illumination or a production performance measurement.",
+      "independentCritique": "Independent pixel review agrees: neutral sun preferred; exposure increase and environment 1.7 rejected. Global lighting is secondary to missing local reflections, layered contents and architectural variation."
+    },
+    "reflectionStudy": {
+      "controls": "Unsaved fixed-camera black-dielectric control isolates reflection from shop transmission. Original neutral sun/exposure/environment intensity retained.",
+      "changes": "Rear walls moved from 2.2m to 4.8m; partitions set back 0.9m; physical shelves/stock placed 0.5-0.7m behind glass after deep stock proved occluded. Original inferred reflected street extends to +/-144m rather than +/-36m to cover grazing rays.",
+      "limits": "Environment and merchandise inferred, not captured/observed business assets. No reflection cards. No increase in HDR dimensions or runtime light count. Near-window repositioning makes some stock visible but improvement remains modest, not photographic realism."
+    },
+    "representativeWindow": {
+      "reference": "Turquoise shop in Figure 128, image x~39-196; main verticals selected at x~84 and144 of566 pixels",
+      "projection": "At fixed camera, facade local x0.8 projects to83.47px andx2.4 to143.95px; prior mullions were roughly96 and151px",
+      "changes": "Central glazed entrance replaces continuous tiled bulkhead; real painted-metal grille with rail/finial geometry; side display shelving near glass rather than across door",
+      "uncertainty": "Pixel picks and hidden joinery estimated. Original inferred merchandise and lettering, not identified business products.",
+      "independentCritique": "Entrance opening, corrected mullions and side-only displays materially closer structurally. Initial grille too dominant; reduced bar width/height and assigned painted metal, with close-glass stock and smaller left-pane lettering.",
+      "finalCritique": "Independent final inspection: materially closer entrance structure, thinner/shorter grille less dominant and near-glass stock more readable. Still sparse, grille unusually exposed compared with photograph; no major regression.",
+      "threshold": "Photo-estimated shop floor raised0.29m with two0.145m steps; grille base atlocaly0.45 projects near365.6px atx0.9 instead385.2px atpreviousy0.18. Not surveyed."
+    },
+    "adjacentEntrance": "Burgundy canopy radius0.85m and centerx5.145 replace1.05m/5.5m; paired doors recentered. Independent comparison places canopy aroundx36-48%,y43-59% versus photo35-50%,42-60%.",
+    "glazingControl": {
+      "comparison": "Fixed camera, neutral sunlight, original exposure and environment intensity. Generated clear glass roughness 0.004 versus 0.035.",
+      "result": "Keep 0.004. Softer glass blurs merchandise without resolving repeated reflection shapes or sparse interiors. Diagnostic only; no saved scene or material change.",
+      "lifecycle": "Both captures completed; camera shadow tracking and Stop listener cleanup passed."
+    },
+    "timberProfileStudy": {
+      "method": "Original stepped timber casing rings and multi-step bay-floor molding inferred from Figure 128. Camera and fitted opening bounds preserved.",
+      "cost": "976 additional triangles; 76224 additional geometry bytes versus prior baseline.",
+      "checks": "Offline regeneration and 9 established local tests pass. Final full-camera render inspected after reducing excessive molding stripes; camera shadow tracking and Stop listener cleanup pass.",
+      "review": "Independent visual review found casings improved fine edges, but first multi-step bay molding made excessive dark stripes. Simplified its profile and reduced projection before final capture."
+    }
+  },
+  "fit": {
+    "landmarks": [
+      {
+        "world": [
+          0.0,
+          4.25,
+          0.0
+        ],
+        "referencePixel": [
+          39.0,
+          84.0
+        ],
+        "projectedPixel": [
+          39.67855375570872,
+          80.73558195614893
+        ],
+        "extrapolated": false
+      },
+      {
+        "world": [
+          0.0,
+          0.16,
+          0.0
+        ],
+        "referencePixel": [
+          39.0,
+          394.0
+        ],
+        "projectedPixel": [
+          39.67855375570872,
+          393.9559607723646
+        ],
+        "extrapolated": true
+      },
+      {
+        "world": [
+          4.290512568466509,
+          4.25,
+          0.0
+        ],
+        "referencePixel": [
+          196.0,
+          111.0
+        ],
+        "projectedPixel": [
+          195.42650336288074,
+          116.06239323568482
+        ],
+        "extrapolated": false
+      },
+      {
+        "world": [
+          4.290512568466509,
+          0.16,
+          0.0
+        ],
+        "referencePixel": [
+          196.0,
+          362.0
+        ],
+        "projectedPixel": [
+          195.42650336288074,
+          362.0061465595394
+        ],
+        "extrapolated": false
+      },
+      {
+        "world": [
+          24.0,
+          4.25,
+          0.0
+        ],
+        "referencePixel": [
+          478.0,
+          182.0
+        ],
+        "projectedPixel": [
+          478.20368484513335,
+          180.20202492636489
+        ],
+        "extrapolated": false
+      },
+      {
+        "world": [
+          24.0,
+          0.16,
+          0.0
+        ],
+        "referencePixel": [
+          478.0,
+          304.0
+        ],
+        "projectedPixel": [
+          478.20368484513335,
+          303.9978168526531
+        ],
+        "extrapolated": false
+      }
+    ],
+    "coordinateRmsPixels": 1.8524890692358418,
+    "method": "Nonlinear least squares over camera position, yaw, field of view, vertical lens shift and shop width. Six points on facade plane, including one extrapolated cut-off base point. Not independent validation or survey calibration.",
+    "uncertainty": "Single view has scale and camera ambiguity. Pixel selections approximate. Facade plane fit does not establish bay, roof or streetscape agreement."
+  },
+  "bayLandmarks": [
+    {
+      "name": "bay left lower cornice",
+      "referencePixel": [
+        113,
+        79
+      ],
+      "oldCenterX": 3.4,
+      "centerX": 3.367195421052885,
+      "baseY": 4.508453586315508
+    },
+    {
+      "name": "bay left lower cornice",
+      "referencePixel": [
+        263,
+        111
+      ],
+      "oldCenterX": 9.1,
+      "centerX": 8.565204938806225,
+      "baseY": 4.6259742955647
+    },
+    {
+      "name": "bay left lower cornice",
+      "referencePixel": [
+        371,
+        143
+      ],
+      "oldCenterX": 15.4,
+      "centerX": 14.759759850581105,
+      "baseY": 4.551334719412753
+    },
+    {
+      "name": "bay left lower cornice",
+      "referencePixel": [
+        449,
+        166
+      ],
+      "oldCenterX": 21.4,
+      "centerX": 21.86864830239908,
+      "baseY": 4.468998057308486
+    }
+  ],
+  "bayLandmarksNote": "Four outer-left lower cornice points initially held out of camera fitting. Initial errors approximately 1.5, 15, 9.6 and 4.7 pixels. Then used to refine individual bay positions and base heights; these are no longer independent validation points.",
+  "locationEvidence": {
+    "address": "1412 Grant Avenue",
+    "parcel": "0115-019",
+    "source": "https://dbiweb02.sfgov.org/dbipts/default.aspx?ComplaintNo=201850741&Stepin=1&page=AddressComplaint",
+    "note": "Official address-to-parcel metadata confirms block/lot. The Grant-facing mapped footprint is used; exact historical storefront identity and partial-frontage offset remain unverified.",
+    "overlapCandidates": [
+      {
+        "id": "201006.0004170",
+        "overlapM2": 675.5268576249582,
+        "footprintM2": 747.9327421817234,
+        "overlapFraction": 0.9031919844215446,
+        "heightM": "11.15"
+      },
+      {
+        "id": "201006.0005585",
+        "overlapM2": 595.0881396879863,
+        "footprintM2": 595.0881396879863,
+        "overlapFraction": 1.0,
+        "heightM": "10.33"
+      },
+      {
+        "id": "201006.0060847",
+        "overlapM2": 31.235706783207206,
+        "footprintM2": 143.22202192792975,
+        "overlapFraction": 0.21809290472749518,
+        "heightM": "11.34"
+      }
+    ],
+    "frontageCandidate": "sf-building:201006.0004170",
+    "mappingStatus": "0004170 is the Grant-facing footprint used for the study; 0005585 lies behind it. Photo frontage offset and corner correction remain inferred."
+  },
+  "vehicles": [
+    {
+      "asset": "assets/models/vehicles/bmw-x5/f.gltf",
+      "provenance": "BMW Car IT, CC BY 4.0; licensed substitute, not the photographed Honda",
+      "placement": "Curb-relative city placement; see integration and generated manifest"
+    },
+    {
+      "asset": "assets/models/vehicles/tozzo-98/f.gltf",
+      "provenance": "Daniel Zhabotinsky, CC BY 4.0; silver sedan substitute",
+      "placement": "Curb-relative city placement; see generated manifest"
+    },
+    {
+      "asset": "assets/models/vehicles/tozzo-98/dark.gltf",
+      "provenance": "Daniel Zhabotinsky, CC BY 4.0; dark sedan substitute",
+      "placement": "Curb-relative city placement; see generated manifest"
+    }
+  ],
+  "materialSources": {
+    "used": "Original procedural albedo, normal and correlated roughness textures with metric UVs. No reference-photo pixels or imported asset-pack textures.",
+    "blocked": [
+      "ambientCG PaintedPlaster017, Asphalt023S, Concrete019: HTTP 403 download denied; no retries",
+      "Poly Haven asphalt_02 and plastered_wall metadata: HTTP 403; no retries"
+    ]
+  },
+  "lighting": "Neutral sun with original exposure and environment intensity. PMREM from original inferred opposite-street geometry, extended for grazing reflection coverage; not captured HDR illumination.",
+  "vehicleSource": {
+    "url": "https://github.com/bmwcarit/digital-car-3d",
+    "commit": "6261f53b5ac63c6686039d106fbbbfb693339d72",
+    "creator": "BMW Car IT",
+    "license": "CC-BY-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "asset": "assets/models/vehicles/bmw-x5/f.gltf",
+    "changes": "Reassembled closed-car hierarchy; converted centimetres to metres; adapted PBR materials; removed unused vertex attributes while retaining source triangles",
+    "photoMismatch": "BMW X5 substitutes for photographed compact SUV; two separately credited Tozzo sedans replace prior repeated SUV placeholders",
+    "placements": [
+      {
+        "position": [
+          7.44,
+          0,
+          1.86
+        ],
+        "yaw": 0.0758,
+        "scale": 0.9
+      }
+    ]
+  },
+  "inferredDetails": [
+    "Procedural paint/asphalt/concrete maps",
+    "Original inferred lettering and notices, not actual business names",
+    "Estimated opposing-building reflection environment, not a captured HDR",
+    "Unobserved building depth and background masses",
+    "Pale background elevation and foreground corner openings follow mapped building envelopes; window positions, storefront contents and finishes are photo estimates",
+    "Pale recessed transom roller blinds approximate visible backing; hidden shop fitout and blind mechanism are not observed",
+    "Distant tower is a separately editable photo-estimated silhouette, not identified or surveyed; disable photoFacade.backgroundTower to omit it",
+    "Lower bay panels simplified and floor moldings given a shallow planar chamfer profile from photo appearance; dimensions estimated, window heights retained"
+  ],
+  "integration": {
+    "buildingId": "sf-building:201006.0004170",
+    "parcel": "0115019",
+    "frontageM": 24,
+    "override": "features[sf-building:201006.0004170].photoFacade",
+    "preserved": "Semantic building ID, source snapshot, editor edits and mapped height; explicit reversible corner geometry correction recorded separately",
+    "offsetAccuracy": "South-aligned partial frontage inferred within the mapped 39.3167 m west edge, not surveyed",
+    "groundContact": "Level shop floor with downhill plinth, terrain from existing city ground samples",
+    "bookmark": "4 Grant study",
+    "environment": "assets/environments/grant-street/street.hdr, original authored opposing street, not photographic HDR",
+    "vehicles": "Three separately editable references: BMW X5, silver and dark Tozzo sedans; inferred curb-relative placement and ground slope",
+    "roadWidth": "9 m carriageway and 1 m sidewalk: photo-derived corridor estimate for sf-road:6404000, replacing the prior 6 m heuristic and 2.1336 m block-level sidewalk value; not surveyed",
+    "background": {
+      "buildingId": "sf-building:201006.0011021",
+      "source": "Mapped footprint and height; pale north elevation, paired sash windows and dark shopfront inferred from reference photograph",
+      "accuracy": "Identification as the exact photographed business is unverified; no surveyed opening positions"
+    },
+    "cornerCorrection": "photoFacade.flattenCorner: photo-estimated flattened south corner exposes the pale background building. Generated footprint/roof/collision prism follow the correction; original DataSF snapshot is unchanged. Not a surveyed correction."
+  },
+  "proceduralReferences": [
+    {
+      "url": "https://github.com/repalash/threepipe-webgi/blob/a7f3685c0ff1504b95828221ce4640ec395c0dc5/examples/ssgi-demo/worlds/kit/architecture.ts",
+      "inspected": "Thick piers, recessed openings, projecting sills and cornices, metre-scaled UVs and material batching",
+      "use": "Concepts applied through original implementation: existing real recesses, small bevels and metric UVs; added correlated albedo/roughness from one surface signal and layered shop display depth. No source/asset copying or engine upgrade."
+    },
+    {
+      "url": "https://github.com/mrdoob/slop-newyork/tree/0049a497be6e36c79f854771f3018f8f41f07fab/js",
+      "inspected": "Facade-local whole-bay layout, wall roles, deterministic variation and distance detail",
+      "use": "Context-generation reference, not a substitute for photo-estimated hero geometry. TSL/WebGPU r186 code is incompatible with pinned r163/WebGL; not imported."
+    }
+  ]
+}

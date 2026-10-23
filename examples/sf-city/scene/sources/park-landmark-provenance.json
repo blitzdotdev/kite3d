@@ -1,0 +1,23 @@
+{
+  "park": {
+    "url": "https://sfrecpark.org/DocumentCenter/View/1878/Community-Meeting-07-25-2018-PDF",
+    "title": "Washington Square Water Conservation Project, July 25 2018",
+    "page": 6,
+    "sha256": "c431dd0ec12099e582032ea22d0a06a84eb23289fdd8918833d0be9b46827980",
+    "method": "Manual tracing of concept-plan lawn and planting contours, three-point affine alignment to existing street corners. Drawing marked NTS. Not surveyed as-built.",
+    "implementation": "Original geometry; reference document not redistributed."
+  },
+  "church": {
+    "historyUrl": "https://www.salesiansspp.org/our-history",
+    "photoPage": "https://www.salesiansspp.org/",
+    "photoUrl": "https://res.cloudinary.com/salesiansspp/image/upload/sspp-media/IMG_8094",
+    "publishedDimensions": {
+      "spireFeet": 191,
+      "widthFeet": 100,
+      "lengthFeet": 160,
+      "roseWindowFeet": 14
+    },
+    "mappedBuildingId": "sf-building:201006.0001265",
+    "method": "Original approximate silhouette aligned to mapped Filbert-facing footprint edge. Hidden sides, ornament and opening depths inferred. Photograph inspected but not copied into assets."
+  }
+}

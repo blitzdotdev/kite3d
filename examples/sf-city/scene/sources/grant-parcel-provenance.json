@@ -1,0 +1,7 @@
+{
+  "item": "f81b5f0adb8c4d6a95282bec1ce10378",
+  "query": "https://services.arcgis.com/Zs2aNLFN00jrS4gG/arcgis/rest/services/Active_Parcels_from_DataSF_pulled_daily_/FeatureServer/0/query?f=json&where=blklot+%3D+%270115019%27&outFields=blklot%2Cmapblklot%2Cfrom_address_num%2Cto_address_num%2Cstreet_name%2Cstreet_type%2Ccentroid_latitude%2Ccentroid_longitude%2Cdata_as_of&outSR=4326&returnGeometry=true",
+  "sha256": "3455dbe6a560cb7bc81367e6edad9c0a5372b1c0bbafa290016b2bb9b40041dc",
+  "retrieved": "2026-10-22",
+  "licenseNote": "Public city parcel geometry from DataSF service; service copyrightText blank. No owner information requested."
+}

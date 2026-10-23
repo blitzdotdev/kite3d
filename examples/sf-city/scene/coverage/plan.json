@@ -1,0 +1,477 @@
+{
+  "version": 1,
+  "kind": "offline-coverage-plan",
+  "geometryGeneratedByThisModule": false,
+  "coordinateSystem": {
+    "origin": [
+      -122.40935,
+      37.8005
+    ],
+    "axes": "X east, Y up, Z south",
+    "horizontal": "Fixed-origin local equirectangular approximation, identical to existing scene/data.mjs; not survey coordinates",
+    "vertical": "Existing NAVD88 ground heights minus verticalOriginM, not ellipsoid altitude",
+    "verticalOriginM": 15,
+    "tileSizeM": 128
+  },
+  "actualCoverage": {
+    "bounds": [
+      -122.4122,
+      37.799,
+      -122.4065,
+      37.802
+    ],
+    "stats": {
+      "buildings": 419,
+      "roads": 74,
+      "trees": 191,
+      "tiles": 20,
+      "triangles": 711420
+    },
+    "sourceCapture": "2026-10-21T11:42:06.935534+00:00",
+    "sourceManifestSHA256": "5dbe6af7336e964f2d26c312fb279b243af323cf288fa51db19b677d3d810bfb",
+    "note": "Only the existing bounded North Beach snapshot has generated geometry. Intersecting tiles are not complete city tiles."
+  },
+  "plannedCoverage": {
+    "regions": [
+      {
+        "id": "mainland",
+        "bounds": [
+          -122.52,
+          37.707,
+          -122.355,
+          37.812
+        ],
+        "stage": 2,
+        "boundsKind": "Author-selected acquisition envelope, not an administrative or land polygon",
+        "range": {
+          "minX": -77,
+          "minZ": -11,
+          "maxX": 37,
+          "maxZ": 81
+        }
+      },
+      {
+        "id": "treasure-yerba-buena",
+        "bounds": [
+          -122.386,
+          37.806,
+          -122.356,
+          37.835
+        ],
+        "stage": 3,
+        "boundsKind": "Author-selected acquisition envelope, not an administrative or land polygon",
+        "range": {
+          "minX": 16,
+          "minZ": -31,
+          "maxX": 36,
+          "maxZ": -5
+        }
+      },
+      {
+        "id": "alcatraz",
+        "bounds": [
+          -122.426,
+          37.823,
+          -122.419,
+          37.83
+        ],
+        "stage": 3,
+        "boundsKind": "Author-selected acquisition envelope, not an administrative or land polygon",
+        "range": {
+          "minX": -12,
+          "minZ": -26,
+          "maxX": -7,
+          "maxZ": -20
+        }
+      }
+    ],
+    "envelopeTileCount": 11157,
+    "landTileCount": null,
+    "requiresLandAndJurisdictionMask": true,
+    "excluded": [
+      "Farallon Islands deferred to a separate geographic region and coordinate strategy",
+      "Bay water and land outside San Francisco must be masked before acquisition/generation"
+    ],
+    "note": "Envelope tile count is a planning upper bound, not generated coverage or measured land area."
+  },
+  "acquisition": {
+    "networkEnabled": false,
+    "maxTilesPerBatch": 16,
+    "maxConcurrentRequests": 2,
+    "maxRowsPerResponse": 5000,
+    "fullResponseAction": "Do not accept as complete. Subdivide query or use stable ordered pagination with duplicate/missing-ID checks; stage files atomically.",
+    "emptyResponseAction": "Record valid empty as distinct from denied/error/truncated. Never replace prior data on errors.",
+    "datasets": {
+      "buildings": {
+        "id": "ynuv-fyni",
+        "geometry": "shape",
+        "key": "sf16_bldgid",
+        "fields": [
+          "sf16_bldgid",
+          "shape",
+          "gnd_mediancm",
+          "gnd_mincm",
+          "gnd_maxcm",
+          "hgt_median_m",
+          "hgt_maxcm",
+          "data_as_of"
+        ]
+      },
+      "roads": {
+        "id": "3psu-pn9h",
+        "geometry": "line",
+        "key": "cnn",
+        "fields": [
+          "cnn",
+          "streetname",
+          "st_type",
+          "classcode",
+          "oneway",
+          "line",
+          "f_node_cnn",
+          "t_node_cnn",
+          "data_as_of"
+        ]
+      },
+      "trees": {
+        "id": "tkzw-k3nq",
+        "key": "treeid",
+        "fields": [
+          "treeid",
+          "species",
+          "latitude",
+          "longitude",
+          "mapdbh",
+          "data_as_of"
+        ]
+      },
+      "sidewalks": {
+        "id": "4g86-grxu",
+        "geometry": "shape",
+        "key": "objectid",
+        "fields": [
+          "objectid",
+          "cnn",
+          "width_min",
+          "sidewalk_f",
+          "side",
+          "shape",
+          "data_as_of"
+        ]
+      }
+    },
+    "nextBatch": [
+      {
+        "id": "-1_-2",
+        "bounds": [
+          -122.41080521583667,
+          37.80164983830399,
+          -122.40935,
+          37.802799676607975
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41080521583667+37.80164983830399%2C-122.40935+37.80164983830399%2C-122.40935+37.802799676607975%2C-122.41080521583667+37.802799676607975%2C-122.41080521583667+37.80164983830399%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41080521583667+37.80164983830399%2C-122.40935+37.80164983830399%2C-122.40935+37.802799676607975%2C-122.41080521583667+37.802799676607975%2C-122.41080521583667+37.80164983830399%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.80164983830399+AND+latitude+%3C+37.802799676607975+AND+longitude+%3E%3D+-122.41080521583667+AND+longitude+%3C+-122.40935&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41080521583667+37.80164983830399%2C-122.40935+37.80164983830399%2C-122.40935+37.802799676607975%2C-122.41080521583667+37.802799676607975%2C-122.41080521583667+37.80164983830399%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "0_-2",
+        "bounds": [
+          -122.40935,
+          37.80164983830399,
+          -122.40789478416333,
+          37.802799676607975
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40935+37.80164983830399%2C-122.40789478416333+37.80164983830399%2C-122.40789478416333+37.802799676607975%2C-122.40935+37.802799676607975%2C-122.40935+37.80164983830399%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40935+37.80164983830399%2C-122.40789478416333+37.80164983830399%2C-122.40789478416333+37.802799676607975%2C-122.40935+37.802799676607975%2C-122.40935+37.80164983830399%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.80164983830399+AND+latitude+%3C+37.802799676607975+AND+longitude+%3E%3D+-122.40935+AND+longitude+%3C+-122.40789478416333&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40935+37.80164983830399%2C-122.40789478416333+37.80164983830399%2C-122.40789478416333+37.802799676607975%2C-122.40935+37.802799676607975%2C-122.40935+37.80164983830399%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "-2_-1",
+        "bounds": [
+          -122.41226043167335,
+          37.8005,
+          -122.41080521583667,
+          37.80164983830399
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.8005%2C-122.41080521583667+37.8005%2C-122.41080521583667+37.80164983830399%2C-122.41226043167335+37.80164983830399%2C-122.41226043167335+37.8005%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41226043167335+37.8005%2C-122.41080521583667+37.8005%2C-122.41080521583667+37.80164983830399%2C-122.41226043167335+37.80164983830399%2C-122.41226043167335+37.8005%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.8005+AND+latitude+%3C+37.80164983830399+AND+longitude+%3E%3D+-122.41226043167335+AND+longitude+%3C+-122.41080521583667&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.8005%2C-122.41080521583667+37.8005%2C-122.41080521583667+37.80164983830399%2C-122.41226043167335+37.80164983830399%2C-122.41226043167335+37.8005%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "1_-1",
+        "bounds": [
+          -122.40789478416333,
+          37.8005,
+          -122.40643956832666,
+          37.80164983830399
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.8005%2C-122.40643956832666+37.8005%2C-122.40643956832666+37.80164983830399%2C-122.40789478416333+37.80164983830399%2C-122.40789478416333+37.8005%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40789478416333+37.8005%2C-122.40643956832666+37.8005%2C-122.40643956832666+37.80164983830399%2C-122.40789478416333+37.80164983830399%2C-122.40789478416333+37.8005%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.8005+AND+latitude+%3C+37.80164983830399+AND+longitude+%3E%3D+-122.40789478416333+AND+longitude+%3C+-122.40643956832666&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.8005%2C-122.40643956832666+37.8005%2C-122.40643956832666+37.80164983830399%2C-122.40789478416333+37.80164983830399%2C-122.40789478416333+37.8005%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "-2_0",
+        "bounds": [
+          -122.41226043167335,
+          37.79935016169601,
+          -122.41080521583667,
+          37.8005
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.79935016169601%2C-122.41080521583667+37.79935016169601%2C-122.41080521583667+37.8005%2C-122.41226043167335+37.8005%2C-122.41226043167335+37.79935016169601%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41226043167335+37.79935016169601%2C-122.41080521583667+37.79935016169601%2C-122.41080521583667+37.8005%2C-122.41226043167335+37.8005%2C-122.41226043167335+37.79935016169601%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.79935016169601+AND+latitude+%3C+37.8005+AND+longitude+%3E%3D+-122.41226043167335+AND+longitude+%3C+-122.41080521583667&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.79935016169601%2C-122.41080521583667+37.79935016169601%2C-122.41080521583667+37.8005%2C-122.41226043167335+37.8005%2C-122.41226043167335+37.79935016169601%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "1_0",
+        "bounds": [
+          -122.40789478416333,
+          37.79935016169601,
+          -122.40643956832666,
+          37.8005
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.79935016169601%2C-122.40643956832666+37.79935016169601%2C-122.40643956832666+37.8005%2C-122.40789478416333+37.8005%2C-122.40789478416333+37.79935016169601%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40789478416333+37.79935016169601%2C-122.40643956832666+37.79935016169601%2C-122.40643956832666+37.8005%2C-122.40789478416333+37.8005%2C-122.40789478416333+37.79935016169601%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.79935016169601+AND+latitude+%3C+37.8005+AND+longitude+%3E%3D+-122.40789478416333+AND+longitude+%3C+-122.40643956832666&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.79935016169601%2C-122.40643956832666+37.79935016169601%2C-122.40643956832666+37.8005%2C-122.40789478416333+37.8005%2C-122.40789478416333+37.79935016169601%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "-1_1",
+        "bounds": [
+          -122.41080521583667,
+          37.798200323392024,
+          -122.40935,
+          37.79935016169601
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41080521583667+37.798200323392024%2C-122.40935+37.798200323392024%2C-122.40935+37.79935016169601%2C-122.41080521583667+37.79935016169601%2C-122.41080521583667+37.798200323392024%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41080521583667+37.798200323392024%2C-122.40935+37.798200323392024%2C-122.40935+37.79935016169601%2C-122.41080521583667+37.79935016169601%2C-122.41080521583667+37.798200323392024%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.798200323392024+AND+latitude+%3C+37.79935016169601+AND+longitude+%3E%3D+-122.41080521583667+AND+longitude+%3C+-122.40935&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41080521583667+37.798200323392024%2C-122.40935+37.798200323392024%2C-122.40935+37.79935016169601%2C-122.41080521583667+37.79935016169601%2C-122.41080521583667+37.798200323392024%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "0_1",
+        "bounds": [
+          -122.40935,
+          37.798200323392024,
+          -122.40789478416333,
+          37.79935016169601
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40935+37.798200323392024%2C-122.40789478416333+37.798200323392024%2C-122.40789478416333+37.79935016169601%2C-122.40935+37.79935016169601%2C-122.40935+37.798200323392024%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40935+37.798200323392024%2C-122.40789478416333+37.798200323392024%2C-122.40789478416333+37.79935016169601%2C-122.40935+37.79935016169601%2C-122.40935+37.798200323392024%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.798200323392024+AND+latitude+%3C+37.79935016169601+AND+longitude+%3E%3D+-122.40935+AND+longitude+%3C+-122.40789478416333&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40935+37.798200323392024%2C-122.40789478416333+37.798200323392024%2C-122.40789478416333+37.79935016169601%2C-122.40935+37.79935016169601%2C-122.40935+37.798200323392024%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "-2_-2",
+        "bounds": [
+          -122.41226043167335,
+          37.80164983830399,
+          -122.41080521583667,
+          37.802799676607975
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.80164983830399%2C-122.41080521583667+37.80164983830399%2C-122.41080521583667+37.802799676607975%2C-122.41226043167335+37.802799676607975%2C-122.41226043167335+37.80164983830399%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41226043167335+37.80164983830399%2C-122.41080521583667+37.80164983830399%2C-122.41080521583667+37.802799676607975%2C-122.41226043167335+37.802799676607975%2C-122.41226043167335+37.80164983830399%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.80164983830399+AND+latitude+%3C+37.802799676607975+AND+longitude+%3E%3D+-122.41226043167335+AND+longitude+%3C+-122.41080521583667&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.80164983830399%2C-122.41080521583667+37.80164983830399%2C-122.41080521583667+37.802799676607975%2C-122.41226043167335+37.802799676607975%2C-122.41226043167335+37.80164983830399%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "1_-2",
+        "bounds": [
+          -122.40789478416333,
+          37.80164983830399,
+          -122.40643956832666,
+          37.802799676607975
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.80164983830399%2C-122.40643956832666+37.80164983830399%2C-122.40643956832666+37.802799676607975%2C-122.40789478416333+37.802799676607975%2C-122.40789478416333+37.80164983830399%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40789478416333+37.80164983830399%2C-122.40643956832666+37.80164983830399%2C-122.40643956832666+37.802799676607975%2C-122.40789478416333+37.802799676607975%2C-122.40789478416333+37.80164983830399%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.80164983830399+AND+latitude+%3C+37.802799676607975+AND+longitude+%3E%3D+-122.40789478416333+AND+longitude+%3C+-122.40643956832666&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.80164983830399%2C-122.40643956832666+37.80164983830399%2C-122.40643956832666+37.802799676607975%2C-122.40789478416333+37.802799676607975%2C-122.40789478416333+37.80164983830399%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "-2_1",
+        "bounds": [
+          -122.41226043167335,
+          37.798200323392024,
+          -122.41080521583667,
+          37.79935016169601
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.798200323392024%2C-122.41080521583667+37.798200323392024%2C-122.41080521583667+37.79935016169601%2C-122.41226043167335+37.79935016169601%2C-122.41226043167335+37.798200323392024%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41226043167335+37.798200323392024%2C-122.41080521583667+37.798200323392024%2C-122.41080521583667+37.79935016169601%2C-122.41226043167335+37.79935016169601%2C-122.41226043167335+37.798200323392024%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.798200323392024+AND+latitude+%3C+37.79935016169601+AND+longitude+%3E%3D+-122.41226043167335+AND+longitude+%3C+-122.41080521583667&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41226043167335+37.798200323392024%2C-122.41080521583667+37.798200323392024%2C-122.41080521583667+37.79935016169601%2C-122.41226043167335+37.79935016169601%2C-122.41226043167335+37.798200323392024%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "1_1",
+        "bounds": [
+          -122.40789478416333,
+          37.798200323392024,
+          -122.40643956832666,
+          37.79935016169601
+        ],
+        "status": "not-acquired",
+        "reason": "complete-partial-snapshot-tile",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.798200323392024%2C-122.40643956832666+37.798200323392024%2C-122.40643956832666+37.79935016169601%2C-122.40789478416333+37.79935016169601%2C-122.40789478416333+37.798200323392024%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40789478416333+37.798200323392024%2C-122.40643956832666+37.798200323392024%2C-122.40643956832666+37.79935016169601%2C-122.40789478416333+37.79935016169601%2C-122.40789478416333+37.798200323392024%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.798200323392024+AND+latitude+%3C+37.79935016169601+AND+longitude+%3E%3D+-122.40789478416333+AND+longitude+%3C+-122.40643956832666&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40789478416333+37.798200323392024%2C-122.40643956832666+37.798200323392024%2C-122.40643956832666+37.79935016169601%2C-122.40789478416333+37.79935016169601%2C-122.40789478416333+37.798200323392024%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "-1_-3",
+        "bounds": [
+          -122.41080521583667,
+          37.802799676607975,
+          -122.40935,
+          37.80394951491196
+        ],
+        "status": "not-acquired",
+        "reason": "adjacent-expansion",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41080521583667+37.802799676607975%2C-122.40935+37.802799676607975%2C-122.40935+37.80394951491196%2C-122.41080521583667+37.80394951491196%2C-122.41080521583667+37.802799676607975%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41080521583667+37.802799676607975%2C-122.40935+37.802799676607975%2C-122.40935+37.80394951491196%2C-122.41080521583667+37.80394951491196%2C-122.41080521583667+37.802799676607975%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.802799676607975+AND+latitude+%3C+37.80394951491196+AND+longitude+%3E%3D+-122.41080521583667+AND+longitude+%3C+-122.40935&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41080521583667+37.802799676607975%2C-122.40935+37.802799676607975%2C-122.40935+37.80394951491196%2C-122.41080521583667+37.80394951491196%2C-122.41080521583667+37.802799676607975%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "0_-3",
+        "bounds": [
+          -122.40935,
+          37.802799676607975,
+          -122.40789478416333,
+          37.80394951491196
+        ],
+        "status": "not-acquired",
+        "reason": "adjacent-expansion",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40935+37.802799676607975%2C-122.40789478416333+37.802799676607975%2C-122.40789478416333+37.80394951491196%2C-122.40935+37.80394951491196%2C-122.40935+37.802799676607975%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40935+37.802799676607975%2C-122.40789478416333+37.802799676607975%2C-122.40789478416333+37.80394951491196%2C-122.40935+37.80394951491196%2C-122.40935+37.802799676607975%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.802799676607975+AND+latitude+%3C+37.80394951491196+AND+longitude+%3E%3D+-122.40935+AND+longitude+%3C+-122.40789478416333&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40935+37.802799676607975%2C-122.40789478416333+37.802799676607975%2C-122.40789478416333+37.80394951491196%2C-122.40935+37.80394951491196%2C-122.40935+37.802799676607975%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "-3_-1",
+        "bounds": [
+          -122.41371564751002,
+          37.8005,
+          -122.41226043167335,
+          37.80164983830399
+        ],
+        "status": "not-acquired",
+        "reason": "adjacent-expansion",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41371564751002+37.8005%2C-122.41226043167335+37.8005%2C-122.41226043167335+37.80164983830399%2C-122.41371564751002+37.80164983830399%2C-122.41371564751002+37.8005%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.41371564751002+37.8005%2C-122.41226043167335+37.8005%2C-122.41226043167335+37.80164983830399%2C-122.41371564751002+37.80164983830399%2C-122.41371564751002+37.8005%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.8005+AND+latitude+%3C+37.80164983830399+AND+longitude+%3E%3D+-122.41371564751002+AND+longitude+%3C+-122.41226043167335&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.41371564751002+37.8005%2C-122.41226043167335+37.8005%2C-122.41226043167335+37.80164983830399%2C-122.41371564751002+37.80164983830399%2C-122.41371564751002+37.8005%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      },
+      {
+        "id": "2_-1",
+        "bounds": [
+          -122.40643956832666,
+          37.8005,
+          -122.40498435248999,
+          37.80164983830399
+        ],
+        "status": "not-acquired",
+        "reason": "adjacent-expansion",
+        "queries": {
+          "buildings": "https://data.sf.gov/resource/ynuv-fyni.json?%24select=sf16_bldgid%2Cshape%2Cgnd_mediancm%2Cgnd_mincm%2Cgnd_maxcm%2Chgt_median_m%2Chgt_maxcm%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40643956832666+37.8005%2C-122.40498435248999+37.8005%2C-122.40498435248999+37.80164983830399%2C-122.40643956832666+37.80164983830399%2C-122.40643956832666+37.8005%29%29%27%29&%24order=sf16_bldgid&%24limit=5000",
+          "roads": "https://data.sf.gov/resource/3psu-pn9h.json?%24select=cnn%2Cstreetname%2Cst_type%2Cclasscode%2Coneway%2Cline%2Cf_node_cnn%2Ct_node_cnn%2Cdata_as_of&%24where=active+%3D+true+AND+intersects%28line%2C+%27POLYGON%28%28-122.40643956832666+37.8005%2C-122.40498435248999+37.8005%2C-122.40498435248999+37.80164983830399%2C-122.40643956832666+37.80164983830399%2C-122.40643956832666+37.8005%29%29%27%29&%24order=cnn&%24limit=5000",
+          "trees": "https://data.sf.gov/resource/tkzw-k3nq.json?%24select=treeid%2Cspecies%2Clatitude%2Clongitude%2Cmapdbh%2Cdata_as_of&%24where=latitude+%3E%3D+37.8005+AND+latitude+%3C+37.80164983830399+AND+longitude+%3E%3D+-122.40643956832666+AND+longitude+%3C+-122.40498435248999&%24order=treeid&%24limit=5000",
+          "sidewalks": "https://data.sf.gov/resource/4g86-grxu.json?%24select=objectid%2Ccnn%2Cwidth_min%2Csidewalk_f%2Cside%2Cshape%2Cdata_as_of&%24where=intersects%28shape%2C+%27POLYGON%28%28-122.40643956832666+37.8005%2C-122.40498435248999+37.8005%2C-122.40498435248999+37.80164983830399%2C-122.40643956832666+37.80164983830399%2C-122.40643956832666+37.8005%29%29%27%29&%24order=objectid&%24limit=5000"
+        }
+      }
+    ]
+  },
+  "proposedRuntimeBudgets": {
+    "status": "Acceptance targets, not measurements",
+    "initialTransferBytes": 20000000,
+    "residentGPUBytes": 384000000,
+    "nearTiles": 9,
+    "maxResidentDetailTiles": 25,
+    "maxInflightTiles": 2,
+    "visibleTriangles": 1500000,
+    "fullFrameDrawCalls": 500,
+    "interactionFrameMsTarget": 33.3,
+    "notes": "Measure all render passes and target hardware. Adjust quality/LOD against evidence rather than claiming these budgets are achieved."
+  },
+  "tileManifestContract": {
+    "id": "integer x_z, fixed 128 m origin grid",
+    "status": [
+      "not-acquired",
+      "source-ready",
+      "generated",
+      "validated",
+      "failed"
+    ],
+    "required": [
+      "bounds",
+      "worldOrigin",
+      "sourceManifestHash",
+      "generatorVersion",
+      "overrideHash",
+      "ownerFeatureIds",
+      "crossTileReferences",
+      "assetsByDetail",
+      "byteSizeByDetail",
+      "triangleCountByDetail",
+      "validation"
+    ],
+    "ownership": "Keep existing semantic dataset feature IDs. Choose one canonical owner from the unclipped source feature, never per-query fragment. Neighbor tiles reference the same feature. Existing owner IDs are migrated explicitly, never silently renumbered.",
+    "edits": "Author edits remain in source assets/overrides. Tile changes do not replace references, unknown extras/extensions, hidden ancestors or components. Runtime batching/LOD must be reversible and never write back to authored files.",
+    "lifecycle": "Desired tile set from camera position; load with generation token, discard stale responses, attach only complete validated tiles; unload owned render objects, listeners and buffers; reference-count shared textures/materials; cancel pending work on Stop/dispose."
+  },
+  "nextMilestone": "First make current North Beach meet measured runtime targets. Then complete partial snapshot border tiles and acquire adjacent cells, at most the listed 16 tiles, retain provenance, generate/edit locally, and validate traversal across one tile boundary with unload/reload and preserved owner edits before any wider expansion."
+}
